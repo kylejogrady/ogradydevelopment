@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ | O'Grady Development Co.</title>
+  <meta name="description" content="Frequently asked questions about O'Grady Development Company — new construction homes, communities, and land in Northern Michigan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #faf9f7; --warm: #f0ede8; --dark: #1a1a1a; --footer-bg: #111010;
+      --gold: #b8a88a; --gold-lt: #cfc0a6; --text: #6b6b6b;
+      --display: 'Cormorant Garamond', Georgia, serif;
+      --body: 'Montserrat', sans-serif;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--display); color: var(--dark); background: var(--bg); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); }
+
+    /* HEADER */
+    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 0 56px; height: 72px; background: rgba(250,249,247,0.96); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid rgba(0,0,0,0.07); }
+    .logo { display: flex; align-items: center; }
+    .logo-img { height: 44px; width: auto; }
+    .nav { display: flex; align-items: center; gap: 40px; }
+    .nav-link { font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dark); position: relative; padding-bottom: 3px; transition: color 0.3s; }
+    .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.45s var(--ease); }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    .nav-cta { font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(184,168,138,0.5); padding: 10px 24px; transition: all 0.4s var(--ease); }
+    .nav-cta:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
+    .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; z-index: 1001; }
+    .mobile-toggle span { display: block; width: 22px; height: 1.5px; background: var(--dark); margin-bottom: 6px; transition: all 0.35s ease; }
+    .mobile-toggle span:last-child { margin-bottom: 0; }
+    .mobile-menu { display: none; position: fixed; inset: 0; background: var(--bg); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: var(--display); font-size: 36px; font-weight: 300; letter-spacing: 1px; }
+
+    /* PAGE HERO */
+    .page-hero { padding: 160px 0 80px; background: var(--warm); border-bottom: 1px solid rgba(0,0,0,0.07); }
+    .wrap { max-width: 1440px; margin: 0 auto; padding: 0 64px; }
+    .page-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; }
+    .t-label { font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); }
+    .t-xl { font-family: var(--display); font-size: clamp(44px, 6vw, 80px); font-weight: 300; line-height: 1.05; }
+    .t-body { font-family: var(--body); font-size: 13.5px; font-weight: 300; line-height: 2; color: var(--text); }
+    .rule { width: 48px; height: 1px; background: var(--gold); }
+
+    /* FAQ */
+    .faq-section { padding: 100px 0; }
+    .faq-layout { display: grid; grid-template-columns: 260px 1fr; gap: 96px; }
+
+    .faq-sidebar { position: sticky; top: 100px; align-self: start; }
+    .faq-cat-title { font-family: var(--body); font-size: 8.5px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(0,0,0,0.28); margin-bottom: 20px; }
+    .faq-cat { display: block; font-family: var(--body); font-size: 11px; font-weight: 400; color: var(--text); padding: 11px 0 11px 16px; border-bottom: 1px solid rgba(0,0,0,0.06); cursor: pointer; transition: color 0.3s; position: relative; }
+    .faq-cat::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 4px; height: 4px; border-radius: 50%; background: var(--gold); opacity: 0; transition: opacity 0.3s; }
+    .faq-cat:hover { color: var(--dark); }
+    .faq-cat.active { color: var(--dark); font-weight: 500; }
+    .faq-cat.active::before { opacity: 1; }
+
+    .faq-group { margin-bottom: 64px; }
+    .faq-group-label { font-family: var(--body); font-size: 8.5px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); padding-bottom: 16px; border-bottom: 2px solid var(--gold); margin-bottom: 0; }
+    .faq-item { border-bottom: 1px solid rgba(0,0,0,0.07); }
+    .faq-q { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 28px 0; cursor: pointer; transition: color 0.3s; }
+    .faq-q:hover { color: var(--gold); }
+    .faq-q-text { font-family: var(--display); font-size: clamp(18px, 2vw, 24px); font-weight: 400; line-height: 1.3; }
+    .faq-icon { width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.4s var(--ease); }
+    .faq-icon svg { width: 14px; height: 14px; stroke: var(--gold); fill: none; stroke-width: 2; transition: transform 0.4s var(--ease); }
+    .faq-item.open .faq-icon { background: var(--gold); border-color: var(--gold); }
+    .faq-item.open .faq-icon svg { stroke: #fff; transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--ease), padding 0.4s var(--ease); }
+    .faq-answer.open { max-height: 800px; padding-bottom: 32px; }
+    .faq-answer p { font-family: var(--body); font-size: 13.5px; font-weight: 300; line-height: 2; color: var(--text); max-width: 680px; }
+    .faq-answer a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* Still have questions box */
+    .faq-still { background: var(--warm); padding: 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; margin-top: 32px; }
+
+    /* BUTTONS */
+    .btn { display: inline-block; font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; padding: 17px 44px; border: 1px solid; transition: all 0.5s var(--ease); background: transparent; }
+    .btn-gold { border-color: var(--gold); color: var(--gold); }
+    .btn-gold:hover { background: var(--gold); color: #fff; }
+
+    /* FOOTER */
+    .footer { background: var(--footer-bg); padding: 88px 0 0; }
+    .footer-main { display: grid; grid-template-columns: 2.2fr 1fr 1fr 1fr; gap: 64px; padding-bottom: 72px; }
+    .footer-logo-img { height: 52px; width: auto; margin-bottom: 20px; }
+    .footer-address { font-family: var(--body); font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.3); line-height: 1.9; }
+    .footer-tagline { font-family: var(--display); font-size: 15px; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.15); margin-top: 28px; }
+    .footer-col-title { font-family: var(--body); font-size: 8.5px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.2); margin-bottom: 24px; }
+    .footer-link { display: block; font-family: var(--body); font-size: 12.5px; font-weight: 300; color: rgba(255,255,255,0.42); margin-bottom: 13px; transition: color 0.3s; }
+    .footer-link:hover { color: rgba(255,255,255,0.75); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding: 28px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-copy { font-family: var(--body); font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.18); }
+
+    /* ANIMATIONS */
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
+    .fade-up.in { opacity: 1; transform: none; }
+    .delay-1 { transition-delay: 0.12s; }
+    .delay-2 { transition-delay: 0.24s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .faq-layout { grid-template-columns: 1fr; gap: 40px; }
+      .faq-sidebar { position: static; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+      .faq-cat-title { width: 100%; margin-bottom: 8px; }
+      .faq-cat { border: 1px solid rgba(0,0,0,0.1); padding: 8px 16px; font-size: 10px; }
+      .faq-cat::before { display: none; }
+      .footer-main { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .mobile-toggle { display: block; }
+      .header { padding: 0 20px; height: 60px; }
+      .logo-img { height: 36px; }
+      .page-hero { padding: 120px 0 56px; }
+      .wrap { padding: 0 20px; }
+      .page-hero-grid { grid-template-columns: 1fr; gap: 24px; }
+      .faq-section { padding: 56px 0; }
+      .faq-q-text { font-size: 18px; }
+      .faq-still { flex-direction: column; align-items: flex-start; gap: 24px; padding: 32px; }
+      .btn { width: 100%; text-align: center; }
+      .footer-main { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="images/logos/Black Logo.png" alt="O'Grady Development Co." class="logo-img">
+    </a>
+    <nav class="nav">
+      <a href="communities.html" class="nav-link">Communities</a>
+      <a href="portfolio.html"   class="nav-link">Portfolio</a>
+      <a href="about.html"       class="nav-link">Our Story</a>
+      <a href="sell-land.html"   class="nav-link">Sell Land</a>
+      <a href="faq.html"         class="nav-link active">FAQ</a>
+      <a href="contact.html"     class="nav-cta">Contact Us</a>
+    </nav>
+    <button class="mobile-toggle" id="mob-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mob-menu">
+    <a href="index.html">Home</a>
+    <a href="communities.html">Communities</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">Our Story</a>
+    <a href="sell-land.html">Sell Land</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="page-hero-grid">
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <span class="t-label fade-up">Frequently Asked Questions</span>
+          <h1 class="t-xl fade-up delay-1">Everything<br>You Need<br>to Know.</h1>
+        </div>
+        <div class="fade-up delay-2" style="padding-bottom:8px;">
+          <div class="rule" style="margin-bottom:24px;"></div>
+          <p class="t-body">We've compiled answers to the questions we hear most often. If yours isn't here, reach out directly — we're always happy to talk.</p>
+          <div style="margin-top:32px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+            <a href="tel:+12314215161" style="font-family:var(--body);font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);">(231) 421-5161</a>
+            <div style="width:1px;height:16px;background:rgba(0,0,0,0.15);"></div>
+            <a href="mailto:Kyle@OGradyTeam.com" style="font-family:var(--body);font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);">Kyle@OGradyTeam.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section">
+    <div class="wrap">
+      <div class="faq-layout">
+
+        <!-- Sidebar -->
+        <div class="faq-sidebar">
+          <div class="faq-cat-title">Jump To</div>
+          <a class="faq-cat active" href="#group-buying">Buying a Home</a>
+          <a class="faq-cat" href="#group-building">Building &amp; Process</a>
+          <a class="faq-cat" href="#group-company">About O'Grady</a>
+          <a class="faq-cat" href="#group-land">Selling Land</a>
+        </div>
+
+        <!-- Items -->
+        <div>
+
+          <!-- Buying -->
+          <div class="faq-group" id="group-buying">
+            <div class="faq-group-label">Buying a Home</div>
+
+            <div class="faq-item">
+              <div class="faq-q">
+                <span class="faq-q-text">How do I get started?</span>
+                <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+              </div>
+              <div class="faq-answer"><p>The easiest way is to reach out directly. Call us at <a href="tel:+12314215161">(231) 421-5161</a>, email <a href="mailto:Kyle@OGradyTeam.com">Kyle@OGradyTeam.com</a>, or use the contact form on our website. Whether you're looking at an available home, thinking about a custom build, or want to sell us your land, we'll point you in the right direction.</p></div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">
+                <span class="faq-q-text">What's included in the price of your spec homes?</span>
+                <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+              </div>
+              <div class="faq-answer"><p>Our spec homes are delivered move-in ready with premium finishes throughout — hardwood floors, custom cabinetry, hard surface countertops, quality appliances, and professionally designed lighting and fixtures. Landscaping, driveways, and all infrastructure are included. Each home is designed and finished to a standard we're proud to put our name on. Specific inclusions vary by development and home, so reach out to our sales team for details on any listing.</p></div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">
+                <span class="faq-q-text">Can I customize a spec home that's under construction?</span>
+                <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+              </div>
+              <div class="faq-answer"><p>In some cases, yes. If a home is early enough in the build process, there may be opportunities to select certain finishes like flooring, countertops, paint colors, or fixtures. Once construction reaches a certain stage, changes become more limited. Contact us as early as possible if you're interested in a home that's underway — the sooner we talk, the more flexibility we can offer. Keep in mind, all of our homes have a complete set of designer-selected finishes prior to starting construction. Make sure you review what we have selected before inquiring about particular preferences — hopefully we are already aligned!</p></div>
+            </div>
+
+          </div>
+
+          <!-- Building -->
+          <div class="faq-group" id="group-building">
+            <div class="faq-group-label">Building &amp; Process</div>
+
+            <div class="faq-item">
+              <div class="faq-q">
+                <span class="faq-q-text">How long does it take to build a new home?</span>
+                <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+              </div>
+              <div class="faq-answer"><p>For our spec homes within an O'Grady development, the timeline depends on where the home is in the construction process when you purchase. Some homes are move-in ready, while others may be several months from completion. For custom homes that have not started, expect approximately 12–18 months from the completion of the planning phase through move-in, depending on the scope of the project and permitting timelines.</p></div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">
+                <span class="faq-q-text">Do you build custom homes?</span>
+                <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+              </div>
+              <div class="faq-answer"><p>We have, although we do not frequently build custom homes. If the timing and location is within our purview, we are willing to have a project-specific conversation. Reach out with your details to see if it can be a fit.</p></div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">
+                <span class="faq-q-text">What areas do you build in?</span>
+                <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+              </div>
+              <div class="faq-answer"><p>Our developments and custom projects are focused in and around Traverse City, Michigan — including Old Mission Peninsula, East Bay Township, Long Lake Township, Garfield Township, and the greater Grand Traverse region. We select every site carefully for its setting, accessibility, and long-term value.</p></div>
+            </div>
+
+          </div>
+
+          <!-- Company -->
+          <div class="faq-group" id="group-company">
+            <div class="faq-group-label">About O'Grady</div>
+
+            <div class="faq-item">
+              <div class="faq-q">
+                <span class="faq-q-text">What makes O'Grady Development different from other builders?</span>
+                <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+              </div>
+              <div class="faq-answer"><p>We own and build every home in our developments ourselves. That means buyers aren't choosing from scattered lots with different builders and inconsistent quality — they're investing in a cohesive community where every home meets the same standard. We've been doing this for over 35 years, and we're involved in every step from land acquisition and engineering through design, construction, and delivery.</p></div>
+            </div>
+
+          </div>
+
+          <!-- Land -->
+          <div class="faq-group" id="group-land">
+            <div class="faq-group-label">Selling Land</div>
+
+            <div class="faq-item">
+              <div class="faq-q">
+                <span class="faq-q-text">I want to sell my land. How does that work?</span>
+                <div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+              </div>
+              <div class="faq-answer"><p>We're actively purchasing residential parcels in and around Grand Traverse, Leelanau, Antrim, and Benzie counties for future development. Submit your property details through our <a href="sell-land.html">Sell Land page</a> and we'll follow up with you directly. No commissions, no listing hassles — just a straightforward conversation and a fair offer within weeks.</p></div>
+            </div>
+
+          </div>
+
+          <!-- Still have questions -->
+          <div class="faq-still">
+            <div>
+              <div class="t-label" style="margin-bottom:12px;">Still Have Questions?</div>
+              <div style="font-family:var(--display);font-size:clamp(22px,3vw,32px);font-weight:300;">We're happy to talk through anything.</div>
+            </div>
+            <a href="contact.html" class="btn btn-gold">Get in Touch</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-main">
+        <div>
+          <img src="images/logos/Gold Logo.png" alt="O'Grady Development Co." class="footer-logo-img">
+          <p class="footer-address">901 South Garfield Avenue, Suite 202<br>Traverse City, MI 49686</p>
+          <p class="footer-tagline">Building Your Future. Now.®</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Explore</div>
+          <a href="communities.html" class="footer-link">Communities</a>
+          <a href="portfolio.html"   class="footer-link">Portfolio</a>
+          <a href="about.html"       class="footer-link">Our Story</a>
+          <a href="faq.html"         class="footer-link">FAQ</a>
+        </div>
+        <div>
+          <div class="footer-col-title">Connect</div>
+          <a href="contact.html"   class="footer-link">Contact Us</a>
+          <a href="sell-land.html" class="footer-link">Sell Land</a>
+          <a href="https://www.instagram.com/OGradyDevelopment" target="_blank" rel="noopener" class="footer-link">Instagram</a>
+          <a href="https://www.facebook.com/OGradyDevelopment"  target="_blank" rel="noopener" class="footer-link">Facebook</a>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <a href="tel:+12314215161"           class="footer-link">(231) 421-5161</a>
+          <a href="mailto:Kyle@OGradyTeam.com" class="footer-link">Kyle@OGradyTeam.com</a>
+          <span class="footer-link" style="cursor:default;">Mon – Fri  9am – 5pm</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 O'Grady Development Company. All rights reserved.</div>
+        <div style="display:flex;gap:28px;">
+          <a href="privacy.html" style="font-family:var(--body);font-size:11px;font-weight:300;color:rgba(255,255,255,0.18);">Privacy Policy</a>
+          <a href="terms.html"   style="font-family:var(--body);font-size:11px;font-weight:300;color:rgba(255,255,255,0.18);">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const toggle = document.getElementById('mob-toggle');
+    const menu   = document.getElementById('mob-menu');
+    const spans  = toggle.querySelectorAll('span');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      document.body.style.overflow = open ? 'hidden' : '';
+      spans[0].style.transform = open ? 'rotate(45deg) translateY(7.5px)' : 'none';
+      spans[1].style.opacity   = open ? '0' : '1';
+      spans[2].style.transform = open ? 'rotate(-45deg) translateY(-7.5px)' : 'none';
+      spans.forEach(s => s.style.background = open ? '#1a1a1a' : '');
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      menu.classList.remove('open');
+      document.body.style.overflow = '';
+      spans[0].style.transform = spans[2].style.transform = 'none';
+      spans[1].style.opacity = '1';
+      spans.forEach(s => s.style.background = '');
+    }));
+
+    // Sidebar smooth scroll + active state
+    document.querySelectorAll('.faq-cat').forEach(cat => {
+      cat.addEventListener('click', e => {
+        document.querySelectorAll('.faq-cat').forEach(c => c.classList.remove('active'));
+        cat.classList.add('active');
+      });
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item   = q.parentElement;
+        const answer = q.nextElementSibling;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-answer').classList.remove('open'); });
+        if (!isOpen) { item.classList.add('open'); answer.classList.add('open'); }
+      });
+    });
+
+    // Scroll animations
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
