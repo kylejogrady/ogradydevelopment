@@ -218,6 +218,34 @@
       .aerial-banner { height: 320px; }
       .features-grid { grid-template-columns: 1fr; }
     }
+
+    /* ─── INQUIRY POPUP ───────────────────────────── */
+    .popup-overlay { display: none; position: fixed; inset: 0; z-index: 500; background: rgba(10,8,6,0.75); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); align-items: center; justify-content: center; padding: 20px; }
+    .popup-overlay.open { display: flex; }
+    .popup { background: var(--bg); max-width: 580px; width: 100%; position: relative; animation: popupIn 0.45s var(--ease) both; max-height: 90vh; overflow-y: auto; }
+    @keyframes popupIn { from { opacity: 0; transform: translateY(32px) scale(0.97); } to { opacity: 1; transform: none; } }
+    .popup-header { background: var(--dark); padding: 32px 40px; position: relative; }
+    .popup-close { position: absolute; top: 20px; right: 24px; background: none; border: none; cursor: pointer; font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); transition: color 0.3s; }
+    .popup-close:hover { color: #fff; }
+    .popup-property-label { font-family: var(--body); font-size: 8px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .popup-property-address { font-family: var(--display); font-size: 22px; font-weight: 300; color: #fff; line-height: 1.3; }
+    .popup-property-price { font-family: var(--display); font-size: 18px; font-weight: 300; color: var(--gold-lt); margin-top: 4px; }
+    .popup-body { padding: 36px 40px; }
+    .popup-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .popup-form-group { display: flex; flex-direction: column; gap: 7px; margin-bottom: 16px; }
+    .popup-label { font-family: var(--body); font-size: 8px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dark); }
+    .popup-input, .popup-textarea { width: 100%; font-family: var(--body); font-size: 13px; font-weight: 300; color: var(--dark); background: #fff; border: 1px solid rgba(0,0,0,0.12); padding: 13px 16px; outline: none; transition: border-color 0.3s; border-radius: 0; -webkit-appearance: none; appearance: none; }
+    .popup-input:focus, .popup-textarea:focus { border-color: var(--gold); }
+    .popup-input::placeholder, .popup-textarea::placeholder { color: rgba(0,0,0,0.25); }
+    .popup-textarea { min-height: 100px; resize: vertical; }
+    .popup-submit { width: 100%; font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; padding: 17px; background: var(--dark); color: #fff; border: 1px solid var(--dark); cursor: pointer; transition: all 0.4s var(--ease); margin-top: 4px; }
+    .popup-submit:hover { background: transparent; color: var(--dark); }
+    .popup-note { font-family: var(--body); font-size: 10px; font-weight: 300; color: rgba(0,0,0,0.3); text-align: center; margin-top: 12px; }
+    .popup-success { display: none; flex-direction: column; align-items: center; gap: 16px; text-align: center; padding: 48px 40px; }
+    .popup-success.show { display: flex; }
+    .popup-success-check { width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; }
+    .popup-success-check svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
   </style>
 </head>
 <body>
@@ -230,6 +258,7 @@
     </a>
     <nav class="nav">
       <a href="communities.html" class="nav-link active">Communities</a>
+      <a href="for-sale.html"    class="nav-link">For Sale</a>
       <a href="portfolio.html"   class="nav-link">Portfolio</a>
       <a href="about.html"       class="nav-link">Our Story</a>
       <a href="sell-land.html"   class="nav-link">Sell Land</a>
@@ -244,6 +273,7 @@
   <div class="mobile-menu" id="mob-menu">
     <a href="index.html">Home</a>
     <a href="communities.html">Communities</a>
+    <a href="for-sale.html">For Sale</a>
     <a href="portfolio.html">Portfolio</a>
     <a href="about.html">Our Story</a>
     <a href="sell-land.html">Sell Land</a>
@@ -378,7 +408,7 @@
               </div>
             </div>
             <div class="home-card-actions">
-              <a href="contact.html?community=peninsula-shores&unit=39" class="btn btn-dark">Schedule a Tour</a>
+              <button class="btn btn-dark" onclick="openPopup('15985 Waters Edge Drive, Traverse City MI 49686', '$2,995,000')">Schedule a Tour</button>
             </div>
           </div>
         </div>
@@ -420,7 +450,7 @@
               </div>
             </div>
             <div class="home-card-actions">
-              <a href="contact.html?community=peninsula-shores&unit=13" class="btn btn-dark">Request First Access</a>
+              <button class="btn btn-dark" onclick="openPopup('15652 Waters Edge Drive, Traverse City MI 49686', '$3,295,000')">Request First Access</button>
               <a href="images/communities/Peninsula shores/Lot 13/Lot #13 Marketing Plans.pdf" target="_blank" class="home-pdf-link">
                 <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
                 Download Floor Plans (PDF)
@@ -578,7 +608,7 @@
         <div class="rule"></div>
         <p class="t-body" style="color:rgba(255,255,255,0.45);text-align:center;max-width:480px;">Reach out to schedule a private tour or request additional details — we respond within one business day.</p>
         <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:8px;">
-          <a href="contact.html?community=peninsula-shores" class="btn btn-white">Schedule a Tour</a>
+          <a href="contact.html?community=peninsula-shores" class="btn btn-white" onclick="openPopup('Peninsula Shores', 'From $2,995,000'); return false;">Schedule a Tour</a>
           <a href="tel:+12314215161" class="btn" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);">(231) 421-5161</a>
         </div>
       </div>
@@ -714,6 +744,85 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
     }, { threshold: 0.08 });
     document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+    // ── POPUP ────────────────────────────────────────
+    function openPopup(address, price) {
+      document.getElementById('popup-address').textContent = address;
+      document.getElementById('popup-price').textContent = price;
+      document.getElementById('popup-property-field').value = address + ' — ' + price;
+      document.getElementById('popup-form').style.display = 'block';
+      document.getElementById('popup-success').classList.remove('show');
+      document.getElementById('popup-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closePopup() {
+      document.getElementById('popup-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('popup-overlay').addEventListener('click', function(e) {
+      if (e.target === this) closePopup();
+    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
+    document.getElementById('popup-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(this);
+      fetch('/', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: new URLSearchParams(data).toString() })
+        .then(() => { this.style.display = 'none'; document.getElementById('popup-success').classList.add('show'); })
+        .catch(() => { this.style.display = 'none'; document.getElementById('popup-success').classList.add('show'); });
+    });
   </script>
+
+  <!-- ═══ INQUIRY POPUP ════════════════════════════ -->
+  <div class="popup-overlay" id="popup-overlay">
+    <div class="popup" role="dialog" aria-modal="true">
+      <div class="popup-header">
+        <button class="popup-close" onclick="closePopup()">Close ✕</button>
+        <div class="popup-property-label">Property Inquiry</div>
+        <div class="popup-property-address" id="popup-address"></div>
+        <div class="popup-property-price" id="popup-price"></div>
+      </div>
+      <div class="popup-body">
+        <form id="popup-form" name="property-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="property-inquiry">
+          <input type="hidden" name="property" id="popup-property-field" value="">
+          <p style="display:none;"><input name="bot-field"></p>
+          <div class="popup-form-row">
+            <div class="popup-form-group">
+              <label class="popup-label" for="popup-first">First Name</label>
+              <input class="popup-input" type="text" id="popup-first" name="first_name" placeholder="First" required>
+            </div>
+            <div class="popup-form-group">
+              <label class="popup-label" for="popup-last">Last Name</label>
+              <input class="popup-input" type="text" id="popup-last" name="last_name" placeholder="Last" required>
+            </div>
+          </div>
+          <div class="popup-form-row">
+            <div class="popup-form-group">
+              <label class="popup-label" for="popup-email">Email</label>
+              <input class="popup-input" type="email" id="popup-email" name="email" placeholder="you@email.com" required>
+            </div>
+            <div class="popup-form-group">
+              <label class="popup-label" for="popup-phone">Phone</label>
+              <input class="popup-input" type="tel" id="popup-phone" name="phone" placeholder="(231) 000-0000">
+            </div>
+          </div>
+          <div class="popup-form-group">
+            <label class="popup-label" for="popup-message">Message <span style="font-weight:300;text-transform:none;letter-spacing:0;color:rgba(0,0,0,0.3);">(optional)</span></label>
+            <textarea class="popup-textarea" id="popup-message" name="message" placeholder="Questions, timeline, anything you'd like us to know..."></textarea>
+          </div>
+          <button type="submit" class="popup-submit">Send Inquiry</button>
+          <p class="popup-note">We respond within one business day. All inquiries are confidential.</p>
+        </form>
+        <div class="popup-success" id="popup-success">
+          <div class="popup-success-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span class="t-label">Inquiry Sent</span>
+          <div style="font-family:var(--display);font-size:26px;font-weight:300;">We'll be in touch soon.</div>
+          <p style="font-family:var(--body);font-size:12px;font-weight:300;color:var(--text);text-align:center;max-width:320px;line-height:1.9;">Expect to hear from Kyle within one business day.</p>
+          <button onclick="closePopup()" style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);background:none;border:none;cursor:pointer;margin-top:8px;">Close ✕</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
