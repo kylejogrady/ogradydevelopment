@@ -109,7 +109,6 @@
       position: relative;
       transition: background 0.4s;
       border: 1px solid rgba(0,0,0,0.09);
-      grid-column: span 1 !important;
     }
     .comm-card:hover { background: var(--warm); }
 
@@ -167,7 +166,7 @@
     .comm-status-tag { font-family: var(--body); font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(0,0,0,0.3); }
 
     /* Featured card — spans 2 columns */
-    .comm-card-featured { flex-direction: column; }
+    .comm-card-featured { grid-column: span 2; flex-direction: row; }
     .comm-card-featured .comm-card-img { aspect-ratio: auto; flex: 1.2; min-height: 380px; }
     .comm-card-featured .comm-card-right { flex: 1; display: flex; flex-direction: column; }
     .comm-card-featured .comm-card-body { padding: 40px 48px; flex: 1; }
