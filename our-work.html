@@ -287,7 +287,7 @@
         <!--
           IMAGE INSTRUCTIONS:
           Replace each src with your photo path from the portfolio folder.
-          Example: src="images/portfolio/beachcomber/beachcomber-exterior.jpg"
+          Example: src="images/our-work/beachcomber/beachcomber-exterior.jpg"
 
           Size classes:
           item-feature  = spans 2 cols × 2 rows (hero shot — use your best photo)
@@ -311,12 +311,8 @@
         -->
 
         <!-- 1. BAYRIDGE — Feature -->
-        <div class="masonry-item item-feature" data-name="Bayridge" data-index="0" onclick="openLightbox(0)">
-          <div class="masonry-placeholder">
-            <div class="masonry-placeholder-name">Bayridge</div>
-            <div class="masonry-placeholder-label">Add photo: images/portfolio/bayridge/bayridge-exterior.jpg</div>
-          </div>
-          <!-- <img src="images/portfolio/bayridge/bayridge-exterior.jpg" alt="Bayridge"> -->
+        <div class="masonry-item item-feature" data-name="Bayridge" onclick="openLightbox('Bayridge')">
+          <img src="images/our-work/bayridge/bayridge-1.jpg" alt="Bayridge">
           <div class="masonry-overlay">
             <div class="masonry-caption">
               <div class="masonry-caption-name">Bayridge</div>
@@ -326,11 +322,11 @@
           <div class="masonry-click"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
         </div>
 
-        <!-- 2. HAVEN — Tall -->
-        <div class="masonry-item item-tall" data-name="Haven" data-index="1" onclick="openLightbox(1)">
+        <!-- 2. HAVEN — Tall (placeholder — no photos yet) -->
+        <div class="masonry-item item-tall" data-name="Haven" onclick="openLightbox('Bayridge')">
           <div class="masonry-placeholder">
             <div class="masonry-placeholder-name">Haven</div>
-            <div class="masonry-placeholder-label">images/portfolio/haven/</div>
+            <div class="masonry-placeholder-label">Photos coming soon</div>
           </div>
           <div class="masonry-overlay">
             <div class="masonry-caption">
@@ -342,11 +338,8 @@
         </div>
 
         <!-- 3. SAILFISH — Square -->
-        <div class="masonry-item item-square" data-name="Sailfish" data-index="2" onclick="openLightbox(2)">
-          <div class="masonry-placeholder">
-            <div class="masonry-placeholder-name">Sailfish</div>
-            <div class="masonry-placeholder-label">images/portfolio/sailfish/</div>
-          </div>
+        <div class="masonry-item item-square" data-name="Sailfish" onclick="openLightbox('Sailfish')">
+          <img src="images/our-work/sailfish/sf-1.jpg" alt="Sailfish">
           <div class="masonry-overlay">
             <div class="masonry-caption">
               <div class="masonry-caption-name">Sailfish</div>
@@ -356,11 +349,11 @@
           <div class="masonry-click"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
         </div>
 
-        <!-- 4. CHESTNUT — Square -->
-        <div class="masonry-item item-square" data-name="Chestnut" data-index="3" onclick="openLightbox(3)">
+        <!-- 4. CHESTNUT — Square (placeholder) -->
+        <div class="masonry-item item-square" data-name="Chestnut" onclick="openLightbox('Bayridge')">
           <div class="masonry-placeholder">
             <div class="masonry-placeholder-name">Chestnut</div>
-            <div class="masonry-placeholder-label">images/portfolio/chestnut/</div>
+            <div class="masonry-placeholder-label">Photos coming soon</div>
           </div>
           <div class="masonry-overlay">
             <div class="masonry-caption">
@@ -372,11 +365,8 @@
         </div>
 
         <!-- 5. BEACHCOMBER — Wide -->
-        <div class="masonry-item item-wide" data-name="Beachcomber" data-index="4" onclick="openLightbox(4)">
-          <div class="masonry-placeholder">
-            <div class="masonry-placeholder-name">Beachcomber</div>
-            <div class="masonry-placeholder-label">images/portfolio/beachcomber/</div>
-          </div>
+        <div class="masonry-item item-wide" data-name="Beachcomber" onclick="openLightbox('Beachcomber')">
+          <img src="images/our-work/beachcomber/beachcomber-1.jpg" alt="Beachcomber">
           <div class="masonry-overlay">
             <div class="masonry-caption">
               <div class="masonry-caption-name">Beachcomber</div>
@@ -387,11 +377,8 @@
         </div>
 
         <!-- 6. BLUFF — Tall -->
-        <div class="masonry-item item-tall" data-name="Bluff" data-index="5" onclick="openLightbox(5)">
-          <div class="masonry-placeholder">
-            <div class="masonry-placeholder-name">Bluff</div>
-            <div class="masonry-placeholder-label">images/portfolio/bluff/</div>
-          </div>
+        <div class="masonry-item item-tall" data-name="Bluff" onclick="openLightbox('Bluff')">
+          <img src="images/our-work/bluff/bluff-1.jpg" alt="Bluff">
           <div class="masonry-overlay">
             <div class="masonry-caption">
               <div class="masonry-caption-name">Bluff</div>
@@ -402,11 +389,8 @@
         </div>
 
         <!-- 7. SYCAMORE — Square -->
-        <div class="masonry-item item-square" data-name="Sycamore" data-index="6" onclick="openLightbox(6)">
-          <div class="masonry-placeholder">
-            <div class="masonry-placeholder-name">Sycamore</div>
-            <div class="masonry-placeholder-label">images/portfolio/sycamore/</div>
-          </div>
+        <div class="masonry-item item-square" data-name="Sycamore" onclick="openLightbox('Sycamore')">
+          <img src="images/our-work/sycamore/sycamore-1.jpg" alt="Sycamore">
           <div class="masonry-overlay">
             <div class="masonry-caption">
               <div class="masonry-caption-name">Sycamore</div>
@@ -417,11 +401,8 @@
         </div>
 
         <!-- 8. CHATEAU — Square -->
-        <div class="masonry-item item-square" data-name="Chateau" data-index="7" onclick="openLightbox(7)">
-          <div class="masonry-placeholder">
-            <div class="masonry-placeholder-name">Chateau</div>
-            <div class="masonry-placeholder-label">images/portfolio/chateau/</div>
-          </div>
+        <div class="masonry-item item-square" data-name="Chateau" onclick="openLightbox('Chateau')">
+          <img src="images/our-work/chateau/chateau-1.jpg" alt="Chateau">
           <div class="masonry-overlay">
             <div class="masonry-caption">
               <div class="masonry-caption-name">Chateau</div>
@@ -432,11 +413,8 @@
         </div>
 
         <!-- 9. BAY VIEW — Wide -->
-        <div class="masonry-item item-wide" data-name="Bay View" data-index="8" onclick="openLightbox(8)">
-          <div class="masonry-placeholder">
-            <div class="masonry-placeholder-name">Bay View</div>
-            <div class="masonry-placeholder-label">images/portfolio/bay-view/</div>
-          </div>
+        <div class="masonry-item item-wide" data-name="Bay View" onclick="openLightbox('Bay View')">
+          <img src="images/our-work/bayview/bayview-1.jpg" alt="Bay View">
           <div class="masonry-overlay">
             <div class="masonry-caption">
               <div class="masonry-caption-name">Bay View</div>
@@ -447,11 +425,8 @@
         </div>
 
         <!-- 10. DOGWOOD — Square -->
-        <div class="masonry-item item-square" data-name="Dogwood" data-index="9" onclick="openLightbox(9)">
-          <div class="masonry-placeholder">
-            <div class="masonry-placeholder-name">Dogwood</div>
-            <div class="masonry-placeholder-label">images/portfolio/dogwood/</div>
-          </div>
+        <div class="masonry-item item-square" data-name="Dogwood" onclick="openLightbox('Dogwood')">
+          <img src="images/our-work/dogwood/dogwood-1.jpg" alt="Dogwood">
           <div class="masonry-overlay">
             <div class="masonry-caption">
               <div class="masonry-caption-name">Dogwood</div>
@@ -462,11 +437,8 @@
         </div>
 
         <!-- 11. REDWOOD — Tall -->
-        <div class="masonry-item item-tall" data-name="Redwood" data-index="10" onclick="openLightbox(10)">
-          <div class="masonry-placeholder">
-            <div class="masonry-placeholder-name">Redwood</div>
-            <div class="masonry-placeholder-label">images/portfolio/redwood/</div>
-          </div>
+        <div class="masonry-item item-tall" data-name="Redwood" onclick="openLightbox('Redwood')">
+          <img src="images/our-work/redwood/redwood-1.jpg" alt="Redwood">
           <div class="masonry-overlay">
             <div class="masonry-caption">
               <div class="masonry-caption-name">Redwood</div>
@@ -477,14 +449,47 @@
         </div>
 
         <!-- 12. ENGLISH OAK — Square -->
-        <div class="masonry-item item-square" data-name="English Oak" data-index="11" onclick="openLightbox(11)">
-          <div class="masonry-placeholder">
-            <div class="masonry-placeholder-name">English Oak</div>
-            <div class="masonry-placeholder-label">images/portfolio/english-oak/</div>
-          </div>
+        <div class="masonry-item item-square" data-name="English Oak" onclick="openLightbox('English Oak')">
+          <img src="images/our-work/english-oak/english-oak-1.jpg" alt="English Oak">
           <div class="masonry-overlay">
             <div class="masonry-caption">
               <div class="masonry-caption-name">English Oak</div>
+              <div class="masonry-caption-rule"></div>
+            </div>
+          </div>
+          <div class="masonry-click"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+        </div>
+
+        <!-- 13. HAMILTON PLACE — Wide -->
+        <div class="masonry-item item-wide" data-name="Hamilton Place" onclick="openLightbox('Hamilton Place')">
+          <img src="images/our-work/hamilton-place/hp-1.jpg" alt="Hamilton Place">
+          <div class="masonry-overlay">
+            <div class="masonry-caption">
+              <div class="masonry-caption-name">Hamilton Place</div>
+              <div class="masonry-caption-rule"></div>
+            </div>
+          </div>
+          <div class="masonry-click"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+        </div>
+
+        <!-- 14. LAKESIDE — Tall -->
+        <div class="masonry-item item-tall" data-name="Lakeside" onclick="openLightbox('Lakeside')">
+          <img src="images/our-work/lakeside/lakeside-1a.JPG" alt="Lakeside">
+          <div class="masonry-overlay">
+            <div class="masonry-caption">
+              <div class="masonry-caption-name">Lakeside</div>
+              <div class="masonry-caption-rule"></div>
+            </div>
+          </div>
+          <div class="masonry-click"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+        </div>
+
+        <!-- 15. TRILLIUM — Square -->
+        <div class="masonry-item item-square" data-name="Trillium" onclick="openLightbox('Trillium')">
+          <img src="images/our-work/trillium/trillium-1.jpg" alt="Trillium">
+          <div class="masonry-overlay">
+            <div class="masonry-caption">
+              <div class="masonry-caption-name">Trillium</div>
               <div class="masonry-caption-rule"></div>
             </div>
           </div>
@@ -587,23 +592,304 @@
       spans.forEach(s => s.style.background = '');
     }));
 
-    // Lightbox
-    // When you add real photos, update each item's src here or just let
-    // the lightbox pull from the img tag src attribute directly.
-    const items = Array.from(document.querySelectorAll('.masonry-item'));
+    // ── CONTINUOUS PHOTO ARRAY ───────────────────────
+    // All photos across all homes in one flat array.
+    // Clicking any grid tile opens at that home's first photo.
+    // Arrows + swipe move through ALL photos seamlessly.
+    const allPhotos = [
+      // BAYRIDGE (14 photos)
+      { src: 'images/our-work/bayridge/bayridge-1.jpg',  home: 'Bayridge' },
+      { src: 'images/our-work/bayridge/bayridge-2.jpg',  home: 'Bayridge' },
+      { src: 'images/our-work/bayridge/bayridge-3.jpg',  home: 'Bayridge' },
+      { src: 'images/our-work/bayridge/bayridge-4.jpg',  home: 'Bayridge' },
+      { src: 'images/our-work/bayridge/bayridge-5.jpg',  home: 'Bayridge' },
+      { src: 'images/our-work/bayridge/bayridge-6.jpg',  home: 'Bayridge' },
+      { src: 'images/our-work/bayridge/bayridge-8.jpg',  home: 'Bayridge' },
+      { src: 'images/our-work/bayridge/bayridge-8a.jpg', home: 'Bayridge' },
+      { src: 'images/our-work/bayridge/bayridge-9.jpg',  home: 'Bayridge' },
+      { src: 'images/our-work/bayridge/bayridge-10.jpg', home: 'Bayridge' },
+      { src: 'images/our-work/bayridge/bayridge-11.jpg', home: 'Bayridge' },
+      { src: 'images/our-work/bayridge/bayridge-12.jpg', home: 'Bayridge' },
+      { src: 'images/our-work/bayridge/bayridge-13.jpg', home: 'Bayridge' },
+      { src: 'images/our-work/bayridge/bayridge-14.jpg', home: 'Bayridge' },
+      { src: 'images/our-work/bayridge/bayridge-15.jpg', home: 'Bayridge' },
+      // BAY VIEW (26 photos)
+      { src: 'images/our-work/bayview/bayview-1.jpg',  home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-2.jpg',  home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-3.jpg',  home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-4.jpg',  home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-5.jpg',  home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-6.jpg',  home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-7.jpg',  home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-8.jpg',  home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-9.jpg',  home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-10.jpg', home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-11.jpg', home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-13.jpg', home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-14.jpg', home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-15.jpg', home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-16.jpg', home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-17.jpg', home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-18.jpg', home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-19.jpg', home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-20.jpg', home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-21.jpg', home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-22.jpg', home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-23.jpg', home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-24.jpg', home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-25.jpg', home: 'Bay View' },
+      { src: 'images/our-work/bayview/bayview-bayview-12.jpg', home: 'Bay View' },
+      // BEACHCOMBER (21 photos)
+      { src: 'images/our-work/beachcomber/beachcomber-1.jpg',  home: 'Beachcomber' },
+      { src: 'images/our-work/beachcomber/beachcomber-2.jpg',  home: 'Beachcomber' },
+      { src: 'images/our-work/beachcomber/beachcomber-3.jpg',  home: 'Beachcomber' },
+      { src: 'images/our-work/beachcomber/beachcomber-4.jpg',  home: 'Beachcomber' },
+      { src: 'images/our-work/beachcomber/beachcomber-5.jpg',  home: 'Beachcomber' },
+      { src: 'images/our-work/beachcomber/beachcomber-6.jpg',  home: 'Beachcomber' },
+      { src: 'images/our-work/beachcomber/beachcomber-7.jpg',  home: 'Beachcomber' },
+      { src: 'images/our-work/beachcomber/beachcomber-8.jpg',  home: 'Beachcomber' },
+      { src: 'images/our-work/beachcomber/beachcomber-9.jpg',  home: 'Beachcomber' },
+      { src: 'images/our-work/beachcomber/beachcomber-10.jpg', home: 'Beachcomber' },
+      { src: 'images/our-work/beachcomber/beachcomber-11.jpg', home: 'Beachcomber' },
+      { src: 'images/our-work/beachcomber/beachcomber-12.jpg', home: 'Beachcomber' },
+      { src: 'images/our-work/beachcomber/beachcomber-13.jpg', home: 'Beachcomber' },
+      { src: 'images/our-work/beachcomber/beachcomber-14.jpg', home: 'Beachcomber' },
+      { src: 'images/our-work/beachcomber/beachcomber-15.jpg', home: 'Beachcomber' },
+      { src: 'images/our-work/beachcomber/beachcomber-16.jpg', home: 'Beachcomber' },
+      { src: 'images/our-work/beachcomber/beachcomber-17.jpg', home: 'Beachcomber' },
+      { src: 'images/our-work/beachcomber/beachcomber-18.jpg', home: 'Beachcomber' },
+      { src: 'images/our-work/beachcomber/beachcomber-19.jpg', home: 'Beachcomber' },
+      { src: 'images/our-work/beachcomber/beachcomber-20.jpg', home: 'Beachcomber' },
+      { src: 'images/our-work/beachcomber/beachcomber-21.jpg', home: 'Beachcomber' },
+      // BLUFF (15 photos)
+      { src: 'images/our-work/bluff/bluff-1.jpg',  home: 'Bluff' },
+      { src: 'images/our-work/bluff/bluff-2.jpg',  home: 'Bluff' },
+      { src: 'images/our-work/bluff/bluff-3.jpg',  home: 'Bluff' },
+      { src: 'images/our-work/bluff/bluff-4.jpg',  home: 'Bluff' },
+      { src: 'images/our-work/bluff/bluff-5.jpg',  home: 'Bluff' },
+      { src: 'images/our-work/bluff/bluff-6.jpg',  home: 'Bluff' },
+      { src: 'images/our-work/bluff/bluff-7.jpg',  home: 'Bluff' },
+      { src: 'images/our-work/bluff/bluff-8.jpg',  home: 'Bluff' },
+      { src: 'images/our-work/bluff/bluff-9.jpg',  home: 'Bluff' },
+      { src: 'images/our-work/bluff/bluff-10.jpg', home: 'Bluff' },
+      { src: 'images/our-work/bluff/bluff-11.jpg', home: 'Bluff' },
+      { src: 'images/our-work/bluff/bluff-12.jpg', home: 'Bluff' },
+      { src: 'images/our-work/bluff/bluff-13.jpg', home: 'Bluff' },
+      { src: 'images/our-work/bluff/bluff-14.jpg', home: 'Bluff' },
+      { src: 'images/our-work/bluff/bluff-15.jpg', home: 'Bluff' },
+      // CHATEAU (23 photos, skip POH.jpg and duplicate 26)
+      { src: 'images/our-work/chateau/chateau-1.jpg',  home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-2.jpg',  home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-3.jpg',  home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-4.jpg',  home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-5.jpg',  home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-6.jpg',  home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-7.jpg',  home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-8.jpg',  home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-9.jpg',  home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-10.jpg', home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-11.jpg', home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-12.jpg', home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-13.jpg', home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-14.jpg', home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-15.jpg', home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-16.jpg', home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-17.jpg', home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-18.jpg', home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-19.jpg', home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-22.jpg', home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-23.jpg', home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-25.jpg', home: 'Chateau' },
+      { src: 'images/our-work/chateau/chateau-26.jpg', home: 'Chateau' },
+      // DOGWOOD (16 photos, no 12)
+      { src: 'images/our-work/dogwood/dogwood-1.jpg',  home: 'Dogwood' },
+      { src: 'images/our-work/dogwood/dogwood-2.jpg',  home: 'Dogwood' },
+      { src: 'images/our-work/dogwood/dogwood-3.jpg',  home: 'Dogwood' },
+      { src: 'images/our-work/dogwood/dogwood-4.jpg',  home: 'Dogwood' },
+      { src: 'images/our-work/dogwood/dogwood-5.jpg',  home: 'Dogwood' },
+      { src: 'images/our-work/dogwood/dogwood-6.jpg',  home: 'Dogwood' },
+      { src: 'images/our-work/dogwood/dogwood-7.jpg',  home: 'Dogwood' },
+      { src: 'images/our-work/dogwood/dogwood-8.jpg',  home: 'Dogwood' },
+      { src: 'images/our-work/dogwood/dogwood-9.jpg',  home: 'Dogwood' },
+      { src: 'images/our-work/dogwood/dogwood-10.jpg', home: 'Dogwood' },
+      { src: 'images/our-work/dogwood/dogwood-11.jpg', home: 'Dogwood' },
+      { src: 'images/our-work/dogwood/dogwood-13.jpg', home: 'Dogwood' },
+      { src: 'images/our-work/dogwood/dogwood-14.jpg', home: 'Dogwood' },
+      { src: 'images/our-work/dogwood/dogwood-15.jpg', home: 'Dogwood' },
+      { src: 'images/our-work/dogwood/dogwood-16.jpg', home: 'Dogwood' },
+      { src: 'images/our-work/dogwood/dogwood-17.jpg', home: 'Dogwood' },
+      // ENGLISH OAK (21 photos)
+      { src: 'images/our-work/english-oak/english-oak-1.jpg',  home: 'English Oak' },
+      { src: 'images/our-work/english-oak/english-oak-2.jpg',  home: 'English Oak' },
+      { src: 'images/our-work/english-oak/english-oak-3.jpg',  home: 'English Oak' },
+      { src: 'images/our-work/english-oak/english-oak-4.jpg',  home: 'English Oak' },
+      { src: 'images/our-work/english-oak/english-oak-5.jpg',  home: 'English Oak' },
+      { src: 'images/our-work/english-oak/english-oak-6.jpg',  home: 'English Oak' },
+      { src: 'images/our-work/english-oak/english-oak-7.jpg',  home: 'English Oak' },
+      { src: 'images/our-work/english-oak/english-oak-8.jpg',  home: 'English Oak' },
+      { src: 'images/our-work/english-oak/english-oak-9.jpg',  home: 'English Oak' },
+      { src: 'images/our-work/english-oak/english-oak-10.jpg', home: 'English Oak' },
+      { src: 'images/our-work/english-oak/english-oak-11.jpg', home: 'English Oak' },
+      { src: 'images/our-work/english-oak/english-oak-12.jpg', home: 'English Oak' },
+      { src: 'images/our-work/english-oak/english-oak-13.jpg', home: 'English Oak' },
+      { src: 'images/our-work/english-oak/english-oak-14.jpg', home: 'English Oak' },
+      { src: 'images/our-work/english-oak/english-oak-15.jpg', home: 'English Oak' },
+      { src: 'images/our-work/english-oak/english-oak-16.jpg', home: 'English Oak' },
+      { src: 'images/our-work/english-oak/english-oak-17.jpg', home: 'English Oak' },
+      { src: 'images/our-work/english-oak/english-oak-18.jpg', home: 'English Oak' },
+      { src: 'images/our-work/english-oak/english-oak-19.jpg', home: 'English Oak' },
+      { src: 'images/our-work/english-oak/english-oak-20.jpg', home: 'English Oak' },
+      { src: 'images/our-work/english-oak/english-oak-21.jpg', home: 'English Oak' },
+      // HAMILTON PLACE (26 photos)
+      { src: 'images/our-work/hamilton-place/hp-1.jpg',  home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-2.jpg',  home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-3.jpg',  home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-4.jpg',  home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-5.jpg',  home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-6.jpg',  home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-7.jpg',  home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-8.jpg',  home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-9.jpg',  home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-10.jpg', home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-11.jpg', home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-12.jpg', home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-13.jpg', home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-14.jpg', home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-15.jpg', home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-16.jpg', home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-17.jpg', home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-18.jpg', home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-19.jpg', home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-20.jpg', home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-21.jpg', home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-22.jpg', home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-23.jpg', home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-24.jpg', home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-25.jpg', home: 'Hamilton Place' },
+      { src: 'images/our-work/hamilton-place/hp-26.jpg', home: 'Hamilton Place' },
+      // LAKESIDE (22 photos)
+      { src: 'images/our-work/lakeside/lakeside-1a.JPG', home: 'Lakeside' },
+      { src: 'images/our-work/lakeside/lakeside-1b.JPG', home: 'Lakeside' },
+      { src: 'images/our-work/lakeside/lakeside-2.JPG',  home: 'Lakeside' },
+      { src: 'images/our-work/lakeside/lakeside-3.JPG',  home: 'Lakeside' },
+      { src: 'images/our-work/lakeside/lakeside-4.JPG',  home: 'Lakeside' },
+      { src: 'images/our-work/lakeside/lakeside-5.JPG',  home: 'Lakeside' },
+      { src: 'images/our-work/lakeside/lakeside-6.JPG',  home: 'Lakeside' },
+      { src: 'images/our-work/lakeside/lakeside-7.JPG',  home: 'Lakeside' },
+      { src: 'images/our-work/lakeside/lakeside-8.JPG',  home: 'Lakeside' },
+      { src: 'images/our-work/lakeside/lakeside-9.JPG',  home: 'Lakeside' },
+      { src: 'images/our-work/lakeside/lakeside-10.JPG', home: 'Lakeside' },
+      { src: 'images/our-work/lakeside/lakeside-11.JPG', home: 'Lakeside' },
+      { src: 'images/our-work/lakeside/lakeside-12.JPG', home: 'Lakeside' },
+      { src: 'images/our-work/lakeside/lakeside-13.JPG', home: 'Lakeside' },
+      { src: 'images/our-work/lakeside/lakeside-14.JPG', home: 'Lakeside' },
+      { src: 'images/our-work/lakeside/lakeside-15.JPG', home: 'Lakeside' },
+      { src: 'images/our-work/lakeside/lakeside-16.JPG', home: 'Lakeside' },
+      { src: 'images/our-work/lakeside/lakeside-17.JPG', home: 'Lakeside' },
+      { src: 'images/our-work/lakeside/lakeside-18.JPG', home: 'Lakeside' },
+      { src: 'images/our-work/lakeside/lakeside-19.JPG', home: 'Lakeside' },
+      { src: 'images/our-work/lakeside/lakeside-20.JPG', home: 'Lakeside' },
+      { src: 'images/our-work/lakeside/lakeside-21.JPG', home: 'Lakeside' },
+      // REDWOOD (13 photos)
+      { src: 'images/our-work/redwood/redwood-1.jpg',  home: 'Redwood' },
+      { src: 'images/our-work/redwood/redwood-2.jpg',  home: 'Redwood' },
+      { src: 'images/our-work/redwood/redwood-3.jpg',  home: 'Redwood' },
+      { src: 'images/our-work/redwood/redwood-4.jpg',  home: 'Redwood' },
+      { src: 'images/our-work/redwood/redwood-5.jpg',  home: 'Redwood' },
+      { src: 'images/our-work/redwood/redwood-6.jpg',  home: 'Redwood' },
+      { src: 'images/our-work/redwood/redwood-7.jpg',  home: 'Redwood' },
+      { src: 'images/our-work/redwood/redwood-8.jpg',  home: 'Redwood' },
+      { src: 'images/our-work/redwood/redwood-9.jpg',  home: 'Redwood' },
+      { src: 'images/our-work/redwood/redwood-10.jpg', home: 'Redwood' },
+      { src: 'images/our-work/redwood/redwood-11.jpg', home: 'Redwood' },
+      { src: 'images/our-work/redwood/redwood-12.jpg', home: 'Redwood' },
+      { src: 'images/our-work/redwood/redwood-13.jpg', home: 'Redwood' },
+      // SAILFISH (25 photos)
+      { src: 'images/our-work/sailfish/sf-1.jpg',   home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-2.jpg',   home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-3.jpg',   home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-4.jpg',   home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-5.jpg',   home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-6.jpg',   home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-7.jpg',   home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-8.jpg',   home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-9.jpg',   home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-10.jpg',  home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-11.jpg',  home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-12.jpg',  home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-13.jpg',  home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-14.jpg',  home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-15.jpg',  home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-16.jpg',  home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-17a.jpg', home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-17b.jpg', home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-18.jpg',  home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-19.jpg',  home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-20.jpg',  home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-21.jpg',  home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-22.jpg',  home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-23.jpg',  home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-24.jpg',  home: 'Sailfish' },
+      { src: 'images/our-work/sailfish/sf-25.jpg',  home: 'Sailfish' },
+      // SYCAMORE (20 photos)
+      { src: 'images/our-work/sycamore/sycamore-1.jpg',  home: 'Sycamore' },
+      { src: 'images/our-work/sycamore/sycamore-2.jpg',  home: 'Sycamore' },
+      { src: 'images/our-work/sycamore/sycamore-3.jpg',  home: 'Sycamore' },
+      { src: 'images/our-work/sycamore/sycamore-4.jpg',  home: 'Sycamore' },
+      { src: 'images/our-work/sycamore/sycamore-5.jpg',  home: 'Sycamore' },
+      { src: 'images/our-work/sycamore/sycamore-6.jpg',  home: 'Sycamore' },
+      { src: 'images/our-work/sycamore/sycamore-7.jpg',  home: 'Sycamore' },
+      { src: 'images/our-work/sycamore/sycamore-8.jpg',  home: 'Sycamore' },
+      { src: 'images/our-work/sycamore/sycamore-9.jpg',  home: 'Sycamore' },
+      { src: 'images/our-work/sycamore/sycamore-10.jpg', home: 'Sycamore' },
+      { src: 'images/our-work/sycamore/sycamore-11.jpg', home: 'Sycamore' },
+      { src: 'images/our-work/sycamore/sycamore-12.jpg', home: 'Sycamore' },
+      { src: 'images/our-work/sycamore/sycamore-13.jpg', home: 'Sycamore' },
+      { src: 'images/our-work/sycamore/sycamore-14.jpg', home: 'Sycamore' },
+      { src: 'images/our-work/sycamore/sycamore-15.jpg', home: 'Sycamore' },
+      { src: 'images/our-work/sycamore/sycamore-16.jpg', home: 'Sycamore' },
+      { src: 'images/our-work/sycamore/sycamore-17.jpg', home: 'Sycamore' },
+      { src: 'images/our-work/sycamore/sycamore-18.jpg', home: 'Sycamore' },
+      { src: 'images/our-work/sycamore/sycamore-19.jpg', home: 'Sycamore' },
+      { src: 'images/our-work/sycamore/sycamore-20.jpg', home: 'Sycamore' },
+      // TRILLIUM (13 photos)
+      { src: 'images/our-work/trillium/trillium-1.jpg',  home: 'Trillium' },
+      { src: 'images/our-work/trillium/trillium-2.jpg',  home: 'Trillium' },
+      { src: 'images/our-work/trillium/trillium-3.jpg',  home: 'Trillium' },
+      { src: 'images/our-work/trillium/trillium-4.jpg',  home: 'Trillium' },
+      { src: 'images/our-work/trillium/trillium-5.jpg',  home: 'Trillium' },
+      { src: 'images/our-work/trillium/trillium-6.jpg',  home: 'Trillium' },
+      { src: 'images/our-work/trillium/trillium-7.jpg',  home: 'Trillium' },
+      { src: 'images/our-work/trillium/trillium-8.jpg',  home: 'Trillium' },
+      { src: 'images/our-work/trillium/trillium-9.jpg',  home: 'Trillium' },
+      { src: 'images/our-work/trillium/trillium-10.jpg', home: 'Trillium' },
+      { src: 'images/our-work/trillium/trillium-11.jpg', home: 'Trillium' },
+      { src: 'images/our-work/trillium/trillium-12.jpg', home: 'Trillium' },
+      { src: 'images/our-work/trillium/trillium-13.jpg', home: 'Trillium' },
+    ];
+
+    // Index of the first photo for each grid tile (home name → array index)
+    const homeStartIndex = {
+      'Bayridge':       0,
+      'Bay View':       15,
+      'Beachcomber':    41,
+      'Bluff':          62,
+      'Chateau':        77,
+      'Dogwood':        100,
+      'English Oak':    116,
+      'Hamilton Place': 137,
+      'Lakeside':       163,
+      'Redwood':        185,
+      'Sailfish':       198,
+      'Sycamore':       224,
+      'Trillium':       244,
+    };
+
     let currentIdx = 0;
 
-    function getSrc(item) {
-      const img = item.querySelector('img');
-      return img ? img.src : null;
-    }
-    function getName(item) {
-      return item.dataset.name || '';
-    }
-
-    function openLightbox(idx) {
-      currentIdx = idx;
-      showLightboxItem();
+    function openLightbox(homeName) {
+      currentIdx = homeStartIndex[homeName] ?? 0;
+      renderLightbox();
       document.getElementById('lightbox').classList.add('open');
       document.body.style.overflow = 'hidden';
     }
@@ -611,32 +897,36 @@
       document.getElementById('lightbox').classList.remove('open');
       document.body.style.overflow = '';
     }
-    function showLightboxItem() {
-      const item = items[currentIdx];
-      const src = getSrc(item);
-      const imgEl = document.getElementById('lightbox-img');
-      if (src) {
-        imgEl.src = src;
-        imgEl.style.display = 'block';
-      } else {
-        imgEl.style.display = 'none';
-      }
-      document.getElementById('lightbox-name').textContent = getName(item);
-      document.getElementById('lightbox-counter').textContent = (currentIdx + 1) + ' of ' + items.length;
+    function renderLightbox() {
+      const photo = allPhotos[currentIdx];
+      document.getElementById('lightbox-img').src = photo.src;
+      document.getElementById('lightbox-name').textContent = photo.home;
+      document.getElementById('lightbox-counter').textContent =
+        (currentIdx + 1) + ' of ' + allPhotos.length + '  ·  ' + photo.home;
     }
     function lightboxNav(dir) {
-      currentIdx = (currentIdx + dir + items.length) % items.length;
-      showLightboxItem();
+      currentIdx = (currentIdx + dir + allPhotos.length) % allPhotos.length;
+      renderLightbox();
     }
+
     document.getElementById('lightbox').addEventListener('click', function(e) {
       if (e.target === this) closeLightbox();
     });
     document.addEventListener('keydown', e => {
       if (!document.getElementById('lightbox').classList.contains('open')) return;
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') lightboxNav(-1);
-      if (e.key === 'ArrowRight') lightboxNav(1);
+      if (e.key === 'Escape')      closeLightbox();
+      if (e.key === 'ArrowLeft')   lightboxNav(-1);
+      if (e.key === 'ArrowRight')  lightboxNav(1);
     });
+
+    // ── TOUCH / SWIPE ────────────────────────────────
+    let touchStartX = 0;
+    const lb = document.getElementById('lightbox');
+    lb.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) lightboxNav(diff > 0 ? 1 : -1);
+    }, { passive: true });
 
     // Scroll animations
     const obs = new IntersectionObserver(entries => {
