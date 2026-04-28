@@ -664,7 +664,7 @@
         <button class="filter-tab" data-filter="available">Available Now</button>
         <button class="filter-tab" data-filter="coming">Coming Soon</button>
       </div>
-      <span class="filter-count" id="filter-count">3 Properties</span>
+      <span class="filter-count" id="filter-count">8 Properties</span>
     </div>
   </div>
 
@@ -688,7 +688,7 @@
         <!-- UNIT 39 — Featured wide card -->
         <div class="prop-card prop-card-wide" data-status="available">
           <div class="prop-card-img">
-            <img src="images/communities/peninsula-shores/unit-39/front 5.jpg" alt="15985 Waters Edge Drive — Peninsula Shores">
+            <img src="images/communities/peninsula-shores/unit-39/unit-39-1.jpg" alt="15985 Waters Edge Drive — Peninsula Shores">
             <div class="prop-badge badge-available">Available Now</div>
             <div class="prop-price-tag">
               <div class="prop-price">$2,950,000</div>
@@ -748,7 +748,7 @@
         <!-- ── VICTORIA FARMS — THE FARMSTEAD ── -->
         <a href="victoria-farms.html" class="prop-card" data-status="available">
           <div class="prop-card-img">
-            <img src="images/communities/Victoria Farms/model-home.jpg" alt="The Farmstead — Victoria Farms">
+            <img src="images/communities/victoria-farms/model-home.jpg" alt="The Farmstead — Victoria Farms">
             <div class="prop-badge badge-available">Available Now</div>
             <div class="prop-price-tag">
               <div class="prop-price">From $995,000</div>
@@ -773,7 +773,7 @@
         <!-- ── VICTORIA FARMS — THE RIDGELINE ── -->
         <a href="victoria-farms.html" class="prop-card" data-status="available">
           <div class="prop-card-img">
-            <img src="images/communities/Victoria Farms/option-2.jpg" alt="The Ridgeline — Victoria Farms">
+            <img src="images/communities/victoria-farms/option-2.jpg" alt="The Ridgeline — Victoria Farms">
             <div class="prop-badge badge-available">Available Now</div>
             <div class="prop-price-tag">
               <div class="prop-price">From $995,000</div>
@@ -1108,6 +1108,10 @@
         emptyState.style.display = visible === 0 ? 'block' : 'none';
       });
     });
+
+    // Set correct count on initial page load
+    const initialVisible = Array.from(cards).filter(c => c.dataset.status !== 'sold').length;
+    filterCount.textContent = initialVisible + (initialVisible === 1 ? ' Property' : ' Properties');
 
     // Email notify (placeholder — wire to your form backend)
     function handleNotify() {
