@@ -1,0 +1,4 @@
+# Redirect peninsulashores.com → ogradydevelopment.com/peninsula-shores.html
+# UTM parameters allow GA4 to track visitors who came from job site signage / peninsulashores.com domain
+https://www.peninsulashores.com/*    https://www.ogradydevelopment.com/peninsula-shores.html?utm_source=peninsulashores.com&utm_medium=signage&utm_campaign=job-site-signs    301!
+https://peninsulashores.com/*        https://www.ogradydevelopment.com/peninsula-shores.html?utm_source=peninsulashores.com&utm_medium=signage&utm_campaign=job-site-signs    301!
