@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Work | O'Grady Development Co. — Northern Michigan</title>
-  <meta name="description" content="35 years of fine homes across Northern Michigan. Browse completed projects by O'Grady Development Company — from waterfront estates to neighborhood spec homes.">
+  <meta name="description" content="35 years of fine homes across Northern Michigan. Browse completed projects by O'Grady Development Company.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -18,159 +18,98 @@
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
     html { scroll-behavior: smooth; }
-    body { font-family: var(--display); color: var(--dark); background: var(--bg); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--display); color: var(--dark); background: var(--dark); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
     img { max-width: 100%; display: block; }
     a { text-decoration: none; color: inherit; }
     ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-track { background: var(--dark); }
     ::-webkit-scrollbar-thumb { background: var(--gold); }
 
     /* ─── HEADER ──────────────────────────────────── */
-    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 0 56px; height: 72px; background: rgba(250,249,247,0.96); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid rgba(0,0,0,0.07); }
-    .logo { display: flex; align-items: center; }
+    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 0 56px; height: 72px; background: rgba(26,26,26,0.92); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid rgba(255,255,255,0.06); }
     .logo-img { height: 44px; width: auto; }
     .nav { display: flex; align-items: center; gap: 40px; }
-    .nav-link { font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dark); position: relative; padding-bottom: 3px; transition: color 0.3s; }
+    .nav-link { font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.55); position: relative; padding-bottom: 3px; transition: color 0.3s; }
     .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.45s var(--ease); }
+    .nav-link:hover { color: #fff; }
     .nav-link:hover::after, .nav-link.active::after { width: 100%; }
-    .nav-cta { font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(184,168,138,0.5); padding: 10px 24px; transition: all 0.4s var(--ease); }
+    .nav-cta { font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(184,168,138,0.4); padding: 10px 24px; transition: all 0.4s var(--ease); }
     .nav-cta:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
     .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; z-index: 1001; }
-    .mobile-toggle span { display: block; width: 22px; height: 1.5px; background: var(--dark); margin-bottom: 6px; transition: all 0.35s ease; }
+    .mobile-toggle span { display: block; width: 22px; height: 1.5px; background: #fff; margin-bottom: 6px; transition: all 0.35s ease; }
     .mobile-toggle span:last-child { margin-bottom: 0; }
-    .mobile-menu { display: none; position: fixed; inset: 0; background: var(--bg); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
+    .mobile-menu { display: none; position: fixed; inset: 0; background: var(--dark); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
     .mobile-menu.open { display: flex; }
-    .mobile-menu a { font-family: var(--display); font-size: 36px; font-weight: 300; letter-spacing: 1px; }
+    .mobile-menu a { font-family: var(--display); font-size: 36px; font-weight: 300; color: #fff; }
 
-    /* ─── PAGE HERO ───────────────────────────────── */
-    .page-hero {
-      padding: 160px 0 80px;
-      background: var(--dark);
-      position: relative; overflow: hidden;
-    }
-    .page-hero::before {
-      content: 'WORK';
-      position: absolute; font-family: var(--display);
-      font-size: clamp(120px, 20vw, 280px); font-weight: 600;
-      color: rgba(255,255,255,0.03); top: 50%; right: -40px;
-      transform: translateY(-50%); letter-spacing: 8px;
-      pointer-events: none;
-    }
-    .wrap { max-width: 1440px; margin: 0 auto; padding: 0 64px; }
-    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; position: relative; z-index: 2; }
+    /* ─── HERO ────────────────────────────────────── */
+    .page-hero { padding: 160px 64px 72px; max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; }
     .hero-left { display: flex; flex-direction: column; gap: 20px; }
     .t-label { font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); }
-    .t-xl { font-family: var(--display); font-size: clamp(48px, 7vw, 88px); font-weight: 300; line-height: 1.02; color: #fff; }
+    .t-xl { font-family: var(--display); font-size: clamp(52px, 8vw, 100px); font-weight: 300; line-height: 0.97; color: #fff; }
     .t-xl em { font-style: italic; color: var(--gold-lt); }
     .t-lg { font-family: var(--display); font-size: clamp(32px, 4vw, 52px); font-weight: 300; line-height: 1.15; }
-    .t-body { font-family: var(--body); font-size: 13.5px; font-weight: 300; line-height: 2; color: var(--text); }
     .rule { width: 48px; height: 1px; background: var(--gold); }
-    .hero-right { padding-bottom: 8px; display: flex; flex-direction: column; gap: 20px; }
-    .hero-stats { display: flex; gap: 40px; margin-top: 8px; }
-    .hero-stat-val { font-family: var(--display); font-size: 40px; font-weight: 300; color: var(--gold); line-height: 1; }
-    .hero-stat-lbl { font-family: var(--body); font-size: 8px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-top: 5px; }
+    .hero-right { padding-bottom: 8px; display: flex; flex-direction: column; gap: 24px; }
+    .hero-stats { display: flex; gap: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .hero-stat-val { font-family: var(--display); font-size: 44px; font-weight: 300; color: var(--gold); line-height: 1; }
+    .hero-stat-lbl { font-family: var(--body); font-size: 8px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-top: 6px; }
 
-    /* ─── MASONRY GRID ────────────────────────────── */
-    .grid-section { padding: 80px 0 120px; background: var(--bg); }
+    /* ─── EDITORIAL GALLERY ───────────────────────── */
+    .gallery { display: flex; flex-direction: column; gap: 6px; padding: 6px 0; }
+    .g-row { display: flex; gap: 6px; width: 100%; }
+    .g-item { position: relative; overflow: hidden; cursor: pointer; flex-shrink: 0; background: #1e1e1e; }
+    .g-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.4s var(--ease); }
+    .g-item:hover img { transform: scale(1.05); }
 
-    /* CSS Grid masonry layout */
-    .masonry {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-auto-rows: 280px;
-      gap: 12px;
-    }
-
-    /* Size variations */
-    .item-tall   { grid-row: span 2; }
-    .item-wide   { grid-column: span 2; }
-    .item-square { grid-row: span 1; }
-    .item-feature { grid-column: span 2; grid-row: span 2; }
-
-    .masonry-item {
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      background: #c8c0b4;
-    }
-    .masonry-item img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform 1.2s var(--ease);
-    }
-    .masonry-item:hover img { transform: scale(1.06); }
-
-    /* Placeholder styling */
-    .masonry-placeholder {
-      width: 100%; height: 100%;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 10px;
-      background: linear-gradient(135deg, #d5cfc7 0%, #c0b8ae 100%);
-    }
-    .masonry-placeholder-name {
-      font-family: var(--display); font-size: 22px; font-weight: 400;
-      color: rgba(0,0,0,0.3);
-    }
-    .masonry-placeholder-label {
-      font-family: var(--body); font-size: 8px; font-weight: 500;
-      letter-spacing: 2.5px; text-transform: uppercase;
-      color: rgba(0,0,0,0.2);
-    }
+    /* Full width */
+    .g-full { width: 100%; height: 72vh; min-height: 500px; }
+    /* Two-col splits */
+    .g-60 { width: 60%; height: 54vh; min-height: 380px; }
+    .g-40 { width: 40%; height: 54vh; min-height: 380px; }
+    .g-33 { width: 33.333%; height: 54vh; min-height: 380px; }
+    .g-67 { width: 66.666%; height: 54vh; min-height: 380px; }
+    .g-50 { width: 50%; height: 54vh; min-height: 380px; }
 
     /* Hover overlay */
-    .masonry-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(15,13,11,0.78) 0%, transparent 55%);
-      opacity: 0;
-      transition: opacity 0.5s var(--ease);
-      display: flex; align-items: flex-end;
-      padding: 28px 32px;
-    }
-    .masonry-item:hover .masonry-overlay { opacity: 1; }
-    .masonry-caption { display: flex; flex-direction: column; gap: 4px; }
-    .masonry-caption-name { font-family: var(--display); font-size: 26px; font-weight: 400; color: #fff; line-height: 1; }
-    .masonry-caption-rule { width: 32px; height: 1px; background: var(--gold); margin-top: 8px; }
+    .g-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,8,6,0.75) 0%, transparent 55%); opacity: 0; transition: opacity 0.5s var(--ease); display: flex; align-items: flex-end; padding: 32px 36px; }
+    .g-item:hover .g-overlay { opacity: 1; }
+    .g-name { font-family: var(--display); font-size: clamp(22px, 3vw, 34px); font-weight: 300; color: #fff; line-height: 1; }
+    .g-rule { width: 32px; height: 1px; background: var(--gold); margin-top: 10px; }
 
-    /* Click hint */
-    .masonry-click {
-      position: absolute; top: 20px; right: 20px;
-      width: 36px; height: 36px; border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.4);
-      display: flex; align-items: center; justify-content: center;
-      opacity: 0; transition: opacity 0.4s;
-    }
-    .masonry-click svg { width: 14px; height: 14px; stroke: #fff; fill: none; stroke-width: 1.5; }
-    .masonry-item:hover .masonry-click { opacity: 1; }
+    /* Expand pill */
+    .g-pill { position: absolute; top: 16px; right: 16px; font-family: var(--body); font-size: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.3); padding: 7px 14px; background: rgba(0,0,0,0.3); opacity: 0; transition: opacity 0.4s; backdrop-filter: blur(4px); }
+    .g-item:hover .g-pill { opacity: 1; }
 
     /* ─── LIGHTBOX ────────────────────────────────── */
-    .lightbox { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(10,8,6,0.97); align-items: center; justify-content: center; flex-direction: column; gap: 20px; }
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(8,6,5,0.98); flex-direction: column; }
     .lightbox.open { display: flex; }
-    .lightbox-img-wrap { position: relative; max-width: 88vw; max-height: 78vh; display: flex; align-items: center; justify-content: center; }
-    .lightbox-img { max-width: 88vw; max-height: 78vh; object-fit: contain; display: block; }
-    .lightbox-close { position: absolute; top: 24px; right: 32px; font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.4); cursor: pointer; background: none; border: none; transition: color 0.3s; z-index: 10; }
-    .lightbox-close:hover { color: #fff; }
-    .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: none; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.5); width: 48px; height: 48px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 18px; transition: all 0.3s; z-index: 10; }
-    .lightbox-nav:hover { border-color: var(--gold); color: var(--gold); }
-    .lightbox-prev { left: 24px; }
-    .lightbox-next { right: 24px; }
-    .lightbox-meta { text-align: center; display: flex; flex-direction: column; gap: 6px; }
-    .lightbox-name { font-family: var(--display); font-size: 28px; font-weight: 300; color: #fff; }
-    .lightbox-counter { font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+    .lb-main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 72px 80px 0; position: relative; }
+    .lb-img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+    .lb-close { position: absolute; top: 20px; right: 28px; font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.35); cursor: pointer; background: none; border: none; transition: color 0.3s; }
+    .lb-close:hover { color: #fff; }
+    .lb-prev, .lb-next { position: absolute; top: 50%; transform: translateY(-50%); background: none; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.4); width: 52px; height: 52px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 20px; transition: all 0.3s; }
+    .lb-prev:hover, .lb-next:hover { border-color: var(--gold); color: var(--gold); }
+    .lb-prev { left: 20px; }
+    .lb-next { right: 20px; }
+    .lb-footer { height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; border-top: 1px solid rgba(255,255,255,0.07); flex-shrink: 0; }
+    .lb-name { font-family: var(--display); font-size: 22px; font-weight: 300; color: #fff; }
+    .lb-counter { font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.3); }
 
     /* ─── CTA ─────────────────────────────────────── */
-    .cta-section { background: var(--warm); padding: 96px 0; text-align: center; }
-    .cta-inner { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+    .cta-section { background: var(--warm); padding: 96px 64px; text-align: center; }
+    .cta-inner { display: flex; flex-direction: column; align-items: center; gap: 20px; max-width: 1440px; margin: 0 auto; }
     .btn { display: inline-block; font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; padding: 17px 44px; border: 1px solid; transition: all 0.5s var(--ease); background: transparent; cursor: pointer; }
     .btn-dark { border-color: var(--dark); color: var(--dark); }
-    .btn-dark:hover { background: var(--dark); color: var(--bg); }
+    .btn-dark:hover { background: var(--dark); color: var(--warm); }
     .btn-gold { border-color: var(--gold); color: var(--gold); }
     .btn-gold:hover { background: var(--gold); color: #fff; }
 
     /* ─── FOOTER ──────────────────────────────────── */
     .footer { background: var(--footer-bg); padding: 88px 0 0; }
+    .footer-inner { max-width: 1440px; margin: 0 auto; padding: 0 64px; }
     .footer-main { display: grid; grid-template-columns: 2.2fr 1fr 1fr 1fr; gap: 64px; padding-bottom: 72px; }
-    .footer-logo-img { height: 52px; width: auto; margin-bottom: 20px; margin-left: -12px; }
+    .footer-logo-img { height: 52px; width: auto; margin-bottom: 20px; }
     .footer-address { font-family: var(--body); font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.3); line-height: 1.9; }
     .footer-tagline { font-family: var(--display); font-size: 15px; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.15); margin-top: 28px; }
     .footer-col-title { font-family: var(--body); font-size: 8.5px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.2); margin-bottom: 24px; }
@@ -180,48 +119,43 @@
     .footer-copy { font-family: var(--body); font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.18); }
 
     /* ─── ANIMATIONS ──────────────────────────────── */
-    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
-    .fade-up.in { opacity: 1; transform: none; }
     .h-anim { opacity: 0; animation: hFade 1s var(--ease) both; }
     .h-d1 { animation-delay: 0.2s; } .h-d2 { animation-delay: 0.4s; } .h-d3 { animation-delay: 0.6s; }
     @keyframes hFade { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
-    .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
+    .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
+    .fade-up.in { opacity: 1; transform: none; }
 
     /* ─── RESPONSIVE ──────────────────────────────── */
     @media (max-width: 1100px) {
-      .masonry { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 260px; }
-      .item-feature { grid-column: span 2; }
       .footer-main { grid-template-columns: 1fr 1fr; gap: 48px; }
-      .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+      .page-hero { grid-template-columns: 1fr; gap: 32px; padding: 140px 40px 56px; }
     }
     @media (max-width: 768px) {
       .nav { display: none; }
       .mobile-toggle { display: block; }
       .header { padding: 0 20px; height: 60px; }
       .logo-img { height: 36px; }
-      .wrap { padding: 0 20px; }
-      .page-hero { padding: 120px 0 64px; }
-      .masonry { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; gap: 8px; }
-      .item-feature { grid-column: span 2; grid-row: span 1; }
-      .item-wide { grid-column: span 2; }
-      .item-tall { grid-row: span 1; }
-      .grid-section { padding: 48px 0 80px; }
-      .cta-section { padding: 72px 0; }
+      .page-hero { padding: 120px 20px 48px; }
+      .hero-stats { gap: 24px; }
+      .g-full { height: 55vw; min-height: 220px; }
+      .g-60,.g-40,.g-33,.g-67,.g-50 { height: 42vw; min-height: 180px; }
+      .gallery { gap: 3px; padding: 3px 0; }
+      .g-row { gap: 3px; }
+      .g-overlay { padding: 16px 20px; }
+      .lb-main { padding: 60px 48px 0; }
+      .lb-prev { left: 8px; } .lb-next { right: 8px; }
+      .cta-section { padding: 72px 20px; }
+      .btn { width: 100%; text-align: center; }
+      .footer-inner { padding: 0 20px; }
       .footer-main { grid-template-columns: 1fr; gap: 32px; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
-      .btn { width: 100%; text-align: center; }
-      .lightbox-prev { left: 8px; }
-      .lightbox-next { right: 8px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="header">
-    <a href="index.html" class="logo">
-      <img src="images/logos/Black Logo.png" alt="O'Grady Development Co." class="logo-img">
-    </a>
+    <a href="index.html"><img src="images/logos/White Logo.png" alt="O'Grady Development Co." class="logo-img"></a>
     <nav class="nav">
       <a href="communities.html" class="nav-link">Communities</a>
       <a href="for-sale.html"    class="nav-link">For Sale</a>
@@ -247,278 +181,153 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <!-- ═══ PAGE HERO ═══════════════════════════════ -->
-  <section class="page-hero">
-    <div class="wrap">
-      <div class="hero-inner">
-        <div class="hero-left">
-          <span class="t-label h-anim h-d1" style="color:rgba(255,255,255,0.4);">O'Grady Development Co.</span>
-          <h1 class="t-xl h-anim h-d2">Our<br><em>Work.</em></h1>
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="hero-left">
+      <span class="t-label h-anim h-d1" style="color:rgba(255,255,255,0.4);">O'Grady Development Co.</span>
+      <h1 class="t-xl h-anim h-d2">Our<br><em>Work.</em></h1>
+    </div>
+    <div class="hero-right h-anim h-d3">
+      <div class="rule"></div>
+      <p style="font-family:var(--body);font-size:13px;font-weight:300;line-height:2;color:rgba(255,255,255,0.45);">35 years of fine homes across Northern Michigan. Click any photo to open the full gallery — swipe through all homes seamlessly.</p>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-val">550<span style="font-size:0.55em;color:rgba(184,168,138,0.6);">+</span></div>
+          <div class="hero-stat-lbl">Homes Delivered</div>
         </div>
-        <div class="hero-right h-anim h-d3">
-          <div class="rule"></div>
-          <p style="font-family:var(--body);font-size:13px;font-weight:300;line-height:2;color:rgba(255,255,255,0.45);">35 years of fine homes across Northern Michigan. Each one built to the same standard — the O'Grady standard.</p>
-          <div class="hero-stats">
-            <div>
-              <div class="hero-stat-val">550<span style="font-size:0.5em;">+</span></div>
-              <div class="hero-stat-lbl">Homes Delivered</div>
-            </div>
-            <div style="width:1px;background:rgba(255,255,255,0.08);"></div>
-            <div>
-              <div class="hero-stat-val">35<span style="font-size:0.5em;">+</span></div>
-              <div class="hero-stat-lbl">Years Building</div>
-            </div>
-            <div style="width:1px;background:rgba(255,255,255,0.08);"></div>
-            <div>
-              <div class="hero-stat-val">15<span style="font-size:0.5em;">+</span></div>
-              <div class="hero-stat-lbl">Communities</div>
-            </div>
-          </div>
+        <div style="width:1px;background:rgba(255,255,255,0.07);"></div>
+        <div>
+          <div class="hero-stat-val">35<span style="font-size:0.55em;color:rgba(184,168,138,0.6);">+</span></div>
+          <div class="hero-stat-lbl">Years Building</div>
+        </div>
+        <div style="width:1px;background:rgba(255,255,255,0.07);"></div>
+        <div>
+          <div class="hero-stat-val">13</div>
+          <div class="hero-stat-lbl">Projects Shown</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- ═══ MASONRY GRID ══════════════════════════════ -->
-  <section class="grid-section">
-    <div class="wrap">
-      <div class="masonry" id="masonry">
+  <!-- EDITORIAL GALLERY -->
+  <div class="gallery">
 
-        <!--
-          IMAGE INSTRUCTIONS:
-          Replace each src with your photo path from the portfolio folder.
-          Example: src="images/our-work/beachcomber/beachcomber-exterior.jpg"
-
-          Size classes:
-          item-feature  = spans 2 cols × 2 rows (hero shot — use your best photo)
-          item-tall     = spans 1 col × 2 rows (portrait orientation)
-          item-wide     = spans 2 cols × 1 row (landscape orientation)
-          item-square   = spans 1 col × 1 row (standard)
-
-          Current layout order (12 homes):
-          1. Bayridge      — feature (2×2)
-          2. Haven         — tall (1×2)
-          3. Sailfish      — square
-          4. Chestnut      — square
-          5. Beachcomber   — wide (2×1)
-          6. Bluff         — tall (1×2)
-          7. Sycamore      — square
-          8. Chateau       — square
-          9. Bay View      — wide (2×1)
-          10. Dogwood      — square
-          11. Redwood      — tall (1×2)
-          12. English Oak  — square
-        -->
-
-        <!-- 1. BAYRIDGE — Feature -->
-        <div class="masonry-item item-feature" data-name="Bayridge" onclick="openLightbox('Bayridge')">
-          <img src="images/our-work/bayridge/bayridge-1.jpg" alt="Bayridge">
-          <div class="masonry-overlay">
-            <div class="masonry-caption">
-              <div class="masonry-caption-name">Bayridge</div>
-              <div class="masonry-caption-rule"></div>
-            </div>
-          </div>
-          <div class="masonry-click"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-        </div>
-
-        <!-- 2. HAVEN — Tall (placeholder — no photos yet) -->
-        <div class="masonry-item item-tall" data-name="Haven" onclick="openLightbox('Bayridge')">
-          <div class="masonry-placeholder">
-            <div class="masonry-placeholder-name">Haven</div>
-            <div class="masonry-placeholder-label">Photos coming soon</div>
-          </div>
-          <div class="masonry-overlay">
-            <div class="masonry-caption">
-              <div class="masonry-caption-name">Haven</div>
-              <div class="masonry-caption-rule"></div>
-            </div>
-          </div>
-          <div class="masonry-click"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-        </div>
-
-        <!-- 3. SAILFISH — Square -->
-        <div class="masonry-item item-square" data-name="Sailfish" onclick="openLightbox('Sailfish')">
-          <img src="images/our-work/sailfish/sf-1.jpg" alt="Sailfish">
-          <div class="masonry-overlay">
-            <div class="masonry-caption">
-              <div class="masonry-caption-name">Sailfish</div>
-              <div class="masonry-caption-rule"></div>
-            </div>
-          </div>
-          <div class="masonry-click"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-        </div>
-
-        <!-- 4. CHESTNUT — Square (placeholder) -->
-        <div class="masonry-item item-square" data-name="Chestnut" onclick="openLightbox('Bayridge')">
-          <div class="masonry-placeholder">
-            <div class="masonry-placeholder-name">Chestnut</div>
-            <div class="masonry-placeholder-label">Photos coming soon</div>
-          </div>
-          <div class="masonry-overlay">
-            <div class="masonry-caption">
-              <div class="masonry-caption-name">Chestnut</div>
-              <div class="masonry-caption-rule"></div>
-            </div>
-          </div>
-          <div class="masonry-click"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-        </div>
-
-        <!-- 5. BEACHCOMBER — Wide -->
-        <div class="masonry-item item-wide" data-name="Beachcomber" onclick="openLightbox('Beachcomber')">
-          <img src="images/our-work/beachcomber/beachcomber-1.jpg" alt="Beachcomber">
-          <div class="masonry-overlay">
-            <div class="masonry-caption">
-              <div class="masonry-caption-name">Beachcomber</div>
-              <div class="masonry-caption-rule"></div>
-            </div>
-          </div>
-          <div class="masonry-click"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-        </div>
-
-        <!-- 6. BLUFF — Tall -->
-        <div class="masonry-item item-tall" data-name="Bluff" onclick="openLightbox('Bluff')">
-          <img src="images/our-work/bluff/bluff-1.jpg" alt="Bluff">
-          <div class="masonry-overlay">
-            <div class="masonry-caption">
-              <div class="masonry-caption-name">Bluff</div>
-              <div class="masonry-caption-rule"></div>
-            </div>
-          </div>
-          <div class="masonry-click"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-        </div>
-
-        <!-- 7. SYCAMORE — Square -->
-        <div class="masonry-item item-square" data-name="Sycamore" onclick="openLightbox('Sycamore')">
-          <img src="images/our-work/sycamore/sycamore-1.jpg" alt="Sycamore">
-          <div class="masonry-overlay">
-            <div class="masonry-caption">
-              <div class="masonry-caption-name">Sycamore</div>
-              <div class="masonry-caption-rule"></div>
-            </div>
-          </div>
-          <div class="masonry-click"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-        </div>
-
-        <!-- 8. CHATEAU — Square -->
-        <div class="masonry-item item-square" data-name="Chateau" onclick="openLightbox('Chateau')">
-          <img src="images/our-work/chateau/chateau-1.jpg" alt="Chateau">
-          <div class="masonry-overlay">
-            <div class="masonry-caption">
-              <div class="masonry-caption-name">Chateau</div>
-              <div class="masonry-caption-rule"></div>
-            </div>
-          </div>
-          <div class="masonry-click"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-        </div>
-
-        <!-- 9. BAY VIEW — Wide -->
-        <div class="masonry-item item-wide" data-name="Bay View" onclick="openLightbox('Bay View')">
-          <img src="images/our-work/bayview/bayview-1.jpg" alt="Bay View">
-          <div class="masonry-overlay">
-            <div class="masonry-caption">
-              <div class="masonry-caption-name">Bay View</div>
-              <div class="masonry-caption-rule"></div>
-            </div>
-          </div>
-          <div class="masonry-click"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-        </div>
-
-        <!-- 10. DOGWOOD — Square -->
-        <div class="masonry-item item-square" data-name="Dogwood" onclick="openLightbox('Dogwood')">
-          <img src="images/our-work/dogwood/dogwood-1.jpg" alt="Dogwood">
-          <div class="masonry-overlay">
-            <div class="masonry-caption">
-              <div class="masonry-caption-name">Dogwood</div>
-              <div class="masonry-caption-rule"></div>
-            </div>
-          </div>
-          <div class="masonry-click"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-        </div>
-
-        <!-- 11. REDWOOD — Tall -->
-        <div class="masonry-item item-tall" data-name="Redwood" onclick="openLightbox('Redwood')">
-          <img src="images/our-work/redwood/redwood-1.jpg" alt="Redwood">
-          <div class="masonry-overlay">
-            <div class="masonry-caption">
-              <div class="masonry-caption-name">Redwood</div>
-              <div class="masonry-caption-rule"></div>
-            </div>
-          </div>
-          <div class="masonry-click"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-        </div>
-
-        <!-- 12. ENGLISH OAK — Square -->
-        <div class="masonry-item item-square" data-name="English Oak" onclick="openLightbox('English Oak')">
-          <img src="images/our-work/english-oak/english-oak-1.jpg" alt="English Oak">
-          <div class="masonry-overlay">
-            <div class="masonry-caption">
-              <div class="masonry-caption-name">English Oak</div>
-              <div class="masonry-caption-rule"></div>
-            </div>
-          </div>
-          <div class="masonry-click"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-        </div>
-
-        <!-- 13. HAMILTON PLACE — Wide -->
-        <div class="masonry-item item-wide" data-name="Hamilton Place" onclick="openLightbox('Hamilton Place')">
-          <img src="images/our-work/hamilton-place/hp-1.jpg" alt="Hamilton Place">
-          <div class="masonry-overlay">
-            <div class="masonry-caption">
-              <div class="masonry-caption-name">Hamilton Place</div>
-              <div class="masonry-caption-rule"></div>
-            </div>
-          </div>
-          <div class="masonry-click"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-        </div>
-
-        <!-- 14. LAKESIDE — Tall -->
-        <div class="masonry-item item-tall" data-name="Lakeside" onclick="openLightbox('Lakeside')">
-          <img src="images/our-work/lakeside/lakeside-1a.JPG" alt="Lakeside">
-          <div class="masonry-overlay">
-            <div class="masonry-caption">
-              <div class="masonry-caption-name">Lakeside</div>
-              <div class="masonry-caption-rule"></div>
-            </div>
-          </div>
-          <div class="masonry-click"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-        </div>
-
-        <!-- 15. TRILLIUM — Square -->
-        <div class="masonry-item item-square" data-name="Trillium" onclick="openLightbox('Trillium')">
-          <img src="images/our-work/trillium/trillium-1.jpg" alt="Trillium">
-          <div class="masonry-overlay">
-            <div class="masonry-caption">
-              <div class="masonry-caption-name">Trillium</div>
-              <div class="masonry-caption-rule"></div>
-            </div>
-          </div>
-          <div class="masonry-click"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
-        </div>
-
+    <!-- ROW 1: Bayridge — full width -->
+    <div class="g-row">
+      <div class="g-item g-full" onclick="openLightbox('Bayridge')">
+        <img src="images/our-work/bayridge/bayridge-1.jpg" alt="Bayridge">
+        <div class="g-overlay"><div><div class="g-name">Bayridge</div><div class="g-rule"></div></div></div>
+        <div class="g-pill">View Gallery</div>
       </div>
     </div>
-  </section>
 
-  <!-- ═══ CTA ═══════════════════════════════════════ -->
+    <!-- ROW 2: Sailfish 60 | Beachcomber 40 -->
+    <div class="g-row">
+      <div class="g-item g-60" onclick="openLightbox('Sailfish')">
+        <img src="images/our-work/sailfish/sf-1.jpg" alt="Sailfish">
+        <div class="g-overlay"><div><div class="g-name">Sailfish</div><div class="g-rule"></div></div></div>
+        <div class="g-pill">View Gallery</div>
+      </div>
+      <div class="g-item g-40" onclick="openLightbox('Beachcomber')">
+        <img src="images/our-work/beachcomber/beachcomber-1.jpg" alt="Beachcomber">
+        <div class="g-overlay"><div><div class="g-name">Beachcomber</div><div class="g-rule"></div></div></div>
+        <div class="g-pill">View Gallery</div>
+      </div>
+    </div>
+
+    <!-- ROW 3: Bluff 33 | Bay View 67 -->
+    <div class="g-row">
+      <div class="g-item g-33" onclick="openLightbox('Bluff')">
+        <img src="images/our-work/bluff/bluff-1.jpg" alt="Bluff">
+        <div class="g-overlay"><div><div class="g-name">Bluff</div><div class="g-rule"></div></div></div>
+        <div class="g-pill">View Gallery</div>
+      </div>
+      <div class="g-item g-67" onclick="openLightbox('Bay View')">
+        <img src="images/our-work/bayview/bayview-1.jpg" alt="Bay View">
+        <div class="g-overlay"><div><div class="g-name">Bay View</div><div class="g-rule"></div></div></div>
+        <div class="g-pill">View Gallery</div>
+      </div>
+    </div>
+
+    <!-- ROW 4: Sycamore 50 | Chateau 50 -->
+    <div class="g-row">
+      <div class="g-item g-50" onclick="openLightbox('Sycamore')">
+        <img src="images/our-work/sycamore/sycamore-1.jpg" alt="Sycamore">
+        <div class="g-overlay"><div><div class="g-name">Sycamore</div><div class="g-rule"></div></div></div>
+        <div class="g-pill">View Gallery</div>
+      </div>
+      <div class="g-item g-50" onclick="openLightbox('Chateau')">
+        <img src="images/our-work/chateau/chateau-1.jpg" alt="Chateau">
+        <div class="g-overlay"><div><div class="g-name">Chateau</div><div class="g-rule"></div></div></div>
+        <div class="g-pill">View Gallery</div>
+      </div>
+    </div>
+
+    <!-- ROW 5: Dogwood — full width -->
+    <div class="g-row">
+      <div class="g-item g-full" onclick="openLightbox('Dogwood')">
+        <img src="images/our-work/dogwood/dogwood-1.jpg" alt="Dogwood" style="object-position:center 30%;">
+        <div class="g-overlay"><div><div class="g-name">Dogwood</div><div class="g-rule"></div></div></div>
+        <div class="g-pill">View Gallery</div>
+      </div>
+    </div>
+
+    <!-- ROW 6: Redwood 40 | English Oak 60 -->
+    <div class="g-row">
+      <div class="g-item g-40" onclick="openLightbox('Redwood')">
+        <img src="images/our-work/redwood/redwood-1.jpg" alt="Redwood">
+        <div class="g-overlay"><div><div class="g-name">Redwood</div><div class="g-rule"></div></div></div>
+        <div class="g-pill">View Gallery</div>
+      </div>
+      <div class="g-item g-60" onclick="openLightbox('English Oak')">
+        <img src="images/our-work/english-oak/english-oak-1.jpg" alt="English Oak">
+        <div class="g-overlay"><div><div class="g-name">English Oak</div><div class="g-rule"></div></div></div>
+        <div class="g-pill">View Gallery</div>
+      </div>
+    </div>
+
+    <!-- ROW 7: Hamilton Place 60 | Lakeside 40 -->
+    <div class="g-row">
+      <div class="g-item g-60" onclick="openLightbox('Hamilton Place')">
+        <img src="images/our-work/hamilton-place/hp-1.jpg" alt="Hamilton Place">
+        <div class="g-overlay"><div><div class="g-name">Hamilton Place</div><div class="g-rule"></div></div></div>
+        <div class="g-pill">View Gallery</div>
+      </div>
+      <div class="g-item g-40" onclick="openLightbox('Lakeside')">
+        <img src="images/our-work/lakeside/lakeside-1a.JPG" alt="Lakeside">
+        <div class="g-overlay"><div><div class="g-name">Lakeside</div><div class="g-rule"></div></div></div>
+        <div class="g-pill">View Gallery</div>
+      </div>
+    </div>
+
+    <!-- ROW 8: Trillium — full width -->
+    <div class="g-row">
+      <div class="g-item g-full" onclick="openLightbox('Trillium')">
+        <img src="images/our-work/trillium/trillium-1.jpg" alt="Trillium">
+        <div class="g-overlay"><div><div class="g-name">Trillium</div><div class="g-rule"></div></div></div>
+        <div class="g-pill">View Gallery</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
   <section class="cta-section">
-    <div class="wrap">
-      <div class="cta-inner fade-up">
-        <span class="t-label">Ready to Be Next?</span>
-        <h2 class="t-lg" style="text-align:center;max-width:480px;">See a Community<br>in Person.</h2>
-        <div class="rule"></div>
-        <p class="t-body" style="text-align:center;max-width:440px;">Every home in our portfolio started with a conversation. Let's have one.</p>
-        <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
-          <a href="communities.html" class="btn btn-dark">View Communities</a>
-          <a href="contact.html"     class="btn btn-gold">Get in Touch</a>
-        </div>
+    <div class="cta-inner fade-up">
+      <span class="t-label">Ready to Be Next?</span>
+      <h2 class="t-lg" style="text-align:center;max-width:480px;">Every Home Started<br>With a Conversation.</h2>
+      <div class="rule"></div>
+      <p style="font-family:var(--body);font-size:13px;font-weight:300;color:var(--text);text-align:center;max-width:400px;line-height:2;">Browse our active communities or get in touch — we'd love to show you what's possible.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+        <a href="communities.html" class="btn btn-dark">View Communities</a>
+        <a href="contact.html"     class="btn btn-gold">Get in Touch</a>
       </div>
     </div>
   </section>
 
-  <!-- ═══ FOOTER ════════════════════════════════════ -->
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="wrap">
+    <div class="footer-inner">
       <div class="footer-main">
         <div>
           <img src="images/logos/Gold Logo.png" alt="O'Grady Development Co." class="footer-logo-img">
@@ -554,21 +363,21 @@
           <a href="terms.html"   style="font-family:var(--body);font-size:11px;font-weight:300;color:rgba(255,255,255,0.18);">Terms of Use</a>
         </div>
       </div>
-      <p style="font-family:var(--body);font-size:10px;font-weight:300;color:rgba(255,255,255,0.18);line-height:1.8;padding-top:20px;border-top:1px solid rgba(255,255,255,0.05);margin-top:8px;">Construction is an ever-changing industry. All pricing, specifications, square footage, and availability referenced on this website are subject to change without notice and are not guaranteed. Please contact our office directly to confirm the most current information before making any purchasing decisions. O'Grady Development Company makes no representations or warranties regarding the accuracy of any details listed herein.</p>
+      <p style="font-family:var(--body);font-size:10px;font-weight:300;color:rgba(255,255,255,0.18);line-height:1.8;padding:20px 0 32px;border-top:1px solid rgba(255,255,255,0.05);margin-top:8px;">Construction is an ever-changing industry. All pricing, specifications, square footage, and availability referenced on this website are subject to change without notice and are not guaranteed. Please contact our office directly to confirm the most current information before making any purchasing decisions. O'Grady Development Company makes no representations or warranties regarding the accuracy of any details listed herein.</p>
     </div>
   </footer>
 
-  <!-- ═══ LIGHTBOX ══════════════════════════════════ -->
+  <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" onclick="closeLightbox()">Close ✕</button>
-    <button class="lightbox-nav lightbox-prev" onclick="lightboxNav(-1)">&#8592;</button>
-    <div class="lightbox-img-wrap">
-      <img class="lightbox-img" id="lightbox-img" src="" alt="">
+    <div class="lb-main">
+      <button class="lb-close" onclick="closeLightbox()">Close ✕</button>
+      <button class="lb-prev" onclick="lightboxNav(-1)">&#8592;</button>
+      <img class="lb-img" id="lb-img" src="" alt="">
+      <button class="lb-next" onclick="lightboxNav(1)">&#8594;</button>
     </div>
-    <button class="lightbox-nav lightbox-next" onclick="lightboxNav(1)">&#8594;</button>
-    <div class="lightbox-meta">
-      <div class="lightbox-name" id="lightbox-name"></div>
-      <div class="lightbox-counter" id="lightbox-counter"></div>
+    <div class="lb-footer">
+      <div class="lb-name" id="lb-name"></div>
+      <div class="lb-counter" id="lb-counter"></div>
     </div>
   </div>
 
@@ -583,313 +392,54 @@
       spans[0].style.transform = open ? 'rotate(45deg) translateY(7.5px)' : 'none';
       spans[1].style.opacity   = open ? '0' : '1';
       spans[2].style.transform = open ? 'rotate(-45deg) translateY(-7.5px)' : 'none';
-      spans.forEach(s => s.style.background = open ? '#1a1a1a' : '');
     });
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
       menu.classList.remove('open'); document.body.style.overflow = '';
       spans[0].style.transform = spans[2].style.transform = 'none';
       spans[1].style.opacity = '1';
-      spans.forEach(s => s.style.background = '');
     }));
 
-    // ── CONTINUOUS PHOTO ARRAY ───────────────────────
-    // All photos across all homes in one flat array.
-    // Clicking any grid tile opens at that home's first photo.
-    // Arrows + swipe move through ALL photos seamlessly.
-    const allPhotos = [
-      // BAYRIDGE (14 photos)
-      { src: 'images/our-work/bayridge/bayridge-1.jpg',  home: 'Bayridge' },
-      { src: 'images/our-work/bayridge/bayridge-2.jpg',  home: 'Bayridge' },
-      { src: 'images/our-work/bayridge/bayridge-3.jpg',  home: 'Bayridge' },
-      { src: 'images/our-work/bayridge/bayridge-4.jpg',  home: 'Bayridge' },
-      { src: 'images/our-work/bayridge/bayridge-5.jpg',  home: 'Bayridge' },
-      { src: 'images/our-work/bayridge/bayridge-6.jpg',  home: 'Bayridge' },
-      { src: 'images/our-work/bayridge/bayridge-8.jpg',  home: 'Bayridge' },
-      { src: 'images/our-work/bayridge/bayridge-8a.jpg', home: 'Bayridge' },
-      { src: 'images/our-work/bayridge/bayridge-9.jpg',  home: 'Bayridge' },
-      { src: 'images/our-work/bayridge/bayridge-10.jpg', home: 'Bayridge' },
-      { src: 'images/our-work/bayridge/bayridge-11.jpg', home: 'Bayridge' },
-      { src: 'images/our-work/bayridge/bayridge-12.jpg', home: 'Bayridge' },
-      { src: 'images/our-work/bayridge/bayridge-13.jpg', home: 'Bayridge' },
-      { src: 'images/our-work/bayridge/bayridge-14.jpg', home: 'Bayridge' },
-      { src: 'images/our-work/bayridge/bayridge-15.jpg', home: 'Bayridge' },
-      // BAY VIEW (26 photos)
-      { src: 'images/our-work/bayview/bayview-1.jpg',  home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-2.jpg',  home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-3.jpg',  home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-4.jpg',  home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-5.jpg',  home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-6.jpg',  home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-7.jpg',  home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-8.jpg',  home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-9.jpg',  home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-10.jpg', home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-11.jpg', home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-13.jpg', home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-14.jpg', home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-15.jpg', home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-16.jpg', home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-17.jpg', home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-18.jpg', home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-19.jpg', home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-20.jpg', home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-21.jpg', home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-22.jpg', home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-23.jpg', home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-24.jpg', home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-25.jpg', home: 'Bay View' },
-      { src: 'images/our-work/bayview/bayview-bayview-12.jpg', home: 'Bay View' },
-      // BEACHCOMBER (21 photos)
-      { src: 'images/our-work/beachcomber/beachcomber-1.jpg',  home: 'Beachcomber' },
-      { src: 'images/our-work/beachcomber/beachcomber-2.jpg',  home: 'Beachcomber' },
-      { src: 'images/our-work/beachcomber/beachcomber-3.jpg',  home: 'Beachcomber' },
-      { src: 'images/our-work/beachcomber/beachcomber-4.jpg',  home: 'Beachcomber' },
-      { src: 'images/our-work/beachcomber/beachcomber-5.jpg',  home: 'Beachcomber' },
-      { src: 'images/our-work/beachcomber/beachcomber-6.jpg',  home: 'Beachcomber' },
-      { src: 'images/our-work/beachcomber/beachcomber-7.jpg',  home: 'Beachcomber' },
-      { src: 'images/our-work/beachcomber/beachcomber-8.jpg',  home: 'Beachcomber' },
-      { src: 'images/our-work/beachcomber/beachcomber-9.jpg',  home: 'Beachcomber' },
-      { src: 'images/our-work/beachcomber/beachcomber-10.jpg', home: 'Beachcomber' },
-      { src: 'images/our-work/beachcomber/beachcomber-11.jpg', home: 'Beachcomber' },
-      { src: 'images/our-work/beachcomber/beachcomber-12.jpg', home: 'Beachcomber' },
-      { src: 'images/our-work/beachcomber/beachcomber-13.jpg', home: 'Beachcomber' },
-      { src: 'images/our-work/beachcomber/beachcomber-14.jpg', home: 'Beachcomber' },
-      { src: 'images/our-work/beachcomber/beachcomber-15.jpg', home: 'Beachcomber' },
-      { src: 'images/our-work/beachcomber/beachcomber-16.jpg', home: 'Beachcomber' },
-      { src: 'images/our-work/beachcomber/beachcomber-17.jpg', home: 'Beachcomber' },
-      { src: 'images/our-work/beachcomber/beachcomber-18.jpg', home: 'Beachcomber' },
-      { src: 'images/our-work/beachcomber/beachcomber-19.jpg', home: 'Beachcomber' },
-      { src: 'images/our-work/beachcomber/beachcomber-20.jpg', home: 'Beachcomber' },
-      { src: 'images/our-work/beachcomber/beachcomber-21.jpg', home: 'Beachcomber' },
-      // BLUFF (15 photos)
-      { src: 'images/our-work/bluff/bluff-1.jpg',  home: 'Bluff' },
-      { src: 'images/our-work/bluff/bluff-2.jpg',  home: 'Bluff' },
-      { src: 'images/our-work/bluff/bluff-3.jpg',  home: 'Bluff' },
-      { src: 'images/our-work/bluff/bluff-4.jpg',  home: 'Bluff' },
-      { src: 'images/our-work/bluff/bluff-5.jpg',  home: 'Bluff' },
-      { src: 'images/our-work/bluff/bluff-6.jpg',  home: 'Bluff' },
-      { src: 'images/our-work/bluff/bluff-7.jpg',  home: 'Bluff' },
-      { src: 'images/our-work/bluff/bluff-8.jpg',  home: 'Bluff' },
-      { src: 'images/our-work/bluff/bluff-9.jpg',  home: 'Bluff' },
-      { src: 'images/our-work/bluff/bluff-10.jpg', home: 'Bluff' },
-      { src: 'images/our-work/bluff/bluff-11.jpg', home: 'Bluff' },
-      { src: 'images/our-work/bluff/bluff-12.jpg', home: 'Bluff' },
-      { src: 'images/our-work/bluff/bluff-13.jpg', home: 'Bluff' },
-      { src: 'images/our-work/bluff/bluff-14.jpg', home: 'Bluff' },
-      { src: 'images/our-work/bluff/bluff-15.jpg', home: 'Bluff' },
-      // CHATEAU (23 photos, skip POH.jpg and duplicate 26)
-      { src: 'images/our-work/chateau/chateau-1.jpg',  home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-2.jpg',  home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-3.jpg',  home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-4.jpg',  home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-5.jpg',  home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-6.jpg',  home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-7.jpg',  home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-8.jpg',  home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-9.jpg',  home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-10.jpg', home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-11.jpg', home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-12.jpg', home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-13.jpg', home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-14.jpg', home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-15.jpg', home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-16.jpg', home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-17.jpg', home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-18.jpg', home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-19.jpg', home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-22.jpg', home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-23.jpg', home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-25.jpg', home: 'Chateau' },
-      { src: 'images/our-work/chateau/chateau-26.jpg', home: 'Chateau' },
-      // DOGWOOD (16 photos, no 12)
-      { src: 'images/our-work/dogwood/dogwood-1.jpg',  home: 'Dogwood' },
-      { src: 'images/our-work/dogwood/dogwood-2.jpg',  home: 'Dogwood' },
-      { src: 'images/our-work/dogwood/dogwood-3.jpg',  home: 'Dogwood' },
-      { src: 'images/our-work/dogwood/dogwood-4.jpg',  home: 'Dogwood' },
-      { src: 'images/our-work/dogwood/dogwood-5.jpg',  home: 'Dogwood' },
-      { src: 'images/our-work/dogwood/dogwood-6.jpg',  home: 'Dogwood' },
-      { src: 'images/our-work/dogwood/dogwood-7.jpg',  home: 'Dogwood' },
-      { src: 'images/our-work/dogwood/dogwood-8.jpg',  home: 'Dogwood' },
-      { src: 'images/our-work/dogwood/dogwood-9.jpg',  home: 'Dogwood' },
-      { src: 'images/our-work/dogwood/dogwood-10.jpg', home: 'Dogwood' },
-      { src: 'images/our-work/dogwood/dogwood-11.jpg', home: 'Dogwood' },
-      { src: 'images/our-work/dogwood/dogwood-13.jpg', home: 'Dogwood' },
-      { src: 'images/our-work/dogwood/dogwood-14.jpg', home: 'Dogwood' },
-      { src: 'images/our-work/dogwood/dogwood-15.jpg', home: 'Dogwood' },
-      { src: 'images/our-work/dogwood/dogwood-16.jpg', home: 'Dogwood' },
-      { src: 'images/our-work/dogwood/dogwood-17.jpg', home: 'Dogwood' },
-      // ENGLISH OAK (21 photos)
-      { src: 'images/our-work/english-oak/english-oak-1.jpg',  home: 'English Oak' },
-      { src: 'images/our-work/english-oak/english-oak-2.jpg',  home: 'English Oak' },
-      { src: 'images/our-work/english-oak/english-oak-3.jpg',  home: 'English Oak' },
-      { src: 'images/our-work/english-oak/english-oak-4.jpg',  home: 'English Oak' },
-      { src: 'images/our-work/english-oak/english-oak-5.jpg',  home: 'English Oak' },
-      { src: 'images/our-work/english-oak/english-oak-6.jpg',  home: 'English Oak' },
-      { src: 'images/our-work/english-oak/english-oak-7.jpg',  home: 'English Oak' },
-      { src: 'images/our-work/english-oak/english-oak-8.jpg',  home: 'English Oak' },
-      { src: 'images/our-work/english-oak/english-oak-9.jpg',  home: 'English Oak' },
-      { src: 'images/our-work/english-oak/english-oak-10.jpg', home: 'English Oak' },
-      { src: 'images/our-work/english-oak/english-oak-11.jpg', home: 'English Oak' },
-      { src: 'images/our-work/english-oak/english-oak-12.jpg', home: 'English Oak' },
-      { src: 'images/our-work/english-oak/english-oak-13.jpg', home: 'English Oak' },
-      { src: 'images/our-work/english-oak/english-oak-14.jpg', home: 'English Oak' },
-      { src: 'images/our-work/english-oak/english-oak-15.jpg', home: 'English Oak' },
-      { src: 'images/our-work/english-oak/english-oak-16.jpg', home: 'English Oak' },
-      { src: 'images/our-work/english-oak/english-oak-17.jpg', home: 'English Oak' },
-      { src: 'images/our-work/english-oak/english-oak-18.jpg', home: 'English Oak' },
-      { src: 'images/our-work/english-oak/english-oak-19.jpg', home: 'English Oak' },
-      { src: 'images/our-work/english-oak/english-oak-20.jpg', home: 'English Oak' },
-      { src: 'images/our-work/english-oak/english-oak-21.jpg', home: 'English Oak' },
-      // HAMILTON PLACE (26 photos)
-      { src: 'images/our-work/hamilton-place/hp-1.jpg',  home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-2.jpg',  home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-3.jpg',  home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-4.jpg',  home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-5.jpg',  home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-6.jpg',  home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-7.jpg',  home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-8.jpg',  home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-9.jpg',  home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-10.jpg', home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-11.jpg', home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-12.jpg', home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-13.jpg', home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-14.jpg', home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-15.jpg', home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-16.jpg', home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-17.jpg', home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-18.jpg', home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-19.jpg', home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-20.jpg', home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-21.jpg', home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-22.jpg', home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-23.jpg', home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-24.jpg', home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-25.jpg', home: 'Hamilton Place' },
-      { src: 'images/our-work/hamilton-place/hp-26.jpg', home: 'Hamilton Place' },
-      // LAKESIDE (22 photos)
-      { src: 'images/our-work/lakeside/lakeside-1a.JPG', home: 'Lakeside' },
-      { src: 'images/our-work/lakeside/lakeside-1b.JPG', home: 'Lakeside' },
-      { src: 'images/our-work/lakeside/lakeside-2.JPG',  home: 'Lakeside' },
-      { src: 'images/our-work/lakeside/lakeside-3.JPG',  home: 'Lakeside' },
-      { src: 'images/our-work/lakeside/lakeside-4.JPG',  home: 'Lakeside' },
-      { src: 'images/our-work/lakeside/lakeside-5.JPG',  home: 'Lakeside' },
-      { src: 'images/our-work/lakeside/lakeside-6.JPG',  home: 'Lakeside' },
-      { src: 'images/our-work/lakeside/lakeside-7.JPG',  home: 'Lakeside' },
-      { src: 'images/our-work/lakeside/lakeside-8.JPG',  home: 'Lakeside' },
-      { src: 'images/our-work/lakeside/lakeside-9.JPG',  home: 'Lakeside' },
-      { src: 'images/our-work/lakeside/lakeside-10.JPG', home: 'Lakeside' },
-      { src: 'images/our-work/lakeside/lakeside-11.JPG', home: 'Lakeside' },
-      { src: 'images/our-work/lakeside/lakeside-12.JPG', home: 'Lakeside' },
-      { src: 'images/our-work/lakeside/lakeside-13.JPG', home: 'Lakeside' },
-      { src: 'images/our-work/lakeside/lakeside-14.JPG', home: 'Lakeside' },
-      { src: 'images/our-work/lakeside/lakeside-15.JPG', home: 'Lakeside' },
-      { src: 'images/our-work/lakeside/lakeside-16.JPG', home: 'Lakeside' },
-      { src: 'images/our-work/lakeside/lakeside-17.JPG', home: 'Lakeside' },
-      { src: 'images/our-work/lakeside/lakeside-18.JPG', home: 'Lakeside' },
-      { src: 'images/our-work/lakeside/lakeside-19.JPG', home: 'Lakeside' },
-      { src: 'images/our-work/lakeside/lakeside-20.JPG', home: 'Lakeside' },
-      { src: 'images/our-work/lakeside/lakeside-21.JPG', home: 'Lakeside' },
-      // REDWOOD (13 photos)
-      { src: 'images/our-work/redwood/redwood-1.jpg',  home: 'Redwood' },
-      { src: 'images/our-work/redwood/redwood-2.jpg',  home: 'Redwood' },
-      { src: 'images/our-work/redwood/redwood-3.jpg',  home: 'Redwood' },
-      { src: 'images/our-work/redwood/redwood-4.jpg',  home: 'Redwood' },
-      { src: 'images/our-work/redwood/redwood-5.jpg',  home: 'Redwood' },
-      { src: 'images/our-work/redwood/redwood-6.jpg',  home: 'Redwood' },
-      { src: 'images/our-work/redwood/redwood-7.jpg',  home: 'Redwood' },
-      { src: 'images/our-work/redwood/redwood-8.jpg',  home: 'Redwood' },
-      { src: 'images/our-work/redwood/redwood-9.jpg',  home: 'Redwood' },
-      { src: 'images/our-work/redwood/redwood-10.jpg', home: 'Redwood' },
-      { src: 'images/our-work/redwood/redwood-11.jpg', home: 'Redwood' },
-      { src: 'images/our-work/redwood/redwood-12.jpg', home: 'Redwood' },
-      { src: 'images/our-work/redwood/redwood-13.jpg', home: 'Redwood' },
-      // SAILFISH (25 photos)
-      { src: 'images/our-work/sailfish/sf-1.jpg',   home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-2.jpg',   home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-3.jpg',   home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-4.jpg',   home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-5.jpg',   home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-6.jpg',   home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-7.jpg',   home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-8.jpg',   home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-9.jpg',   home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-10.jpg',  home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-11.jpg',  home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-12.jpg',  home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-13.jpg',  home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-14.jpg',  home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-15.jpg',  home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-16.jpg',  home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-17a.jpg', home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-17b.jpg', home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-18.jpg',  home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-19.jpg',  home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-20.jpg',  home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-21.jpg',  home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-22.jpg',  home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-23.jpg',  home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-24.jpg',  home: 'Sailfish' },
-      { src: 'images/our-work/sailfish/sf-25.jpg',  home: 'Sailfish' },
-      // SYCAMORE (20 photos)
-      { src: 'images/our-work/sycamore/sycamore-1.jpg',  home: 'Sycamore' },
-      { src: 'images/our-work/sycamore/sycamore-2.jpg',  home: 'Sycamore' },
-      { src: 'images/our-work/sycamore/sycamore-3.jpg',  home: 'Sycamore' },
-      { src: 'images/our-work/sycamore/sycamore-4.jpg',  home: 'Sycamore' },
-      { src: 'images/our-work/sycamore/sycamore-5.jpg',  home: 'Sycamore' },
-      { src: 'images/our-work/sycamore/sycamore-6.jpg',  home: 'Sycamore' },
-      { src: 'images/our-work/sycamore/sycamore-7.jpg',  home: 'Sycamore' },
-      { src: 'images/our-work/sycamore/sycamore-8.jpg',  home: 'Sycamore' },
-      { src: 'images/our-work/sycamore/sycamore-9.jpg',  home: 'Sycamore' },
-      { src: 'images/our-work/sycamore/sycamore-10.jpg', home: 'Sycamore' },
-      { src: 'images/our-work/sycamore/sycamore-11.jpg', home: 'Sycamore' },
-      { src: 'images/our-work/sycamore/sycamore-12.jpg', home: 'Sycamore' },
-      { src: 'images/our-work/sycamore/sycamore-13.jpg', home: 'Sycamore' },
-      { src: 'images/our-work/sycamore/sycamore-14.jpg', home: 'Sycamore' },
-      { src: 'images/our-work/sycamore/sycamore-15.jpg', home: 'Sycamore' },
-      { src: 'images/our-work/sycamore/sycamore-16.jpg', home: 'Sycamore' },
-      { src: 'images/our-work/sycamore/sycamore-17.jpg', home: 'Sycamore' },
-      { src: 'images/our-work/sycamore/sycamore-18.jpg', home: 'Sycamore' },
-      { src: 'images/our-work/sycamore/sycamore-19.jpg', home: 'Sycamore' },
-      { src: 'images/our-work/sycamore/sycamore-20.jpg', home: 'Sycamore' },
-      // TRILLIUM (13 photos)
-      { src: 'images/our-work/trillium/trillium-1.jpg',  home: 'Trillium' },
-      { src: 'images/our-work/trillium/trillium-2.jpg',  home: 'Trillium' },
-      { src: 'images/our-work/trillium/trillium-3.jpg',  home: 'Trillium' },
-      { src: 'images/our-work/trillium/trillium-4.jpg',  home: 'Trillium' },
-      { src: 'images/our-work/trillium/trillium-5.jpg',  home: 'Trillium' },
-      { src: 'images/our-work/trillium/trillium-6.jpg',  home: 'Trillium' },
-      { src: 'images/our-work/trillium/trillium-7.jpg',  home: 'Trillium' },
-      { src: 'images/our-work/trillium/trillium-8.jpg',  home: 'Trillium' },
-      { src: 'images/our-work/trillium/trillium-9.jpg',  home: 'Trillium' },
-      { src: 'images/our-work/trillium/trillium-10.jpg', home: 'Trillium' },
-      { src: 'images/our-work/trillium/trillium-11.jpg', home: 'Trillium' },
-      { src: 'images/our-work/trillium/trillium-12.jpg', home: 'Trillium' },
-      { src: 'images/our-work/trillium/trillium-13.jpg', home: 'Trillium' },
+    // All photos in one flat array
+    const photos = [
+      // BAYRIDGE (15)
+      ...[1,2,3,4,5,6,8,'8a',9,10,11,12,13,14,15].map(n=>({src:`images/our-work/bayridge/bayridge-${n}.jpg`,home:'Bayridge'})),
+      // BAY VIEW (25 — skip 12, includes bayview-bayview-12)
+      ...[1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23,24,25].map(n=>({src:`images/our-work/bayview/bayview-${n}.jpg`,home:'Bay View'})),
+      {src:'images/our-work/bayview/bayview-bayview-12.jpg',home:'Bay View'},
+      // BEACHCOMBER (21)
+      ...[...Array(21)].map((_,i)=>({src:`images/our-work/beachcomber/beachcomber-${i+1}.jpg`,home:'Beachcomber'})),
+      // BLUFF (15)
+      ...[...Array(15)].map((_,i)=>({src:`images/our-work/bluff/bluff-${i+1}.jpg`,home:'Bluff'})),
+      // CHATEAU (23 — skip POH, use actual numbers)
+      ...[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,22,23,25,26].map(n=>({src:`images/our-work/chateau/chateau-${n}.jpg`,home:'Chateau'})),
+      // DOGWOOD (16 — no 12)
+      ...[1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17].map(n=>({src:`images/our-work/dogwood/dogwood-${n}.jpg`,home:'Dogwood'})),
+      // ENGLISH OAK (21)
+      ...[...Array(21)].map((_,i)=>({src:`images/our-work/english-oak/english-oak-${i+1}.jpg`,home:'English Oak'})),
+      // HAMILTON PLACE (26)
+      ...[...Array(26)].map((_,i)=>({src:`images/our-work/hamilton-place/hp-${i+1}.jpg`,home:'Hamilton Place'})),
+      // LAKESIDE (22)
+      {src:'images/our-work/lakeside/lakeside-1a.JPG',home:'Lakeside'},
+      {src:'images/our-work/lakeside/lakeside-1b.JPG',home:'Lakeside'},
+      ...[...Array(20)].map((_,i)=>({src:`images/our-work/lakeside/lakeside-${i+2}.JPG`,home:'Lakeside'})),
+      // REDWOOD (13)
+      ...[...Array(13)].map((_,i)=>({src:`images/our-work/redwood/redwood-${i+1}.jpg`,home:'Redwood'})),
+      // SAILFISH (25 — includes 17a and 17b)
+      ...[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,'17a','17b',18,19,20,21,22,23,24,25].map(n=>({src:`images/our-work/sailfish/sf-${n}.jpg`,home:'Sailfish'})),
+      // SYCAMORE (20)
+      ...[...Array(20)].map((_,i)=>({src:`images/our-work/sycamore/sycamore-${i+1}.jpg`,home:'Sycamore'})),
+      // TRILLIUM (13)
+      ...[...Array(13)].map((_,i)=>({src:`images/our-work/trillium/trillium-${i+1}.jpg`,home:'Trillium'})),
     ];
 
-    // Index of the first photo for each grid tile (home name → array index)
-    const homeStartIndex = {
-      'Bayridge':       0,
-      'Bay View':       15,
-      'Beachcomber':    41,
-      'Bluff':          62,
-      'Chateau':        77,
-      'Dogwood':        100,
-      'English Oak':    116,
-      'Hamilton Place': 137,
-      'Lakeside':       163,
-      'Redwood':        185,
-      'Sailfish':       198,
-      'Sycamore':       224,
-      'Trillium':       244,
-    };
+    // Start index for each home
+    const startOf = {};
+    photos.forEach((p,i) => { if (startOf[p.home] === undefined) startOf[p.home] = i; });
 
-    let currentIdx = 0;
-
-    function openLightbox(homeName) {
-      currentIdx = homeStartIndex[homeName] ?? 0;
-      renderLightbox();
+    let idx = 0;
+    function openLightbox(home) {
+      idx = startOf[home] ?? 0;
+      render();
       document.getElementById('lightbox').classList.add('open');
       document.body.style.overflow = 'hidden';
     }
@@ -897,41 +447,36 @@
       document.getElementById('lightbox').classList.remove('open');
       document.body.style.overflow = '';
     }
-    function renderLightbox() {
-      const photo = allPhotos[currentIdx];
-      document.getElementById('lightbox-img').src = photo.src;
-      document.getElementById('lightbox-name').textContent = photo.home;
-      document.getElementById('lightbox-counter').textContent =
-        (currentIdx + 1) + ' of ' + allPhotos.length + '  ·  ' + photo.home;
+    function render() {
+      const p = photos[idx];
+      document.getElementById('lb-img').src = p.src;
+      document.getElementById('lb-name').textContent = p.home;
+      document.getElementById('lb-counter').textContent = (idx+1) + ' / ' + photos.length;
     }
     function lightboxNav(dir) {
-      currentIdx = (currentIdx + dir + allPhotos.length) % allPhotos.length;
-      renderLightbox();
+      idx = (idx + dir + photos.length) % photos.length;
+      render();
     }
-
-    document.getElementById('lightbox').addEventListener('click', function(e) {
-      if (e.target === this) closeLightbox();
+    document.getElementById('lightbox').addEventListener('click', e => {
+      if (e.target === document.getElementById('lightbox')) closeLightbox();
     });
     document.addEventListener('keydown', e => {
       if (!document.getElementById('lightbox').classList.contains('open')) return;
-      if (e.key === 'Escape')      closeLightbox();
-      if (e.key === 'ArrowLeft')   lightboxNav(-1);
-      if (e.key === 'ArrowRight')  lightboxNav(1);
+      if (e.key==='Escape') closeLightbox();
+      if (e.key==='ArrowLeft') lightboxNav(-1);
+      if (e.key==='ArrowRight') lightboxNav(1);
     });
-
-    // ── TOUCH / SWIPE ────────────────────────────────
-    let touchStartX = 0;
+    let tx = 0;
     const lb = document.getElementById('lightbox');
-    lb.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-    lb.addEventListener('touchend', e => {
-      const diff = touchStartX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) lightboxNav(diff > 0 ? 1 : -1);
-    }, { passive: true });
+    lb.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, {passive:true});
+    lb.addEventListener('touchend',   e => {
+      const d = tx - e.changedTouches[0].clientX;
+      if (Math.abs(d) > 40) lightboxNav(d > 0 ? 1 : -1);
+    }, {passive:true});
 
-    // Scroll animations
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
-    }, { threshold: 0.08 });
+    }, {threshold:0.1});
     document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
   </script>
 </body>
