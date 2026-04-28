@@ -1,4 +1,28 @@
-# Redirect peninsulashores.com → ogradydevelopment.com/peninsula-shores.html
-# UTM parameters allow GA4 to track visitors who came from job site signage / peninsulashores.com domain
-https://www.peninsulashores.com/*    https://www.ogradydevelopment.com/peninsula-shores.html?utm_source=peninsulashores.com&utm_medium=signage&utm_campaign=job-site-signs    301!
-https://peninsulashores.com/*        https://www.ogradydevelopment.com/peninsula-shores.html?utm_source=peninsulashores.com&utm_medium=signage&utm_campaign=job-site-signs    301!
+# ============================================================
+# O'Grady Development Company — Netlify Domain Redirects
+# ============================================================
+
+# PENINSULA SHORES — Job site signage
+https://www.peninsulashores.com/*       https://www.ogradydevelopment.com/peninsula-shores.html?utm_source=peninsulashores.com&utm_medium=signage&utm_campaign=job-site-signs    301!
+https://peninsulashores.com/*           https://www.ogradydevelopment.com/peninsula-shores.html?utm_source=peninsulashores.com&utm_medium=signage&utm_campaign=job-site-signs    301!
+
+# DEED COLLECTORS — Sell land page
+https://www.deedcollectors.com/*        https://www.ogradydevelopment.com/sell-land.html?utm_source=deedcollectors.com&utm_medium=domain&utm_campaign=land-acquisition    301!
+https://deedcollectors.com/*            https://www.ogradydevelopment.com/sell-land.html?utm_source=deedcollectors.com&utm_medium=domain&utm_campaign=land-acquisition    301!
+
+# DIVORCE FREE BUILDER — Homepage
+https://www.divorcefreebuilder.com/*    https://www.ogradydevelopment.com/?utm_source=divorcefreebuilder.com&utm_medium=domain&utm_campaign=brand    301!
+https://divorcefreebuilder.com/*        https://www.ogradydevelopment.com/?utm_source=divorcefreebuilder.com&utm_medium=domain&utm_campaign=brand    301!
+
+# OGRADY DC — Homepage
+https://www.ogradydc.com/*              https://www.ogradydevelopment.com/?utm_source=ogradydc.com&utm_medium=domain&utm_campaign=brand    301!
+https://ogradydc.com/*                  https://www.ogradydevelopment.com/?utm_source=ogradydc.com&utm_medium=domain&utm_campaign=brand    301!
+
+# OGRADY TEAM — Homepage
+https://www.ogradyteam.com/*            https://www.ogradydevelopment.com/?utm_source=ogradyteam.com&utm_medium=domain&utm_campaign=brand    301!
+https://ogradyteam.com/*                https://www.ogradydevelopment.com/?utm_source=ogradyteam.com&utm_medium=domain&utm_campaign=brand    301!
+
+# OGRADY BUILDING — Homepage
+https://www.ogradybuilding.com/*        https://www.ogradydevelopment.com/?utm_source=ogradybuilding.com&utm_medium=domain&utm_campaign=brand    301!
+https://ogradybuilding.com/*            https://www.ogradydevelopment.com/?utm_source=ogradybuilding.com&utm_medium=domain&utm_campaign=brand    301!
+
