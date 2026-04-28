@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Luxury New Construction Homes in Traverse City | O'Grady Development</title>
-  <meta name="description" content="O'Grady Development builds luxury new construction homes and thoughtfully planned communities in Northern Michigan. Family-owned since 1989.">
+  <title>O'Grady Development Co. | New Construction Homes — Traverse City, Michigan</title>
+  <meta name="description" content="O'Grady Development builds luxury new construction homes and communities across Northern Michigan. Browse Peninsula Shores, Victoria Farms, Hamilton Place and more.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -507,12 +507,11 @@
     /* ─── FEATURED HOMES / MASONRY PORTFOLIO ─────── */
     .portfolio-section { background: var(--warm); }
     .masonry {
-      columns: 3;
-      column-gap: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
     }
     .masonry-item {
-      break-inside: avoid;
-      margin-bottom: 20px;
       position: relative;
       overflow: hidden;
       cursor: pointer;
@@ -520,7 +519,15 @@
     .masonry-item img {
       width: 100%;
       display: block;
+      aspect-ratio: 4/3;
+      object-fit: cover;
       transition: transform 1.1s var(--ease);
+    }
+    .masonry-item:first-child img {
+      aspect-ratio: 3/4;
+    }
+    .masonry-item:nth-child(5) img {
+      aspect-ratio: 3/4;
     }
     .masonry-item:hover img { transform: scale(1.05); }
     .masonry-overlay {
@@ -588,7 +595,7 @@
     }
     .testimonial-bg {
       position: absolute; inset: 0;
-      background-image: url('YOUR_AERIAL_IMAGE_URL_HERE');
+      background-image: url('images/communities/peninsula-shores/hero.jpg');
       background-size: cover;
       background-position: center;
       filter: brightness(0.35);
@@ -823,7 +830,7 @@
     /* ─── RESPONSIVE ─────────────────────────────── */
     @media (max-width: 1200px) {
       .wrap, .wrap-md { padding: 0 48px; }
-      .masonry { columns: 2; }
+      .masonry { grid-template-columns: repeat(2, 1fr); }
       .footer-main { grid-template-columns: 1fr 1fr; gap: 48px; }
       .comm-panel.active { gap: 48px; }
     }
@@ -853,7 +860,7 @@
       .wrap, .wrap-md, .wrap-sm { padding: 0 20px; }
       .sec { padding: 64px 0; }
       .sec-sm { padding: 48px 0; }
-      .masonry { columns: 1; }
+      .masonry { grid-template-columns: 1fr; }
       .section-header { flex-direction: column; gap: 12px; align-items: flex-start; margin-bottom: 32px; }
       .footer-main { grid-template-columns: 1fr; gap: 36px; }
       .land-cta { padding: 72px 0; }
@@ -890,7 +897,7 @@
       .btn { text-align: center; width: 100%; padding: 15px 32px; }
       .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
       .footer-legal { gap: 20px; }
-      .masonry-item img { aspect-ratio: 4/3 !important; }
+      .masonry-item img { aspect-ratio: 4/3; }
       .comm-tab { padding: 10px 12px; font-size: 8px; }
       .contact-cell-icon { width: 36px; height: 36px; }
       .story-pull { font-size: clamp(15px, 4vw, 20px); }
@@ -900,6 +907,39 @@
       .section-header-right { display: none; }
     }
   </style>
+
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://www.ogradydevelopment.com/">
+
+  <!-- SEO: Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="O'Grady Development Co. | New Construction Homes — Traverse City, Michigan">
+  <meta property="og:description" content="O'Grady Development builds luxury new construction homes and communities across Northern Michigan. Browse Peninsula Shores, Victoria Farms, Hamilton Place and more.">
+  <meta property="og:url"         content="https://www.ogradydevelopment.com/">
+  <meta property="og:image"       content="https://www.ogradydevelopment.com/images/communities/peninsula-shores.jpg">
+  <meta property="og:site_name"   content="O'Grady Development Co.">
+  <meta property="og:locale"      content="en_US">
+
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="O'Grady Development Co. | New Construction Homes — Traverse City, Michigan">
+  <meta name="twitter:description" content="O'Grady Development builds luxury new construction homes and communities across Northern Michigan. Browse Peninsula Shores, Victoria Farms, Hamilton Place and more.">
+  <meta name="twitter:image"       content="https://www.ogradydevelopment.com/images/communities/peninsula-shores.jpg">
+
+  <!-- SEO: Additional -->
+  <meta name="robots"  content="index, follow">
+  <meta name="author"  content="O'Grady Development Company">
+  <meta name="geo.region"       content="US-MI">
+  <meta name="geo.placename"    content="Traverse City, Michigan">
+  <meta name="geo.position"     content="44.7631;-85.6206">
+  <meta name="ICBM"             content="44.7631, -85.6206">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent","address":{"@type":"PostalAddress","streetAddress":"901 South Garfield Avenue, Suite 202","addressLocality":"Traverse City","addressRegion":"MI","postalCode":"49686","addressCountry":"US"},"telephone":"+12314215161","email":"Info@OGradyTeam.com","url":"https://www.ogradydevelopment.com","areaServed":["Grand Traverse County","Leelanau County","Antrim County","Benzie County"],"priceRange":"$$$"
+  }
+  </script>
 </head>
 <body>
 
@@ -1117,7 +1157,7 @@
       <!-- Panel: Brook Valley -->
       <div class="comm-panel" data-panel="3">
         <div class="comm-img-wrap">
-          <img src="YOUR_BROOK_VALLEY_IMAGE_URL" alt="Brook Valley future development in Long Lake Township">
+          <img src="images/communities/brook-valley.jpg" alt="Brook Valley future development in Long Lake Township">
           <div class="comm-badge comm-badge-dark">Coming Soon</div>
           <div class="comm-price-tag">
             <div class="comm-price-label">Status</div>
@@ -1147,7 +1187,7 @@
       <!-- Panel: Westacres -->
       <div class="comm-panel" data-panel="4">
         <div class="comm-img-wrap">
-          <img src="YOUR_WESTACRES_IMAGE_URL" alt="Westacres new development in Long Lake Township">
+          <img src="images/communities/westacres.jpg" alt="Westacres new development in Long Lake Township">
           <div class="comm-badge comm-badge-dark">Coming Soon</div>
           <div class="comm-price-tag">
             <div class="comm-price-label">Lot Size</div>
@@ -1193,7 +1233,7 @@
       <div class="masonry fade-up delay-1">
 
         <div class="masonry-item">
-          <img src="images/our-work/bayridge/bayridge-1.jpg" alt="Bayridge — O'Grady Development" style="aspect-ratio: 3/4; object-fit:cover; width:100%;">
+          <img src="images/our-work/bayridge/bayridge-1.jpg" alt="Bayridge — O'Grady Development">
           <div class="masonry-overlay">
             <div class="masonry-caption">
               <div class="t-sm">Bayridge</div>
@@ -1203,7 +1243,7 @@
         </div>
 
         <div class="masonry-item">
-          <img src="images/our-work/sailfish/sf-1.jpg" alt="Sailfish — O'Grady Development" style="aspect-ratio: 4/3; object-fit:cover; width:100%;">
+          <img src="images/our-work/sailfish/sf-1.jpg" alt="Sailfish — O'Grady Development">
           <div class="masonry-overlay">
             <div class="masonry-caption">
               <div class="t-sm">Sailfish</div>
@@ -1213,7 +1253,7 @@
         </div>
 
         <div class="masonry-item">
-          <img src="images/our-work/beachcomber/beachcomber-1.jpg" alt="Beachcomber — O'Grady Development" style="aspect-ratio: 4/3; object-fit:cover; width:100%;">
+          <img src="images/our-work/beachcomber/beachcomber-1.jpg" alt="Beachcomber — O'Grady Development">
           <div class="masonry-overlay">
             <div class="masonry-caption">
               <div class="t-sm">Beachcomber</div>
@@ -1223,7 +1263,7 @@
         </div>
 
         <div class="masonry-item">
-          <img src="images/our-work/bluff/bluff-1.jpg" alt="Bluff — O'Grady Development" style="aspect-ratio: 4/3; object-fit:cover; width:100%;">
+          <img src="images/our-work/bluff/bluff-1.jpg" alt="Bluff — O'Grady Development">
           <div class="masonry-overlay">
             <div class="masonry-caption">
               <div class="t-sm">Bluff</div>
@@ -1233,7 +1273,7 @@
         </div>
 
         <div class="masonry-item">
-          <img src="images/our-work/chateau/chateau-1.jpg" alt="Chateau — O'Grady Development" style="aspect-ratio: 3/4; object-fit:cover; width:100%;">
+          <img src="images/our-work/chateau/chateau-1.jpg" alt="Chateau — O'Grady Development">
           <div class="masonry-overlay">
             <div class="masonry-caption">
               <div class="t-sm">Chateau</div>
@@ -1243,7 +1283,7 @@
         </div>
 
         <div class="masonry-item">
-          <img src="images/our-work/sycamore/sycamore-1.jpg" alt="Sycamore — O'Grady Development" style="aspect-ratio: 4/3; object-fit:cover; width:100%;">
+          <img src="images/our-work/sycamore/sycamore-1.jpg" alt="Sycamore — O'Grady Development">
           <div class="masonry-overlay">
             <div class="masonry-caption">
               <div class="t-sm">Sycamore</div>
@@ -1308,7 +1348,7 @@
     <div class="wrap">
       <div class="footer-main">
         <div class="footer-brand">
-          <img src="images/logos/Gold Logo.png" alt="O'Grady Development Co." style="height:56px; width:auto; margin-bottom: 20px;">
+          <img src="images/logos/Gold Logo.png" alt="O'Grady Development Co." style="height:56px; width:auto; margin-bottom: 20px; margin-left: -4px;">
           <p class="footer-address">
             901 South Garfield Avenue, Suite 202<br>
             Traverse City, MI 49686
@@ -1318,7 +1358,7 @@
         <div>
           <div class="footer-col-title">Explore</div>
           <a href="communities.html"  class="footer-link">Communities</a>
-          <a href="portfolio.html"    class="footer-link">Portfolio</a>
+          <a href="our-work.html"    class="footer-link">Our Work</a>
           <a href="faq.html" class="footer-link">FAQ</a>
           <a href="about.html"        class="footer-link">Our Story</a>
         </div>

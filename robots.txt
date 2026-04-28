@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /privacy.html
+Disallow: /terms.html
+
+Sitemap: https://www.ogradydevelopment.com/sitemap.xml
