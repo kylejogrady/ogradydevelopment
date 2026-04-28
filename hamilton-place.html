@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Victoria Farms | New Construction Homes — O'Grady Development Co.</title>
-  <meta name="description" content="Victoria Farms is a brand new subdivision in East Bay Township featuring luxury new construction homes from O'Grady Development. Two floor plans available — schedule a site visit today.">
+  <title>Hamilton Place | Luxury Townhomes — O'Grady Development Co.</title>
+  <meta name="description" content="Hamilton Place is a collection of fully furnished, turnkey luxury townhomes in the heart of Traverse City's Hotel Resort District. Designed for personal use and short-term rental income.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -53,7 +53,7 @@
     .t-label { font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); }
     .t-xl { font-family: var(--display); font-size: clamp(48px, 8vw, 100px); font-weight: 300; line-height: 1.0; }
     .t-lg { font-family: var(--display); font-size: clamp(34px, 4.5vw, 58px); font-weight: 300; line-height: 1.15; }
-    .t-md { font-family: var(--display); font-size: clamp(24px, 3vw, 40px); font-weight: 300; line-height: 1.2; }
+    .t-md { font-family: var(--display); font-size: clamp(24px, 3vw, 40px); font-weight: 300; }
     .t-body { font-family: var(--body); font-size: 13.5px; font-weight: 300; line-height: 2.1; color: var(--text); }
     .rule { width: 48px; height: 1px; background: var(--gold); }
     .wrap { max-width: 1440px; margin: 0 auto; padding: 0 64px; }
@@ -67,9 +67,9 @@
 
     /* ─── HERO ────────────────────────────────────── */
     .hero { position: relative; height: 100vh; min-height: 700px; overflow: hidden; display: flex; align-items: flex-end; }
-    .hero-bg { position: absolute; inset: 0; background-image: url('images/communities/Victoria Farms/victoria-farms-page-main.jpg'); background-size: cover; background-position: center 40%; transform: scale(1.04); animation: heroZoom 14s ease forwards; }
+    .hero-bg { position: absolute; inset: 0; background-image: url('images/communities/hamilton-place.jpg'); background-size: cover; background-position: center 40%; transform: scale(1.04); animation: heroZoom 14s ease forwards; }
     @keyframes heroZoom { to { transform: scale(1); } }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,8,6,0.88) 0%, rgba(10,8,6,0.2) 50%, rgba(10,8,6,0.45) 100%); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,8,6,0.92) 0%, rgba(10,8,6,0.25) 50%, rgba(10,8,6,0.5) 100%); }
     .hero-content { position: relative; z-index: 2; padding: 0 64px 80px; width: 100%; display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: end; }
     .hero-left { display: flex; flex-direction: column; gap: 24px; }
     .hero-eyebrow { display: flex; align-items: center; gap: 16px; }
@@ -77,8 +77,8 @@
     .hero-specs { display: flex; gap: 32px; flex-wrap: wrap; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.1); }
     .hero-spec-val { font-family: var(--display); font-size: 18px; font-weight: 300; color: #fff; }
     .hero-spec-lbl { font-family: var(--body); font-size: 8px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 3px; }
-    .hero-right { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
-    .hero-badge { font-family: var(--body); font-size: 8.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; background: var(--gold); color: #fff; padding: 8px 18px; }
+    .hero-right { display: flex; flex-direction: column; gap: 20px; }
+    .hero-badge { font-family: var(--body); font-size: 8.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; background: var(--gold); color: #fff; padding: 8px 18px; display: inline-block; align-self: flex-start; }
 
     /* ─── INTRO ───────────────────────────────────── */
     .intro-section { padding: 120px 0; background: var(--bg); }
@@ -93,60 +93,62 @@
     .feature-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
     .feature-text { font-family: var(--body); font-size: 12px; font-weight: 300; color: var(--text); }
 
-    /* ─── AERIAL BANNER ───────────────────────────── */
-    .aerial-banner { position: relative; height: 440px; overflow: hidden; }
-    .aerial-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
-    .aerial-banner-overlay { position: absolute; inset: 0; background: rgba(10,8,6,0.45); display: flex; align-items: center; justify-content: center; }
-    .aerial-text { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    /* ─── UNITS SECTION ───────────────────────────── */
+    .units-section { padding: 120px 0; background: var(--warm); }
+    .units-header { display: flex; flex-direction: column; gap: 16px; margin-bottom: 64px; }
+    .units-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .unit-card { background: var(--bg); overflow: hidden; display: flex; flex-direction: column; }
+    .unit-img { overflow: hidden; aspect-ratio: 4/3; position: relative; }
+    .unit-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+    .unit-card:hover .unit-img img { transform: scale(1.04); }
+    .unit-badge { position: absolute; top: 14px; left: 14px; font-family: var(--body); font-size: 7.5px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; background: var(--gold); color: #fff; padding: 6px 14px; }
+    .unit-body { padding: 28px 32px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+    .unit-name { font-family: var(--display); font-size: 26px; font-weight: 400; }
+    .unit-type { font-family: var(--body); font-size: 8.5px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--text); }
+    .unit-price { font-family: var(--display); font-size: 28px; font-weight: 300; color: var(--dark); }
+    .unit-specs { display: flex; gap: 16px; padding-top: 12px; border-top: 1px solid rgba(0,0,0,0.07); }
+    .unit-spec { font-family: var(--body); font-size: 11px; font-weight: 300; color: var(--text); }
+    .unit-footer { padding: 16px 32px 28px; }
 
-    /* ─── FLOOR PLANS ─────────────────────────────── */
-    .plans-section { padding: 120px 0; background: var(--bg); }
-    .plans-header { display: flex; flex-direction: column; gap: 16px; margin-bottom: 72px; }
-    .plans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    /* ─── AMENITIES ───────────────────────────────── */
+    .amenities-section { padding: 120px 0; background: var(--bg); }
+    .amenities-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(0,0,0,0.06); margin-top: 64px; }
+    .amenity-col { background: var(--bg); padding: 56px 48px; }
+    .amenity-col-title { font-family: var(--body); font-size: 8.5px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; }
+    .amenity-list { display: flex; flex-direction: column; gap: 0; }
+    .amenity-item { display: flex; align-items: center; gap: 14px; padding: 13px 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-family: var(--body); font-size: 12.5px; font-weight: 300; color: var(--text); }
+    .amenity-item:last-child { border-bottom: none; }
+    .amenity-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
 
-    .plan-card { background: var(--warm); overflow: hidden; display: flex; flex-direction: column; }
-    .plan-img { position: relative; overflow: hidden; aspect-ratio: 4/3; }
-    .plan-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
-    .plan-card:hover .plan-img img { transform: scale(1.04); }
-    .plan-tag { position: absolute; top: 16px; left: 16px; font-family: var(--body); font-size: 7.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; background: var(--dark); color: #fff; padding: 7px 16px; }
-    .plan-tag-available { background: var(--gold); }
-    .plan-body { padding: 40px 44px; display: flex; flex-direction: column; gap: 20px; flex: 1; }
-    .plan-name { font-family: var(--display); font-size: clamp(28px, 3.5vw, 42px); font-weight: 300; color: var(--dark); }
-    .plan-tagline { font-family: var(--body); font-size: 11px; font-weight: 300; color: var(--gold); letter-spacing: 1.5px; font-style: italic; margin-top: -8px; }
-    .plan-desc { font-family: var(--body); font-size: 12.5px; font-weight: 300; color: var(--text); line-height: 1.95; }
+    /* ─── MANAGEMENT SECTION ──────────────────────── */
+    .mgmt-section { background: var(--dark); padding: 0; display: grid; grid-template-columns: 1fr 1fr; }
+    .mgmt-left { padding: 96px 72px; display: flex; flex-direction: column; gap: 28px; }
+    .mgmt-steps { display: flex; flex-direction: column; gap: 0; margin-top: 8px; }
+    .mgmt-step { display: flex; gap: 20px; padding: 24px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .mgmt-step:last-child { border-bottom: none; }
+    .mgmt-step-num { font-family: var(--display); font-size: 32px; font-weight: 300; color: rgba(184,168,138,0.25); flex-shrink: 0; width: 32px; line-height: 1; }
+    .mgmt-step-title { font-family: var(--display); font-size: 20px; font-weight: 400; color: #fff; margin-bottom: 5px; }
+    .mgmt-step-desc { font-family: var(--body); font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.45); line-height: 1.85; }
+    .mgmt-right { background: #111; padding: 96px 72px; display: flex; flex-direction: column; justify-content: center; gap: 32px; }
+    .mgmt-partner-label { font-family: var(--body); font-size: 8px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+    .mgmt-partner-name { font-family: var(--display); font-size: 36px; font-weight: 300; color: #fff; line-height: 1.2; }
+    .mgmt-partner-sub { font-family: var(--body); font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.35); letter-spacing: 1px; margin-top: -8px; }
+    .mgmt-attrs { display: flex; flex-direction: column; gap: 0; }
+    .mgmt-attr { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.07); display: flex; flex-direction: column; gap: 5px; }
+    .mgmt-attr:last-child { border-bottom: none; }
+    .mgmt-attr-title { font-family: var(--display); font-size: 18px; font-weight: 400; color: var(--gold); }
+    .mgmt-attr-desc { font-family: var(--body); font-size: 11.5px; font-weight: 300; color: rgba(255,255,255,0.4); line-height: 1.8; }
+    .mgmt-link { font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 8px; transition: gap 0.3s var(--ease); margin-top: 8px; }
+    .mgmt-link::after { content: '→'; }
+    .mgmt-link:hover { gap: 12px; }
 
-    .plan-specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(0,0,0,0.08); margin: 4px 0; }
-    .plan-spec { background: var(--bg); padding: 16px 12px; text-align: center; }
-    .plan-spec-val { font-family: var(--display); font-size: 24px; font-weight: 400; color: var(--dark); line-height: 1; }
-    .plan-spec-lbl { font-family: var(--body); font-size: 7.5px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: rgba(0,0,0,0.35); margin-top: 5px; }
-
-    .plan-includes { display: flex; flex-direction: column; gap: 8px; padding: 20px 0; border-top: 1px solid rgba(0,0,0,0.07); }
-    .plan-includes-title { font-family: var(--body); font-size: 8px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(0,0,0,0.3); margin-bottom: 4px; }
-    .plan-include-item { display: flex; align-items: center; gap: 10px; font-family: var(--body); font-size: 12px; font-weight: 300; color: var(--text); }
-    .plan-include-item::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
-
-    .plan-footer { padding: 24px 44px 40px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
-
-    /* ─── SITE VISIT CTA ──────────────────────────── */
-    .visit-section { background: var(--dark); padding: 0; display: grid; grid-template-columns: 1fr 1fr; }
-    .visit-img { position: relative; overflow: hidden; min-height: 480px; }
-    .visit-img img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); }
-    .visit-text { padding: 80px 72px; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
-    .visit-steps { display: flex; flex-direction: column; gap: 0; }
-    .visit-step { display: flex; align-items: flex-start; gap: 20px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
-    .visit-step:last-child { border-bottom: none; }
-    .visit-step-num { font-family: var(--display); font-size: 32px; font-weight: 300; color: rgba(184,168,138,0.3); line-height: 1; flex-shrink: 0; width: 32px; }
-    .visit-step-content { display: flex; flex-direction: column; gap: 4px; }
-    .visit-step-title { font-family: var(--display); font-size: 20px; font-weight: 400; color: #fff; }
-    .visit-step-desc { font-family: var(--body); font-size: 11.5px; font-weight: 300; color: rgba(255,255,255,0.45); line-height: 1.8; }
-
-    /* ─── LOCATION ────────────────────────────────── */
-    .location-section { padding: 120px 0; background: var(--warm); }
-    .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: center; }
+    /* ─── LOCATION STRIP ──────────────────────────── */
+    .location-strip { background: var(--warm); padding: 96px 0; }
+    .location-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: center; }
     .location-map { aspect-ratio: 4/3; overflow: hidden; }
     .location-map iframe { width: 100%; height: 100%; border: none; filter: grayscale(20%); }
-    .location-details { display: flex; flex-direction: column; gap: 0; }
-    .location-item { padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.07); display: flex; flex-direction: column; gap: 5px; }
+    .location-text { display: flex; flex-direction: column; gap: 0; }
+    .location-item { padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.07); display: flex; flex-direction: column; gap: 4px; }
     .location-item:first-child { padding-top: 0; }
     .location-item:last-child { border-bottom: none; }
     .location-lbl { font-family: var(--body); font-size: 8.5px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); }
@@ -172,9 +174,10 @@
     .popup-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
     .popup-form-group { display: flex; flex-direction: column; gap: 7px; margin-bottom: 16px; }
     .popup-label { font-family: var(--body); font-size: 8px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dark); }
-    .popup-input, .popup-textarea { width: 100%; font-family: var(--body); font-size: 13px; font-weight: 300; color: var(--dark); background: #fff; border: 1px solid rgba(0,0,0,0.12); padding: 13px 16px; outline: none; transition: border-color 0.3s; border-radius: 0; -webkit-appearance: none; appearance: none; }
-    .popup-input:focus, .popup-textarea:focus { border-color: var(--gold); }
+    .popup-input, .popup-select, .popup-textarea { width: 100%; font-family: var(--body); font-size: 13px; font-weight: 300; color: var(--dark); background: #fff; border: 1px solid rgba(0,0,0,0.12); padding: 13px 16px; outline: none; transition: border-color 0.3s; border-radius: 0; -webkit-appearance: none; appearance: none; }
+    .popup-input:focus, .popup-select:focus, .popup-textarea:focus { border-color: var(--gold); }
     .popup-input::placeholder, .popup-textarea::placeholder { color: rgba(0,0,0,0.25); }
+    .popup-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23b8a88a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; cursor: pointer; }
     .popup-textarea { min-height: 100px; resize: vertical; }
     .popup-submit { width: 100%; font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; padding: 17px; background: var(--dark); color: #fff; border: 1px solid var(--dark); cursor: pointer; transition: all 0.4s var(--ease); margin-top: 4px; }
     .popup-submit:hover { background: transparent; color: var(--dark); }
@@ -207,11 +210,12 @@
     /* ─── RESPONSIVE ──────────────────────────────── */
     @media (max-width: 1100px) {
       .intro-grid { grid-template-columns: 1fr; gap: 48px; }
-      .plans-grid { grid-template-columns: 1fr; }
-      .visit-section { grid-template-columns: 1fr; }
-      .visit-img { min-height: 360px; }
-      .visit-text { padding: 64px 48px; }
-      .location-grid { grid-template-columns: 1fr; gap: 48px; }
+      .units-grid { grid-template-columns: 1fr 1fr; }
+      .amenities-grid { grid-template-columns: 1fr; }
+      .mgmt-section { grid-template-columns: 1fr; }
+      .mgmt-left { padding: 72px 48px; }
+      .mgmt-right { padding: 72px 48px; }
+      .location-inner { grid-template-columns: 1fr; gap: 48px; }
       .footer-main { grid-template-columns: 1fr 1fr; gap: 48px; }
       .hero-content { grid-template-columns: 1fr; gap: 32px; }
     }
@@ -223,13 +227,14 @@
       .wrap { padding: 0 20px; }
       .hero-content { padding: 0 20px 64px; }
       .intro-section { padding: 72px 0; }
-      .plans-section { padding: 72px 0; }
-      .plan-body { padding: 28px 24px; }
-      .plan-footer { padding: 20px 24px 32px; flex-direction: column; align-items: stretch; }
-      .plan-footer .btn { text-align: center; width: 100%; }
-      .visit-text { padding: 48px 20px; }
-      .location-section { padding: 72px 0; }
-      .aerial-banner { height: 300px; }
+      .units-section { padding: 72px 0; }
+      .units-grid { grid-template-columns: 1fr; }
+      .amenities-section { padding: 72px 0; }
+      .amenity-col { padding: 40px 24px; }
+      .mgmt-left { padding: 56px 20px; }
+      .mgmt-right { padding: 56px 20px; }
+      .location-strip { padding: 72px 0; }
+      .cta-section { padding: 80px 0; }
       .footer-main { grid-template-columns: 1fr; gap: 32px; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
       .popup-form-row { grid-template-columns: 1fr; }
@@ -278,28 +283,32 @@
       <div class="hero-left">
         <div class="hero-eyebrow h-anim h-d1">
           <div class="rule"></div>
-          <span class="t-label" style="color:rgba(255,255,255,0.45);">East Bay Township</span>
+          <span class="t-label" style="color:rgba(255,255,255,0.45);">City of Traverse City · Hotel Resort District</span>
         </div>
-        <h1 class="t-xl h-anim h-d2" style="color:#fff;">Victoria<br><em style="font-style:italic;color:var(--gold-lt);">Farms.</em></h1>
+        <h1 class="t-xl h-anim h-d2" style="color:#fff;">Hamilton<br><em style="font-style:italic;color:var(--gold-lt);">Place.</em></h1>
         <div class="hero-specs h-anim h-d3">
           <div>
-            <div class="hero-spec-val">2 Plans</div>
+            <div class="hero-spec-val">3 Units</div>
             <div class="hero-spec-lbl">Available</div>
           </div>
           <div>
-            <div class="hero-spec-val">From $995,000</div>
+            <div class="hero-spec-val">From $439,000</div>
             <div class="hero-spec-lbl">Starting Price</div>
           </div>
           <div>
-            <div class="hero-spec-val">Three Mile Rd</div>
-            <div class="hero-spec-lbl">Location</div>
+            <div class="hero-spec-val">Turnkey</div>
+            <div class="hero-spec-lbl">Fully Furnished</div>
+          </div>
+          <div>
+            <div class="hero-spec-val">STR Ready</div>
+            <div class="hero-spec-lbl">Mgmt in Place</div>
           </div>
         </div>
       </div>
       <div class="hero-right h-anim h-d3">
         <div class="hero-badge">Now Selling</div>
-        <p class="t-body" style="color:rgba(255,255,255,0.55);">A brand new subdivision on scenic rolling terrain off Three Mile Road in East Bay Township — 20 minutes south of Traverse City, with two thoughtfully designed home plans to choose from.</p>
-        <button onclick="openPopup('Victoria Farms', 'From $995,000')" class="btn btn-white" style="margin-top:8px;">Schedule a Site Visit</button>
+        <p class="t-body" style="color:rgba(255,255,255,0.55);">A newly built (2025) collection of design-forward luxury townhomes in the heart of Traverse City — fully furnished, move-in ready, and professionally managed. Own a personal retreat that earns while you're away.</p>
+        <button onclick="openPopup('Hamilton Place', 'From $439,000')" class="btn btn-white" style="margin-top:8px;">Request More Information</button>
       </div>
     </div>
   </section>
@@ -309,207 +318,247 @@
     <div class="wrap">
       <div class="intro-grid">
         <div class="intro-img fade-up">
-          <img src="images/communities/Victoria Farms/victoria-farms-page-main.jpg" alt="Victoria Farms — East Bay Township new construction">
+          <img src="images/communities/hamilton-place.jpg" alt="Hamilton Place — Traverse City luxury townhomes">
         </div>
         <div class="intro-text fade-up delay-2">
-          <span class="t-label">The Community</span>
-          <h2 class="t-lg">Big Sky Country.<br>New Construction.<br>Close to It All.</h2>
+          <span class="t-label">The Opportunity</span>
+          <h2 class="t-lg">Own in Traverse City.<br><em style="font-style:italic;color:var(--gold);">Earn While You're Away.</em></h2>
           <div class="rule"></div>
-          <p class="t-body">Victoria Farms sits on some of the most naturally beautiful residential land in East Bay Township — gently rolling terrain that gives each home a sense of place and privacy. Located off Three Mile Road, you're close to Traverse City without being in it.</p>
-          <blockquote class="pull">Two plans. Two price points. One standard of quality.</blockquote>
+          <p class="t-body">Hamilton Place is a collection of three luxury townhomes at 307 Hamilton Street — built in 2025, fully furnished with premium designer selections, and located in Traverse City's Hotel Resort District. Whether you're looking for a full-time residence, a personal getaway, or a turnkey investment property, Hamilton Place delivers on all three.</p>
+          <blockquote class="pull">Fully stocked, furnished, and completely livable from day one.</blockquote>
           <div class="feature-grid">
-            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">East Bay Township</span></div>
-            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Three Mile Road</span></div>
-            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Rolling Terrain Lots</span></div>
-            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">~20 Min to Downtown TC</span></div>
-            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">New Construction</span></div>
-            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Covered Back Patio</span></div>
+            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Hotel Resort Zoning</span></div>
+            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Fully Furnished</span></div>
+            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">STR Nightly Rentable</span></div>
+            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Mgmt Already in Place</span></div>
+            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Landscaped Courtyard</span></div>
+            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Assigned Parking</span></div>
+            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">2 Bed / 2 Bath</span></div>
+            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Steps to West Bay Beach</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ AERIAL BANNER ════════════════════════════ -->
-  <div class="aerial-banner">
-    <img src="images/communities/Victoria Farms/aerial-model home.JPG" alt="Victoria Farms aerial view — East Bay Township">
-    <div class="aerial-banner-overlay">
-      <div class="aerial-text fade-up">
-        <span class="t-label" style="color:rgba(255,255,255,0.5);">East Bay Township, Michigan</span>
-        <h2 class="t-lg" style="color:#fff;text-align:center;">Three Mile Road,<br>Traverse City, MI</h2>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══ FLOOR PLANS ═══════════════════════════════ -->
-  <section class="plans-section" id="plans">
+  <!-- ═══ AVAILABLE UNITS ═══════════════════════════ -->
+  <section class="units-section" id="units">
     <div class="wrap">
-      <div class="plans-header fade-up">
-        <span class="t-label">Available Plans</span>
-        <h2 class="t-lg">Choose Your Home.</h2>
+      <div class="units-header fade-up">
+        <span class="t-label">307 Hamilton Street</span>
+        <h2 class="t-lg">Available Units</h2>
         <div class="rule"></div>
-        <p class="t-body" style="max-width:560px;">Both plans share the same commitment to quality finishes, thoughtful layouts, and the craftsmanship O'Grady is known for. Schedule a site visit to walk the lots and see the model in person.</p>
+        <p class="t-body" style="max-width:520px;">Three units — two end units and one middle unit. Each is identically finished and fully equipped. End units offer additional windows and natural light.</p>
       </div>
+      <div class="units-grid">
 
-      <div class="plans-grid">
-
-        <!-- ── THE FARMSTEAD ── -->
-        <div class="plan-card fade-up">
-          <div class="plan-img">
-            <img src="images/communities/Victoria Farms/model-home.jpg" alt="The Farmstead — Victoria Farms model home">
-            <div class="plan-tag plan-tag-available">Model Home</div>
+        <!-- Unit A -->
+        <div class="unit-card fade-up">
+          <div class="unit-img">
+            <img src="images/communities/hamilton-place.jpg" alt="Hamilton Place Unit A — End Unit">
+            <div class="unit-badge">End Unit</div>
           </div>
-          <div class="plan-body">
-            <div>
-              <div class="plan-name">The Farmstead</div>
-              <div class="plan-tagline">Victoria Farms — Plan One</div>
-            </div>
-            <p class="plan-desc">Our model home — a warm, grounded design with an open main level, generous bedroom suite, and a fully finished walkout lower level that doubles your livable space. Designed for real life and built to last.</p>
-            <div class="plan-specs">
-              <div class="plan-spec">
-                <div class="plan-spec-val">~3,337</div>
-                <div class="plan-spec-lbl">Sq Ft</div>
-              </div>
-              <div class="plan-spec">
-                <div class="plan-spec-val">4–5</div>
-                <div class="plan-spec-lbl">Bedrooms</div>
-              </div>
-              <div class="plan-spec">
-                <div class="plan-spec-val">3.5</div>
-                <div class="plan-spec-lbl">Bathrooms</div>
-              </div>
-            </div>
-            <div class="plan-includes">
-              <div class="plan-includes-title">Included Features</div>
-              <div class="plan-include-item">Fully finished lower level</div>
-              <div class="plan-include-item">Covered back patio</div>
-              <div class="plan-include-item">4 or 5 bedroom configuration</div>
-              <div class="plan-include-item">Premium finishes throughout</div>
-              <div class="plan-include-item">Hardwood floors, custom cabinetry</div>
-              <div class="plan-include-item">Landscaping &amp; driveway included</div>
+          <div class="unit-body">
+            <div class="unit-name">Unit A</div>
+            <div class="unit-type">307-A Hamilton Street</div>
+            <div class="unit-price">$449,000</div>
+            <div class="unit-specs">
+              <span class="unit-spec">2 Bed</span>
+              <span class="unit-spec">·</span>
+              <span class="unit-spec">2 Bath</span>
+              <span class="unit-spec">·</span>
+              <span class="unit-spec">End Unit</span>
             </div>
           </div>
-          <div class="plan-footer">
-            <button class="btn btn-dark" onclick="openPopup('The Farmstead — Victoria Farms', 'From $995,000')">Schedule a Site Visit</button>
+          <div class="unit-footer">
+            <button class="btn btn-dark" style="width:100%;text-align:center;" onclick="openPopup('Hamilton Place — Unit A (307-A Hamilton St)', '$449,000')">Inquire About Unit A</button>
           </div>
         </div>
 
-        <!-- ── THE RIDGELINE ── -->
-        <div class="plan-card fade-up delay-1">
-          <div class="plan-img">
-            <img src="images/communities/Victoria Farms/option-2.jpg" alt="The Ridgeline — Victoria Farms plan two">
-            <div class="plan-tag plan-tag-available">Available Now</div>
+        <!-- Unit B -->
+        <div class="unit-card fade-up delay-1">
+          <div class="unit-img">
+            <img src="images/communities/hamilton-place.jpg" alt="Hamilton Place Unit B — Middle Unit">
+            <div class="unit-badge" style="background:var(--dark);">Middle Unit</div>
           </div>
-          <div class="plan-body">
-            <div>
-              <div class="plan-name">The Ridgeline</div>
-              <div class="plan-tagline">Victoria Farms — Plan Two</div>
-            </div>
-            <p class="plan-desc">A refined alternative with a distinct exterior character and equally thoughtful interior layout. The Ridgeline offers the same square footage class with a slightly different architectural personality — perfect for those who want something a little different from their neighbor.</p>
-            <div class="plan-specs">
-              <div class="plan-spec">
-                <div class="plan-spec-val">~3,254</div>
-                <div class="plan-spec-lbl">Sq Ft</div>
-              </div>
-              <div class="plan-spec">
-                <div class="plan-spec-val">4–5</div>
-                <div class="plan-spec-lbl">Bedrooms</div>
-              </div>
-              <div class="plan-spec">
-                <div class="plan-spec-val">3.5</div>
-                <div class="plan-spec-lbl">Bathrooms</div>
-              </div>
-            </div>
-            <div class="plan-includes">
-              <div class="plan-includes-title">Included Features</div>
-              <div class="plan-include-item">Fully finished lower level</div>
-              <div class="plan-include-item">Covered back patio</div>
-              <div class="plan-include-item">4 or 5 bedroom configuration</div>
-              <div class="plan-include-item">Premium finishes throughout</div>
-              <div class="plan-include-item">Hardwood floors, custom cabinetry</div>
-              <div class="plan-include-item">Landscaping &amp; driveway included</div>
+          <div class="unit-body">
+            <div class="unit-name">Unit B</div>
+            <div class="unit-type">307-B Hamilton Street</div>
+            <div class="unit-price">$439,000</div>
+            <div class="unit-specs">
+              <span class="unit-spec">2 Bed</span>
+              <span class="unit-spec">·</span>
+              <span class="unit-spec">2 Bath</span>
+              <span class="unit-spec">·</span>
+              <span class="unit-spec">Middle Unit</span>
             </div>
           </div>
-          <div class="plan-footer">
-            <button class="btn btn-dark" onclick="openPopup('The Ridgeline — Victoria Farms', 'From $995,000')">Schedule a Site Visit</button>
+          <div class="unit-footer">
+            <button class="btn btn-dark" style="width:100%;text-align:center;" onclick="openPopup('Hamilton Place — Unit B (307-B Hamilton St)', '$439,000')">Inquire About Unit B</button>
           </div>
         </div>
 
+        <!-- Unit C -->
+        <div class="unit-card fade-up delay-2">
+          <div class="unit-img">
+            <img src="images/communities/hamilton-place.jpg" alt="Hamilton Place Unit C — End Unit">
+            <div class="unit-badge">End Unit</div>
+          </div>
+          <div class="unit-body">
+            <div class="unit-name">Unit C</div>
+            <div class="unit-type">307-C Hamilton Street</div>
+            <div class="unit-price">$449,000</div>
+            <div class="unit-specs">
+              <span class="unit-spec">2 Bed</span>
+              <span class="unit-spec">·</span>
+              <span class="unit-spec">2 Bath</span>
+              <span class="unit-spec">·</span>
+              <span class="unit-spec">End Unit</span>
+            </div>
+          </div>
+          <div class="unit-footer">
+            <button class="btn btn-dark" style="width:100%;text-align:center;" onclick="openPopup('Hamilton Place — Unit C (307-C Hamilton St)', '$449,000')">Inquire About Unit C</button>
+          </div>
+        </div>
+
+      </div>
+      <div style="margin-top:32px;text-align:center;">
+        <a href="https://www.owntraverse.com" target="_blank" rel="noopener" style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:8px;transition:gap 0.3s;" onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='8px'">View Full Listing at OwnTraverse.com →</a>
       </div>
     </div>
   </section>
 
-  <!-- ═══ SITE VISIT ════════════════════════════════ -->
-  <section class="visit-section">
-    <div class="visit-img">
-      <img src="images/communities/Victoria Farms/model-home.jpg" alt="Victoria Farms — visit the model home">
+  <!-- ═══ AMENITIES ════════════════════════════════ -->
+  <section class="amenities-section">
+    <div class="wrap">
+      <div class="fade-up" style="display:flex;flex-direction:column;gap:16px;">
+        <span class="t-label">What's Included</span>
+        <h2 class="t-lg">Everything You Need.<br><em style="font-style:italic;color:var(--gold);">Already Here.</em></h2>
+        <div class="rule"></div>
+        <p class="t-body" style="max-width:560px;">Each unit arrives fully stocked — no trips to the store, no missing essentials. Ready for you, and ready for guests, from the moment you close.</p>
+      </div>
+      <div class="amenities-grid">
+        <div class="amenity-col fade-up delay-1">
+          <div class="amenity-col-title">Living &amp; Technology</div>
+          <div class="amenity-list">
+            <div class="amenity-item"><div class="amenity-dot"></div>Commercial-grade furniture throughout</div>
+            <div class="amenity-item"><div class="amenity-dot"></div>High-speed Fiber WiFi</div>
+            <div class="amenity-item"><div class="amenity-dot"></div>Wall-mounted smart TV in each bedroom</div>
+            <div class="amenity-item"><div class="amenity-dot"></div>3 individual mini-split AC &amp; heat units</div>
+            <div class="amenity-item"><div class="amenity-dot"></div>Smart keyless entry</div>
+            <div class="amenity-item"><div class="amenity-dot"></div>In-unit washer &amp; dryer</div>
+            <div class="amenity-item"><div class="amenity-dot"></div>Roller shades in every window</div>
+            <div class="amenity-item"><div class="amenity-dot"></div>Stainless steel appliances + dishwasher</div>
+            <div class="amenity-item"><div class="amenity-dot"></div>1 assigned parking space per unit</div>
+          </div>
+        </div>
+        <div class="amenity-col fade-up delay-2">
+          <div class="amenity-col-title">Bedrooms &amp; Baths</div>
+          <div class="amenity-list">
+            <div class="amenity-item"><div class="amenity-dot"></div>Heated bathroom floors</div>
+            <div class="amenity-item"><div class="amenity-dot"></div>2 bedrooms, 2 full bathrooms</div>
+            <div class="amenity-item"><div class="amenity-dot"></div>Premium bedding &amp; linens</div>
+            <div class="amenity-item"><div class="amenity-dot"></div>Glass-enclosed full-tile showers</div>
+            <div class="amenity-item"><div class="amenity-dot"></div>Vessel sink vanities</div>
+            <div class="amenity-item"><div class="amenity-dot"></div>Designer tile &amp; fixtures</div>
+            <div class="amenity-item"><div class="amenity-dot"></div>Multi-speed ceiling fans</div>
+          </div>
+          <div class="amenity-col-title" style="margin-top:32px;">Shared Outdoor Amenities</div>
+          <div class="amenity-list">
+            <div class="amenity-item"><div class="amenity-dot"></div>Landscaped courtyard with evergreen turf</div>
+            <div class="amenity-item"><div class="amenity-dot"></div>Fire pit lounge</div>
+            <div class="amenity-item"><div class="amenity-dot"></div>Pergola &amp; outdoor dining</div>
+            <div class="amenity-item"><div class="amenity-dot"></div>Outdoor kitchen &amp; grills</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="visit-text">
-      <span class="t-label" style="color:rgba(255,255,255,0.4);">How It Works</span>
-      <h2 class="t-lg" style="color:#fff;">Come See It<br>in Person.</h2>
-      <div class="rule"></div>
-      <div class="visit-steps">
-        <div class="visit-step">
-          <div class="visit-step-num">01</div>
-          <div class="visit-step-content">
-            <div class="visit-step-title">Submit Your Interest</div>
-            <div class="visit-step-desc">Fill out the form below and tell us which plan interests you. We'll reach out within one business day.</div>
+  </section>
+
+  <!-- ═══ MANAGEMENT ════════════════════════════════ -->
+  <section class="mgmt-section">
+    <div class="mgmt-left">
+      <span class="t-label fade-up" style="color:rgba(255,255,255,0.4);">The Management Advantage</span>
+      <h2 class="t-lg fade-up delay-1" style="color:#fff;">The Hardest Part<br>Is Already<br><em style="font-style:italic;color:var(--gold-lt);">Done for You.</em></h2>
+      <div class="rule fade-up delay-1"></div>
+      <div class="mgmt-steps fade-up delay-2">
+        <div class="mgmt-step">
+          <div class="mgmt-step-num">01</div>
+          <div>
+            <div class="mgmt-step-title">Keep All Existing Bookings</div>
+            <div class="mgmt-step-desc">When you close, you inherit the unit's booking calendar. Revenue starts immediately — no waiting while you figure out listings and pricing.</div>
           </div>
         </div>
-        <div class="visit-step">
-          <div class="visit-step-num">02</div>
-          <div class="visit-step-content">
-            <div class="visit-step-title">Meet Us on Site</div>
-            <div class="visit-step-desc">We'll walk the lots with you, show you the model home, and answer every question — no pressure, no rush.</div>
+        <div class="mgmt-step">
+          <div class="mgmt-step-num">02</div>
+          <div>
+            <div class="mgmt-step-title">True Set It and Forget It</div>
+            <div class="mgmt-step-desc">Elevated handles everything — guest communication, check-in, housekeeping, maintenance, and listing management. You own the asset. They run the operation.</div>
           </div>
         </div>
-        <div class="visit-step">
-          <div class="visit-step-num">03</div>
-          <div class="visit-step-content">
-            <div class="visit-step-title">Choose Your Lot &amp; Plan</div>
-            <div class="visit-step-desc">Pick your preferred lot location and floor plan. We handle the rest from there.</div>
+        <div class="mgmt-step">
+          <div class="mgmt-step-num">03</div>
+          <div>
+            <div class="mgmt-step-title">Reserve Nights for Yourself</div>
+            <div class="mgmt-step-desc">Block your dates as an owner and enjoy your property — then hand it back to Elevated when you leave.</div>
           </div>
         </div>
       </div>
-      <div style="margin-top:8px;">
-        <button class="btn btn-white" onclick="openPopup('Victoria Farms', 'From $995,000')">Schedule a Site Visit</button>
+    </div>
+    <div class="mgmt-right">
+      <div>
+        <div class="mgmt-partner-label">Local Management Partner</div>
+        <div class="mgmt-partner-name">Elevated Homes<br>&amp; Hospitality</div>
+        <div class="mgmt-partner-sub">Traverse City, Michigan · Local Experts</div>
       </div>
+      <div class="mgmt-attrs">
+        <div class="mgmt-attr">
+          <div class="mgmt-attr-title">Traverse City Native</div>
+          <div class="mgmt-attr-desc">Deep local knowledge of the market, the seasonality, and what guests in this destination actually want.</div>
+        </div>
+        <div class="mgmt-attr">
+          <div class="mgmt-attr-title">Already Operational</div>
+          <div class="mgmt-attr-desc">Elevated is actively managing Hamilton Place today — systems, standards, and guest experience are proven and running.</div>
+        </div>
+        <div class="mgmt-attr">
+          <div class="mgmt-attr-title">Hospitality-Grade Standards</div>
+          <div class="mgmt-attr-desc">From welcome kits to housekeeping protocols, Elevated operates Hamilton Place like a boutique hotel.</div>
+        </div>
+      </div>
+      <a href="https://www.elevatedstays.com" target="_blank" rel="noopener" class="mgmt-link">Visit ElevatedStays.com</a>
     </div>
   </section>
 
   <!-- ═══ LOCATION ══════════════════════════════════ -->
-  <section class="location-section">
+  <section class="location-strip">
     <div class="wrap">
-      <div class="location-grid">
+      <div class="location-inner">
         <div class="location-map fade-up">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!4v1777292800319!6m8!1m7!1sKFKVMGugFX2dJQMolkXVvw!2m2!1d44.67579230520484!2d-85.5567564676716!3f82.40949655852812!4f0.5663231101402175!5f0.7820865974627469"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9878.351618387675!2d-85.58775792256665!3d44.76193578001835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x881fcd591da3ca1f%3A0xe4a2db3c86b43f74!2sHamilton%20Place!5e1!3m2!1sen!2sus!4v1777292881418!5m2!1sen!2sus"
             width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            title="Victoria Farms location map" style="border:none;width:100%;height:100%;filter:grayscale(20%);">
+            title="Hamilton Place location map" style="border:none;width:100%;height:100%;filter:grayscale(20%);">
           </iframe>
         </div>
-        <div class="location-details fade-up delay-2">
+        <div class="fade-up delay-2">
           <span class="t-label" style="margin-bottom:20px;display:block;">Location</span>
-          <h2 class="t-lg" style="margin-bottom:32px;">East Bay<br>Township.</h2>
-          <div class="location-item">
-            <div class="location-lbl">General Location</div>
-            <div class="location-val">Three Mile Road</div>
-            <div class="location-sub">East Bay Township, Traverse City MI</div>
-          </div>
-          <div class="location-item">
-            <div class="location-lbl">To Downtown Traverse City</div>
-            <div class="location-val">~20 Minutes</div>
-            <div class="location-sub">Easy access to TC's restaurants, shops, beaches, and amenities.</div>
-          </div>
-          <div class="location-item">
-            <div class="location-lbl">Nearby</div>
-            <div class="location-val">East Bay, Trail Systems</div>
-            <div class="location-sub">Minutes from East Grand Traverse Bay, TART trails, and year-round Northern Michigan recreation.</div>
-          </div>
-          <div class="location-item">
-            <div class="location-lbl">School District</div>
-            <div class="location-val">Traverse City Area</div>
-            <div class="location-sub">Traverse City Area Public Schools district.</div>
+          <h2 class="t-lg" style="margin-bottom:32px;">At the Center<br>of Everything.</h2>
+          <div style="display:flex;flex-direction:column;gap:0;">
+            <div class="location-item">
+              <div class="location-lbl">Address</div>
+              <div class="location-val">307 Hamilton Street</div>
+              <div class="location-sub">Traverse City, MI 49686 · Hotel Resort District</div>
+            </div>
+            <div class="location-item">
+              <div class="location-lbl">Walking Distance</div>
+              <div class="location-val">Downtown &amp; West Bay Beach</div>
+              <div class="location-sub">Steps from Traverse City's restaurants, shops, and waterfront.</div>
+            </div>
+            <div class="location-item">
+              <div class="location-lbl">Nearby</div>
+              <div class="location-val">Wineries, Beaches &amp; Events</div>
+              <div class="location-sub">Old Mission &amp; Leelanau wine trails, National Cherry Festival, Sleeping Bear Dunes, Cherry Capital Airport.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -520,13 +569,13 @@
   <section class="cta-section">
     <div class="wrap">
       <div class="cta-inner fade-up">
-        <span class="t-label">Victoria Farms</span>
-        <h2 class="t-lg" style="text-align:center;max-width:540px;">Ready to Walk<br>the Property?</h2>
+        <span class="t-label">Hamilton Place</span>
+        <h2 class="t-lg" style="text-align:center;max-width:560px;">Ready to Learn More<br>About Hamilton Place?</h2>
         <div class="rule"></div>
-        <p class="t-body" style="text-align:center;max-width:460px;">Submit your interest below and we'll be in touch within one business day to schedule a time that works for you.</p>
+        <p class="t-body" style="text-align:center;max-width:480px;">Whether you're considering a unit as a personal retreat or a turnkey investment, we'd love to connect. We typically respond within one business day.</p>
         <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
-          <button class="btn btn-dark" onclick="openPopup('Victoria Farms', 'From $995,000')">Schedule a Site Visit</button>
-          <a href="tel:+12314215161" class="btn btn-gold">(231) 421-5161</a>
+          <button class="btn btn-dark" onclick="openPopup('Hamilton Place', 'From $439,000')">Request More Information</button>
+          <a href="https://www.owntraverse.com" target="_blank" rel="noopener" class="btn btn-gold">View Full Listing</a>
         </div>
       </div>
     </div>
@@ -558,8 +607,8 @@
         </div>
         <div>
           <div class="footer-col-title">Contact</div>
-          <a href="tel:+12314215161"             class="footer-link">(231) 421-5161</a>
-          <a href="mailto:Info@OGradyTeam.com"   class="footer-link">Info@OGradyTeam.com</a>
+          <a href="tel:+12314215161"           class="footer-link">(231) 421-5161</a>
+          <a href="mailto:Info@OGradyTeam.com" class="footer-link">Info@OGradyTeam.com</a>
           <span class="footer-link" style="cursor:default;">Mon – Fri  9am – 5pm</span>
         </div>
       </div>
@@ -579,7 +628,7 @@
     <div class="popup" role="dialog" aria-modal="true">
       <div class="popup-header">
         <button class="popup-close" onclick="closePopup()">Close ✕</button>
-        <div class="popup-property-label">Schedule a Site Visit</div>
+        <div class="popup-property-label">Hamilton Place — Inquiry</div>
         <div class="popup-property-address" id="popup-address"></div>
         <div class="popup-property-price" id="popup-price"></div>
       </div>
@@ -609,17 +658,29 @@
             </div>
           </div>
           <div class="popup-form-group">
-            <label class="popup-label" for="popup-message">Message <span style="font-weight:300;text-transform:none;letter-spacing:0;color:rgba(0,0,0,0.3);">(optional)</span></label>
-            <textarea class="popup-textarea" id="popup-message" name="message" placeholder="Which plan interests you? Any questions or preferred times to meet?"></textarea>
+            <label class="popup-label" for="popup-interest">I'm Interested In</label>
+            <select class="popup-select" id="popup-interest" name="interest">
+              <option value="" disabled selected>Select one...</option>
+              <option>Investment Purchase</option>
+              <option>Personal Use + Investment</option>
+              <option>Personal Use Purchase</option>
+              <option>Purchasing More Than One Unit</option>
+              <option>Scheduling a Walkthrough</option>
+              <option>Condo Documents &amp; Costs</option>
+            </select>
           </div>
-          <button type="submit" class="popup-submit">Request a Site Visit</button>
+          <div class="popup-form-group">
+            <label class="popup-label" for="popup-message">Message <span style="font-weight:300;text-transform:none;letter-spacing:0;color:rgba(0,0,0,0.3);">(optional)</span></label>
+            <textarea class="popup-textarea" id="popup-message" name="message" placeholder="Questions about a specific unit, the management program, financing..."></textarea>
+          </div>
+          <button type="submit" class="popup-submit">Send Inquiry</button>
           <p class="popup-note">We respond within one business day. All inquiries are confidential.</p>
         </form>
         <div class="popup-success" id="popup-success">
           <div class="popup-success-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <span class="t-label">Request Received</span>
+          <span class="t-label">Inquiry Sent</span>
           <div style="font-family:var(--display);font-size:26px;font-weight:300;">We'll be in touch soon.</div>
-          <p style="font-family:var(--body);font-size:12px;font-weight:300;color:var(--text);text-align:center;max-width:320px;line-height:1.9;">Expect to hear from us within one business day to schedule your site visit.</p>
+          <p style="font-family:var(--body);font-size:12px;font-weight:300;color:var(--text);text-align:center;max-width:320px;line-height:1.9;">Expect to hear from us within one business day.</p>
           <button onclick="closePopup()" style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);background:none;border:none;cursor:pointer;margin-top:8px;">Close ✕</button>
         </div>
       </div>
@@ -627,11 +688,9 @@
   </div>
 
   <script>
-    // Header scroll
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
 
-    // Mobile menu
     const toggle = document.getElementById('mob-toggle');
     const menu   = document.getElementById('mob-menu');
     const spans  = toggle.querySelectorAll('span');
@@ -650,7 +709,6 @@
       spans.forEach(s => s.style.background = '');
     }));
 
-    // Popup
     function openPopup(address, price) {
       document.getElementById('popup-address').textContent = address;
       document.getElementById('popup-price').textContent = price;
@@ -674,7 +732,6 @@
         .catch(() => { this.style.display = 'none'; document.getElementById('popup-success').classList.add('show'); });
     });
 
-    // Scroll animations
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
     }, { threshold: 0.08 });
