@@ -93,7 +93,7 @@
     .communities-section { padding: 72px 0 120px; }
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 16px;
       background: transparent;
     }
@@ -115,7 +115,7 @@
     .comm-card-img {
       position: relative;
       overflow: hidden;
-      aspect-ratio: 3/2;
+      aspect-ratio: 4/3;
     }
     .comm-card-img img {
       width: 100%; height: 100%;
@@ -126,7 +126,7 @@
 
     /* Placeholder for coming soon with no image */
     .comm-card-img-placeholder {
-      width: 100%; aspect-ratio: 3/2;
+      width: 100%; aspect-ratio: 4/3;
       background: linear-gradient(135deg, #ddd8d0, #c8c0b4);
       display: flex; align-items: center; justify-content: center;
     }
@@ -166,7 +166,7 @@
     .comm-status-tag { font-family: var(--body); font-size: 8px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(0,0,0,0.3); }
 
     /* Featured card — spans 2 columns */
-    .comm-card-featured { grid-column: span 2; flex-direction: row; }
+    .comm-card-featured { flex-direction: column; }
     .comm-card-featured .comm-card-img { aspect-ratio: auto; flex: 1.2; min-height: 380px; }
     .comm-card-featured .comm-card-right { flex: 1; display: flex; flex-direction: column; }
     .comm-card-featured .comm-card-body { padding: 40px 48px; flex: 1; }
@@ -380,7 +380,7 @@
           <button class="filter-tab" data-filter="active">Active</button>
           <button class="filter-tab" data-filter="coming">Coming Soon</button>
         </div>
-        <span class="filter-count" id="filter-count">5 Communities</span>
+        
       </div>
     </div>
   </div>
