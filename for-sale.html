@@ -116,16 +116,17 @@
     .listings-section { padding: 72px 0 120px; }
     .listings-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      background: rgba(0,0,0,0.06);
+      grid-template-columns: 1fr;
+      gap: 96px;
+      background: transparent;
       margin-bottom: 2px;
     }
 
     /* Property Card */
     .prop-card {
       background: var(--bg);
-      display: flex; flex-direction: column;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
       position: relative;
       overflow: hidden;
       transition: background 0.4s;
@@ -137,7 +138,8 @@
     .prop-card-img {
       position: relative;
       overflow: hidden;
-      aspect-ratio: 4/3;
+      aspect-ratio: auto;
+      min-height: 120px;
     }
     .prop-card-img img {
       width: 100%; height: 100%; object-fit: cover;
@@ -166,7 +168,7 @@
       color: #fff; line-height: 1;
     }
 
-    .prop-card-body { padding: 24px 28px 32px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+    .prop-card-body { padding: 40px 48px; display: flex; flex-direction: column; gap: 16px; flex: 1; justify-content: center; background: #f0ede8; }
     .prop-community { font-family: var(--body); font-size: 8px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); }
     .prop-address { font-family: var(--display); font-size: 20px; font-weight: 400; line-height: 1.3; color: var(--dark); }
     .prop-specs { display: flex; gap: 16px; flex-wrap: wrap; padding-top: 12px; border-top: 1px solid rgba(0,0,0,0.07); }
@@ -176,6 +178,7 @@
     .prop-card-footer {
       padding: 16px 28px;
       border-top: 1px solid rgba(0,0,0,0.06);
+      background: #f0ede8;
       display: flex; align-items: center; justify-content: space-between;
     }
     .prop-more {
@@ -367,8 +370,13 @@
 
   
     @media (max-width: 1100px) {
-      .listings-grid { grid-template-columns: repeat(2, 1fr); }
-      .prop-card-wide { grid-column: span 2; grid-template-columns: 1fr 1fr; }
+      .listings-grid { grid-template-columns: 1fr; gap: 2px; }
+      .prop-card { grid-template-columns: 1fr; }
+      .prop-card .prop-card-img { min-height: 260px; }
+      .prop-card .prop-card-body { padding: 28px 20px; }
+      .prop-card-wide { grid-column: span 1; grid-template-columns: 1fr; }
+      .prop-card-wide .prop-card-img { min-height: 260px; }
+      .prop-card-wide .prop-card-body { padding: 28px 20px; }
       .coming-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-main { grid-template-columns: 1fr 1fr; gap: 48px; }
       .hero-inner { grid-template-columns: 1fr; gap: 32px; }
@@ -630,28 +638,12 @@
   <section class="page-hero">
     <div class="hero-inner">
       <div class="hero-left">
-        <span class="t-label h-anim h-d1" style="color:rgba(255,255,255,0.4);">Available Now</span>
         <h1 class="t-xl h-anim h-d2" style="color:#fff;">Properties<br><em style="font-style:italic;color:var(--gold-lt);">For Sale.</em></h1>
       </div>
       <div class="hero-right h-anim h-d3">
         <div class="rule" style="margin-bottom:20px;"></div>
-        <p class="t-body" style="color:rgba(255,255,255,0.5);">Every available O'Grady home in one place — from gated waterfront communities to standalone new construction. Updated as properties come to market.</p>
-        <div style="margin-top:28px;display:flex;gap:28px;flex-wrap:wrap;">
-          <div>
-            <div style="font-family:var(--body);font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:6px;">Available Now</div>
-            <div style="font-family:var(--display);font-size:36px;font-weight:300;color:var(--gold);" id="available-count">7</div>
-          </div>
-          <div style="width:1px;background:rgba(255,255,255,0.08);"></div>
-          <div>
-            <div style="font-family:var(--body);font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:6px;">Coming Soon</div>
-            <div style="font-family:var(--display);font-size:36px;font-weight:300;color:rgba(255,255,255,0.4);" id="coming-count">1</div>
-          </div>
-          <div style="width:1px;background:rgba(255,255,255,0.08);"></div>
-          <div>
-            <div style="font-family:var(--body);font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:6px;">Starting From</div>
-            <div style="font-family:var(--display);font-size:36px;font-weight:300;color:rgba(255,255,255,0.6);">$439,000</div>
-          </div>
-        </div>
+        <p class="t-body" style="color:rgba(255,255,255,0.5);">Every available property in one place — everything from gated waterfront communities to big sky country views. Updated as properties come to market. Contact us for more information.</p>
+      </div>        </div>
       </div>
     </div>
   </section>
@@ -661,10 +653,7 @@
     <div class="filter-bar-inner">
       <div class="filter-tabs">
         <button class="filter-tab active" data-filter="all">All Properties</button>
-        <button class="filter-tab" data-filter="available">Available Now</button>
-        <button class="filter-tab" data-filter="coming">Coming Soon</button>
       </div>
-      <span class="filter-count" id="filter-count">8 Properties</span>
     </div>
   </div>
 
@@ -696,7 +685,7 @@
           </div>
           <div style="display:flex;flex-direction:column;">
             <div class="prop-card-body">
-              <div class="prop-community">Peninsula Shores · Old Mission Peninsula</div>
+              
               <div class="prop-address">15985 Waters Edge Drive<br>Traverse City, MI 49686</div>
               <p style="font-family:var(--body);font-size:12px;font-weight:300;color:var(--text);line-height:1.9;">Ranch with walkout lower level — set on .60 acres with shared East Grand Traverse Bay frontage. Gated community on Old Mission Peninsula.</p>
               <div class="prop-specs">
@@ -723,7 +712,7 @@
             </div>
           </div>
           <div class="prop-card-body">
-            <div class="prop-community">Peninsula Shores · Old Mission Peninsula</div>
+            
             <div class="prop-address">15652 Waters Edge Drive<br>Traverse City, MI 49686</div>
             <div class="prop-specs">
               <div class="prop-spec"><div class="prop-spec-val">4</div><div class="prop-spec-lbl">Beds</div></div>
@@ -755,7 +744,7 @@
             </div>
           </div>
           <div class="prop-card-body">
-            <div class="prop-community">Victoria Farms · East Bay Township</div>
+            
             <div class="prop-address">The Farmstead<br>Three Mile Road, Traverse City MI</div>
             <p style="font-family:var(--body);font-size:12px;font-weight:300;color:var(--text);line-height:1.9;">Ranch with walkout lower level — ~3,337 sq ft, 4 or 5 bed, 3.5 bath, covered back patio. Model home available to tour on site.</p>
             <div class="prop-specs">
@@ -780,7 +769,7 @@
             </div>
           </div>
           <div class="prop-card-body">
-            <div class="prop-community">Victoria Farms · East Bay Township</div>
+            
             <div class="prop-address">The Ridgeline<br>Three Mile Road, Traverse City MI</div>
             <p style="font-family:var(--body);font-size:12px;font-weight:300;color:var(--text);line-height:1.9;">Distinct exterior character with fully finished walkout lower level — ~3,254 sq ft, 4 or 5 bed, 3.5 bath, covered back patio.</p>
             <div class="prop-specs">
@@ -805,7 +794,7 @@
             </div>
           </div>
           <div class="prop-card-body">
-            <div class="prop-community">Hamilton Place · City of Traverse City</div>
+            
             <div class="prop-address">Unit A — 307-A Hamilton St<br>Traverse City, MI 49686</div>
             <div class="prop-specs">
               <div class="prop-spec"><div class="prop-spec-val">2</div><div class="prop-spec-lbl">Beds</div></div>
@@ -829,7 +818,7 @@
             </div>
           </div>
           <div class="prop-card-body">
-            <div class="prop-community">Hamilton Place · City of Traverse City</div>
+            
             <div class="prop-address">Unit B — 307-B Hamilton St<br>Traverse City, MI 49686</div>
             <div class="prop-specs">
               <div class="prop-spec"><div class="prop-spec-val">2</div><div class="prop-spec-lbl">Beds</div></div>
@@ -853,7 +842,7 @@
             </div>
           </div>
           <div class="prop-card-body">
-            <div class="prop-community">Hamilton Place · City of Traverse City</div>
+            
             <div class="prop-address">Unit C — 307-C Hamilton St<br>Traverse City, MI 49686</div>
             <div class="prop-specs">
               <div class="prop-spec"><div class="prop-spec-val">2</div><div class="prop-spec-lbl">Beds</div></div>
