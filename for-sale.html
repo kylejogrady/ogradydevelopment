@@ -65,34 +65,26 @@
 
     /* ─── LISTINGS GRID ───────────────────────────── */
     .listings-section { padding: 72px 0 120px; }
-    .listings-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 96px;
-      background: transparent;
-      margin-bottom: 2px;
-    }
+    .listings-grid { display: flex; flex-direction: column; gap: 4px; }
 
-    /* Property Card */
+    /* ── Base card — image left, content right ── */
     .prop-card {
-      background: var(--bg);
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
+      grid-template-columns: 1.1fr 1fr;
       grid-template-rows: 1fr auto;
-      position: relative;
+      min-height: 380px;
       overflow: hidden;
-      transition: background 0.4s;
       text-decoration: none; color: inherit;
+      transition: opacity 0.3s;
     }
-    .prop-card:hover { background: var(--warm); }
     .prop-card[data-status="sold"] { opacity: 0.55; pointer-events: none; }
 
+    /* Image spans both rows on the left */
     .prop-card-img {
+      grid-column: 1;
+      grid-row: 1 / 3;
       position: relative;
       overflow: hidden;
-      aspect-ratio: 4/3;
-      grid-row: 1 / 3;
-      grid-column: 1;
     }
     .prop-card-img img {
       width: 100%; height: 100%; object-fit: cover;
@@ -113,49 +105,59 @@
     .prop-price-tag {
       position: absolute; bottom: 0; left: 0; right: 0;
       background: linear-gradient(to top, rgba(15,13,11,0.85) 0%, transparent 100%);
-      padding: 32px 20px 16px;
-      z-index: 2;
+      padding: 32px 20px 16px; z-index: 2;
     }
-    .prop-price {
-      font-family: var(--display); font-size: 26px; font-weight: 300;
-      color: #fff; line-height: 1;
-    }
+    .prop-price { font-family: var(--display); font-size: 26px; font-weight: 300; color: #fff; line-height: 1; }
 
-    .prop-card-body { padding: 40px 48px; display: flex; flex-direction: column; gap: 16px; flex: 1; justify-content: center; background: #f0ede8; grid-column: 2; grid-row: 1; }
-    .prop-community { font-family: var(--body); font-size: 8px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); }
-    .prop-address { font-family: var(--display); font-size: 20px; font-weight: 400; line-height: 1.3; color: var(--dark); }
-    .prop-specs { display: flex; gap: 16px; flex-wrap: wrap; padding-top: 12px; border-top: 1px solid rgba(0,0,0,0.07); }
-    .prop-spec { display: flex; flex-direction: column; gap: 2px; }
-    .prop-spec-val { font-family: var(--display); font-size: 18px; font-weight: 400; color: var(--dark); }
-    .prop-spec-lbl { font-family: var(--body); font-size: 7.5px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: rgba(0,0,0,0.3); }
-    .prop-card-footer {
-      padding: 16px 28px;
-      border-top: 1px solid rgba(0,0,0,0.06);
-      background: #f0ede8;
-      display: flex; align-items: center; justify-content: space-between;
-      grid-column: 2; grid-row: 2;
+    /* Body — top right */
+    .prop-card-body {
+      grid-column: 2;
+      grid-row: 1;
+      padding: 40px 48px;
+      background: var(--warm);
+      display: flex; flex-direction: column; gap: 16px; justify-content: center;
+      transition: background 0.4s;
     }
-    .prop-more {
+    .prop-card:hover .prop-card-body { background: #e8e3dc; }
+
+    .prop-community { font-family: var(--body); font-size: 8px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); }
+    .prop-address { font-family: var(--display); font-size: 22px; font-weight: 400; line-height: 1.3; color: var(--dark); }
+    .prop-desc { font-family: var(--body); font-size: 12px; font-weight: 300; color: var(--text); line-height: 1.9; }
+    .prop-specs { display: flex; gap: 20px; flex-wrap: wrap; padding-top: 12px; border-top: 1px solid rgba(0,0,0,0.07); }
+    .prop-spec { display: flex; flex-direction: column; gap: 2px; }
+    .prop-spec-val { font-family: var(--display); font-size: 20px; font-weight: 400; color: var(--dark); }
+    .prop-spec-lbl { font-family: var(--body); font-size: 7.5px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: rgba(0,0,0,0.3); }
+
+    /* Footer — bottom right */
+    .prop-card-footer {
+      grid-column: 2;
+      grid-row: 2;
+      padding: 16px 48px;
+      background: var(--warm);
+      border-top: 1px solid rgba(0,0,0,0.07);
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      transition: background 0.4s;
+    }
+    .prop-card:hover .prop-card-footer { background: #e8e3dc; }
+
+    .prop-inquiry-btn {
       font-family: var(--body); font-size: 9px; font-weight: 500;
-      letter-spacing: 2px; text-transform: uppercase; color: var(--gold);
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold); background: none; border: none;
+      cursor: pointer; padding: 0;
       display: flex; align-items: center; gap: 8px;
       transition: gap 0.3s var(--ease);
     }
-    .prop-card:hover .prop-more { gap: 12px; }
-    .prop-more::after { content: '→'; }
+    .prop-inquiry-btn::after { content: '→'; }
+    .prop-inquiry-btn:hover { gap: 12px; }
     .prop-acreage { font-family: var(--body); font-size: 10.5px; font-weight: 300; color: var(--text); }
 
-    /* Featured / Wide card */
-    .prop-card-wide {
-      grid-column: span 2;
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-    }
-    .prop-card-wide .prop-card-img { aspect-ratio: auto; min-height: 400px; }
-    .prop-card-wide .prop-card-body { padding: 40px 48px; justify-content: center; }
-    .prop-card-wide .prop-address { font-size: 26px; }
+    /* Wide/featured card — taller */
+    .prop-card-wide { min-height: 500px; }
+    .prop-card-wide .prop-card-body { padding: 56px 56px; }
+    .prop-card-wide .prop-address { font-size: 28px; }
     .prop-card-wide .prop-price { font-size: 32px; }
-    .prop-card-wide .prop-card-footer { padding: 20px 48px; }
+    .prop-card-wide .prop-card-footer { padding: 20px 56px; }
 
     /* ─── COMING SOON BANNER ──────────────────────── */
     .coming-section { padding: 0 0 2px; background: rgba(0,0,0,0.06); }
@@ -322,16 +324,22 @@
       .popup-row { grid-template-columns: 1fr; gap: 0; }
     }
 
-  
     @media (max-width: 1100px) {
-      .listings-grid { grid-template-columns: 1fr; gap: 48px; }
-      .prop-card { grid-template-columns: 1fr; grid-template-rows: auto auto auto; }
-      .prop-card-img { grid-column: 1; grid-row: 1; min-height: 260px; }
-      .prop-card-body { grid-column: 1; grid-row: 2; padding: 28px 20px; }
-      .prop-card-footer { grid-column: 1; grid-row: 3; }
-      .prop-card-wide { grid-column: span 1; grid-template-columns: 1fr; }
-      .prop-card-wide .prop-card-img { min-height: 260px; }
-      .prop-card-wide .prop-card-body { padding: 28px 20px; }
+      .prop-card {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px auto auto;
+        min-height: unset;
+      }
+      .prop-card-wide {
+        grid-template-columns: 1fr;
+        grid-template-rows: 340px auto auto;
+        min-height: unset;
+      }
+      .prop-card-img { grid-column: 1; grid-row: 1; }
+      .prop-card-body { grid-column: 1; grid-row: 2; padding: 32px 32px; }
+      .prop-card-footer { grid-column: 1; grid-row: 3; padding: 16px 32px; }
+      .prop-card-wide .prop-card-body { padding: 32px 32px; }
+      .prop-card-wide .prop-card-footer { padding: 16px 32px; }
       .coming-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-main { grid-template-columns: 1fr 1fr; gap: 48px; }
       .hero-inner { grid-template-columns: 1fr; gap: 32px; }
@@ -346,11 +354,21 @@
       .hero-inner { padding: 0 20px; }
       .page-hero { padding: 120px 0 64px; }
       .listings-section { padding: 48px 0 80px; }
-      .listings-grid { grid-template-columns: 1fr; gap: 2px; }
-      .prop-card-wide { grid-column: span 1; grid-template-columns: 1fr; }
-      .prop-card-wide .prop-card-img { min-height: 260px; }
-      .prop-card-wide .prop-card-body { padding: 28px 20px; }
-      .prop-card-wide .prop-card-footer { padding: 16px 20px; }
+      .prop-card {
+        grid-template-columns: 1fr;
+        grid-template-rows: 260px auto auto;
+        min-height: unset;
+      }
+      .prop-card-wide {
+        grid-template-columns: 1fr;
+        grid-template-rows: 280px auto auto;
+        min-height: unset;
+      }
+      .prop-card-img { grid-column: 1; grid-row: 1; }
+      .prop-card-body { grid-column: 1; grid-row: 2; padding: 24px 20px; }
+      .prop-card-footer { grid-column: 1; grid-row: 3; padding: 14px 20px; }
+      .prop-card-wide .prop-card-body { padding: 24px 20px; }
+      .prop-card-wide .prop-card-footer { padding: 14px 20px; }
       .coming-grid { grid-template-columns: 1fr; }
       .coming-header { padding: 40px 20px 24px; }
       .notify-strip { padding: 56px 0; }
@@ -628,30 +646,27 @@
               <div class="prop-price">$2,950,000</div>
             </div>
           </div>
-          <div style="display:flex;flex-direction:column;">
-            <div class="prop-card-body">
-              
-              <div class="prop-address">15985 Waters Edge Drive<br>Traverse City, MI 49686</div>
-              <p style="font-family:var(--body);font-size:12px;font-weight:300;color:var(--text);line-height:1.9;">Ranch with walkout lower level — set on .60 acres with shared East Grand Traverse Bay frontage. Gated community on Old Mission Peninsula.</p>
-              <div class="prop-specs">
-                <div class="prop-spec"><div class="prop-spec-val">4</div><div class="prop-spec-lbl">Beds</div></div>
-                <div class="prop-spec"><div class="prop-spec-val">3.5</div><div class="prop-spec-lbl">Baths</div></div>
-                <div class="prop-spec"><div class="prop-spec-val">4,077</div><div class="prop-spec-lbl">Sq Ft</div></div>
-                <div class="prop-spec"><div class="prop-spec-val">.60</div><div class="prop-spec-lbl">Acres</div></div>
-              </div>
+          <div class="prop-card-body">
+            <div class="prop-address">15985 Waters Edge Drive<br>Traverse City, MI 49686</div>
+            <p class="prop-desc">Ranch with walkout lower level — set on .60 acres with shared East Grand Traverse Bay frontage. Gated community on Old Mission Peninsula.</p>
+            <div class="prop-specs">
+              <div class="prop-spec"><div class="prop-spec-val">4</div><div class="prop-spec-lbl">Beds</div></div>
+              <div class="prop-spec"><div class="prop-spec-val">3.5</div><div class="prop-spec-lbl">Baths</div></div>
+              <div class="prop-spec"><div class="prop-spec-val">~4,077</div><div class="prop-spec-lbl">Sq Ft</div></div>
+              <div class="prop-spec"><div class="prop-spec-val">.60</div><div class="prop-spec-lbl">Acres</div></div>
             </div>
-            <div class="prop-card-footer">
-              <button class="prop-inquiry-btn" onclick="openPopup('15985 Waters Edge Drive, Traverse City MI 49686', '$2,950,000'); event.preventDefault();">Request Info</button>
-              <span style="display:flex;align-items:center;gap:16px;">
-                <span class="prop-acreage">Unit 39</span>
-                <span style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);">View Property →</span>
-              </span>
-            </div>
+          </div>
+          <div class="prop-card-footer">
+            <button class="prop-inquiry-btn" onclick="openPopup('15985 Waters Edge Drive, Traverse City MI 49686', '$2,950,000'); event.preventDefault();">Request Info</button>
+            <span style="display:flex;align-items:center;gap:16px;">
+              <span class="prop-acreage">Unit 39</span>
+              <span style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);">View Property →</span>
+            </span>
           </div>
         </a>
 
         <!-- UNIT 13 — Coming Soon -->
-        <div class="prop-card" data-status="coming">
+        <a href="ps13.html" class="prop-card" data-status="coming">
           <div class="prop-card-img">
             <img src="images/communities/peninsula-shores/unit-13/lot-13-front-elevation.jpg" alt="15652 Waters Edge Drive — Peninsula Shores">
             <div class="prop-badge badge-coming">Coming to Market</div>
@@ -660,20 +675,23 @@
             </div>
           </div>
           <div class="prop-card-body">
-            
             <div class="prop-address">15652 Waters Edge Drive<br>Traverse City, MI 49686</div>
+            <p class="prop-desc">Two-story with fully finished basement — set on .66 acres with shared East Grand Traverse Bay frontage. Gated community on Old Mission Peninsula.</p>
             <div class="prop-specs">
               <div class="prop-spec"><div class="prop-spec-val">4</div><div class="prop-spec-lbl">Beds</div></div>
               <div class="prop-spec"><div class="prop-spec-val">4.5</div><div class="prop-spec-lbl">Baths</div></div>
-              <div class="prop-spec"><div class="prop-spec-val">4,754</div><div class="prop-spec-lbl">Sq Ft</div></div>
+              <div class="prop-spec"><div class="prop-spec-val">~4,754</div><div class="prop-spec-lbl">Sq Ft</div></div>
               <div class="prop-spec"><div class="prop-spec-val">.66</div><div class="prop-spec-lbl">Acres</div></div>
             </div>
           </div>
           <div class="prop-card-footer">
-            <button class="prop-inquiry-btn" onclick="openPopup('15652 Waters Edge Drive, Traverse City MI 49686', '$3,295,000'); event.preventDefault();">Request First Access</button>
-            <span class="prop-acreage">Unit 13</span>
+            <button class="prop-inquiry-btn" onclick="openPopup('15652 Waters Edge Drive, Traverse City MI 49686', '$3,295,000'); event.preventDefault(); event.stopPropagation();">Request First Access</button>
+            <span style="display:flex;align-items:center;gap:16px;">
+              <span class="prop-acreage">Unit 13</span>
+              <span style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);">View Property →</span>
+            </span>
           </div>
-        </div>
+        </a>
 
         <!--
           ┌─────────────────────────────────────────────┐
