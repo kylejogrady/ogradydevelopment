@@ -44,27 +44,12 @@
 
     /* ─── PAGE HERO ───────────────────────────────── */
     .page-hero {
-      padding: 148px 0 72px;
-      background: var(--dark);
-      position: relative;
-      overflow: hidden;
-    }
-    .page-hero::before {
-      content: 'FOR SALE';
-      position: absolute;
-      font-family: var(--display);
-      font-size: clamp(60px, 12vw, 180px);
-      font-weight: 600;
-      color: rgba(255,255,255,0.025);
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      white-space: nowrap;
-      letter-spacing: 20px;
-      pointer-events: none;
+      padding: 160px 0 88px;
+      background: var(--warm);
+      border-bottom: 1px solid rgba(0,0,0,0.07);
     }
     .hero-inner {
       max-width: 1440px; margin: 0 auto; padding: 0 64px;
-      position: relative; z-index: 2;
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 80px; align-items: end;
     }
@@ -77,40 +62,6 @@
     .rule { width: 48px; height: 1px; background: var(--gold); }
     .wrap { max-width: 1440px; margin: 0 auto; padding: 0 64px; }
 
-    /* ─── FILTER BAR ──────────────────────────────── */
-    .filter-bar {
-      background: var(--warm);
-      border-bottom: 1px solid rgba(0,0,0,0.07);
-      position: sticky; top: 72px; z-index: 100;
-    }
-    .filter-bar-inner {
-      max-width: 1440px; margin: 0 auto; padding: 0 64px;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 60px; gap: 24px;
-    }
-    .filter-tabs { display: flex; gap: 0; height: 100%; }
-    .filter-tab {
-      font-family: var(--body); font-size: 9px; font-weight: 500;
-      letter-spacing: 2.5px; text-transform: uppercase;
-      padding: 0 20px; height: 100%;
-      display: flex; align-items: center;
-      border: none; background: transparent; cursor: pointer;
-      color: rgba(0,0,0,0.4); position: relative;
-      transition: color 0.3s;
-    }
-    .filter-tab::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-      height: 2px; background: var(--gold);
-      transform: scaleX(0); transition: transform 0.4s var(--ease);
-    }
-    .filter-tab.active { color: var(--dark); }
-    .filter-tab.active::after { transform: scaleX(1); }
-    .filter-tab:hover { color: var(--dark); }
-    .filter-count {
-      font-family: var(--body); font-size: 8.5px; font-weight: 500;
-      letter-spacing: 2px; text-transform: uppercase;
-      color: rgba(0,0,0,0.3);
-    }
 
     /* ─── LISTINGS GRID ───────────────────────────── */
     .listings-section { padding: 72px 0 120px; }
@@ -393,9 +344,7 @@
       .logo-img { height: 36px; }
       .wrap { padding: 0 20px; }
       .hero-inner { padding: 0 20px; }
-      .page-hero { padding: 120px 0 56px; }
-      .filter-bar-inner { padding: 0 20px; }
-      .filter-tab { padding: 0 12px; font-size: 8px; }
+      .page-hero { padding: 120px 0 64px; }
       .listings-section { padding: 48px 0 80px; }
       .listings-grid { grid-template-columns: 1fr; gap: 2px; }
       .prop-card-wide { grid-column: span 1; grid-template-columns: 1fr; }
@@ -642,25 +591,17 @@
   <section class="page-hero">
     <div class="hero-inner">
       <div class="hero-left">
-        <h1 class="t-xl h-anim h-d2" style="color:#fff;">Properties<br><em style="font-style:italic;color:var(--gold-lt);">For Sale.</em></h1>
+        <span class="t-label h-anim h-d1">Available Properties</span>
+        <h1 class="t-xl h-anim h-d2">Properties<br><em style="font-style:italic;color:var(--gold);">For Sale.</em></h1>
       </div>
       <div class="hero-right h-anim h-d3">
         <div class="rule" style="margin-bottom:20px;"></div>
-        <p class="t-body" style="color:rgba(255,255,255,0.5);">Every available property in one place — everything from gated waterfront communities to big sky country views. Updated as properties come to market. Contact us for more information.</p>
-      </div>        </div>
+        <p class="t-body">Every available property in one place — everything from gated waterfront communities to big sky country views. Updated as properties come to market. Contact us for more information.</p>
       </div>
     </div>
   </section>
 
   <!-- ═══ FILTER BAR ════════════════════════════════ -->
-  <div class="filter-bar">
-    <div class="filter-bar-inner">
-      <div class="filter-tabs">
-        <button class="filter-tab active" data-filter="all">All Properties</button>
-      </div>
-    </div>
-  </div>
-
   <!-- ═══ LISTINGS ══════════════════════════════════ -->
   <section class="listings-section">
     <div class="wrap">
@@ -679,7 +620,7 @@
         -->
 
         <!-- UNIT 39 — Featured wide card -->
-        <div class="prop-card prop-card-wide" data-status="available">
+        <a href="ps39.html" class="prop-card prop-card-wide" data-status="available">
           <div class="prop-card-img">
             <img src="images/communities/peninsula-shores/unit-39/unit-39-1.jpg" alt="15985 Waters Edge Drive — Peninsula Shores">
             <div class="prop-badge badge-available">Available Now</div>
@@ -701,10 +642,13 @@
             </div>
             <div class="prop-card-footer">
               <button class="prop-inquiry-btn" onclick="openPopup('15985 Waters Edge Drive, Traverse City MI 49686', '$2,950,000'); event.preventDefault();">Request Info</button>
-              <span class="prop-acreage">Unit 39</span>
+              <span style="display:flex;align-items:center;gap:16px;">
+                <span class="prop-acreage">Unit 39</span>
+                <span style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);">View Property →</span>
+              </span>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- UNIT 13 — Coming Soon -->
         <div class="prop-card" data-status="coming">
@@ -1078,33 +1022,6 @@
       spans[1].style.opacity = '1';
       spans.forEach(s => s.style.background = '');
     }));
-
-    // Filter tabs
-    const filterTabs = document.querySelectorAll('.filter-tab');
-    const cards = document.querySelectorAll('.prop-card');
-    const filterCount = document.getElementById('filter-count');
-    const emptyState = document.getElementById('empty-state');
-
-    filterTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        filterTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        const filter = tab.dataset.filter;
-        let visible = 0;
-        cards.forEach(card => {
-          const status = card.dataset.status;
-          const show = filter === 'all' || status === filter;
-          card.style.display = show ? '' : 'none';
-          if (show) visible++;
-        });
-        filterCount.textContent = visible + (visible === 1 ? ' Property' : ' Properties');
-        emptyState.style.display = visible === 0 ? 'block' : 'none';
-      });
-    });
-
-    // Set correct count on initial page load
-    const initialVisible = Array.from(cards).filter(c => c.dataset.status !== 'sold').length;
-    filterCount.textContent = initialVisible + (initialVisible === 1 ? ' Property' : ' Properties');
 
     // Email notify (placeholder — wire to your form backend)
     function handleNotify() {
