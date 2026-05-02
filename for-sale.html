@@ -72,12 +72,12 @@
       display: grid;
       grid-template-columns: 1.1fr 1fr;
       grid-template-rows: 1fr auto;
-      min-height: 380px;
+      min-height: 440px;
       overflow: hidden;
       text-decoration: none; color: inherit;
       transition: opacity 0.3s;
     }
-    .prop-card[data-status="sold"] { opacity: 0.55; pointer-events: none; }
+    .prop-card[data-status="sold"] { }
 
     /* Image spans both rows on the left */
     .prop-card-img {
@@ -697,13 +697,13 @@
           </div>
         </a>
 
-        <!-- UNIT 14 — Sold -->
+        <!-- UNIT 14 — Just Sold -->
         <div class="prop-card" data-status="sold">
           <div class="prop-card-img">
-            <img src="images/communities/peninsula-shores/unit-14/unit-14-rendering-front.jpg" alt="15664 Waters Edge Drive — Peninsula Shores">
+            <img src="images/communities/peninsula-shores/unit-14/unit-14-1.jpg" alt="15664 Waters Edge Drive — Peninsula Shores">
             <div class="prop-badge badge-sold">Just Sold</div>
             <div class="prop-price-tag">
-              <div class="prop-price" style="text-decoration:line-through;opacity:0.6;">Sold</div>
+              <div class="prop-price">$2,950,000</div>
             </div>
           </div>
           <div class="prop-card-body">
@@ -716,7 +716,7 @@
             </div>
           </div>
           <div class="prop-card-footer">
-            <span class="prop-acreage" style="color:rgba(0,0,0,0.35);font-style:italic;">This property has sold.</span>
+            <span class="prop-acreage" style="font-style:italic;color:var(--text);">This property has sold.</span>
             <span class="prop-acreage">Unit 14</span>
           </div>
         </div>
