@@ -547,10 +547,50 @@
         </div>
       </div>
 
+      <!-- ── UNIT 14 ── -->
+      <div class="home-card fade-up delay-2" style="margin-top:24px;">
+        <div class="home-card-inner">
+          <div class="home-card-gallery">
+            <img
+              src="images/communities/peninsula-shores/unit-14/unit-14-1.jpg"
+              alt="15664 Waters Edge Drive — Unit 14"
+              class="home-card-main-img"
+              id="main-14"
+              onclick="openLightbox('lot14', 0)"
+              style="cursor:pointer;"
+            >
+            <div class="home-card-thumbs">
+              <div class="home-card-thumb" onclick="swapMain('main-14','images/communities/peninsula-shores/unit-14/unit-14-2.jpg'); openLightbox('lot14',1)">
+                <img src="images/communities/peninsula-shores/unit-14/unit-14-2.jpg" alt="Unit 14 view 2">
+              </div>
+            </div>
+          </div>
+          <div class="home-card-info">
+            <div class="home-card-badge" style="background:#555;opacity:0.8;">Just Sold</div>
+            <div class="home-card-address">15664 Waters Edge Drive, Traverse City, MI 49686</div>
+            <div class="home-card-price" style="text-decoration:line-through;opacity:0.5;">Sold</div>
+            <div class="home-card-specs">
+              <div class="home-spec"><div class="home-spec-val">4</div><div class="home-spec-lbl">Bedrooms</div></div>
+              <div class="home-spec"><div class="home-spec-val">4.5</div><div class="home-spec-lbl">Bathrooms</div></div>
+              <div class="home-spec"><div class="home-spec-val">~4,136</div><div class="home-spec-lbl">Total Sq Ft</div></div>
+            </div>
+            <p class="home-card-desc">A stunning home set within the Peninsula Shores gated community on Old Mission Peninsula — with shared East Grand Traverse Bay frontage and a 3+ car garage. Now sold.</p>
+            <div style="display:flex;flex-direction:column;gap:8px;padding:16px 0;border-top:1px solid rgba(0,0,0,0.07);border-bottom:1px solid rgba(0,0,0,0.07);">
+              <div style="display:flex;gap:24px;flex-wrap:wrap;">
+                <span style="font-family:var(--body);font-size:11px;font-weight:300;color:var(--text);">Garage: <strong style="color:var(--dark);font-weight:500;">3+ Car Attached</strong></span>
+                <span style="font-family:var(--body);font-size:11px;font-weight:300;color:var(--text);">Lot: <strong style="color:var(--dark);font-weight:500;">Unit 14</strong></span>
+                <span style="font-family:var(--body);font-size:11px;font-weight:300;color:var(--text);">Status: <strong style="color:var(--dark);font-weight:500;">Sold</strong></span>
+              </div>
+            </div>
+            <div class="home-card-actions">
+              <a href="for-sale.html" class="btn btn-dark">View Available Homes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
-
-  <!-- ═══ LOCATION ══════════════════════════════════ -->
   <section class="location-section">
     <div class="wrap">
       <div class="location-grid">
@@ -796,6 +836,11 @@
       ],
       lot13: [
         'images/communities/peninsula-shores/unit-13/lot-13-front-elevation.jpg',
+        'images/communities/peninsula-shores/unit-13/lot-13-front-elevation-dusk.jpg',
+      ],
+      lot14: [
+        'images/communities/peninsula-shores/unit-14/unit-14-1.jpg',
+        'images/communities/peninsula-shores/unit-14/unit-14-2.jpg',
       ]
     };
     let currentGallery = [], currentIdx = 0;
