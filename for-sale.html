@@ -72,7 +72,7 @@
       display: grid;
       grid-template-columns: 1.1fr 1fr;
       grid-template-rows: 1fr auto;
-      min-height: 440px;
+      height: 460px;
       overflow: hidden;
       text-decoration: none; color: inherit;
       transition: opacity 0.3s;
@@ -85,10 +85,10 @@
       grid-row: 1 / 3;
       position: relative;
       overflow: hidden;
-      max-height: 420px;
+      height: 100%;
     }
     .prop-card-wide .prop-card-img {
-      max-height: 520px;
+      height: 100%;
     }
     .prop-card-img img {
       width: 100%; height: 100%; object-fit: cover;
@@ -157,7 +157,7 @@
     .prop-acreage { font-family: var(--body); font-size: 10.5px; font-weight: 300; color: var(--text); }
 
     /* Wide/featured card — taller */
-    .prop-card-wide { min-height: 500px; }
+    .prop-card-wide { height: 540px; }
     .prop-card-wide .prop-card-body { padding: 56px 56px; }
     .prop-card-wide .prop-address { font-size: 28px; }
     .prop-card-wide .prop-price { font-size: 32px; }
@@ -332,14 +332,14 @@
       .prop-card {
         grid-template-columns: 1fr;
         grid-template-rows: 300px auto auto;
-        min-height: unset;
+        height: auto;
       }
       .prop-card-wide {
         grid-template-columns: 1fr;
         grid-template-rows: 340px auto auto;
-        min-height: unset;
+        height: auto;
       }
-      .prop-card-img { grid-column: 1; grid-row: 1; }
+      .prop-card-img { grid-column: 1; grid-row: 1; height: 100%; }
       .prop-card-body { grid-column: 1; grid-row: 2; padding: 32px 32px; }
       .prop-card-footer { grid-column: 1; grid-row: 3; padding: 16px 32px; }
       .prop-card-wide .prop-card-body { padding: 32px 32px; }
@@ -361,14 +361,14 @@
       .prop-card {
         grid-template-columns: 1fr;
         grid-template-rows: 260px auto auto;
-        min-height: unset;
+        height: auto;
       }
       .prop-card-wide {
         grid-template-columns: 1fr;
         grid-template-rows: 280px auto auto;
-        min-height: unset;
+        height: auto;
       }
-      .prop-card-img { grid-column: 1; grid-row: 1; }
+      .prop-card-img { grid-column: 1; grid-row: 1; height: 100%; }
       .prop-card-body { grid-column: 1; grid-row: 2; padding: 24px 20px; }
       .prop-card-footer { grid-column: 1; grid-row: 3; padding: 14px 20px; }
       .prop-card-wide .prop-card-body { padding: 24px 20px; }

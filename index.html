@@ -256,7 +256,8 @@
       font-family: var(--body);
       text-shadow: 0 1px 12px rgba(0,0,0,0.7);
     }
-    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+    .hero-actions-row { display: flex; gap: 16px; align-self: stretch; }
 
     /* Scroll indicator */
     .scroll-hint {
@@ -890,7 +891,8 @@
     }
     @media (max-width: 480px) {
       .stats-grid { grid-template-columns: 1fr 1fr; }
-      .hero-actions { flex-direction: column; gap: 12px; }
+      .hero-actions { flex-direction: column; gap: 12px; align-items: stretch; }
+      .hero-actions-row { flex-direction: column; gap: 12px; }
       .btn { text-align: center; width: 100%; padding: 15px 32px; }
       .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
       .footer-legal { gap: 20px; }
@@ -1052,8 +1054,13 @@
         Luxury new construction homes and thoughtfully planned communities in Northern Michigan's most coveted settings.
       </p>
       <div class="hero-actions h-anim h-d4">
-        <a href="communities.html" class="btn btn-white">View Communities</a>
-        <a href="sell-land.html"   class="btn btn-ghost">Sell Your Land</a>
+        <div class="hero-actions-row">
+          <a href="for-sale.html" class="btn btn-white" style="flex:1;text-align:center;">Available Homes</a>
+        </div>
+        <div class="hero-actions-row">
+          <a href="communities.html" class="btn btn-ghost" style="flex:1;text-align:center;">View Communities</a>
+          <a href="sell-land.html"   class="btn btn-ghost" style="flex:1;text-align:center;">Sell Your Land</a>
+        </div>
       </div>
     </div>
 
