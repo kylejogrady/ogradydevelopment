@@ -651,12 +651,12 @@
             </div>
           </div>
           <div class="prop-card-body">
-            <div class="prop-address">15985 Waters Edge Drive<br>Traverse City, MI 49686</div>
+            <div class="prop-address">The Highbank at Peninsula Shores<br><span style="font-family:var(--body);font-size:11px;font-weight:300;color:var(--text);">15985 Waters Edge Drive, Traverse City, MI 49686</span></div>
             <p class="prop-desc">Ranch with walkout lower level — set on .60 acres with shared East Grand Traverse Bay frontage. Gated community on Old Mission Peninsula.</p>
             <div class="prop-specs">
               <div class="prop-spec"><div class="prop-spec-val">4</div><div class="prop-spec-lbl">Beds</div></div>
               <div class="prop-spec"><div class="prop-spec-val">3.5</div><div class="prop-spec-lbl">Baths</div></div>
-              <div class="prop-spec"><div class="prop-spec-val">± 4,080</div><div class="prop-spec-lbl">Sq Ft</div></div>
+              <div class="prop-spec"><div class="prop-spec-val">~4,077</div><div class="prop-spec-lbl">Sq Ft</div></div>
               <div class="prop-spec"><div class="prop-spec-val">.60</div><div class="prop-spec-lbl">Acres</div></div>
             </div>
           </div>
@@ -679,12 +679,12 @@
             </div>
           </div>
           <div class="prop-card-body">
-            <div class="prop-address">15652 Waters Edge Drive<br>Traverse City, MI 49686</div>
+            <div class="prop-address">The Harbormont at Peninsula Shores<br><span style="font-family:var(--body);font-size:11px;font-weight:300;color:var(--text);">15652 Waters Edge Drive, Traverse City, MI 49686</span></div>
             <p class="prop-desc">Two-story with fully finished basement — set on .66 acres with shared East Grand Traverse Bay frontage. Gated community on Old Mission Peninsula.</p>
             <div class="prop-specs">
               <div class="prop-spec"><div class="prop-spec-val">4</div><div class="prop-spec-lbl">Beds</div></div>
               <div class="prop-spec"><div class="prop-spec-val">4.5</div><div class="prop-spec-lbl">Baths</div></div>
-              <div class="prop-spec"><div class="prop-spec-val">± 4,750</div><div class="prop-spec-lbl">Sq Ft</div></div>
+              <div class="prop-spec"><div class="prop-spec-val">~4,754</div><div class="prop-spec-lbl">Sq Ft</div></div>
               <div class="prop-spec"><div class="prop-spec-val">.66</div><div class="prop-spec-lbl">Acres</div></div>
             </div>
           </div>
@@ -1008,7 +1008,8 @@
     </div>
   </div>
 
-
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
     // ── Popup ──────────────────────────────────────
     function openPopup(address, price) {
       document.getElementById('popup-address').textContent = address;
@@ -1082,41 +1083,8 @@
     }, { threshold: 0.08 });
     document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
-    // ── POPUP ────────────────────────────────────────
-    function openPopup(address, price) {
-      document.getElementById('popup-address').textContent = address;
-      document.getElementById('popup-price').textContent = price;
-      document.getElementById('popup-property-field').value = address + ' — ' + price;
-      document.getElementById('popup-form').style.display = 'block';
-      document.getElementById('popup-success').classList.remove('show');
-      document.getElementById('popup-overlay').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closePopup() {
-      document.getElementById('popup-overlay').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    document.getElementById('popup-overlay').addEventListener('click', function(e) {
-      if (e.target === this) closePopup();
-    });
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closePopup();
-    });
-    document.getElementById('popup-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = this;
-      const data = new FormData(form);
-      fetch('/', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: new URLSearchParams(data).toString() })
-        .then(() => {
-          form.style.display = 'none';
-          document.getElementById('popup-success').classList.add('show');
-        })
-        .catch(() => {
-          // Fallback — show success anyway for demo
-          form.style.display = 'none';
-          document.getElementById('popup-success').classList.add('show');
-        });
-    });
+
+  }); // end DOMContentLoaded
   </script>
 
   <!-- ═══ INQUIRY POPUP ════════════════════════════ -->
