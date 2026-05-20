@@ -433,16 +433,6 @@
     </div>
   </section>
 
-  <!-- ═══ AERIAL BANNER ════════════════════════════ -->
-  <div class="aerial-banner">
-    <img src="images/communities/peninsula-shores/unit-39/unit-39-9.jpg" alt="Peninsula Shores aerial — East Grand Traverse Bay">
-    <div class="aerial-banner-overlay">
-      <div class="aerial-banner-text fade-up">
-        <span class="t-label" style="color:rgba(255,255,255,0.5);">East Grand Traverse Bay</span>
-        <h2 class="t-lg" style="color:#fff;text-align:center;">Waters Edge Drive,<br>Traverse City, MI</h2>
-      </div>
-    </div>
-  </div>
 
   <!-- ═══ AVAILABLE HOMES ═══════════════════════════ -->
   <section class="homes-section" id="available-homes">
@@ -542,9 +532,9 @@
             </div>
             <div class="home-card-actions">
               <button class="btn btn-dark" onclick="openPopup('15652 Waters Edge Drive, Traverse City MI 49686', '$3,295,000')">Request First Access</button>
-              <a href="images/communities/peninsula-shores/unit-13/lot-13-marketing-plans.pdf" target="_blank" class="home-pdf-link">
+              <a href="images/communities/peninsula-shores/unit-13/unit-13-brochure.pdf" target="_blank" class="home-pdf-link">
                 <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                Download Floor Plans (PDF)
+                Download Property Brochure (PDF)
               </a>
             </div>
           </div>
@@ -736,6 +726,39 @@
     </div>
   </section>
 
+  <!-- ═══ USEFUL LINKS ══════════════════════════════ -->
+  <section style="padding:72px 0;background:var(--warm);">
+    <div class="wrap">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+        <div class="fade-up">
+          <span class="t-label">Resources</span>
+          <h2 class="t-lg" style="margin-top:12px;margin-bottom:16px;">Useful<br>Documents.</h2>
+          <div class="rule"></div>
+          <p class="t-body" style="margin-top:20px;">Important community documents for Peninsula Shores — including condo association bylaws, rules and regulations, and related HOA materials.</p>
+        </div>
+        <div class="fade-up delay-2" style="display:flex;flex-direction:column;gap:3px;">
+          <a href="https://drive.google.com/drive/folders/1maqeewPFJY1XkQPtN52bxccxuR6EM9mW?usp=share_link"
+             target="_blank" rel="noopener"
+             style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 28px;background:var(--bg);border:1px solid rgba(0,0,0,0.07);transition:background 0.3s,border-color 0.3s;"
+             onmouseover="this.style.background='#fff';this.style.borderColor='var(--gold)'"
+             onmouseout="this.style.background='var(--bg)';this.style.borderColor='rgba(0,0,0,0.07)'">
+            <div style="display:flex;align-items:center;gap:16px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" style="flex-shrink:0;"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+              <div>
+                <div style="font-family:var(--display);font-size:18px;font-weight:400;color:var(--dark);">Condo Association Documents</div>
+                <div style="font-family:var(--body);font-size:10px;font-weight:300;color:var(--text);margin-top:3px;">Bylaws, rules &amp; regulations, HOA materials</div>
+              </div>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <div style="padding:14px 28px;background:var(--bg);border:1px solid rgba(0,0,0,0.07);">
+            <p style="font-family:var(--body);font-size:10px;font-weight:300;color:rgba(0,0,0,0.35);line-height:1.8;">Opens in Google Drive. Documents are provided for informational purposes and are subject to change.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══ CTA SECTION ════════════════════════════════ -->
   <section class="cta-section">
     <div class="wrap">
@@ -827,9 +850,12 @@
     }));
 
     // Swap main image on thumb click
+    document.addEventListener('DOMContentLoaded', function() {
+
     function swapMain(id, src) {
       document.getElementById(id).src = src;
     }
+    window.swapMain = swapMain;
 
     // Lightbox
     const galleries = {
@@ -874,6 +900,10 @@
       document.getElementById('lightbox-img').src = currentGallery[currentIdx];
       document.getElementById('lightbox-counter').textContent = (currentIdx + 1) + ' / ' + currentGallery.length;
     }
+    window.openLightbox = openLightbox;
+    window.closeLightbox = closeLightbox;
+    window.lightboxNav = lightboxNav;
+
     document.getElementById('lightbox').addEventListener('click', function(e) {
       if (e.target === this) closeLightbox();
     });
@@ -904,6 +934,9 @@
       document.getElementById('popup-overlay').classList.remove('open');
       document.body.style.overflow = '';
     }
+    window.openPopup = openPopup;
+    window.closePopup = closePopup;
+
     document.getElementById('popup-overlay').addEventListener('click', function(e) {
       if (e.target === this) closePopup();
     });
@@ -915,6 +948,8 @@
         .then(() => { this.style.display = 'none'; document.getElementById('popup-success').classList.add('show'); })
         .catch(() => { this.style.display = 'none'; document.getElementById('popup-success').classList.add('show'); });
     });
+
+    }); // end DOMContentLoaded
   </script>
 
   <!-- ═══ INQUIRY POPUP ════════════════════════════ -->
