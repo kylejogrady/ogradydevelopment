@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Victoria Farms | New Construction Homes — East Bay Township, Traverse City MI</title>
   <meta name="description" content="Victoria Farms is a brand new subdivision in East Bay Township with two luxury home plans — The Farmstead and The Ridgeline. From $995,000. Schedule a site visit.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,8 +26,8 @@
     ::-webkit-scrollbar-thumb { background: var(--gold); }
 
     /* ─── HEADER ──────────────────────────────────── */
-    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 0 56px; height: 72px; transition: background 0.5s, border-color 0.5s, height 0.4s var(--ease); border-bottom: 1px solid transparent; }
-    .header.scrolled { height: 64px; background: rgba(250,249,247,0.96); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom-color: rgba(0,0,0,0.07); }
+    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 0 56px; height: 72px; transition: background 0.5s, border-color 0.5s, height 0.4s var(--ease); background: rgba(250,249,247,0.97); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid rgba(0,0,0,0.07); }
+    .header.scrolled { height: 64px; background: rgba(250,249,247,0.97); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom-color: rgba(0,0,0,0.07); }
     .logo { display: flex; align-items: center; }
     .logo-img { height: 44px; width: auto; }
     .logo-img-light { display: none; }
@@ -227,7 +227,7 @@
     .hero-img { position: relative; overflow: hidden; padding-top: 72px; }
     .hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block; animation: heroZoom 14s ease forwards; transform: scale(1.04); }
     @keyframes heroZoom { to { transform: scale(1); } }
-    .hero-panel { background: var(--warm); display: flex; flex-direction: column; justify-content: center; padding: 120px 56px 56px; gap: 0; }
+    .hero-panel { background: var(--warm); display: flex; flex-direction: column; justify-content: center; padding: 96px 56px 56px; gap: 0; }
     .hero-eyebrow { font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
     .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); flex-shrink: 0; }
     .hero-name { font-family: var(--display); font-size: clamp(44px, 5vw, 76px); font-weight: 300; color: var(--dark); line-height: 1.0; margin-bottom: 20px; }
@@ -243,14 +243,24 @@
 
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; height: auto; min-height: unset; }
-      .hero-img { height: 56vw; min-height: 260px; max-height: 400px; padding-top: 0; }
-      .hero-img img { height: 100%; }
-      .hero-panel { padding: 40px 24px 48px; justify-content: flex-start; }
-      .hero-name { font-size: clamp(36px, 9vw, 56px); }
+      .hero-img { height: 60vw; min-height: 280px; max-height: 460px; padding-top: 60px; }
+      .hero-img img { width: 100%; height: 100%; object-fit: cover; }
+      .hero-panel { padding: 36px 28px 52px; justify-content: flex-start; }
+      .hero-name { font-size: clamp(38px, 10vw, 58px); }
+      .hero-desc { max-width: 100%; font-size: 13px; }
+      .hero-stats { gap: 0; }
+      .hero-stat { padding-right: 18px; margin-right: 18px; }
+      .hero-stat-val { font-size: 17px; }
+      .hero-actions { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .hero-actions .btn { width: 100%; text-align: center; }
     }
     @media (max-width: 480px) {
-      .hero-img { height: 240px; }
-      .hero-panel { padding: 28px 20px 40px; }
+      .hero-img { height: 55vw; min-height: 220px; padding-top: 60px; }
+      .hero-panel { padding: 28px 20px 44px; }
+      .hero-name { font-size: clamp(34px, 11vw, 48px); }
+      .hero-eyebrow { font-size: 8px; letter-spacing: 3px; }
+      .hero-stat-val { font-size: 15px; }
+      .hero-stat { padding-right: 14px; margin-right: 14px; }
     }
   </style>
 
