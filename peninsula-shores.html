@@ -66,20 +66,6 @@
     .btn-gold:hover { background: var(--gold); color: #fff; }
 
     /* ─── HERO ────────────────────────────────────── */
-    .hero { position: relative; height: 100vh; min-height: 700px; overflow: hidden; display: flex; align-items: flex-end; }
-    .hero-bg { position: absolute; inset: 0; background-image: url('images/communities/peninsula-shores/peninsula-shores-hero.jpg'); background-size: cover; background-position: center 40%; transform: scale(1.04); animation: heroZoom 14s ease forwards; }
-    @keyframes heroZoom { to { transform: scale(1); } }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,8,6,0.88) 0%, rgba(10,8,6,0.2) 50%, rgba(10,8,6,0.4) 100%); }
-    .hero-content { position: relative; z-index: 2; padding: 0 64px 80px; width: 100%; display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: end; }
-    .hero-left { display: flex; flex-direction: column; gap: 24px; }
-    .hero-eyebrow { display: flex; align-items: center; gap: 16px; }
-    .hero-eyebrow .rule { background: rgba(207,192,166,0.5); }
-    .hero-specs { display: flex; gap: 32px; flex-wrap: wrap; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.1); }
-    .hero-spec { display: flex; flex-direction: column; gap: 4px; }
-    .hero-spec-val { font-family: var(--display); font-size: 18px; font-weight: 300; color: #fff; }
-    .hero-spec-lbl { font-family: var(--body); font-size: 8px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.35); }
-    .hero-right { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
-    .hero-badge { font-family: var(--body); font-size: 8.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; background: var(--gold); color: #fff; padding: 8px 18px; display: inline-block; }
 
     /* ─── OVERVIEW STRIP ──────────────────────────── */
     .overview-strip { background: var(--dark); display: grid; grid-template-columns: repeat(5, 1fr); }
@@ -194,16 +180,14 @@
       .location-grid { grid-template-columns: 1fr; gap: 48px; }
       .overview-strip { grid-template-columns: repeat(3, 1fr); }
       .footer-main { grid-template-columns: 1fr 1fr; gap: 48px; }
-      .hero-content { grid-template-columns: 1fr; gap: 32px; }
-    }
+      }
     @media (max-width: 768px) {
       .nav { display: none; }
       .mobile-toggle { display: block; }
       .header { padding: 0 20px; height: 60px; }
       .logo-img { height: 36px; }
       .wrap { padding: 0 20px; }
-      .hero-content { padding: 0 20px 64px; }
-      .intro-section { padding: 72px 0; }
+        .intro-section { padding: 72px 0; }
       .homes-section { padding: 72px 0; }
       .homes-header { flex-direction: column; align-items: flex-start; }
       .home-card-info { padding: 28px 20px; }
@@ -246,6 +230,36 @@
     .popup-success-check { width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; }
     .popup-success-check svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
 
+
+    /* ─── SPLIT HERO ──────────────────────────────────── */
+    .hero { display: grid; grid-template-columns: 1.1fr 1fr; min-height: 100vh; padding-top: 72px; }
+    .hero-img { position: relative; overflow: hidden; }
+    .hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block; animation: heroZoom 14s ease forwards; transform: scale(1.04); }
+    @keyframes heroZoom { to { transform: scale(1); } }
+    .hero-panel { background: var(--warm); display: flex; flex-direction: column; justify-content: center; padding: 72px 56px; gap: 0; }
+    .hero-eyebrow { font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); flex-shrink: 0; }
+    .hero-name { font-family: var(--display); font-size: clamp(48px, 5.5vw, 80px); font-weight: 300; color: var(--dark); line-height: 1.0; margin-bottom: 20px; }
+    .hero-name em { font-style: italic; color: var(--gold); }
+    .hero-rule { width: 40px; height: 1px; background: var(--gold); margin-bottom: 20px; }
+    .hero-desc { font-family: var(--body); font-size: 13px; font-weight: 300; color: var(--text); line-height: 2.1; margin-bottom: 28px; max-width: 360px; }
+    .hero-stats { display: flex; gap: 0; margin-bottom: 32px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.08); flex-wrap: wrap; }
+    .hero-stat { display: flex; flex-direction: column; gap: 5px; padding-right: 24px; border-right: 1px solid rgba(0,0,0,0.08); margin-right: 24px; margin-bottom: 12px; }
+    .hero-stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+    .hero-stat-val { font-family: var(--display); font-size: 20px; font-weight: 400; color: var(--dark); }
+    .hero-stat-lbl { font-family: var(--body); font-size: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: rgba(0,0,0,0.35); }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: unset; padding-top: 0; }
+      .hero-img { height: 56vw; min-height: 280px; max-height: 420px; }
+      .hero-panel { padding: 40px 24px 48px; }
+      .hero-name { font-size: clamp(38px, 9vw, 60px); }
+    }
+    @media (max-width: 480px) {
+      .hero-img { height: 260px; }
+      .hero-panel { padding: 32px 20px 40px; }
+    }
   </style>
 
   <!-- SEO: Canonical -->
@@ -374,34 +388,30 @@
 
   <!-- ═══ HERO ══════════════════════════════════════ -->
   <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-left">
-        <div class="hero-eyebrow h-anim h-d1">
-          <div class="rule"></div>
-          <span class="t-label" style="color:rgba(255,255,255,0.45);">Old Mission Peninsula</span>
+    <div class="hero-img">
+      <img src="images/communities/peninsula-shores/peninsula-shores-hero.jpg" alt="Peninsula Shores — Old Mission Peninsula aerial" fetchpriority="high">
+    </div>
+    <div class="hero-panel">
+      <div class="hero-eyebrow h-anim h-d1">Old Mission Peninsula</div>
+      <h1 class="hero-name h-anim h-d2">Peninsula<br><em>Shores.</em></h1>
+      <div class="hero-rule h-anim h-d2"></div>
+      <p class="hero-desc h-anim h-d3">A private, gated waterfront community featuring custom-built luxury homes with shared East Grand Traverse Bay frontage on Old Mission Peninsula.</p>
+      <div class="hero-stats h-anim h-d3">
+        <div class="hero-stat">
+          <div class="hero-stat-val">2 Homes</div>
+          <div class="hero-stat-lbl">Under Construction</div>
         </div>
-        <h1 class="t-xl h-anim h-d2" style="color:#fff;">Peninsula<br><em style="font-style:italic;color:var(--gold-lt);">Shores.</em></h1>
-        <div class="hero-specs h-anim h-d3">
-          <div class="hero-spec">
-            <div class="hero-spec-val">2 Homes</div>
-            <div class="hero-spec-lbl">Under Construction</div>
-          </div>
-          <div class="hero-spec">
-            <div class="hero-spec-val">From $2,950,000</div>
-            <div class="hero-spec-lbl">Starting Price</div>
-          </div>
-          <div class="hero-spec">
-            <div class="hero-spec-val">Bay Frontage</div>
-            <div class="hero-spec-lbl">Shared Access</div>
-          </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">From $2,950,000</div>
+          <div class="hero-stat-lbl">Starting Price</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">Bay Frontage</div>
+          <div class="hero-stat-lbl">Shared Access</div>
         </div>
       </div>
-      <div class="hero-right h-anim h-d3">
-        <div class="hero-badge">Under Construction</div>
-        <p class="t-body" style="color:rgba(255,255,255,0.55);">A private, gated waterfront community featuring custom-built luxury homes with shared East Grand Traverse Bay frontage on Old Mission Peninsula.</p>
-        <a href="#available-homes" class="btn btn-white" style="margin-top:8px;">View Available Homes</a>
+      <div class="hero-actions h-anim h-d4">
+        <a href="#available-homes" class="btn btn-dark">View Available Homes</a>
       </div>
     </div>
   </section>
@@ -433,6 +443,16 @@
     </div>
   </section>
 
+  <!-- ═══ AERIAL BANNER ════════════════════════════ -->
+  <div class="aerial-banner">
+    <img src="images/communities/peninsula-shores/unit-39/unit-39-9.jpg" alt="Peninsula Shores aerial — East Grand Traverse Bay">
+    <div class="aerial-banner-overlay">
+      <div class="aerial-banner-text fade-up">
+        <span class="t-label" style="color:rgba(255,255,255,0.5);">East Grand Traverse Bay</span>
+        <h2 class="t-lg" style="color:#fff;text-align:center;">Waters Edge Drive,<br>Traverse City, MI</h2>
+      </div>
+    </div>
+  </div>
 
   <!-- ═══ AVAILABLE HOMES ═══════════════════════════ -->
   <section class="homes-section" id="available-homes">
@@ -473,14 +493,12 @@
           </div>
           <div class="home-card-info">
             <div class="home-card-badge">Under Construction</div>
-            <div style="font-family:var(--display);font-size:clamp(24px,2.5vw,34px);font-weight:300;color:var(--dark);line-height:1.2;margin-bottom:6px;">The Highbank<br><em style="font-style:italic;color:var(--gold);">at Peninsula Shores</em></div>
             <div class="home-card-address">15985 Waters Edge Drive, Traverse City, MI 49686</div>
-            <div style="font-family:var(--body);font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(0,0,0,0.3);margin-bottom:4px;">Unit 39</div>
             <div class="home-card-price">$2,950,000</div>
             <div class="home-card-specs">
               <div class="home-spec"><div class="home-spec-val">4</div><div class="home-spec-lbl">Bedrooms</div></div>
               <div class="home-spec"><div class="home-spec-val">3.5</div><div class="home-spec-lbl">Bathrooms</div></div>
-              <div class="home-spec"><div class="home-spec-val">± 4,080</div><div class="home-spec-lbl">Sq Ft</div></div>
+              <div class="home-spec"><div class="home-spec-val">4,077</div><div class="home-spec-lbl">Sq Ft</div></div>
               <div class="home-spec"><div class="home-spec-val">.60</div><div class="home-spec-lbl">Acres</div></div>
             </div>
             <p class="home-card-desc">A stunning ranch with a walkout lower level — thoughtfully designed for single-level living with expansive lower-level entertaining space. Set on .60 acres in the heart of Peninsula Shores with access to shared East Grand Traverse Bay frontage.</p>
@@ -492,10 +510,6 @@
             </div>
             <div class="home-card-actions">
               <button class="btn btn-dark" onclick="openPopup('15985 Waters Edge Drive, Traverse City MI 49686', '$2,950,000')">Schedule a Tour</button>
-              <a href="images/communities/peninsula-shores/unit-39/unit-39-brochure.pdf" target="_blank" class="home-pdf-link">
-                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                Download Property Brochure (PDF)
-              </a>
             </div>
           </div>
         </div>
@@ -516,14 +530,12 @@
           </div>
           <div class="home-card-info">
             <div class="home-card-badge" style="background:var(--dark);">To Be Built</div>
-            <div style="font-family:var(--display);font-size:clamp(24px,2.5vw,34px);font-weight:300;color:var(--dark);line-height:1.2;margin-bottom:6px;">The Harbormont<br><em style="font-style:italic;color:var(--gold);">at Peninsula Shores</em></div>
             <div class="home-card-address">15652 Waters Edge Drive, Traverse City, MI 49686</div>
-            <div style="font-family:var(--body);font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(0,0,0,0.3);margin-bottom:4px;">Unit 13</div>
             <div class="home-card-price">$3,295,000</div>
             <div class="home-card-specs">
               <div class="home-spec"><div class="home-spec-val">4</div><div class="home-spec-lbl">Bedrooms</div></div>
               <div class="home-spec"><div class="home-spec-val">4.5</div><div class="home-spec-lbl">Bathrooms</div></div>
-              <div class="home-spec"><div class="home-spec-val">± 4,750</div><div class="home-spec-lbl">Total Sq Ft</div></div>
+              <div class="home-spec"><div class="home-spec-val">4,754</div><div class="home-spec-lbl">Total Sq Ft</div></div>
               <div class="home-spec"><div class="home-spec-val">.66</div><div class="home-spec-lbl">Acres</div></div>
             </div>
             <p class="home-card-desc">An exceptional two-story home with a fully finished basement — offering 3,498 sq ft above grade and an additional 1,256 sq ft of finished lower level living. Set on .66 acres with access to shared East Grand Traverse Bay frontage. Coming to market soon — contact us now for first access.</p>
@@ -536,9 +548,9 @@
             </div>
             <div class="home-card-actions">
               <button class="btn btn-dark" onclick="openPopup('15652 Waters Edge Drive, Traverse City MI 49686', '$3,295,000')">Request First Access</button>
-              <a href="images/communities/peninsula-shores/unit-13/unit-13-brochure.pdf" target="_blank" class="home-pdf-link">
+              <a href="images/communities/peninsula-shores/unit-13/lot-13-marketing-plans.pdf" target="_blank" class="home-pdf-link">
                 <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                Download Property Brochure (PDF)
+                Download Floor Plans (PDF)
               </a>
             </div>
           </div>
@@ -560,6 +572,12 @@
             <div class="home-card-thumbs">
               <div class="home-card-thumb" onclick="swapMain('main-14','images/communities/peninsula-shores/unit-14/unit-14-2.jpg'); openLightbox('lot14',1)">
                 <img src="images/communities/peninsula-shores/unit-14/unit-14-2.jpg" alt="Unit 14 view 2">
+              </div>
+              <div class="home-card-thumb" onclick="swapMain('main-14','images/communities/peninsula-shores/unit-14/unit-14-rendering-front.jpg'); openLightbox('lot14',2)">
+                <img src="images/communities/peninsula-shores/unit-14/unit-14-rendering-front.jpg" alt="Unit 14 front rendering">
+              </div>
+              <div class="home-card-thumb" onclick="swapMain('main-14','images/communities/peninsula-shores/unit-14/unit-14-rendering-rear.jpg'); openLightbox('lot14',3)">
+                <img src="images/communities/peninsula-shores/unit-14/unit-14-rendering-rear.jpg" alt="Unit 14 rear rendering">
               </div>
             </div>
           </div>
@@ -724,39 +742,6 @@
     </div>
   </section>
 
-  <!-- ═══ USEFUL LINKS ══════════════════════════════ -->
-  <section style="padding:72px 0;background:var(--warm);">
-    <div class="wrap">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
-        <div class="fade-up">
-          <span class="t-label">Resources</span>
-          <h2 class="t-lg" style="margin-top:12px;margin-bottom:16px;">Useful<br>Documents.</h2>
-          <div class="rule"></div>
-          <p class="t-body" style="margin-top:20px;">Important community documents for Peninsula Shores — including condo association bylaws, rules and regulations, and related HOA materials.</p>
-        </div>
-        <div class="fade-up delay-2" style="display:flex;flex-direction:column;gap:3px;">
-          <a href="https://drive.google.com/drive/folders/1maqeewPFJY1XkQPtN52bxccxuR6EM9mW?usp=share_link"
-             target="_blank" rel="noopener"
-             style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 28px;background:var(--bg);border:1px solid rgba(0,0,0,0.07);transition:background 0.3s,border-color 0.3s;"
-             onmouseover="this.style.background='#fff';this.style.borderColor='var(--gold)'"
-             onmouseout="this.style.background='var(--bg)';this.style.borderColor='rgba(0,0,0,0.07)'">
-            <div style="display:flex;align-items:center;gap:16px;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" style="flex-shrink:0;"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-              <div>
-                <div style="font-family:var(--display);font-size:18px;font-weight:400;color:var(--dark);">Condo Association Documents</div>
-                <div style="font-family:var(--body);font-size:10px;font-weight:300;color:var(--text);margin-top:3px;">Bylaws, rules &amp; regulations, HOA materials</div>
-              </div>
-            </div>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-          <div style="padding:14px 28px;background:var(--bg);border:1px solid rgba(0,0,0,0.07);">
-            <p style="font-family:var(--body);font-size:10px;font-weight:300;color:rgba(0,0,0,0.35);line-height:1.8;">Opens in Google Drive. Documents are provided for informational purposes and are subject to change.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ═══ CTA SECTION ════════════════════════════════ -->
   <section class="cta-section">
     <div class="wrap">
@@ -848,12 +833,9 @@
     }));
 
     // Swap main image on thumb click
-    document.addEventListener('DOMContentLoaded', function() {
-
     function swapMain(id, src) {
       document.getElementById(id).src = src;
     }
-    window.swapMain = swapMain;
 
     // Lightbox
     const galleries = {
@@ -875,6 +857,8 @@
       lot14: [
         'images/communities/peninsula-shores/unit-14/unit-14-1.jpg',
         'images/communities/peninsula-shores/unit-14/unit-14-2.jpg',
+        'images/communities/peninsula-shores/unit-14/unit-14-rendering-front.jpg',
+        'images/communities/peninsula-shores/unit-14/unit-14-rendering-rear.jpg',
       ]
     };
     let currentGallery = [], currentIdx = 0;
@@ -896,10 +880,6 @@
       document.getElementById('lightbox-img').src = currentGallery[currentIdx];
       document.getElementById('lightbox-counter').textContent = (currentIdx + 1) + ' / ' + currentGallery.length;
     }
-    window.openLightbox = openLightbox;
-    window.closeLightbox = closeLightbox;
-    window.lightboxNav = lightboxNav;
-
     document.getElementById('lightbox').addEventListener('click', function(e) {
       if (e.target === this) closeLightbox();
     });
@@ -930,9 +910,6 @@
       document.getElementById('popup-overlay').classList.remove('open');
       document.body.style.overflow = '';
     }
-    window.openPopup = openPopup;
-    window.closePopup = closePopup;
-
     document.getElementById('popup-overlay').addEventListener('click', function(e) {
       if (e.target === this) closePopup();
     });
@@ -944,8 +921,6 @@
         .then(() => { this.style.display = 'none'; document.getElementById('popup-success').classList.add('show'); })
         .catch(() => { this.style.display = 'none'; document.getElementById('popup-success').classList.add('show'); });
     });
-
-    }); // end DOMContentLoaded
   </script>
 
   <!-- ═══ INQUIRY POPUP ════════════════════════════ -->

@@ -43,95 +43,12 @@
     .mobile-menu a { font-family: var(--display); font-size: 36px; font-weight: 300; letter-spacing: 1px; }
 
     /* ─── HERO — FULL SCREEN BLURRED ─────────────── */
-    .hero {
-      min-height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      padding-top: 72px;
-    }
     /* Blurred background layer */
-    .hero-bg {
-      position: absolute; inset: 0; z-index: 0;
-      background:
-        radial-gradient(ellipse at 30% 40%, rgba(184,168,138,0.12) 0%, transparent 60%),
-        radial-gradient(ellipse at 70% 60%, rgba(26,26,26,0.08) 0%, transparent 60%),
-        linear-gradient(135deg, #1a1a1a 0%, #2a2520 40%, #1a1a1a 100%);
-    }
     /* Blurred image placeholder — swap with real photo when available */
-    .hero-bg-img {
-      position: absolute; inset: 0;
-      background-image: url('images/communities/westacres/westacres-hero.jpg');
-      background-size: cover;
-      background-position: center;
-      filter: blur(18px) brightness(0.3) saturate(0.6);
-      transform: scale(1.1);
-      z-index: 1;
-    }
-    .hero-overlay {
-      position: absolute; inset: 0; z-index: 2;
-      background: rgba(15,12,10,0.55);
-    }
-    .hero-content {
-      position: relative; z-index: 3;
-      text-align: center;
-      display: flex; flex-direction: column;
-      align-items: center; gap: 28px;
-      padding: 64px 32px;
-      max-width: 800px;
-      width: 100%;
-    }
-    .hero-coming-tag {
-      font-family: var(--body); font-size: 8.5px; font-weight: 600;
-      letter-spacing: 3px; text-transform: uppercase;
-      border: 1px solid rgba(184,168,138,0.5); color: var(--gold);
-      padding: 9px 24px;
-    }
-    .hero-title {
-      font-family: var(--display);
-      font-size: clamp(56px, 10vw, 120px);
-      font-weight: 300; line-height: 0.95;
-      color: #fff;
-    }
-    .hero-title em { font-style: italic; color: var(--gold-lt); }
-    .hero-subtitle {
-      font-family: var(--body); font-size: 13px; font-weight: 300;
-      letter-spacing: 0.5px; line-height: 2;
-      color: rgba(255,255,255,0.5);
-      max-width: 480px;
-    }
 
     /* Blurred details teaser */
-    .hero-details {
-      display: flex; gap: 32px; flex-wrap: wrap; justify-content: center;
-      padding: 28px 40px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.04);
-      backdrop-filter: blur(12px);
-      position: relative;
-    }
-    .hero-detail { text-align: center; }
-    .hero-detail-val {
-      font-family: var(--display); font-size: 28px; font-weight: 300;
-      color: #fff; line-height: 1;
-    }
-    .hero-detail-lbl {
-      font-family: var(--body); font-size: 8px; font-weight: 500;
-      letter-spacing: 2.5px; text-transform: uppercase;
-      color: rgba(255,255,255,0.35); margin-top: 6px;
-    }
-    .hero-detail-divider { width: 1px; background: rgba(255,255,255,0.1); align-self: stretch; }
 
     /* "Details Revealed Soon" blur overlay on the stats */
-    .hero-details-blur {
-      position: absolute; inset: 0;
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(10,8,6,0.92);
-    }
     .hero-details-blur span {
       font-family: var(--body); font-size: 8.5px; font-weight: 600;
       letter-spacing: 3px; text-transform: uppercase;
@@ -139,7 +56,6 @@
       padding: 8px 20px; background: rgba(15,12,10,0.5);
     }
 
-    .hero-cta-row { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
     .btn { display: inline-block; font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; padding: 17px 44px; border: 1px solid; transition: all 0.5s var(--ease); background: transparent; cursor: pointer; }
     .btn-white { border-color: rgba(255,255,255,0.7); color: #fff; }
     .btn-white:hover { background: #fff; color: var(--dark); }
@@ -280,10 +196,7 @@
       .header { padding: 0 20px; height: 60px; }
       .logo-img { height: 36px; }
       .wrap { padding: 0 20px; }
-      .hero-details { flex-direction: column; gap: 24px; padding: 24px; }
-      .hero-detail-divider { width: 100%; height: 1px; }
-      .hero-cta-row { flex-direction: column; }
-      .btn { width: 100%; text-align: center; }
+            .btn { width: 100%; text-align: center; }
       .known-section { padding: 72px 0; }
       .known-cell { padding: 36px 24px; }
       .interest-left { padding: 56px 20px; }
@@ -293,6 +206,36 @@
       .other-section { padding: 64px 0; }
       .footer-main { grid-template-columns: 1fr; gap: 32px; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ─── SPLIT HERO ──────────────────────────────────── */
+    .hero { display: grid; grid-template-columns: 1.1fr 1fr; min-height: 100vh; padding-top: 72px; }
+    .hero-img { position: relative; overflow: hidden; }
+    .hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block; animation: heroZoom 14s ease forwards; transform: scale(1.04); }
+    @keyframes heroZoom { to { transform: scale(1); } }
+    .hero-panel { background: var(--warm); display: flex; flex-direction: column; justify-content: center; padding: 72px 56px; gap: 0; }
+    .hero-eyebrow { font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); flex-shrink: 0; }
+    .hero-name { font-family: var(--display); font-size: clamp(48px, 5.5vw, 80px); font-weight: 300; color: var(--dark); line-height: 1.0; margin-bottom: 20px; }
+    .hero-name em { font-style: italic; color: var(--gold); }
+    .hero-rule { width: 40px; height: 1px; background: var(--gold); margin-bottom: 20px; }
+    .hero-desc { font-family: var(--body); font-size: 13px; font-weight: 300; color: var(--text); line-height: 2.1; margin-bottom: 28px; max-width: 360px; }
+    .hero-stats { display: flex; gap: 0; margin-bottom: 32px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.08); flex-wrap: wrap; }
+    .hero-stat { display: flex; flex-direction: column; gap: 5px; padding-right: 24px; border-right: 1px solid rgba(0,0,0,0.08); margin-right: 24px; margin-bottom: 12px; }
+    .hero-stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+    .hero-stat-val { font-family: var(--display); font-size: 20px; font-weight: 400; color: var(--dark); }
+    .hero-stat-lbl { font-family: var(--body); font-size: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: rgba(0,0,0,0.35); }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: unset; padding-top: 0; }
+      .hero-img { height: 56vw; min-height: 280px; max-height: 420px; }
+      .hero-panel { padding: 40px 24px 48px; }
+      .hero-name { font-size: clamp(38px, 9vw, 60px); }
+    }
+    @media (max-width: 480px) {
+      .hero-img { height: 260px; }
+      .hero-panel { padding: 32px 20px 40px; }
     }
   </style>
 
@@ -403,7 +346,7 @@
       <a href="faq.html"         class="nav-link">FAQ</a>
       <a href="contact.html"     class="nav-cta">Contact Us</a>
     </nav>
-    <button style="touch-action:manipulation;"  class="mobile-toggle" id="mob-toggle" aria-label="Open menu">
+    <button class="mobile-toggle" id="mob-toggle" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
   </header>
@@ -421,55 +364,34 @@
 
   <!-- ═══ HERO ══════════════════════════════════════ -->
   <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-bg-img"></div>
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-      <div class="hero-coming-tag h-anim h-d1">Coming Soon</div>
-
-      <h1 class="hero-title h-anim h-d2">West<em>acres.</em></h1>
-
-      <p class="hero-subtitle h-anim h-d3">
-        A brand new O'Grady Development on the west side of Traverse City —
-        generous 2.5 to 3 acre lots with limited restrictions.
-        More details coming soon.
-      </p>
-
-      <!-- Blurred stats teaser -->
-      <div class="hero-details h-anim h-d4">
-        <div class="hero-detail">
-          <div class="hero-detail-val">2.5–3</div>
-          <div class="hero-detail-lbl">Acre Lots</div>
+    <div class="hero-img">
+      <img src="images/communities/westacres/westacres-hero.jpg" alt="Westacres — Traverse City" fetchpriority="high">
+    </div>
+    <div class="hero-panel">
+      <div class="hero-eyebrow h-anim h-d1">West Traverse City</div>
+      <h1 class="hero-name h-anim h-d2">West<em>acres.</em></h1>
+      <div class="hero-rule h-anim h-d2"></div>
+      <p class="hero-desc h-anim h-d3">A brand new O'Grady Development on the west side of Traverse City — generous 2.5 to 3 acre lots with limited restrictions. More details coming soon.</p>
+      <div class="hero-stats h-anim h-d3">
+        <div class="hero-stat">
+          <div class="hero-stat-val">2.5–3 Acres</div>
+          <div class="hero-stat-lbl">Lot Size</div>
         </div>
-        <div class="hero-detail-divider"></div>
-        <div class="hero-detail">
-          <div class="hero-detail-val">No</div>
-          <div class="hero-detail-lbl">HOA Restrictions</div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">No HOA</div>
+          <div class="hero-stat-lbl">Restrictions</div>
         </div>
-        <div class="hero-detail-divider"></div>
-        <div class="hero-detail">
-          <div class="hero-detail-val">West TC</div>
-          <div class="hero-detail-lbl">Location</div>
-        </div>
-        <div class="hero-detail-divider"></div>
-        <div class="hero-detail">
-          <div class="hero-detail-val">TBD</div>
-          <div class="hero-detail-lbl">Pricing</div>
-        </div>
-        <div class="hero-details-blur">
-          <span>Pricing &amp; Details Revealed at Launch</span>
+        <div class="hero-stat">
+          <div class="hero-stat-val">West TC</div>
+          <div class="hero-stat-lbl">Location</div>
         </div>
       </div>
-
-      <div class="hero-cta-row h-anim h-d5">
-        <a href="#interest" class="btn btn-white">Join the Interest List</a>
-        <a href="tel:+12314215161" class="btn btn-ghost">(231) 421-5161</a>
+      <div class="hero-actions h-anim h-d4">
+        <a href="#interest" class="btn btn-dark">Join the Interest List</a>
       </div>
     </div>
-
-
   </section>
+
 
   <!-- ═══ WHAT WE KNOW ══════════════════════════════ -->
   <section class="known-section">
@@ -591,7 +513,7 @@
           <label class="form-label" for="notes">Questions or Comments <span style="font-weight:300;text-transform:none;letter-spacing:0;color:rgba(0,0,0,0.3);">(optional)</span></label>
           <textarea class="form-textarea" id="notes" name="notes" placeholder="Anything you'd like us to know..."></textarea>
         </div>
-        <button style="touch-action:manipulation;"  type="submit" class="form-submit">Join the Interest List</button>
+        <button type="submit" class="form-submit">Join the Interest List</button>
         <p class="form-note">No obligation. We'll be in touch when Westacres is ready to launch.</p>
       </form>
       <div class="form-success" id="form-success">
@@ -612,7 +534,7 @@
       </div>
       <div class="other-grid">
         <a href="peninsula-shores.html" class="other-card fade-up delay-1">
-          <div class="other-card-img"><img src="images/communities/peninsula-shores.jpg" alt="Peninsula Shores" loading="lazy"></div>
+          <div class="other-card-img"><img src="images/communities/peninsula-shores.jpg" alt="Peninsula Shores"></div>
           <div class="other-card-body">
             <div class="other-card-community">Old Mission Peninsula · From $2,995,000</div>
             <div class="other-card-name">Peninsula Shores</div>
@@ -620,7 +542,7 @@
           <div class="other-card-footer"><span class="other-more">Explore</span></div>
         </a>
         <a href="victoria-farms.html" class="other-card fade-up delay-2">
-          <div class="other-card-img"><img src="images/communities/victoria-farms.jpg" alt="Victoria Farms" loading="lazy"></div>
+          <div class="other-card-img"><img src="images/communities/victoria-farms.jpg" alt="Victoria Farms"></div>
           <div class="other-card-body">
             <div class="other-card-community">East Bay Township · From $995,000</div>
             <div class="other-card-name">Victoria Farms</div>
@@ -628,7 +550,7 @@
           <div class="other-card-footer"><span class="other-more">Explore</span></div>
         </a>
         <a href="hamilton-place.html" class="other-card fade-up delay-3">
-          <div class="other-card-img"><img src="images/communities/hamilton-place.jpg" alt="Hamilton Place" loading="lazy"></div>
+          <div class="other-card-img"><img src="images/communities/hamilton-place.jpg" alt="Hamilton Place"></div>
           <div class="other-card-body">
             <div class="other-card-community">City of Traverse City · From $439,000</div>
             <div class="other-card-name">Hamilton Place</div>
@@ -644,7 +566,7 @@
     <div class="wrap">
       <div class="footer-main">
         <div>
-          <a href="index.html"><img src="images/logos/Gold Logo.png" alt="O'Grady Development Co." class="footer-logo-img" loading="lazy"></a>
+          <a href="index.html"><img src="images/logos/Gold Logo.png" alt="O'Grady Development Co." class="footer-logo-img"></a>
           <p class="footer-address">901 South Garfield Avenue, Suite 202<br>Traverse City, MI 49686</p>
           <p class="footer-tagline">Building Your Future. Now.®</p>
         </div>

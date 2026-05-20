@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brook Valley | Coming Soon — Long Lake Township, Traverse City MI</title>
   <meta name="description" content="Brook Valley is a new O'Grady Development subdivision coming to Long Lake Township — just 4 miles from downtown Traverse City. Half-acre wooded lots with municipal water. Join the interest list.">
-  <link rel="dns-prefetch" href="https://maps.googleapis.com">
-  <link rel="dns-prefetch" href="https://maps.gstatic.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -60,62 +58,7 @@
     .btn-white:hover { background: #fff; color: var(--dark); }
 
     /* ─── HERO ────────────────────────────────────── */
-    .hero {
-      min-height: 100vh;
-      background: var(--dark);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      position: relative;
-      overflow: hidden;
-      padding-top: 72px;
-    }
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 80px 80px 80px 64px;
-      position: relative;
-      z-index: 2;
-    }
-    .hero-eyebrow { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
-    .hero-eyebrow .rule { background: rgba(207,192,166,0.4); }
-    .hero-coming-tag {
-      display: inline-block;
-      font-family: var(--body); font-size: 8.5px; font-weight: 600;
-      letter-spacing: 2.5px; text-transform: uppercase;
-      border: 1px solid rgba(184,168,138,0.4); color: var(--gold);
-      padding: 8px 20px; margin-bottom: 32px; align-self: flex-start;
-    }
-    .hero-headline { color: #fff; margin-bottom: 32px; }
-    .hero-headline em { font-style: italic; color: var(--gold-lt); }
-    .hero-desc { font-family: var(--body); font-size: 13px; font-weight: 300; line-height: 2; color: rgba(255,255,255,0.5); max-width: 420px; margin-bottom: 40px; }
-    .hero-right {
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-right-placeholder {
-      width: 100%; height: 100%;
-      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-      display: flex; align-items: center; justify-content: center;
-      min-height: 600px;
-    }
-    .hero-right img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      filter: brightness(0.75);
-    }
-    .hero-right-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to right, rgba(26,26,26,0.6) 0%, transparent 50%);
-    }
     /* Ghost text watermark */
-    .hero-ghost {
-      position: absolute; bottom: 40px; left: 64px;
-      font-family: var(--display); font-size: clamp(80px, 12vw, 160px);
-      font-weight: 600; color: rgba(255,255,255,0.03);
-      line-height: 1; pointer-events: none; user-select: none;
-      white-space: nowrap; z-index: 1;
-    }
 
     /* ─── KEY FACTS STRIP ─────────────────────────── */
     .facts-strip {
@@ -263,10 +206,7 @@
 
     /* ─── RESPONSIVE ──────────────────────────────── */
     @media (max-width: 1100px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-right { min-height: 420px; }
-      .hero-left { padding: 80px 48px; }
-      .facts-grid { grid-template-columns: repeat(2, 1fr); }
+            .facts-grid { grid-template-columns: repeat(2, 1fr); }
       .about-grid { grid-template-columns: 1fr; gap: 48px; }
       .interest-section { grid-template-columns: 1fr; }
       .interest-left { padding: 72px 48px; }
@@ -281,8 +221,7 @@
       .header { padding: 0 20px; height: 60px; }
       .logo-img { height: 36px; }
       .wrap { padding: 0 20px; }
-      .hero-left { padding: 56px 20px; }
-      .facts-grid { grid-template-columns: 1fr 1fr; }
+        .facts-grid { grid-template-columns: 1fr 1fr; }
       .fact-cell { padding: 32px 20px; border-right: none; border-bottom: 1px solid rgba(0,0,0,0.07); }
       .about-section { padding: 72px 0; }
       .interest-left { padding: 56px 20px; }
@@ -294,6 +233,36 @@
       .footer-main { grid-template-columns: 1fr; gap: 32px; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
       .btn { width: 100%; text-align: center; }
+    }
+
+    /* ─── SPLIT HERO ──────────────────────────────────── */
+    .hero { display: grid; grid-template-columns: 1.1fr 1fr; min-height: 100vh; padding-top: 72px; }
+    .hero-img { position: relative; overflow: hidden; }
+    .hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block; animation: heroZoom 14s ease forwards; transform: scale(1.04); }
+    @keyframes heroZoom { to { transform: scale(1); } }
+    .hero-panel { background: var(--warm); display: flex; flex-direction: column; justify-content: center; padding: 72px 56px; gap: 0; }
+    .hero-eyebrow { font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); flex-shrink: 0; }
+    .hero-name { font-family: var(--display); font-size: clamp(48px, 5.5vw, 80px); font-weight: 300; color: var(--dark); line-height: 1.0; margin-bottom: 20px; }
+    .hero-name em { font-style: italic; color: var(--gold); }
+    .hero-rule { width: 40px; height: 1px; background: var(--gold); margin-bottom: 20px; }
+    .hero-desc { font-family: var(--body); font-size: 13px; font-weight: 300; color: var(--text); line-height: 2.1; margin-bottom: 28px; max-width: 360px; }
+    .hero-stats { display: flex; gap: 0; margin-bottom: 32px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.08); flex-wrap: wrap; }
+    .hero-stat { display: flex; flex-direction: column; gap: 5px; padding-right: 24px; border-right: 1px solid rgba(0,0,0,0.08); margin-right: 24px; margin-bottom: 12px; }
+    .hero-stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+    .hero-stat-val { font-family: var(--display); font-size: 20px; font-weight: 400; color: var(--dark); }
+    .hero-stat-lbl { font-family: var(--body); font-size: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: rgba(0,0,0,0.35); }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: unset; padding-top: 0; }
+      .hero-img { height: 56vw; min-height: 280px; max-height: 420px; }
+      .hero-panel { padding: 40px 24px 48px; }
+      .hero-name { font-size: clamp(38px, 9vw, 60px); }
+    }
+    @media (max-width: 480px) {
+      .hero-img { height: 260px; }
+      .hero-panel { padding: 32px 20px 40px; }
     }
   </style>
 
@@ -404,7 +373,7 @@
       <a href="faq.html"         class="nav-link">FAQ</a>
       <a href="contact.html"     class="nav-cta">Contact Us</a>
     </nav>
-    <button style="touch-action:manipulation;"  class="mobile-toggle" id="mob-toggle" aria-label="Open menu">
+    <button class="mobile-toggle" id="mob-toggle" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
   </header>
@@ -422,25 +391,34 @@
 
   <!-- ═══ HERO ══════════════════════════════════════ -->
   <section class="hero">
-    <div class="hero-left">
-      <div class="hero-ghost">BV</div>
-      <div class="hero-eyebrow h-anim h-d1">
-        <div class="rule"></div>
-        <span class="t-label" style="color:rgba(255,255,255,0.4);">Long Lake Township</span>
-      </div>
-      <div class="hero-coming-tag h-anim h-d1">Coming Soon</div>
-      <h1 class="t-xl hero-headline h-anim h-d2">Brook<br><em>Valley.</em></h1>
-      <p class="hero-desc h-anim h-d3">A brand new O'Grady subdivision just 4 miles from downtown Traverse City — wooded half-acre lots with municipal water, brand new road and utilities, and the privacy you've been looking for.</p>
-      <div class="h-anim h-d4" style="display:flex;gap:16px;flex-wrap:wrap;">
-        <a href="#interest" class="btn btn-white">Join the Interest List</a>
-        <a href="tel:+12314215161" class="btn" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.5);">(231) 421-5161</a>
-      </div>
+    <div class="hero-img">
+      <img src="images/communities/brook-valley/brook-valley-hero.jpg" alt="Brook Valley — Long Lake Township" fetchpriority="high">
     </div>
-    <div class="hero-right">
-      <img src="images/communities/brook-valley/brook-valley-hero.jpg" alt="Brook Valley — Long Lake Township" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" loading="lazy">
-      <div class="hero-right-overlay"></div>
+    <div class="hero-panel">
+      <div class="hero-eyebrow h-anim h-d1">Long Lake Township</div>
+      <h1 class="hero-name h-anim h-d2">Brook<br><em>Valley.</em></h1>
+      <div class="hero-rule h-anim h-d2"></div>
+      <p class="hero-desc h-anim h-d3">A brand new O'Grady subdivision just 4 miles from downtown Traverse City — wooded half-acre lots with municipal water, brand new road and utilities, and the privacy you've been looking for.</p>
+      <div class="hero-stats h-anim h-d3">
+        <div class="hero-stat">
+          <div class="hero-stat-val">4 Miles</div>
+          <div class="hero-stat-lbl">From Downtown TC</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">½+ Acre</div>
+          <div class="hero-stat-lbl">Average Lot Size</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">Municipal</div>
+          <div class="hero-stat-lbl">Water Service</div>
+        </div>
+      </div>
+      <div class="hero-actions h-anim h-d4">
+        <a href="#interest" class="btn btn-dark">Join the Interest List</a><a href="tel:+12314215161" class="btn btn-ghost" style="border-color:rgba(0,0,0,0.2);color:var(--text);">(231) 421-5161</a>
+      </div>
     </div>
   </section>
+
 
   <!-- ═══ KEY FACTS ═════════════════════════════════ -->
   <div class="facts-strip">
@@ -577,7 +555,7 @@
           <label class="form-label" for="notes">Questions or Comments <span style="font-weight:300;text-transform:none;letter-spacing:0;color:rgba(0,0,0,0.3);">(optional)</span></label>
           <textarea class="form-textarea" id="notes" name="notes" placeholder="Anything you'd like us to know — preferred lot type, timeline, questions..."></textarea>
         </div>
-        <button style="touch-action:manipulation;"  type="submit" class="form-submit">Join the Interest List</button>
+        <button type="submit" class="form-submit">Join the Interest List</button>
         <p class="form-note">No obligation. We'll reach out when Brook Valley is ready to launch.</p>
       </form>
       <div class="form-success" id="form-success">
@@ -640,7 +618,7 @@
       <div class="other-grid">
         <a href="peninsula-shores.html" class="other-card fade-up delay-1">
           <div class="other-card-img">
-            <img src="images/communities/peninsula-shores.jpg" alt="Peninsula Shores" loading="lazy">
+            <img src="images/communities/peninsula-shores.jpg" alt="Peninsula Shores">
           </div>
           <div class="other-card-body">
             <div class="other-card-community">Old Mission Peninsula · From $2,995,000</div>
@@ -650,7 +628,7 @@
         </a>
         <a href="victoria-farms.html" class="other-card fade-up delay-2">
           <div class="other-card-img">
-            <img src="images/communities/victoria-farms.jpg" alt="Victoria Farms" loading="lazy">
+            <img src="images/communities/victoria-farms.jpg" alt="Victoria Farms">
           </div>
           <div class="other-card-body">
             <div class="other-card-community">East Bay Township · From $995,000</div>
@@ -660,7 +638,7 @@
         </a>
         <a href="hamilton-place.html" class="other-card fade-up delay-3">
           <div class="other-card-img">
-            <img src="images/communities/hamilton-place.jpg" alt="Hamilton Place" loading="lazy">
+            <img src="images/communities/hamilton-place.jpg" alt="Hamilton Place">
           </div>
           <div class="other-card-body">
             <div class="other-card-community">City of Traverse City · From $439,000</div>
@@ -677,7 +655,7 @@
     <div class="wrap">
       <div class="footer-main">
         <div>
-          <a href="index.html"><img src="images/logos/Gold Logo.png" alt="O'Grady Development Co." class="footer-logo-img" loading="lazy"></a>
+          <a href="index.html"><img src="images/logos/Gold Logo.png" alt="O'Grady Development Co." class="footer-logo-img"></a>
           <p class="footer-address">901 South Garfield Avenue, Suite 202<br>Traverse City, MI 49686</p>
           <p class="footer-tagline">Building Your Future. Now.®</p>
         </div>

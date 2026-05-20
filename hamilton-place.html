@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hamilton Place | Luxury Townhomes & STR Investment — Traverse City, Michigan</title>
   <meta name="description" content="Hamilton Place offers fully furnished luxury townhomes in Traverse City's Hotel Resort District. Perfect for personal use or short-term rental income. From $439,000.">
-  <link rel="dns-prefetch" href="https://maps.googleapis.com">
-  <link rel="dns-prefetch" href="https://maps.gstatic.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -68,19 +66,6 @@
     .btn-gold:hover { background: var(--gold); color: #fff; }
 
     /* ─── HERO ────────────────────────────────────── */
-    .hero { position: relative; height: 100vh; min-height: 700px; overflow: hidden; display: flex; align-items: flex-end; }
-    .hero-bg { position: absolute; inset: 0; background-image: url('images/communities/hamilton-place/hamilton-place-hero.jpg'); background-size: cover; background-position: center 40%; transform: scale(1.04); animation: heroZoom 14s ease forwards; }
-    @keyframes heroZoom { to { transform: scale(1); } }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,8,6,0.92) 0%, rgba(10,8,6,0.25) 50%, rgba(10,8,6,0.5) 100%); }
-    .hero-content { position: relative; z-index: 2; padding: 0 64px 80px; width: 100%; display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: end; }
-    .hero-left { display: flex; flex-direction: column; gap: 24px; }
-    .hero-eyebrow { display: flex; align-items: center; gap: 16px; }
-    .hero-eyebrow .rule { background: rgba(207,192,166,0.5); }
-    .hero-specs { display: flex; gap: 32px; flex-wrap: wrap; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.1); }
-    .hero-spec-val { font-family: var(--display); font-size: 18px; font-weight: 300; color: #fff; }
-    .hero-spec-lbl { font-family: var(--body); font-size: 8px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 3px; }
-    .hero-right { display: flex; flex-direction: column; gap: 20px; }
-    .hero-badge { font-family: var(--body); font-size: 8.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; background: var(--gold); color: #fff; padding: 8px 18px; display: inline-block; align-self: flex-start; }
 
     /* ─── INTRO ───────────────────────────────────── */
     .intro-section { padding: 120px 0; background: var(--bg); }
@@ -219,16 +204,14 @@
       .mgmt-right { padding: 72px 48px; }
       .location-inner { grid-template-columns: 1fr; gap: 48px; }
       .footer-main { grid-template-columns: 1fr 1fr; gap: 48px; }
-      .hero-content { grid-template-columns: 1fr; gap: 32px; }
-    }
+      }
     @media (max-width: 768px) {
       .nav { display: none; }
       .mobile-toggle { display: block; }
       .header { padding: 0 20px; height: 60px; }
       .logo-img { height: 36px; }
       .wrap { padding: 0 20px; }
-      .hero-content { padding: 0 20px 64px; }
-      .intro-section { padding: 72px 0; }
+        .intro-section { padding: 72px 0; }
       .units-section { padding: 72px 0; }
       .units-grid { grid-template-columns: 1fr; }
       .amenities-section { padding: 72px 0; }
@@ -241,6 +224,36 @@
       .footer-bottom { flex-direction: column; align-items: flex-start; }
       .popup-form-row { grid-template-columns: 1fr; }
       .btn { width: 100%; text-align: center; }
+    }
+
+    /* ─── SPLIT HERO ──────────────────────────────────── */
+    .hero { display: grid; grid-template-columns: 1.1fr 1fr; min-height: 100vh; padding-top: 72px; }
+    .hero-img { position: relative; overflow: hidden; }
+    .hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block; animation: heroZoom 14s ease forwards; transform: scale(1.04); }
+    @keyframes heroZoom { to { transform: scale(1); } }
+    .hero-panel { background: var(--warm); display: flex; flex-direction: column; justify-content: center; padding: 72px 56px; gap: 0; }
+    .hero-eyebrow { font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); flex-shrink: 0; }
+    .hero-name { font-family: var(--display); font-size: clamp(48px, 5.5vw, 80px); font-weight: 300; color: var(--dark); line-height: 1.0; margin-bottom: 20px; }
+    .hero-name em { font-style: italic; color: var(--gold); }
+    .hero-rule { width: 40px; height: 1px; background: var(--gold); margin-bottom: 20px; }
+    .hero-desc { font-family: var(--body); font-size: 13px; font-weight: 300; color: var(--text); line-height: 2.1; margin-bottom: 28px; max-width: 360px; }
+    .hero-stats { display: flex; gap: 0; margin-bottom: 32px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.08); flex-wrap: wrap; }
+    .hero-stat { display: flex; flex-direction: column; gap: 5px; padding-right: 24px; border-right: 1px solid rgba(0,0,0,0.08); margin-right: 24px; margin-bottom: 12px; }
+    .hero-stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+    .hero-stat-val { font-family: var(--display); font-size: 20px; font-weight: 400; color: var(--dark); }
+    .hero-stat-lbl { font-family: var(--body); font-size: 8px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: rgba(0,0,0,0.35); }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: unset; padding-top: 0; }
+      .hero-img { height: 56vw; min-height: 280px; max-height: 420px; }
+      .hero-panel { padding: 40px 24px 48px; }
+      .hero-name { font-size: clamp(38px, 9vw, 60px); }
+    }
+    @media (max-width: 480px) {
+      .hero-img { height: 260px; }
+      .hero-panel { padding: 32px 20px 40px; }
     }
   </style>
 
@@ -341,7 +354,7 @@
   <header class="header" id="header">
     <a href="index.html" class="logo">
       <img src="images/logos/White Logo.png" alt="O'Grady Development Co." class="logo-img logo-img-light">
-      <img src="images/logos/Black Logo.png" alt="O'Grady Development Co." class="logo-img logo-img-dark" loading="lazy">
+      <img src="images/logos/Black Logo.png" alt="O'Grady Development Co." class="logo-img logo-img-dark">
     </a>
     <nav class="nav">
       <a href="communities.html" class="nav-link active">Communities</a>
@@ -352,7 +365,7 @@
       <a href="faq.html"         class="nav-link">FAQ</a>
       <a href="contact.html"     class="nav-cta">Contact Us</a>
     </nav>
-    <button style="touch-action:manipulation;"  class="mobile-toggle" id="mob-toggle" aria-label="Open menu">
+    <button class="mobile-toggle" id="mob-toggle" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
   </header>
@@ -370,48 +383,45 @@
 
   <!-- ═══ HERO ══════════════════════════════════════ -->
   <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-left">
-        <div class="hero-eyebrow h-anim h-d1">
-          <div class="rule"></div>
-          <span class="t-label" style="color:rgba(255,255,255,0.45);">City of Traverse City · Hotel Resort District</span>
+    <div class="hero-img">
+      <img src="images/communities/hamilton-place/hamilton-place-hero.jpg" alt="Hamilton Place — Traverse City" fetchpriority="high">
+    </div>
+    <div class="hero-panel">
+      <div class="hero-eyebrow h-anim h-d1">City of Traverse City · Hotel Resort District</div>
+      <h1 class="hero-name h-anim h-d2">Hamilton<br><em>Place.</em></h1>
+      <div class="hero-rule h-anim h-d2"></div>
+      <p class="hero-desc h-anim h-d3">A newly built collection of design-forward luxury townhomes in the heart of Traverse City — fully furnished, move-in ready, and professionally managed.</p>
+      <div class="hero-stats h-anim h-d3">
+        <div class="hero-stat">
+          <div class="hero-stat-val">3 Units</div>
+          <div class="hero-stat-lbl">Available</div>
         </div>
-        <h1 class="t-xl h-anim h-d2" style="color:#fff;">Hamilton<br><em style="font-style:italic;color:var(--gold-lt);">Place.</em></h1>
-        <div class="hero-specs h-anim h-d3">
-          <div>
-            <div class="hero-spec-val">3 Units</div>
-            <div class="hero-spec-lbl">Available</div>
-          </div>
-          <div>
-            <div class="hero-spec-val">From $439,000</div>
-            <div class="hero-spec-lbl">Starting Price</div>
-          </div>
-          <div>
-            <div class="hero-spec-val">Turnkey</div>
-            <div class="hero-spec-lbl">Fully Furnished</div>
-          </div>
-          <div>
-            <div class="hero-spec-val">STR Ready</div>
-            <div class="hero-spec-lbl">Mgmt in Place</div>
-          </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">From $439,000</div>
+          <div class="hero-stat-lbl">Starting Price</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">Turnkey</div>
+          <div class="hero-stat-lbl">Fully Furnished</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">STR Ready</div>
+          <div class="hero-stat-lbl">Mgmt in Place</div>
         </div>
       </div>
-      <div class="hero-right h-anim h-d3">
-        <div class="hero-badge">Now Selling</div>
-        <p class="t-body" style="color:rgba(255,255,255,0.55);">A newly built (2025) collection of design-forward luxury townhomes in the heart of Traverse City — fully furnished, move-in ready, and professionally managed. Own a personal retreat that earns while you're away.</p>
-        <button style="touch-action:manipulation;"  onclick="openPopup('Hamilton Place', 'From $439,000')" class="btn btn-white" style="margin-top:8px;">Request More Information</button>
+      <div class="hero-actions h-anim h-d4">
+        <button onclick="openPopup('Hamilton Place', 'From $439,000')" class="btn btn-dark">Request More Information</button>
       </div>
     </div>
   </section>
+
 
   <!-- ═══ INTRO ════════════════════════════════════ -->
   <section class="intro-section">
     <div class="wrap">
       <div class="intro-grid">
         <div class="intro-img fade-up">
-          <img src="images/communities/hamilton-place/hamilton-place-hero.jpg" alt="Hamilton Place — Traverse City luxury townhomes" loading="lazy">
+          <img src="images/communities/hamilton-place/hamilton-place-hero.jpg" alt="Hamilton Place — Traverse City luxury townhomes">
         </div>
         <div class="intro-text fade-up delay-2">
           <span class="t-label">The Opportunity</span>
@@ -448,7 +458,7 @@
         <!-- Unit A -->
         <div class="unit-card fade-up">
           <div class="unit-img">
-            <img src="images/communities/hamilton-place/hamilton-place-307-a.jpg" alt="Hamilton Place Unit A — End Unit" loading="lazy">
+            <img src="images/communities/hamilton-place/hamilton-place-307-a.jpg" alt="Hamilton Place Unit A — End Unit">
             <div class="unit-badge">End Unit</div>
           </div>
           <div class="unit-body">
@@ -464,14 +474,14 @@
             </div>
           </div>
           <div class="unit-footer">
-            <button style="touch-action:manipulation;"  class="btn btn-dark" style="width:100%;text-align:center;" onclick="openPopup('Hamilton Place — Unit A (307-A Hamilton St)', '$449,000')">Inquire About Unit A</button>
+            <button class="btn btn-dark" style="width:100%;text-align:center;" onclick="openPopup('Hamilton Place — Unit A (307-A Hamilton St)', '$449,000')">Inquire About Unit A</button>
           </div>
         </div>
 
         <!-- Unit B -->
         <div class="unit-card fade-up delay-1">
           <div class="unit-img">
-            <img src="images/communities/hamilton-place/hamilton-place-307-b.jpg" alt="Hamilton Place Unit B — Middle Unit" loading="lazy">
+            <img src="images/communities/hamilton-place/hamilton-place-307-b.jpg" alt="Hamilton Place Unit B — Middle Unit">
             <div class="unit-badge" style="background:var(--dark);">Middle Unit</div>
           </div>
           <div class="unit-body">
@@ -487,14 +497,14 @@
             </div>
           </div>
           <div class="unit-footer">
-            <button style="touch-action:manipulation;"  class="btn btn-dark" style="width:100%;text-align:center;" onclick="openPopup('Hamilton Place — Unit B (307-B Hamilton St)', '$439,000')">Inquire About Unit B</button>
+            <button class="btn btn-dark" style="width:100%;text-align:center;" onclick="openPopup('Hamilton Place — Unit B (307-B Hamilton St)', '$439,000')">Inquire About Unit B</button>
           </div>
         </div>
 
         <!-- Unit C -->
         <div class="unit-card fade-up delay-2">
           <div class="unit-img">
-            <img src="images/communities/hamilton-place/hamilton-place-307-c.jpg" alt="Hamilton Place Unit C — End Unit" loading="lazy">
+            <img src="images/communities/hamilton-place/hamilton-place-307-c.jpg" alt="Hamilton Place Unit C — End Unit">
             <div class="unit-badge">End Unit</div>
           </div>
           <div class="unit-body">
@@ -510,7 +520,7 @@
             </div>
           </div>
           <div class="unit-footer">
-            <button style="touch-action:manipulation;"  class="btn btn-dark" style="width:100%;text-align:center;" onclick="openPopup('Hamilton Place — Unit C (307-C Hamilton St)', '$449,000')">Inquire About Unit C</button>
+            <button class="btn btn-dark" style="width:100%;text-align:center;" onclick="openPopup('Hamilton Place — Unit C (307-C Hamilton St)', '$449,000')">Inquire About Unit C</button>
           </div>
         </div>
 
@@ -667,7 +677,7 @@
         <div class="rule"></div>
         <p class="t-body" style="text-align:center;max-width:480px;">Whether you're considering a unit as a personal retreat or a turnkey investment, we'd love to connect. We typically respond within one business day.</p>
         <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
-          <button style="touch-action:manipulation;"  class="btn btn-dark" onclick="openPopup('Hamilton Place', 'From $439,000')">Request More Information</button>
+          <button class="btn btn-dark" onclick="openPopup('Hamilton Place', 'From $439,000')">Request More Information</button>
           <a href="https://www.owntraverse.com" target="_blank" rel="noopener" class="btn btn-gold">View Full Listing</a>
         </div>
       </div>
@@ -679,7 +689,7 @@
     <div class="wrap">
       <div class="footer-main">
         <div>
-          <a href="index.html"><img src="images/logos/Gold Logo.png" alt="O'Grady Development Co." class="footer-logo-img" loading="lazy"></a>
+          <a href="index.html"><img src="images/logos/Gold Logo.png" alt="O'Grady Development Co." class="footer-logo-img"></a>
           <p class="footer-address">901 South Garfield Avenue, Suite 202<br>Traverse City, MI 49686</p>
           <p class="footer-tagline">Building Your Future. Now.®</p>
         </div>
@@ -720,7 +730,7 @@
   <div class="popup-overlay" id="popup-overlay">
     <div class="popup" role="dialog" aria-modal="true">
       <div class="popup-header">
-        <button style="touch-action:manipulation;"  class="popup-close" onclick="closePopup()">Close ✕</button>
+        <button class="popup-close" onclick="closePopup()">Close ✕</button>
         <div class="popup-property-label">Hamilton Place — Inquiry</div>
         <div class="popup-property-address" id="popup-address"></div>
         <div class="popup-property-price" id="popup-price"></div>
@@ -766,7 +776,7 @@
             <label class="popup-label" for="popup-message">Message <span style="font-weight:300;text-transform:none;letter-spacing:0;color:rgba(0,0,0,0.3);">(optional)</span></label>
             <textarea class="popup-textarea" id="popup-message" name="message" placeholder="Questions about a specific unit, the management program, financing..."></textarea>
           </div>
-          <button style="touch-action:manipulation;"  type="submit" class="popup-submit">Send Inquiry</button>
+          <button type="submit" class="popup-submit">Send Inquiry</button>
           <p class="popup-note">We respond within one business day. All inquiries are confidential.</p>
         </form>
         <div class="popup-success" id="popup-success">
@@ -774,7 +784,7 @@
           <span class="t-label">Inquiry Sent</span>
           <div style="font-family:var(--display);font-size:26px;font-weight:300;">We'll be in touch soon.</div>
           <p style="font-family:var(--body);font-size:12px;font-weight:300;color:var(--text);text-align:center;max-width:320px;line-height:1.9;">Expect to hear from us within one business day.</p>
-          <button style="touch-action:manipulation;"  onclick="closePopup()" style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);background:none;border:none;cursor:pointer;margin-top:8px;">Close ✕</button>
+          <button onclick="closePopup()" style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);background:none;border:none;cursor:pointer;margin-top:8px;">Close ✕</button>
         </div>
       </div>
     </div>
