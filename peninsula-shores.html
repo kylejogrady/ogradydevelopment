@@ -29,20 +29,21 @@
     .header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 0 56px; height: 72px; transition: background 0.5s, border-color 0.5s, height 0.4s var(--ease); border-bottom: 1px solid transparent; }
     .header.scrolled { height: 64px; background: rgba(250,249,247,0.96); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom-color: rgba(0,0,0,0.07); }
     .logo { display: flex; align-items: center; }
-    .logo-img { height: 44px; width: auto; filter: drop-shadow(0 1px 8px rgba(0,0,0,0.5)); }
-    .logo-img-dark { display: none; }
+    .logo-img { height: 44px; width: auto; }
+    .logo-img-light { display: none; }
+    .logo-img-dark { display: block; }
     .header.scrolled .logo-img-light { display: none; }
     .header.scrolled .logo-img-dark { display: block; }
     .header.scrolled .logo-img { filter: none; }
     .nav { display: flex; align-items: center; gap: 40px; }
-    .nav-link { font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.75); position: relative; padding-bottom: 3px; transition: color 0.3s; }
+    .nav-link { font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dark); position: relative; padding-bottom: 3px; transition: color 0.3s; }
     .header.scrolled .nav-link { color: var(--dark); }
     .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.45s var(--ease); }
     .nav-link:hover::after, .nav-link.active::after { width: 100%; }
     .nav-cta { font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(184,168,138,0.5); padding: 10px 24px; transition: all 0.4s var(--ease); }
     .nav-cta:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
     .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; z-index: 1001; }
-    .mobile-toggle span { display: block; width: 22px; height: 1.5px; background: #fff; margin-bottom: 6px; transition: all 0.35s ease; }
+    .mobile-toggle span { display: block; width: 22px; height: 1.5px; background: var(--dark); margin-bottom: 6px; transition: all 0.35s ease; }
     .header.scrolled .mobile-toggle span { background: var(--dark); }
     .mobile-toggle span:last-child { margin-bottom: 0; }
     .mobile-menu { display: none; position: fixed; inset: 0; background: var(--bg); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
@@ -445,15 +446,7 @@
   </section>
 
   <!-- ═══ AERIAL BANNER ════════════════════════════ -->
-  <div class="aerial-banner">
-    <img src="images/communities/peninsula-shores/unit-39/unit-39-9.jpg" alt="Peninsula Shores aerial — East Grand Traverse Bay">
-    <div class="aerial-banner-overlay">
-      <div class="aerial-banner-text fade-up">
-        <span class="t-label" style="color:rgba(255,255,255,0.5);">East Grand Traverse Bay</span>
-        <h2 class="t-lg" style="color:#fff;text-align:center;">Waters Edge Drive,<br>Traverse City, MI</h2>
-      </div>
-    </div>
-  </div>
+
 
   <!-- ═══ AVAILABLE HOMES ═══════════════════════════ -->
   <section class="homes-section" id="available-homes">
@@ -574,12 +567,7 @@
               <div class="home-card-thumb" onclick="swapMain('main-14','images/communities/peninsula-shores/unit-14/unit-14-2.jpg'); openLightbox('lot14',1)">
                 <img src="images/communities/peninsula-shores/unit-14/unit-14-2.jpg" alt="Unit 14 view 2">
               </div>
-              <div class="home-card-thumb" onclick="swapMain('main-14','images/communities/peninsula-shores/unit-14/unit-14-rendering-front.jpg'); openLightbox('lot14',2)">
-                <img src="images/communities/peninsula-shores/unit-14/unit-14-rendering-front.jpg" alt="Unit 14 front rendering">
-              </div>
-              <div class="home-card-thumb" onclick="swapMain('main-14','images/communities/peninsula-shores/unit-14/unit-14-rendering-rear.jpg'); openLightbox('lot14',3)">
-                <img src="images/communities/peninsula-shores/unit-14/unit-14-rendering-rear.jpg" alt="Unit 14 rear rendering">
-              </div>
+
             </div>
           </div>
           <div class="home-card-info">
@@ -743,6 +731,39 @@
     </div>
   </section>
 
+  <!-- ═══ USEFUL LINKS ══════════════════════════════ -->
+  <section style="padding:72px 0;background:var(--warm);">
+    <div class="wrap">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+        <div class="fade-up">
+          <span class="t-label">Resources</span>
+          <h2 class="t-lg" style="margin-top:12px;margin-bottom:16px;">Useful<br>Documents.</h2>
+          <div class="rule"></div>
+          <p class="t-body" style="margin-top:20px;">Important community documents for Peninsula Shores — including condo association bylaws, rules and regulations, and related HOA materials.</p>
+        </div>
+        <div class="fade-up delay-2" style="display:flex;flex-direction:column;gap:3px;">
+          <a href="https://drive.google.com/drive/folders/1maqeewPFJY1XkQPtN52bxccxuR6EM9mW?usp=share_link"
+             target="_blank" rel="noopener"
+             style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 28px;background:var(--bg);border:1px solid rgba(0,0,0,0.07);transition:background 0.3s,border-color 0.3s;"
+             onmouseover="this.style.background='#fff';this.style.borderColor='var(--gold)'"
+             onmouseout="this.style.background='var(--bg)';this.style.borderColor='rgba(0,0,0,0.07)'">
+            <div style="display:flex;align-items:center;gap:16px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" style="flex-shrink:0;"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+              <div>
+                <div style="font-family:var(--display);font-size:18px;font-weight:400;color:var(--dark);">Condo Association Documents</div>
+                <div style="font-family:var(--body);font-size:10px;font-weight:300;color:var(--text);margin-top:3px;">Bylaws, rules &amp; regulations, HOA materials</div>
+              </div>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <div style="padding:14px 28px;background:var(--bg);border:1px solid rgba(0,0,0,0.07);">
+            <p style="font-family:var(--body);font-size:10px;font-weight:300;color:rgba(0,0,0,0.35);line-height:1.8;">Opens in Google Drive. Documents are provided for informational purposes and are subject to change.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══ CTA SECTION ════════════════════════════════ -->
   <section class="cta-section">
     <div class="wrap">
@@ -858,8 +879,7 @@
       lot14: [
         'images/communities/peninsula-shores/unit-14/unit-14-1.jpg',
         'images/communities/peninsula-shores/unit-14/unit-14-2.jpg',
-        'images/communities/peninsula-shores/unit-14/unit-14-rendering-front.jpg',
-        'images/communities/peninsula-shores/unit-14/unit-14-rendering-rear.jpg',
+
       ]
     };
     let currentGallery = [], currentIdx = 0;
