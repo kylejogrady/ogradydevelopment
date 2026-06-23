@@ -81,6 +81,26 @@
     .intro-img { position: relative; overflow: hidden; aspect-ratio: 4/3; }
     .intro-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
     .intro-img:hover img { transform: scale(1.04); }
+    /* ── Photo gallery ── */
+    .ps-gallery { position: relative; }
+    .ps-gallery #psGalImg { cursor: zoom-in; }
+    .ps-gal-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 42px; height: 42px; border: none; border-radius: 50%; background: rgba(255,255,255,0.85); color: #1a1a1a; font-family: var(--body); font-size: 22px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 3; box-shadow: 0 2px 12px rgba(0,0,0,0.18); transition: background 0.25s; }
+    .ps-gal-nav:hover { background: #fff; }
+    .ps-gal-prev { left: 14px; }
+    .ps-gal-next { right: 14px; }
+    .ps-gal-count { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.55); color: #fff; font-family: var(--body); font-size: 10px; letter-spacing: 1.5px; padding: 5px 12px; border-radius: 20px; z-index: 3; }
+    .ps-gal-expand { position: absolute; top: 14px; right: 14px; width: 30px; height: 30px; border-radius: 50%; background: rgba(0,0,0,0.45); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; z-index: 3; pointer-events: none; }
+    /* ── Lightbox ── */
+    .ps-lightbox { position: fixed; inset: 0; z-index: 9999; background: rgba(12,12,12,0.94); display: none; align-items: center; justify-content: center; }
+    .ps-lightbox.open { display: flex; }
+    .ps-lightbox img { max-width: 90vw; max-height: 86vh; object-fit: contain; box-shadow: 0 10px 60px rgba(0,0,0,0.5); }
+    .ps-lb-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 54px; height: 54px; border: none; border-radius: 50%; background: rgba(255,255,255,0.12); color: #fff; font-family: var(--body); font-size: 28px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.25s; }
+    .ps-lb-nav:hover { background: rgba(255,255,255,0.25); }
+    .ps-lb-prev { left: 24px; } .ps-lb-next { right: 24px; }
+    .ps-lb-close { position: absolute; top: 22px; right: 28px; width: 44px; height: 44px; border: none; background: transparent; color: #fff; font-size: 22px; cursor: pointer; opacity: 0.8; }
+    .ps-lb-close:hover { opacity: 1; }
+    .ps-lb-count { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.85); font-family: var(--body); font-size: 11px; letter-spacing: 2px; }
+    @media (max-width: 768px) { .ps-lb-nav { width: 44px; height: 44px; font-size: 22px; } .ps-lb-prev { left: 8px; } .ps-lb-next { right: 8px; } }
     .intro-text { display: flex; flex-direction: column; gap: 24px; }
     .pull { font-family: var(--display); font-size: clamp(17px, 2vw, 22px); font-style: italic; font-weight: 400; color: var(--gold); line-height: 1.65; padding-left: 24px; border-left: 1px solid var(--gold); }
     .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; padding: 24px 0; border-top: 1px solid rgba(0,0,0,0.07); border-bottom: 1px solid rgba(0,0,0,0.07); }
@@ -315,7 +335,6 @@
     gtag('js', new Date());
     gtag('config', 'G-85XKL1C940');
   </script>
-  <script src="tracking.js"></script>
 </head>
 <body>
 
@@ -434,8 +453,12 @@
   <section class="intro-section">
     <div class="wrap">
       <div class="intro-grid">
-        <div class="intro-img fade-up">
-          <img src="images/communities/peninsula-shores/peninsula-shores-sub-hero.jpg" alt="Peninsula Shores community — Old Mission Peninsula">
+        <div class="intro-img fade-up ps-gallery" id="psGallery">
+          <img id="psGalImg" src="images/communities/peninsula-shores/gallery/peninsula-shores-1.jpg" alt="Peninsula Shores community — Old Mission Peninsula" onclick="psOpenLightbox()">
+          <button type="button" class="ps-gal-nav ps-gal-prev" onclick="psGalStep(-1)" aria-label="Previous photo">&#8249;</button>
+          <button type="button" class="ps-gal-nav ps-gal-next" onclick="psGalStep(1)" aria-label="Next photo">&#8250;</button>
+          <div class="ps-gal-expand" aria-hidden="true">&#9974;</div>
+          <div class="ps-gal-count"><span id="psGalCur">1</span>&nbsp;/&nbsp;<span id="psGalTot">1</span></div>
         </div>
         <div class="intro-text fade-up delay-2">
           <span class="t-label">The Community</span>
@@ -1015,5 +1038,53 @@
     </div>
   </div>
 
+  <!-- Peninsula Shores gallery lightbox -->
+  <div id="psLightbox" class="ps-lightbox" role="dialog" aria-modal="true" aria-label="Peninsula Shores photo gallery">
+    <button type="button" class="ps-lb-close" onclick="psCloseLightbox()" aria-label="Close">&#10005;</button>
+    <button type="button" class="ps-lb-nav ps-lb-prev" onclick="psLbStep(-1)" aria-label="Previous photo">&#8249;</button>
+    <img id="psLbImg" src="" alt="Peninsula Shores photo">
+    <button type="button" class="ps-lb-nav ps-lb-next" onclick="psLbStep(1)" aria-label="Next photo">&#8250;</button>
+    <div class="ps-lb-count"><span id="psLbCur">1</span> / <span id="psLbTot">1</span></div>
+  </div>
+
+  <script>
+  (function(){
+    /* ===== PENINSULA SHORES GALLERY =================================
+       Add or remove photos by editing THIS list only.
+       Order here = order shown. Paths are relative to the site root. */
+    const psGallery = [
+      "images/communities/peninsula-shores/gallery/peninsula-shores-1.jpg",
+      "images/communities/peninsula-shores/gallery/peninsula-shores-2.jpg",
+      "images/communities/peninsula-shores/gallery/peninsula-shores-3.jpg",
+      "images/communities/peninsula-shores/gallery/peninsula-shores-4.jpg",
+      "images/communities/peninsula-shores/gallery/peninsula-shores-5.jpg",
+      "images/communities/peninsula-shores/gallery/peninsula-shores-6.jpg"
+    ];
+    /* =============================================================== */
+    let gi=0, li=0;
+    const $=id=>document.getElementById(id);
+    const galImg=$('psGalImg'),galCur=$('psGalCur'),galTot=$('psGalTot'),
+          gallery=$('psGallery'),lbox=$('psLightbox'),lbImg=$('psLbImg'),
+          lbCur=$('psLbCur'),lbTot=$('psLbTot');
+    if(!galImg) return;
+    const renderGal=()=>{galImg.src=psGallery[gi];galCur.textContent=gi+1;galTot.textContent=psGallery.length;};
+    const renderLb =()=>{lbImg.src=psGallery[li];lbCur.textContent=li+1;lbTot.textContent=psGallery.length;};
+    window.psGalStep=d=>{gi=(gi+d+psGallery.length)%psGallery.length;renderGal();};
+    window.psOpenLightbox=()=>{li=gi;renderLb();lbox.classList.add('open');document.body.style.overflow='hidden';};
+    window.psCloseLightbox=()=>{lbox.classList.remove('open');document.body.style.overflow='';};
+    window.psLbStep=d=>{li=(li+d+psGallery.length)%psGallery.length;renderLb();};
+    lbox.addEventListener('click',e=>{if(e.target===lbox)window.psCloseLightbox();});
+    document.addEventListener('keydown',e=>{
+      if(!lbox.classList.contains('open'))return;
+      if(e.key==='ArrowLeft')window.psLbStep(-1);
+      else if(e.key==='ArrowRight')window.psLbStep(1);
+      else if(e.key==='Escape')window.psCloseLightbox();
+    });
+    const multi=psGallery.length>1;
+    [...document.querySelectorAll('.ps-gal-nav, .ps-lb-nav')].forEach(b=>b.style.display=multi?'':'none');
+    [gallery.querySelector('.ps-gal-count'),lbox.querySelector('.ps-lb-count')].forEach(c=>{if(c)c.style.display=multi?'':'none';});
+    renderGal();
+  })();
+  </script>
 </body>
 </html>
