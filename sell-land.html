@@ -89,17 +89,18 @@
     }
     .hero-content {
       position: relative; z-index: 2;
-      padding: 0 64px 96px;
+      padding: 0 64px 88px;
       width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: end;
+      max-width: 720px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
     }
-    .hero-left { display: flex; flex-direction: column; gap: 28px; }
     .hero-eyebrow { display: flex; align-items: center; gap: 16px; }
     .hero-eyebrow .rule { background: rgba(207,192,166,0.5); }
-    .hero-right { display: flex; flex-direction: column; gap: 24px; padding-bottom: 8px; }
+    .hero-copy { display: flex; flex-direction: column; gap: 16px; max-width: 600px; }
+    .hero-copy p { font-family: var(--body); font-weight: 300; font-size: 16px; line-height: 1.85; color: rgba(255,255,255,0.82); margin: 0; }
+    .hero-copy p + p { color: rgba(255,255,255,0.6); }
 
     /* Animated counter pills */
     .hero-pills { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
@@ -356,7 +357,6 @@
     gtag('js', new Date());
     gtag('config', 'G-85XKL1C940');
   </script>
-  <script src="tracking.js"></script>
 </head>
 <body>
 
@@ -445,26 +445,18 @@
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-left">
-        <div class="hero-eyebrow h-anim h-d1">
-          <div class="rule"></div>
-          <span class="t-label" style="color:rgba(255,255,255,0.45);">Land Acquisition</span>
-        </div>
-        <h1 class="t-xl h-anim h-d2" style="color:#fff;">Your Land.<br><em style="font-style:italic;color:var(--gold-lt);">Our Next<br>Community.</em></h1>
-
-        <div class="h-anim h-d4" style="display:flex;gap:16px;flex-wrap:wrap;">
-          <a href="#submit" class="btn btn-white">Get an Offer</a>
-          <a href="tel:+12314215161" class="btn" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);">Call (231) 421-5161</a>
-        </div>
+      <div class="hero-eyebrow h-anim h-d1">
+        <div class="rule"></div>
+        <span class="t-label" style="color:rgba(255,255,255,0.45);">Land Acquisition</span>
       </div>
-      <div class="hero-right h-anim h-d3">
-        <div class="rule" style="background:rgba(207,192,166,0.4);"></div>
-        <p class="t-body" style="color:rgba(255,255,255,0.55);font-size:14px;line-height:2.1;">
-          O'Grady Development has been purchasing land and building homes since 1989. We move quickly, pay fairly, and handle the complexity so you don't have to.
-        </p>
-        <p class="t-body" style="color:rgba(255,255,255,0.4);">
-          No real estate agents. No commissions. No drawn-out listing process. Just a straightforward conversation and a written offer within weeks.
-        </p>
+      <h1 class="t-xl h-anim h-d2" style="color:#fff;">Your Land.<br><em style="font-style:italic;color:var(--gold-lt);">Our Next<br>Community.</em></h1>
+      <div class="hero-copy h-anim h-d3">
+        <p>O'Grady Development has been purchasing land and building homes since 1989. We move quickly, pay fairly, and handle the complexity so you don't have to.</p>
+        <p>No real estate agents. No commissions. No drawn-out listing process. Just a straightforward conversation and a written offer within weeks.</p>
+      </div>
+      <div class="h-anim h-d4" style="display:flex;gap:16px;flex-wrap:wrap;">
+        <a href="#submit" class="btn btn-white">Get an Offer</a>
+        <a href="tel:+12314215161" class="btn" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);">Call (231) 421-5161</a>
       </div>
     </div>
   </section>
@@ -623,10 +615,6 @@
           <a href="mailto:Info@OGradyTeam.com" class="contact-direct-val">Info@OGradyTeam.com</a>
         </div>
       </div>
-      <blockquote class="pull" style="margin-top:8px;">
-        "We've been buying land since 1989. If you have something worth considering, we'll tell you honestly — one way or the other."
-      </blockquote>
-      <p class="t-body" style="font-size:12px;">— Kyle O'Grady</p>
     </div>
 
     <div class="form-right">
