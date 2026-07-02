@@ -401,7 +401,7 @@
       cursor: pointer;
       color: #aaa;
       position: relative;
-      transition: color 0.3s;
+      transition: color 0.3s, background 0.3s, box-shadow 0.3s;
     }
     .comm-tab::after {
       content: '';
@@ -410,8 +410,7 @@
       transform: scaleX(0);
       transition: transform 0.4s var(--ease);
     }
-    .comm-tab.active { color: var(--dark); }
-    .comm-tab.active::after { transform: scaleX(1); }
+    .comm-tab.active { color: var(--dark); background: rgba(184, 168, 138, 0.2); box-shadow: inset 0 0 0 1px var(--gold); }
     .comm-tab:hover { color: var(--dark); }
 
     .comm-panel { display: none; }
@@ -466,7 +465,9 @@
       color: #fff;
     }
     .comm-info { display: flex; flex-direction: column; gap: 32px; padding: 44px 0 0; }
-    .comm-location { display: flex; align-items: center; gap: 12px; }
+    .comm-location { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .comm-info > .t-md { margin-bottom: 24px; }
+    .comm-info > .t-body { margin-bottom: 24px; }
     .comm-features {
       display: grid;
       grid-template-columns: 1fr 1fr;
