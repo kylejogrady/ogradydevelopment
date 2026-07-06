@@ -237,7 +237,21 @@
     @media (max-width: 480px) {
       .team-grid-support { grid-template-columns: 1fr; }
     }
-  </style>
+  
+    /* ── Footer email capture (low-friction lead magnet) ── */
+    .footer-signup { display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap; padding:0 0 40px; margin-bottom:40px; border-bottom:1px solid rgba(255,255,255,0.08); position:relative; }
+    .footer-signup-title { font-family:var(--display,'Cormorant Garamond',serif); font-size:clamp(22px,2.4vw,30px); font-weight:300; color:#fff; line-height:1.1; }
+    .footer-signup-sub { font-family:var(--body,'Montserrat',sans-serif); font-size:13px; font-weight:300; color:rgba(255,255,255,0.5); margin-top:10px; max-width:440px; line-height:1.7; }
+    .footer-signup-form { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+    .footer-signup-form input[type=email] { font-family:var(--body,'Montserrat',sans-serif); font-size:13px; padding:14px 18px; min-width:260px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); color:#fff; outline:none; }
+    .footer-signup-form input[type=email]:focus { border-color:var(--gold,#b8a88a); }
+    .footer-signup-form input[type=email]::placeholder { color:rgba(255,255,255,0.35); }
+    .footer-signup-form button { font-family:var(--body,'Montserrat',sans-serif); font-size:10px; font-weight:500; letter-spacing:2px; text-transform:uppercase; padding:15px 30px; background:var(--gold,#b8a88a); color:#1a1a1a; border:none; cursor:pointer; transition:opacity .25s; }
+    .footer-signup-form button:hover { opacity:.85; }
+    .footer-signup-msg { font-family:var(--body,'Montserrat',sans-serif); font-size:12px; color:var(--gold-lt,#cfc0a6); flex-basis:100%; }
+    .footer-signup .og-hp { position:absolute; left:-9999px; top:-9999px; }
+    @media(max-width:768px){ .footer-signup-form { width:100%; } .footer-signup-form input[type=email]{ min-width:0; flex:1; } }
+</style>
 
   <!-- SEO: Canonical -->
   <link rel="canonical" href="https://www.ogradydevelopment.com/about.html">
@@ -280,7 +294,6 @@
     gtag('js', new Date());
     gtag('config', 'G-85XKL1C940');
   </script>
-  <script src="tracking.js"></script>
 </head>
 <body>
 
@@ -511,8 +524,29 @@
   </section>
 
   <!-- ═══ FOOTER ════════════════════════════════════ -->
+  <!-- Netlify form registration: email updates capture -->
+  <form name="updates" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="updates">
+    <input type="email" name="email">
+    <input type="text" name="source">
+  </form>
+
   <footer class="footer">
     <div class="wrap">
+      <div class="footer-signup">
+        <div>
+          <div class="footer-signup-title">Be the first to know.</div>
+          <p class="footer-signup-sub">New listings, community launches, and priority access &mdash; sent straight to your inbox. No spam, unsubscribe anytime.</p>
+        </div>
+        <form name="updates" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="footer-signup-form" onsubmit="return ogUpdatesSubmit(this,event)">
+          <input type="hidden" name="form-name" value="updates">
+          <input type="hidden" name="source" value="footer">
+          <p class="og-hp"><label>Skip this: <input name="bot-field"></label></p>
+          <input type="email" name="email" placeholder="Your email address" required aria-label="Email address">
+          <button type="submit">Join</button>
+          <span class="footer-signup-msg" aria-live="polite"></span>
+        </form>
+      </div>
       <div class="footer-main">
         <div>
           <a href="index.html"><img src="images/logos/Gold Logo.png" alt="O'Grady Development Co." class="footer-logo-img" loading="lazy"></a>
@@ -575,6 +609,17 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
     }, { threshold: 0.08 });
     document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
+  <script>
+    function ogUpdatesSubmit(form, e){
+      e.preventDefault();
+      var msg = form.querySelector('.footer-signup-msg');
+      var body = new URLSearchParams(new FormData(form)).toString();
+      fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:body})
+        .then(function(){ msg.textContent = "You're on the list \u2014 thank you."; form.querySelector('input[type=email]').value=''; })
+        .catch(function(){ msg.textContent = "Something went wrong. Please try again."; });
+      return false;
+    }
   </script>
 </body>
 </html>

@@ -13,8 +13,6 @@
     :root {
       --bg: #faf9f7; --warm: #f0ede8; --dark: #1a1a1a; --footer-bg: #111010;
       --gold: #b8a88a; --gold-lt: #cfc0a6; --text: #6b6b6b;
-      /* Victoria Farms community accents */
-      --vf-sage: #5a7a5a; --vf-sage-lt: #8aab8a; --vf-sage-pale: #c2d4c2; --vf-sage-mist: #e8f0e8; --vf-deep: #3d5c3d;
       --display: 'Cormorant Garamond', Georgia, serif;
       --body: 'Montserrat', sans-serif;
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -53,43 +51,35 @@
     .mobile-menu a { font-family: var(--display); font-size: 36px; font-weight: 300; letter-spacing: 1px; }
 
     /* ─── TYPE ────────────────────────────────────── */
-    .t-label { font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--vf-sage); }
+    .t-label { font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); }
     .t-xl { font-family: var(--display); font-size: clamp(48px, 8vw, 100px); font-weight: 300; line-height: 1.0; }
     .t-lg { font-family: var(--display); font-size: clamp(34px, 4.5vw, 58px); font-weight: 300; line-height: 1.15; }
     .t-md { font-family: var(--display); font-size: clamp(24px, 3vw, 40px); font-weight: 300; line-height: 1.2; }
     .t-body { font-family: var(--body); font-size: 13.5px; font-weight: 300; line-height: 2.1; color: var(--text); }
-    .rule { width: 48px; height: 1px; background: var(--vf-sage); }
+    .rule { width: 48px; height: 1px; background: var(--gold); }
     .wrap { max-width: 1440px; margin: 0 auto; padding: 0 64px; }
     .btn { display: inline-block; font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; padding: 17px 44px; border: 1px solid; transition: all 0.5s var(--ease); background: transparent; cursor: pointer; }
     .btn-white { border-color: rgba(255,255,255,0.7); color: #fff; }
     .btn-white:hover { background: #fff; color: var(--dark); }
     .btn-dark { border-color: var(--dark); color: var(--dark); }
     .btn-dark:hover { background: var(--dark); color: var(--bg); }
-    .btn-gold { border-color: var(--vf-sage); color: var(--vf-sage); }
-    .btn-gold:hover { background: var(--vf-sage); color: #fff; }
+    .btn-gold { border-color: var(--gold); color: var(--gold); }
+    .btn-gold:hover { background: var(--gold); color: #fff; }
 
     /* ─── HERO ────────────────────────────────────── */
 
     /* ─── INTRO ───────────────────────────────────── */
     .intro-section { padding: 120px 0; background: var(--bg); }
-    .vf-banner { width: 100%; line-height: 0; background: var(--warm); overflow: hidden; }
-    .vf-banner img { width: 100%; height: clamp(320px, 42vw, 640px); object-fit: cover; object-position: center; display: block; }
     .intro-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 96px; align-items: center; }
     .intro-img { overflow: hidden; aspect-ratio: 4/3; }
     .intro-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
     .intro-img:hover img { transform: scale(1.04); }
     .intro-text { display: flex; flex-direction: column; gap: 24px; }
-    .pull { font-family: var(--display); font-size: clamp(17px, 2vw, 22px); font-style: italic; font-weight: 400; color: var(--vf-sage); line-height: 1.65; padding-left: 24px; border-left: 1px solid var(--vf-sage); }
-    .feature-grid { display: grid; grid-template-columns: 1fr; gap: 12px; padding: 24px 0; border-top: 1px solid rgba(0,0,0,0.07); border-bottom: 1px solid rgba(0,0,0,0.07); }
+    .pull { font-family: var(--display); font-size: clamp(17px, 2vw, 22px); font-style: italic; font-weight: 400; color: var(--gold); line-height: 1.65; padding-left: 24px; border-left: 1px solid var(--gold); }
+    .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; padding: 24px 0; border-top: 1px solid rgba(0,0,0,0.07); border-bottom: 1px solid rgba(0,0,0,0.07); }
     .feature-item { display: flex; align-items: center; gap: 10px; }
-    .feature-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--vf-sage); flex-shrink: 0; }
+    .feature-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
     .feature-text { font-family: var(--body); font-size: 12px; font-weight: 300; color: var(--text); }
-    .adu-callout { margin-top: 44px; max-width: 680px; background: var(--vf-sage-mist); border-left: 3px solid var(--vf-sage); padding: 30px 36px; }
-    .adu-eyebrow { display: block; font-family: var(--body); font-size: 9px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; color: var(--vf-deep); margin-bottom: 14px; }
-    .adu-title { font-family: var(--display); font-size: clamp(22px, 2.6vw, 30px); font-weight: 300; line-height: 1.2; color: var(--dark); margin-bottom: 12px; }
-    .adu-text { font-family: var(--body); font-size: 13px; font-weight: 300; line-height: 1.95; color: var(--text); margin: 0; }
-    .homes-price { font-family: var(--display); font-size: clamp(21px, 2.4vw, 29px); font-weight: 300; color: var(--vf-sage); margin: 16px 0 2px; letter-spacing: 0.3px; }
-    .homes-price em { font-style: normal; font-weight: 400; color: var(--vf-deep); }
 
     /* ─── AERIAL BANNER ───────────────────────────── */
     .aerial-banner { position: relative; height: 440px; overflow: hidden; }
@@ -98,7 +88,7 @@
     .aerial-text { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; }
 
     /* ─── FLOOR PLANS ─────────────────────────────── */
-    .plans-section { padding: 60px 0 120px; background: var(--bg); }
+    .plans-section { padding: 120px 0; background: var(--bg); }
     .plans-header { display: flex; flex-direction: column; gap: 16px; margin-bottom: 72px; }
     .plans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 
@@ -107,10 +97,10 @@
     .plan-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
     .plan-card:hover .plan-img img { transform: scale(1.04); }
     .plan-tag { position: absolute; top: 16px; left: 16px; font-family: var(--body); font-size: 7.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; background: var(--dark); color: #fff; padding: 7px 16px; }
-    .plan-tag-available { background: var(--vf-sage); }
+    .plan-tag-available { background: var(--gold); }
     .plan-body { padding: 40px 44px; display: flex; flex-direction: column; gap: 20px; flex: 1; }
     .plan-name { font-family: var(--display); font-size: clamp(28px, 3.5vw, 42px); font-weight: 300; color: var(--dark); }
-    .plan-tagline { font-family: var(--body); font-size: 11px; font-weight: 300; color: var(--vf-sage); letter-spacing: 1.5px; font-style: italic; margin-top: -8px; }
+    .plan-tagline { font-family: var(--body); font-size: 11px; font-weight: 300; color: var(--gold); letter-spacing: 1.5px; font-style: italic; margin-top: -8px; }
     .plan-desc { font-family: var(--body); font-size: 12.5px; font-weight: 300; color: var(--text); line-height: 1.95; }
 
     .plan-specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(0,0,0,0.08); margin: 4px 0; }
@@ -121,7 +111,7 @@
     .plan-includes { display: flex; flex-direction: column; gap: 8px; padding: 20px 0; border-top: 1px solid rgba(0,0,0,0.07); }
     .plan-includes-title { font-family: var(--body); font-size: 8px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(0,0,0,0.3); margin-bottom: 4px; }
     .plan-include-item { display: flex; align-items: center; gap: 10px; font-family: var(--body); font-size: 12px; font-weight: 300; color: var(--text); }
-    .plan-include-item::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--vf-sage); flex-shrink: 0; }
+    .plan-include-item::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
 
     .plan-footer { padding: 24px 44px 40px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
 
@@ -133,11 +123,10 @@
     .visit-steps { display: flex; flex-direction: column; gap: 0; }
     .visit-step { display: flex; align-items: flex-start; gap: 20px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
     .visit-step:last-child { border-bottom: none; }
-    .visit-step-num { font-family: var(--display); font-size: 32px; font-weight: 300; color: rgba(138,171,138,0.4); line-height: 1; flex-shrink: 0; width: 32px; }
+    .visit-step-num { font-family: var(--display); font-size: 32px; font-weight: 300; color: rgba(184,168,138,0.3); line-height: 1; flex-shrink: 0; width: 32px; }
     .visit-step-content { display: flex; flex-direction: column; gap: 4px; }
     .visit-step-title { font-family: var(--display); font-size: 20px; font-weight: 400; color: #fff; }
     .visit-step-desc { font-family: var(--body); font-size: 11.5px; font-weight: 300; color: rgba(255,255,255,0.45); line-height: 1.8; }
-    .visit-text .rule { background: var(--vf-sage-lt); }
 
     /* ─── LOCATION ────────────────────────────────── */
     .location-section { padding: 120px 0; background: var(--warm); }
@@ -148,7 +137,7 @@
     .location-item { padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.07); display: flex; flex-direction: column; gap: 5px; }
     .location-item:first-child { padding-top: 0; }
     .location-item:last-child { border-bottom: none; }
-    .location-lbl { font-family: var(--body); font-size: 8.5px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--vf-sage); }
+    .location-lbl { font-family: var(--body); font-size: 8.5px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); }
     .location-val { font-family: var(--display); font-size: 20px; font-weight: 300; color: var(--dark); }
     .location-sub { font-family: var(--body); font-size: 12px; font-weight: 300; color: var(--text); line-height: 1.8; }
 
@@ -164,15 +153,15 @@
     .popup-header { background: var(--dark); padding: 32px 40px; position: relative; }
     .popup-close { position: absolute; top: 20px; right: 24px; background: none; border: none; cursor: pointer; font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); transition: color 0.3s; }
     .popup-close:hover { color: #fff; }
-    .popup-property-label { font-family: var(--body); font-size: 8px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--vf-sage-lt); margin-bottom: 8px; }
+    .popup-property-label { font-family: var(--body); font-size: 8px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
     .popup-property-address { font-family: var(--display); font-size: 22px; font-weight: 300; color: #fff; line-height: 1.3; }
-    .popup-property-price { font-family: var(--display); font-size: 18px; font-weight: 300; color: var(--vf-sage-lt); margin-top: 4px; }
+    .popup-property-price { font-family: var(--display); font-size: 18px; font-weight: 300; color: var(--gold-lt); margin-top: 4px; }
     .popup-body { padding: 36px 40px; }
     .popup-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
     .popup-form-group { display: flex; flex-direction: column; gap: 7px; margin-bottom: 16px; }
     .popup-label { font-family: var(--body); font-size: 8px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dark); }
     .popup-input, .popup-textarea { width: 100%; font-family: var(--body); font-size: 13px; font-weight: 300; color: var(--dark); background: #fff; border: 1px solid rgba(0,0,0,0.12); padding: 13px 16px; outline: none; transition: border-color 0.3s; border-radius: 0; -webkit-appearance: none; appearance: none; }
-    .popup-input:focus, .popup-textarea:focus { border-color: var(--vf-sage); }
+    .popup-input:focus, .popup-textarea:focus { border-color: var(--gold); }
     .popup-input::placeholder, .popup-textarea::placeholder { color: rgba(0,0,0,0.25); }
     .popup-textarea { min-height: 100px; resize: vertical; }
     .popup-submit { width: 100%; font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; padding: 17px; background: var(--dark); color: #fff; border: 1px solid var(--dark); cursor: pointer; transition: all 0.4s var(--ease); margin-top: 4px; }
@@ -180,8 +169,8 @@
     .popup-note { font-family: var(--body); font-size: 10px; font-weight: 300; color: rgba(0,0,0,0.3); text-align: center; margin-top: 12px; }
     .popup-success { display: none; flex-direction: column; align-items: center; gap: 16px; text-align: center; padding: 48px 40px; }
     .popup-success.show { display: flex; }
-    .popup-success-check { width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--vf-sage); display: flex; align-items: center; justify-content: center; }
-    .popup-success-check svg { width: 20px; height: 20px; stroke: var(--vf-sage); fill: none; stroke-width: 1.5; }
+    .popup-success-check { width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; }
+    .popup-success-check svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
 
     /* ─── FOOTER ──────────────────────────────────── */
     .footer { background: var(--footer-bg); padding: 88px 0 0; }
@@ -234,17 +223,17 @@
     }
 
     /* ─── SPLIT HERO ──────────────────────────────────── */
-    .hero { display: grid; grid-template-columns: 1fr; }
-    .hero-img { position: relative; overflow: hidden; padding-top: 72px; height: 64vh; min-height: 440px; max-height: 680px; }
+    .hero { display: grid; grid-template-columns: 1.1fr 1fr; height: 100vh; min-height: 640px; }
+    .hero-img { position: relative; overflow: hidden; padding-top: 72px; }
     .hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block; animation: heroZoom 14s ease forwards; transform: scale(1.04); }
     @keyframes heroZoom { to { transform: scale(1); } }
-    .hero-panel { background: var(--warm); display: flex; flex-direction: column; justify-content: flex-start; padding: 64px 56px 76px; gap: 0; }
-    .hero-eyebrow { font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--vf-sage); display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
-    .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--vf-sage); flex-shrink: 0; }
+    .hero-panel { background: var(--warm); display: flex; flex-direction: column; justify-content: center; padding: 96px 56px 56px; gap: 0; }
+    .hero-eyebrow { font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); flex-shrink: 0; }
     .hero-name { font-family: var(--display); font-size: clamp(44px, 5vw, 76px); font-weight: 300; color: var(--dark); line-height: 1.0; margin-bottom: 20px; }
-    .hero-name em { font-style: italic; color: var(--vf-sage); }
-    .hero-rule { width: 40px; height: 1px; background: var(--vf-sage); margin-bottom: 20px; }
-    .hero-desc { font-family: var(--body); font-size: 13px; font-weight: 300; color: var(--text); line-height: 2.1; margin-bottom: 28px; max-width: 760px; }
+    .hero-name em { font-style: italic; color: var(--gold); }
+    .hero-rule { width: 40px; height: 1px; background: var(--gold); margin-bottom: 20px; }
+    .hero-desc { font-family: var(--body); font-size: 13px; font-weight: 300; color: var(--text); line-height: 2.1; margin-bottom: 28px; max-width: 360px; }
     .hero-stats { display: flex; gap: 0; margin-bottom: 32px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.08); flex-wrap: wrap; }
     .hero-stat { display: flex; flex-direction: column; gap: 5px; padding-right: 24px; border-right: 1px solid rgba(0,0,0,0.08); margin-right: 24px; margin-bottom: 12px; }
     .hero-stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
@@ -274,69 +263,20 @@
       .hero-stat { padding-right: 14px; margin-right: 14px; }
     }
   
-    /* ─ WHY IT'S WORTH IT ────────────────────── */
-    .worth-section { padding: 120px 0 60px; background: var(--bg); }
-    .worth-head { display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
-    .worth-lead { font-family: var(--body); font-size: 14px; font-weight: 300; line-height: 2.05; color: var(--text); max-width: 680px; }
-    .worth-lead strong { color: var(--dark); font-weight: 500; }
-    .worth-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 56px 0 8px; }
-    .worth-card { background: var(--vf-sage-mist); padding: 40px 40px 44px; border-top: 2px solid var(--vf-sage); }
-    .worth-card-eyebrow { font-family: var(--body); font-size: 8.5px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--vf-deep); margin-bottom: 14px; }
-    .worth-card-title { font-family: var(--display); font-size: 26px; font-weight: 400; color: var(--dark); line-height: 1.2; margin-bottom: 18px; }
-    .worth-card p { font-family: var(--body); font-size: 12.5px; font-weight: 300; line-height: 1.95; color: var(--text); }
-    .worth-list { list-style: none; display: flex; flex-direction: column; gap: 11px; }
-    .worth-list li { font-family: var(--body); font-size: 12.5px; font-weight: 300; color: var(--dark); display: flex; align-items: flex-start; gap: 11px; line-height: 1.5; }
-    .worth-list li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--vf-sage); margin-top: 7px; flex-shrink: 0; }
-    .worth-homes { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: center; margin-top: 64px; padding-top: 56px; border-top: 1px solid rgba(0,0,0,0.08); }
-    .worth-homes-num { font-family: var(--display); font-size: clamp(30px, 3.4vw, 44px); font-weight: 300; color: var(--dark); line-height: 1.12; margin: 14px 0 16px; }
-    .worth-homes-features { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 28px; }
-    .worth-close { font-family: var(--display); font-style: italic; font-size: clamp(20px, 2.4vw, 28px); font-weight: 300; color: var(--vf-deep); line-height: 1.5; max-width: 760px; margin-top: 64px; padding-left: 28px; border-left: 2px solid var(--vf-sage); }
-
-    /* ─ NOW UNDERWAY ─────────────────────────── */
-    .underway-section { padding: 100px 0; background: var(--vf-sage-mist); }
-    .underway-inner { display: flex; flex-direction: column; gap: 16px; }
-    .underway-actions { margin-top: 24px; display: flex; gap: 14px; flex-wrap: wrap; }
-
-    /* ─ STICKY ACTION BAR ─────────────────── */
-    .sticky-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 300; display: flex; background: rgba(26,26,26,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 2px solid var(--vf-sage); transform: translateY(100%); transition: transform 0.45s var(--ease); }
-    .sticky-bar.show { transform: translateY(0); }
-    .sticky-bar a, .sticky-bar button { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: #fff; background: none; border: none; border-right: 1px solid rgba(255,255,255,0.1); padding: 16px 8px; cursor: pointer; transition: background 0.3s; }
-    .sticky-bar a:last-child { border-right: none; }
-    .sticky-bar a:hover, .sticky-bar button:hover { background: var(--vf-sage); }
-    .sticky-bar .sb-primary { background: var(--vf-sage); flex: 1.5; }
-    .sticky-bar .sb-primary:hover { background: var(--vf-deep); }
-    @media (min-width: 861px) {
-      .sticky-bar { left: 50%; right: auto; bottom: 24px; width: auto; border-top: none; border-radius: 3px; overflow: hidden; box-shadow: 0 10px 36px rgba(0,0,0,0.22); transform: translateX(-50%) translateY(160%); }
-      .sticky-bar.show { transform: translateX(-50%) translateY(0); }
-      .sticky-bar a, .sticky-bar button { padding: 15px 30px; }
-    }
-    @media (max-width: 860px) {
-      body { padding-bottom: 53px; }
-      .sticky-bar a, .sticky-bar button { padding: 13px 5px; letter-spacing: 0.5px; font-size: 9.5px; }
-      .worth-cols { grid-template-columns: 1fr; }
-      .worth-homes { grid-template-columns: 1fr; gap: 28px; margin-top: 48px; padding-top: 40px; }
-    }
-  
-    /* HOMESITES */
-    .homesite-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
-    .homesite-card { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-top: 3px solid var(--vf-sage); padding: 32px 32px 28px; display: flex; flex-direction: column; gap: 15px; transition: box-shadow 0.4s var(--ease); }
-    .homesite-card:hover { box-shadow: 0 14px 38px rgba(0,0,0,0.07); }
-    .hs-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
-    .hs-plan { font-family: var(--body); font-size: 8.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--vf-sage); margin-bottom: 8px; }
-    .hs-unit { font-family: var(--display); font-size: 30px; font-weight: 300; color: var(--dark); line-height: 1; }
-    .hs-badge { font-family: var(--body); font-size: 8px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 11px; border-radius: 2px; white-space: nowrap; flex-shrink: 0; }
-    .hs-badge.construction { background: var(--vf-sage-pale); color: var(--vf-deep); }
-    .hs-badge.model { background: var(--vf-deep); color: #fff; }
-    .hs-badge.available { background: var(--vf-sage); color: #fff; }
-    .hs-badge.reserved { background: #b0514b; color: #fff; }
-    .hs-address { font-family: var(--body); font-size: 12px; font-weight: 300; color: var(--text); letter-spacing: 0.3px; }
-    .hs-specs { font-family: var(--body); font-size: 12.5px; font-weight: 400; color: var(--dark); padding-top: 14px; border-top: 1px solid rgba(0,0,0,0.08); }
-    .hs-line { font-family: var(--body); font-size: 11.5px; font-weight: 300; color: var(--text); display: flex; align-items: center; gap: 9px; }
-    .hs-line::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--vf-sage); flex-shrink: 0; }
-    .hs-inquire { font-family: var(--body); font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--vf-sage); margin-top: 8px; background: none; border: none; padding: 0; cursor: pointer; display: flex; align-items: center; gap: 7px; transition: gap 0.3s; }
-    .hs-inquire::after { content: '\2192'; }
-    .hs-inquire:hover { gap: 11px; }
-  </style>
+    /* ── Footer email capture (low-friction lead magnet) ── */
+    .footer-signup { display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap; padding:0 0 40px; margin-bottom:40px; border-bottom:1px solid rgba(255,255,255,0.08); position:relative; }
+    .footer-signup-title { font-family:var(--display,'Cormorant Garamond',serif); font-size:clamp(22px,2.4vw,30px); font-weight:300; color:#fff; line-height:1.1; }
+    .footer-signup-sub { font-family:var(--body,'Montserrat',sans-serif); font-size:13px; font-weight:300; color:rgba(255,255,255,0.5); margin-top:10px; max-width:440px; line-height:1.7; }
+    .footer-signup-form { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+    .footer-signup-form input[type=email] { font-family:var(--body,'Montserrat',sans-serif); font-size:13px; padding:14px 18px; min-width:260px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); color:#fff; outline:none; }
+    .footer-signup-form input[type=email]:focus { border-color:var(--gold,#b8a88a); }
+    .footer-signup-form input[type=email]::placeholder { color:rgba(255,255,255,0.35); }
+    .footer-signup-form button { font-family:var(--body,'Montserrat',sans-serif); font-size:10px; font-weight:500; letter-spacing:2px; text-transform:uppercase; padding:15px 30px; background:var(--gold,#b8a88a); color:#1a1a1a; border:none; cursor:pointer; transition:opacity .25s; }
+    .footer-signup-form button:hover { opacity:.85; }
+    .footer-signup-msg { font-family:var(--body,'Montserrat',sans-serif); font-size:12px; color:var(--gold-lt,#cfc0a6); flex-basis:100%; }
+    .footer-signup .og-hp { position:absolute; left:-9999px; top:-9999px; }
+    @media(max-width:768px){ .footer-signup-form { width:100%; } .footer-signup-form input[type=email]{ min-width:0; flex:1; } }
+</style>
 
   <!-- SEO: Canonical -->
   <link rel="canonical" href="https://www.ogradydevelopment.com/victoria-farms.html">
@@ -379,7 +319,6 @@
     gtag('js', new Date());
     gtag('config', 'G-85XKL1C940');
   </script>
-  <script src="tracking.js"></script>
 </head>
 <body>
 
@@ -469,23 +408,22 @@
       <img src="images/communities/victoria-farms/victoria-farms-hero.jpg" alt="Victoria Farms — East Bay Township" fetchpriority="high">
     </div>
     <div class="hero-panel">
-      <div class="hero-eyebrow h-anim h-d1">Traverse City, With Less City</div>
-      <h1 class="hero-name h-anim h-d2">Victoria <em>Farms.</em></h1>
+      <div class="hero-eyebrow h-anim h-d1">East Bay Township</div>
+      <h1 class="hero-name h-anim h-d2">Victoria<br><em>Farms.</em></h1>
       <div class="hero-rule h-anim h-d2"></div>
-      <p class="hero-desc h-anim h-d3">Victoria Farms is a thoughtfully planned community set across 120 acres of gently rolling, retired farm land in East Bay Township — surrounded by hardwood forests, open fields, and preserved green space. Located off Three Mile Road, you're roughly 20 minutes from downtown Traverse City while still counting stars, birdwatching, and sleeping with your windows open.</p>
-      <blockquote class="pull h-anim h-d3" style="margin:0 0 28px;">Thoughtfully designed homes, preserved open space, and a setting rooted in Northern Michigan's natural beauty define the Victoria Farms experience.</blockquote>
+      <p class="hero-desc h-anim h-d3">A brand new subdivision on scenic rolling terrain off Three Mile Road — 20 minutes south of Traverse City, with two thoughtfully designed home plans to choose from.</p>
       <div class="hero-stats h-anim h-d3">
         <div class="hero-stat">
-          <div class="hero-stat-val">120 Acres</div>
-          <div class="hero-stat-lbl">Planned Community</div>
+          <div class="hero-stat-val">2 Plans</div>
+          <div class="hero-stat-lbl">Available</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-val">35 Acres</div>
-          <div class="hero-stat-lbl">Preserved Open Space</div>
+          <div class="hero-stat-val">From $995,000</div>
+          <div class="hero-stat-lbl">Starting Price</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-val">O'Grady</div>
-          <div class="hero-stat-lbl">Exclusively Built By</div>
+          <div class="hero-stat-val">Three Mile Rd</div>
+          <div class="hero-stat-lbl">Location</div>
         </div>
       </div>
       <div class="hero-actions h-anim h-d4">
@@ -494,230 +432,150 @@
     </div>
   </section>
 
-  <!-- ═══ MODEL EXTERIOR BANNER ═══════════ -->
-  <section class="vf-banner" aria-label="Victoria Farms model home exterior">
-    <img src="images/communities/victoria-farms/dark-exterior-model-(compressed).jpg"
-         alt="Victoria Farms model home exterior at dusk" loading="lazy">
-  </section>
 
-  <!-- ═══ WHY IT'S WORTH IT ═══ -->
-  <section class="worth-section">
+  <!-- ═══ INTRO ════════════════════════════════════ -->
+  <section class="intro-section">
     <div class="wrap">
-      <div class="worth-head fade-up">
-        <span class="t-label">Why an O'Grady Home Is Worth It</span>
-        <h2 class="t-lg">Built as if it<br>were our own.</h2>
-        <div class="rule"></div>
-      </div>
-      <p class="worth-lead fade-up">For more than three decades, O'Grady Development has built homes across Northern Michigan on a simple philosophy: <strong>build every home as if it were our own.</strong> Each one is thoughtfully designed, professionally curated, and finished with details most builders treat as upgrades — considered long before construction begins.</p>
-
-      <div class="worth-cols">
-        <div class="worth-card fade-up">
-          <div class="worth-card-eyebrow">Your Upgrades. Our Standard.</div>
-          <div class="worth-card-title">What comes included.</div>
-          <ul class="worth-list">
-            <li>Premium cabinetry &amp; quartz countertops</li>
-            <li>Designer lighting &amp; plumbing fixtures</li>
-            <li>High-quality flooring throughout</li>
-            <li>Energy-efficient windows</li>
-            <li>Curated exterior materials for lasting curb appeal</li>
-          </ul>
-          <p style="margin-top:18px;">Many of the finishes other builders charge extra for are already part of an O'Grady home.</p>
+      <div class="intro-grid">
+        <div class="intro-img fade-up">
+          <img src="images/communities/victoria-farms/victoria-farms-hero.jpg" alt="Victoria Farms — East Bay Township new construction">
         </div>
-        <div class="worth-card fade-up delay-1">
-          <div class="worth-card-eyebrow">Built to Last</div>
-          <div class="worth-card-title">Quality beyond what you see.</div>
-          <p>Beyond the finishes, quality is built into what's behind the walls — careful attention to framing, insulation, and mechanical systems, and construction practices that make each home comfortable, efficient, and built to stand the test of time.</p>
-          <p style="margin-top:16px;">The result is a home that feels complete from day one — thoughtfully designed, professionally finished, and ready to enjoy.</p>
+        <div class="intro-text fade-up delay-2">
+          <span class="t-label">The Community</span>
+          <h2 class="t-lg">Big Sky Country.<br>New Construction.<br>Close to It All.</h2>
+          <div class="rule"></div>
+          <p class="t-body">Victoria Farms sits on some of the most naturally beautiful retired farm land in East Bay Township — gently rolling terrain that gives each home a sense of place and privacy. Located off Three Mile Road, you're as close to Traverse City as you need to be while still counting stars, birdwatching, and sleeping with your windows open.</p>
+          <blockquote class="pull">Just announced is our first two sets of home plans. Enjoy necessary living requirements as well as some bonuses — like a covered back porch and a fully finished basement.</blockquote>
+          <div class="feature-grid">
+            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">East Bay Township</span></div>
+            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Three Mile Road</span></div>
+            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Rolling Terrain Lots</span></div>
+            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">~20 Min to Downtown TC</span></div>
+            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">New Construction</span></div>
+            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Covered Back Patio</span></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- AVAILABLE HOMESITES -->
+  <!-- ═══ AERIAL BANNER ════════════════════════════ -->
+  <div class="aerial-banner">
+    <img src="images/communities/victoria-farms/aerial-model-home.jpg" alt="Victoria Farms aerial view — East Bay Township">
+    <div class="aerial-banner-overlay">
+      <div class="aerial-text fade-up">
+        <span class="t-label" style="color:rgba(255,255,255,0.5);">East Bay Township, Michigan</span>
+        <h2 class="t-lg" style="color:#fff;text-align:center;">Three Mile Road,<br>Traverse City, MI</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ FLOOR PLANS ═══════════════════════════════ -->
   <section class="plans-section" id="plans">
     <div class="wrap">
-      <!-- community site plan -->
-      <div class="fade-up" style="margin:0 0 56px;">
-        <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:40px;">
-          <span class="t-label">Victoria Farms</span>
-          <h2 class="t-lg">Community<br>Site Plan.</h2>
-          <div class="rule"></div>
-          <p class="t-body" style="max-width:520px;">Explore the full Victoria Farms layout — lot locations, road layout, and phasing across the entire community. Cross-reference the unit numbers on the plan with the available homes listed below to see exactly where each one sits. Click to open the full-size PDF.</p>
-        </div>
-        <a href="images/communities/victoria-farms/victoria-farms-site-plan.pdf" target="_blank"
-           style="display:block;overflow:hidden;border:1px solid rgba(0,0,0,0.08);transition:opacity 0.4s;cursor:pointer;"
-           onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
-          <img src="images/communities/victoria-farms/victoria-farms-site-plan-image.jpg"
-               alt="Victoria Farms Site Plan"
-               style="width:100%;display:block;">
-        </a>
-        <div style="margin-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-          <p style="font-family:var(--body);font-size:11px;font-weight:300;color:rgba(0,0,0,0.35);">Site plan is for illustrative purposes. Lot sizes, road layout, and phasing subject to change.</p>
-          <a href="images/communities/victoria-farms/victoria-farms-site-plan.pdf" target="_blank"
-             style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--vf-sage);display:flex;align-items:center;gap:8px;transition:gap 0.3s;"
-             onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='8px'">
-            Download Site Plan PDF →
-          </a>
-        </div>
-      </div>
       <div class="plans-header fade-up">
-        <span class="t-label">The Homes</span>
-        <h2 class="t-lg">Room to grow,<br>and space to gather.</h2>
-        <div class="homes-price">Homes from <em>$995,000</em></div>
+        <span class="t-label">Available Plans</span>
+        <h2 class="t-lg">Choose Your Home.</h2>
         <div class="rule"></div>
-        <p class="t-body" style="max-width:600px;">Designed for the way families actually live today.</p>
-        <div class="worth-homes-features" style="margin-top:10px;max-width:580px;">
-          <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Finished basements</span></div>
-          <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Open living spaces</span></div>
-          <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Generous kitchens</span></div>
-          <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Private primary suites</span></div>
-          <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Covered outdoor living</span></div>
-          <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Three-car garages</span></div>
-          <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Individual well and septic</span></div>
-          <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">High-speed fiber</span></div>
-          <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Natural gas</span></div>
-          <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Underground utilities</span></div>
-        </div>
-        <div class="adu-callout fade-up">
-          <span class="adu-eyebrow">Optional &middot; Detached Building</span>
-          <h3 class="adu-title">More than the main house.</h3>
-          <p class="adu-text">Add a detached building, finished in the same materials as your home. Use it for extra garage space, a workshop, or storage for boats and toys — or finish it as an accessory dwelling unit (ADU): a guest house, in-law suite, or home office.</p>
-        </div>
-        <blockquote class="worth-close fade-up" style="margin-top:40px;">When you buy an O'Grady home, you're buying from a local, family-owned company with a reputation built over generations — and a team that stays involved through the whole process and stands behind every home we build.</blockquote>
+        <p class="t-body" style="max-width:560px;">Both plans share the same commitment to quality finishes, thoughtful layouts, and the craftsmanship O'Grady is known for. Schedule a site visit to walk the lots and see the model in person.</p>
       </div>
-      <div class="homesite-grid">
-        <div class="homesite-card fade-up">
-          <div class="hs-top">
-            <div>
-              <div class="hs-unit">Unit 4</div>
-            </div>
-            <span class="hs-badge construction">Under Construction</span>
-          </div>
-          <div class="hs-address">1128 Victoria Farms Drive</div>
-          <div class="hs-specs">3, 4, or 5 Bedroom &middot; 3.5 Bath &middot; &plusmn;3,300 Sq Ft</div>
-          <div class="hs-line">Exterior &mdash; Quarry Gray</div>
-          <div class="hs-line">3-Car Garage</div>
-          <button class="hs-inquire" onclick="openPopup('Unit 4 — 1128 Victoria Farms Drive', 'Quarry Gray · Under Construction')">Inquire about this home</button>
-        </div>
-        <div class="homesite-card fade-up">
-          <div class="hs-top">
-            <div>
-              <div class="hs-unit">Unit 7</div>
-            </div>
-            <span class="hs-badge model">Model Home</span>
-          </div>
-          <div class="hs-address">1198 Victoria Farms Drive</div>
-          <div class="hs-specs">4 Bedroom &middot; 3.5 Bath &middot; &plusmn;3,200 Sq Ft</div>
-          <div class="hs-line">Exterior &mdash; Desert Stone</div>
-          <div class="hs-line">3-Car Garage</div>
-          <button class="hs-inquire" onclick="openPopup('Unit 7 — 1198 Victoria Farms Drive', 'Desert Stone · Model Home')">Inquire about this home</button>
-        </div>
-        <div class="homesite-card fade-up">
-          <div class="hs-top">
-            <div>
-              <div class="hs-unit">Unit 13</div>
-            </div>
-            <span class="hs-badge reserved">Reserved</span>
-          </div>
-          <div class="hs-address">1368 Victoria Farms Drive</div>
-          <div class="hs-specs">4 Bedroom &middot; 3.5 Bath &middot; &plusmn;3,300 Sq Ft</div>
-          <div class="hs-line">Exterior &mdash; Garden Sage</div>
-          <div class="hs-line">3-Car Garage</div>
-          <button class="hs-inquire" onclick="openPopup('Unit 13 — 1368 Victoria Farms Drive', 'Garden Sage · Reserved')">Inquire about this home</button>
-        </div>
-        <div class="homesite-card fade-up">
-          <div class="hs-top">
-            <div>
-              <div class="hs-unit">Unit 15</div>
-            </div>
-            <span class="hs-badge reserved">Reserved</span>
-          </div>
-          <div class="hs-address">1398 Victoria Farms Drive</div>
-          <div class="hs-specs">4 Bedroom &middot; 3.5 Bath &middot; &plusmn;3,200 Sq Ft</div>
-          <div class="hs-line">Exterior &mdash; Timberland Suede</div>
-          <div class="hs-line">3-Car Garage</div>
-          <button class="hs-inquire" onclick="openPopup('Unit 15 — 1398 Victoria Farms Drive', 'Timberland Suede · Reserved')">Inquire about this home</button>
-        </div>
-        <div class="homesite-card fade-up">
-          <div class="hs-top">
-            <div>
-              <div class="hs-unit">Unit 19</div>
-            </div>
-            <span class="hs-badge available">Just Listed</span>
-          </div>
-          <div class="hs-address">1255 Victoria Farms Drive</div>
-          <div class="hs-specs">4 Bedroom &middot; 3.5 Bath &middot; &plusmn;3,200 Sq Ft</div>
-          <div class="hs-line">Exterior &mdash; Tundra Gray</div>
-          <div class="hs-line">3-Car Garage</div>
-          <button class="hs-inquire" onclick="openPopup('Unit 19 — 1255 Victoria Farms Drive', 'Tundra Gray · Just Listed')">Inquire about this home</button>
-        </div>
-        <div class="homesite-card fade-up">
-          <div class="hs-top">
-            <div>
-              <div class="hs-unit">Unit 22</div>
-            </div>
-            <span class="hs-badge construction">Under Construction</span>
-          </div>
-          <div class="hs-address">1179 Victoria Farms Drive</div>
-          <div class="hs-specs">3, 4, or 5 Bedroom &middot; 3.5 Bath &middot; &plusmn;3,300 Sq Ft</div>
-          <div class="hs-line">Exterior &mdash; Snowscape White</div>
-          <div class="hs-line">3-Car Garage</div>
-          <button class="hs-inquire" onclick="openPopup('Unit 22 — 1179 Victoria Farms Drive', 'Snowscape White · Under Construction')">Inquire about this home</button>
-        </div>
-      </div>
-      <div class="fade-up" style="margin-top:48px;display:flex;justify-content:center;">
-        <a href="images/communities/victoria-farms/victoria-farms-site-plan.pdf" target="_blank"
-           style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--vf-sage);display:inline-flex;align-items:center;gap:8px;transition:gap 0.3s;"
-           onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='8px'">
-          Download Site Plan PDF →
-        </a>
-      </div>
-      <div class="fade-up" style="margin-top:64px;">
-        <span class="t-label" style="display:block;margin-bottom:16px;">Model Home &middot; In Progress</span>
-        <div style="overflow:hidden;border:1px solid rgba(0,0,0,0.08);">
-          <img src="images/communities/victoria-farms/model-home-rendering-(compressed).jpg" alt="Victoria Farms model home rendering at dusk" loading="lazy" style="width:100%;display:block;">
-        </div>
-        <p style="font-family:var(--body);font-size:11px;font-weight:300;color:rgba(0,0,0,0.35);margin-top:12px;">Artist's rendering. Model home currently under construction.</p>
-      </div>
-    </div>
-  </section>
 
-<!-- ═══ LOCATION ══════════════════════════════════ -->
-  <section class="location-section">
-    <div class="wrap">
-      <div class="location-grid">
-        <div class="location-map fade-up">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241698.12124122394!2d-85.58853904417546!3d44.82012375263738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x881fcb9c76ca44b3%3A0xd72aa354815ddcbf!2s633%203%20Mile%20Rd%20S%2C%20Traverse%20City%2C%20MI%2049696!5e1!3m2!1sen!2sus!4v1781266565764!5m2!1sen!2sus"
-            width="600" height="450" style="border:0;width:100%;height:100%;filter:grayscale(20%);"
-            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            title="Victoria Farms location map">
-          </iframe>
+      <div class="plans-grid">
+
+        <!-- ── THE FARMSTEAD ── -->
+        <div class="plan-card fade-up">
+          <div class="plan-img">
+            <img src="images/communities/victoria-farms/model-home.jpg" alt="The Farmstead — Victoria Farms model home">
+            <div class="plan-tag plan-tag-coming">Coming Soon</div>
+          </div>
+          <div class="plan-body">
+            <div>
+              <div class="plan-name">The Farmstead</div>
+              <div class="plan-tagline">Victoria Farms — Plan One</div>
+            </div>
+            <p class="plan-desc">Our model home — a warm, grounded design with an open main level, generous bedroom suite, and a fully finished walkout lower level that doubles your livable space. Designed for real life and built to last.</p>
+            <div class="plan-specs">
+              <div class="plan-spec">
+                <div class="plan-spec-val">~3,337</div>
+                <div class="plan-spec-lbl">Sq Ft</div>
+              </div>
+              <div class="plan-spec">
+                <div class="plan-spec-val">4–5</div>
+                <div class="plan-spec-lbl">Bedrooms</div>
+              </div>
+              <div class="plan-spec">
+                <div class="plan-spec-val">3.5</div>
+                <div class="plan-spec-lbl">Bathrooms</div>
+              </div>
+            </div>
+            <div class="plan-includes">
+              <div class="plan-includes-title">Included Features</div>
+              <div class="plan-include-item">Fully finished lower level</div>
+              <div class="plan-include-item">Covered back patio</div>
+              <div class="plan-include-item">4 or 5 bedroom configuration</div>
+              <div class="plan-include-item">Premium finishes throughout</div>
+              <div class="plan-include-item">Hardwood floors, custom cabinetry</div>
+              <div class="plan-include-item">Landscaping &amp; driveway included</div>
+            </div>
+          </div>
+          <div class="plan-footer">
+            <button class="btn btn-dark" onclick="openPopup('The Farmstead — Victoria Farms', 'From $995,000')">Schedule a Site Visit</button>
+            <a href="images/communities/victoria-farms/victoria-farms-farmstead-home-plans.pdf" target="_blank"
+               style="display:inline-flex;align-items:center;gap:8px;font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--text);transition:color 0.3s;margin-top:16px;"
+               onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--text)'">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              Download Floor Plans (PDF)
+            </a>
+          </div>
         </div>
-        <div class="location-details fade-up delay-2">
-          <span class="t-label" style="margin-bottom:20px;display:block;">Location</span>
-          <h2 class="t-lg" style="margin-bottom:32px;">East Bay<br>Township.</h2>
-          <div class="location-item">
-            <div class="location-lbl">General Location</div>
-            <div class="location-val">Three Mile Road</div>
-            <div class="location-sub">East Bay Township, Traverse City MI</div>
+
+        <!-- ── THE RIDGELINE ── -->
+        <div class="plan-card fade-up delay-1">
+          <div class="plan-img">
+            <img src="images/communities/victoria-farms/option-2.jpg" alt="The Ridgeline — Victoria Farms plan two">
+            <div class="plan-tag plan-tag-coming">Coming Soon</div>
           </div>
-          <div class="location-item">
-            <div class="location-lbl">To Downtown Traverse City</div>
-            <div class="location-val">~20 Minutes</div>
-            <div class="location-sub">Easy access to TC's restaurants, shops, beaches, and amenities.</div>
+          <div class="plan-body">
+            <div>
+              <div class="plan-name">The Ridgeline</div>
+              <div class="plan-tagline">Victoria Farms — Plan Two</div>
+            </div>
+            <p class="plan-desc">A refined alternative with a distinct exterior character and equally thoughtful interior layout. The Ridgeline offers the same square footage class with a slightly different architectural personality — perfect for those who want something a little different from their neighbor.</p>
+            <div class="plan-specs">
+              <div class="plan-spec">
+                <div class="plan-spec-val">~3,254</div>
+                <div class="plan-spec-lbl">Sq Ft</div>
+              </div>
+              <div class="plan-spec">
+                <div class="plan-spec-val">4–5</div>
+                <div class="plan-spec-lbl">Bedrooms</div>
+              </div>
+              <div class="plan-spec">
+                <div class="plan-spec-val">3.5</div>
+                <div class="plan-spec-lbl">Bathrooms</div>
+              </div>
+            </div>
+            <div class="plan-includes">
+              <div class="plan-includes-title">Included Features</div>
+              <div class="plan-include-item">Fully finished lower level</div>
+              <div class="plan-include-item">Covered back patio</div>
+              <div class="plan-include-item">4 or 5 bedroom configuration</div>
+              <div class="plan-include-item">Premium finishes throughout</div>
+              <div class="plan-include-item">Hardwood floors, custom cabinetry</div>
+              <div class="plan-include-item">Landscaping &amp; driveway included</div>
+            </div>
           </div>
-          <div class="location-item">
-            <div class="location-lbl">Nearby</div>
-            <div class="location-val">East Bay, Trail Systems</div>
-            <div class="location-sub">Minutes from East Grand Traverse Bay, TART trails, and year-round Northern Michigan recreation.</div>
-          </div>
-          <div class="location-item">
-            <div class="location-lbl">School District</div>
-            <div class="location-val">Traverse City Area</div>
-            <div class="location-sub">Traverse City Area Public Schools district.</div>
+          <div class="plan-footer">
+            <button class="btn btn-dark" onclick="openPopup('The Ridgeline — Victoria Farms', 'From $995,000')">Schedule a Site Visit</button>
+            <a href="images/communities/victoria-farms/victoria-farms-ridgeline-floor-plans.pdf" target="_blank"
+               style="display:inline-flex;align-items:center;gap:8px;font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--text);transition:color 0.3s;margin-top:16px;"
+               onmouseover="this.style.color='var(--dark)'" onmouseout="this.style.color='var(--text)'">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="16" y1="13" x2="8" y2="13"/></svg>
+              Download Floor Plans (PDF)
+            </a>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -751,6 +609,74 @@
     </div>
   </section>
 
+  <!-- ═══ SITE PLAN ══════════════════════════════════ -->
+  <section style="padding:96px 0;background:var(--warm);">
+    <div class="wrap">
+      <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:48px;" class="fade-up">
+        <span class="t-label">Victoria Farms</span>
+        <h2 class="t-lg">Community<br>Site Plan.</h2>
+        <div class="rule"></div>
+        <p class="t-body" style="max-width:520px;">Explore the full Victoria Farms layout — lot locations, road layout, and phasing across the entire community. Click to open the full-size PDF.</p>
+      </div>
+      <a href="images/communities/victoria-farms/victoria-farms-site-plan.pdf" target="_blank"
+         class="fade-up"
+         style="display:block;overflow:hidden;border:1px solid rgba(0,0,0,0.08);transition:opacity 0.4s;cursor:pointer;"
+         onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
+        <img src="images/communities/victoria-farms/victoria-farms-site-plan-image.jpg"
+             alt="Victoria Farms Site Plan"
+             style="width:100%;display:block;">
+      </a>
+      <div style="margin-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+        <p style="font-family:var(--body);font-size:11px;font-weight:300;color:rgba(0,0,0,0.35);">Site plan is for illustrative purposes. Lot sizes, road layout, and phasing subject to change.</p>
+        <a href="images/communities/victoria-farms/victoria-farms-site-plan.pdf" target="_blank"
+           style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:8px;transition:gap 0.3s;"
+           onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='8px'">
+          Download Site Plan PDF →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ LOCATION ══════════════════════════════════ -->
+  <section class="location-section">
+    <div class="wrap">
+      <div class="location-grid">
+        <div class="location-map fade-up">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d298401.6266269372!2d-85.67895271880403!3d44.838511446163544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x881fcb9c76ca44b3%3A0xd72aa354815ddcbf!2s633%203%20Mile%20Rd%20S%2C%20Traverse%20City%2C%20MI%2049696!5e1!3m2!1sen!2sus!4v1777748271732!5m2!1sen!2sus"
+            width="600" height="450" style="border:0;width:100%;height:100%;filter:grayscale(20%);"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Victoria Farms location map">
+          </iframe>
+        </div>
+        <div class="location-details fade-up delay-2">
+          <span class="t-label" style="margin-bottom:20px;display:block;">Location</span>
+          <h2 class="t-lg" style="margin-bottom:32px;">East Bay<br>Township.</h2>
+          <div class="location-item">
+            <div class="location-lbl">General Location</div>
+            <div class="location-val">Three Mile Road</div>
+            <div class="location-sub">East Bay Township, Traverse City MI</div>
+          </div>
+          <div class="location-item">
+            <div class="location-lbl">To Downtown Traverse City</div>
+            <div class="location-val">~20 Minutes</div>
+            <div class="location-sub">Easy access to TC's restaurants, shops, beaches, and amenities.</div>
+          </div>
+          <div class="location-item">
+            <div class="location-lbl">Nearby</div>
+            <div class="location-val">East Bay, Trail Systems</div>
+            <div class="location-sub">Minutes from East Grand Traverse Bay, TART trails, and year-round Northern Michigan recreation.</div>
+          </div>
+          <div class="location-item">
+            <div class="location-lbl">School District</div>
+            <div class="location-val">Traverse City Area</div>
+            <div class="location-sub">Traverse City Area Public Schools district.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══ CTA ═══════════════════════════════════════ -->
   <section class="cta-section">
     <div class="wrap">
@@ -761,15 +687,36 @@
         <p class="t-body" style="text-align:center;max-width:460px;">Submit your interest below and we'll be in touch within one business day to schedule a time that works for you.</p>
         <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
           <button class="btn btn-dark" onclick="openPopup('Victoria Farms', 'From $995,000')">Schedule a Site Visit</button>
-          <a href="tel:+12314999999" class="btn btn-gold">(231) 499-9999</a>
+          <a href="tel:+12314215161" class="btn btn-gold">(231) 421-5161</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ═══ FOOTER ════════════════════════════════════ -->
+  <!-- Netlify form registration: email updates capture -->
+  <form name="updates" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="updates">
+    <input type="email" name="email">
+    <input type="text" name="source">
+  </form>
+
   <footer class="footer">
     <div class="wrap">
+      <div class="footer-signup">
+        <div>
+          <div class="footer-signup-title">Be the first to know.</div>
+          <p class="footer-signup-sub">New listings, community launches, and priority access &mdash; sent straight to your inbox. No spam, unsubscribe anytime.</p>
+        </div>
+        <form name="updates" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="footer-signup-form" onsubmit="return ogUpdatesSubmit(this,event)">
+          <input type="hidden" name="form-name" value="updates">
+          <input type="hidden" name="source" value="footer">
+          <p class="og-hp"><label>Skip this: <input name="bot-field"></label></p>
+          <input type="email" name="email" placeholder="Your email address" required aria-label="Email address">
+          <button type="submit">Join</button>
+          <span class="footer-signup-msg" aria-live="polite"></span>
+        </form>
+      </div>
       <div class="footer-main">
         <div>
           <a href="index.html"><img src="images/logos/Gold Logo.png" alt="O'Grady Development Co." class="footer-logo-img"></a>
@@ -793,7 +740,7 @@
         </div>
         <div>
           <div class="footer-col-title">Contact</div>
-          <a href="tel:+12314999999"             class="footer-link">(231) 499-9999</a>
+          <a href="tel:+12314215161"             class="footer-link">(231) 421-5161</a>
           <a href="mailto:Info@OGradyTeam.com"   class="footer-link">Info@OGradyTeam.com</a>
           <span class="footer-link" style="cursor:default;">Mon – Fri  9am – 5pm</span>
         </div>
@@ -809,15 +756,7 @@
     </div>
   </footer>
 
-    <!-- ═══ STICKY ACTION BAR ═══ -->
-  <div class="sticky-bar" id="sticky-bar">
-    <button class="sb-primary" onclick="openPopup('Victoria Farms', 'From $995,000')">Schedule a Visit</button>
-    <a href="tel:+12314999999">Call</a>
-    <a href="sms:+12314999999">Text</a>
-    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=633+3+Mile+Rd+S%2C+Traverse+City%2C+MI+49696" target="_blank" rel="noopener">Directions</a>
-  </div>
-
-<!-- ═══ POPUP ═════════════════════════════════════ -->
+  <!-- ═══ POPUP ═════════════════════════════════════ -->
   <div class="popup-overlay" id="popup-overlay">
     <div class="popup" role="dialog" aria-modal="true">
       <div class="popup-header">
@@ -863,7 +802,7 @@
           <span class="t-label">Request Received</span>
           <div style="font-family:var(--display);font-size:26px;font-weight:300;">We'll be in touch soon.</div>
           <p style="font-family:var(--body);font-size:12px;font-weight:300;color:var(--text);text-align:center;max-width:320px;line-height:1.9;">Expect to hear from us within one business day to schedule your site visit.</p>
-          <button onclick="closePopup()" style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--vf-sage);background:none;border:none;cursor:pointer;margin-top:8px;">Close ✕</button>
+          <button onclick="closePopup()" style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);background:none;border:none;cursor:pointer;margin-top:8px;">Close ✕</button>
         </div>
       </div>
     </div>
@@ -922,16 +861,17 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
     }, { threshold: 0.08 });
     document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
-
-    // Sticky action bar — reveal after hero
-    const sticky = document.getElementById('sticky-bar');
-    const heroEl = document.querySelector('.hero');
-    function toggleSticky(){
-      const trigger = heroEl ? heroEl.offsetHeight - 140 : 560;
-      sticky.classList.toggle('show', window.scrollY > trigger);
+  </script>
+  <script>
+    function ogUpdatesSubmit(form, e){
+      e.preventDefault();
+      var msg = form.querySelector('.footer-signup-msg');
+      var body = new URLSearchParams(new FormData(form)).toString();
+      fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:body})
+        .then(function(){ msg.textContent = "You're on the list \u2014 thank you."; form.querySelector('input[type=email]').value=''; })
+        .catch(function(){ msg.textContent = "Something went wrong. Please try again."; });
+      return false;
     }
-    window.addEventListener('scroll', toggleSticky, { passive: true });
-    toggleSticky();
   </script>
 </body>
 </html>
