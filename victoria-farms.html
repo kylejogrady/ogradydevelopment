@@ -329,6 +329,28 @@
     .sticky-bar .sb-primary { background: var(--vf-sage); }
     @media (min-width: 861px) { .sticky-bar { left: 50%; right: auto; bottom: 24px; width: auto; border-top: none; border-radius: 3px; overflow: hidden; box-shadow: 0 10px 36px rgba(0,0,0,0.22); transform: translateX(-50%) translateY(200%); } .sticky-bar.show { transform: translateX(-50%) translateY(0); } .sticky-bar a, .sticky-bar button { padding: 15px 30px; } }
     @media (max-width: 860px) { body { padding-bottom: 53px; } .worth-cols { grid-template-columns: 1fr; } }
+
+    /* ── CONDOMINIUM DOCUMENTS ── */
+    .docs-section { padding: 120px 0; background: var(--bg); }
+    .docs-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 96px; align-items: center; }
+    .docs-text { display: flex; flex-direction: column; gap: 22px; }
+    .docs-note { font-family: var(--body); font-size: 11.5px; font-weight: 300; line-height: 1.9; color: rgba(0,0,0,0.4); padding-left: 20px; border-left: 1px solid var(--vf-sage-pale); max-width: 440px; }
+    .docs-panel { background: var(--vf-sage-mist); border-top: 2px solid var(--vf-sage); padding: 40px 40px 38px; }
+    .docs-panel-head { display: flex; align-items: center; gap: 16px; }
+    .docs-folder-icon { width: 46px; height: 46px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .docs-folder-icon svg { width: 21px; height: 21px; stroke: var(--vf-deep); fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+    .docs-panel-title { font-family: var(--display); font-size: 25px; font-weight: 400; color: var(--dark); line-height: 1.1; }
+    .docs-panel-sub { font-family: var(--body); font-size: 8.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--vf-deep); margin-top: 5px; }
+    .docs-list { display: flex; flex-direction: column; gap: 0; margin: 26px 0 30px; border-top: 1px solid rgba(61,92,61,0.16); }
+    .docs-list-item { display: flex; align-items: center; gap: 14px; padding: 15px 4px; border-bottom: 1px solid rgba(61,92,61,0.16); font-family: var(--body); font-size: 13px; font-weight: 300; color: var(--dark); transition: color 0.3s var(--ease), padding-left 0.3s var(--ease); }
+    .docs-list-item:hover { color: var(--vf-deep); padding-left: 12px; }
+    .docs-list-item .docs-file-icon { width: 16px; height: 16px; stroke: var(--vf-sage); fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .docs-list-item .docs-arrow { margin-left: auto; font-family: var(--body); font-size: 15px; color: var(--vf-sage); transition: transform 0.3s var(--ease); }
+    .docs-list-item:hover .docs-arrow { transform: translateX(4px); }
+    .docs-btn { display: inline-flex; align-items: center; gap: 12px; font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; padding: 16px 34px; background: var(--vf-sage); color: #fff; border: 1px solid var(--vf-sage); transition: all 0.45s var(--ease); cursor: pointer; }
+    .docs-btn:hover { background: var(--vf-deep); border-color: var(--vf-deep); }
+    @media (max-width: 1100px) { .docs-grid { grid-template-columns: 1fr; gap: 48px; } }
+    @media (max-width: 768px) { .docs-section { padding: 72px 0; } .docs-panel { padding: 32px 24px 30px; } .docs-btn { width: 100%; justify-content: center; } }
   </style>
 
   <!-- SEO: Canonical -->
@@ -684,30 +706,55 @@
     </div>
   </section>
 
-  <!-- ═══ SITE PLAN ══════════════════════════════════ -->
-  <section style="padding:96px 0;background:var(--warm);">
+  <!-- ═══ CONDOMINIUM DOCUMENTS ═════════════════════ -->
+  <section class="docs-section">
     <div class="wrap">
-      <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:48px;" class="fade-up">
-        <span class="t-label">Victoria Farms</span>
-        <h2 class="t-lg">Community<br>Site Plan.</h2>
-        <div class="rule"></div>
-        <p class="t-body" style="max-width:520px;">Explore the full Victoria Farms layout — lot locations, road layout, and phasing across the entire community. Click to open the full-size PDF.</p>
-      </div>
-      <a href="images/communities/victoria-farms/victoria-farms-site-plan.pdf" target="_blank"
-         class="fade-up"
-         style="display:block;overflow:hidden;border:1px solid rgba(0,0,0,0.08);transition:opacity 0.4s;cursor:pointer;"
-         onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
-        <img src="images/communities/victoria-farms/victoria-farms-site-plan-image.jpg"
-             alt="Victoria Farms Site Plan"
-             style="width:100%;display:block;">
-      </a>
-      <div style="margin-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-        <p style="font-family:var(--body);font-size:11px;font-weight:300;color:rgba(0,0,0,0.35);">Site plan is for illustrative purposes. Lot sizes, road layout, and phasing subject to change.</p>
-        <a href="images/communities/victoria-farms/victoria-farms-site-plan.pdf" target="_blank"
-           style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--vf-sage);display:flex;align-items:center;gap:8px;transition:gap 0.3s;"
-           onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='8px'">
-          Download Site Plan PDF →
-        </a>
+      <div class="docs-grid">
+        <div class="docs-text fade-up">
+          <span class="t-label">Victoria Farms</span>
+          <h2 class="t-lg">Condominium<br>Documents.</h2>
+          <div class="rule"></div>
+          <p class="t-body" style="max-width:440px;">Victoria Farms is a site condominium community. The governing documents below outline ownership, the association, building and use standards, and the recorded site plan &mdash; everything you and your attorney need to review before purchasing.</p>
+          <p class="docs-note">Please review these documents as part of your due diligence. Contact our office with any questions, or ask your agent or attorney to walk through them with you.</p>
+        </div>
+        <div class="docs-panel fade-up delay-1">
+          <div class="docs-panel-head">
+            <div class="docs-folder-icon">
+              <svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            </div>
+            <div>
+              <div class="docs-panel-title">Document Library</div>
+              <div class="docs-panel-sub">View &middot; Download</div>
+            </div>
+          </div>
+
+          <!-- Each row opens the shared Google Drive folder. To link a single file
+               directly, replace that row's href with the individual file's share link. -->
+          <div class="docs-list">
+            <a class="docs-list-item" href="https://drive.google.com/drive/folders/1MVoX0sAckedB7ArPWq0j8kYSPp4VfjbI?usp=share_link" target="_blank" rel="noopener">
+              <svg class="docs-file-icon" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><polyline points="14 3 14 8 19 8"/></svg>
+              Master Deed<span class="docs-arrow">→</span>
+            </a>
+            <a class="docs-list-item" href="https://drive.google.com/drive/folders/1MVoX0sAckedB7ArPWq0j8kYSPp4VfjbI?usp=share_link" target="_blank" rel="noopener">
+              <svg class="docs-file-icon" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><polyline points="14 3 14 8 19 8"/></svg>
+              Condominium Bylaws<span class="docs-arrow">→</span>
+            </a>
+            <a class="docs-list-item" href="https://drive.google.com/drive/folders/1MVoX0sAckedB7ArPWq0j8kYSPp4VfjbI?usp=share_link" target="_blank" rel="noopener">
+              <svg class="docs-file-icon" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><polyline points="14 3 14 8 19 8"/></svg>
+              Condominium Subdivision Plan (Exhibit B)<span class="docs-arrow">→</span>
+            </a>
+            <a class="docs-list-item" href="https://drive.google.com/drive/folders/1MVoX0sAckedB7ArPWq0j8kYSPp4VfjbI?usp=share_link" target="_blank" rel="noopener">
+              <svg class="docs-file-icon" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><polyline points="14 3 14 8 19 8"/></svg>
+              Disclosure Statement<span class="docs-arrow">→</span>
+            </a>
+            <a class="docs-list-item" href="https://drive.google.com/drive/folders/1MVoX0sAckedB7ArPWq0j8kYSPp4VfjbI?usp=share_link" target="_blank" rel="noopener">
+              <svg class="docs-file-icon" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><polyline points="14 3 14 8 19 8"/></svg>
+              Association Budget &amp; Dues<span class="docs-arrow">→</span>
+            </a>
+          </div>
+
+          <a class="docs-btn" href="https://drive.google.com/drive/folders/1MVoX0sAckedB7ArPWq0j8kYSPp4VfjbI?usp=share_link" target="_blank" rel="noopener">Open Document Folder <span>→</span></a>
+        </div>
       </div>
     </div>
   </section>
