@@ -394,6 +394,75 @@
     gtag('js', new Date());
     gtag('config', 'G-85XKL1C940');
   </script>
+  <style>
+    .interest-section { background:var(--dark,#1a1a1a); padding:0; display:grid; grid-template-columns:1fr 1fr; }
+    .interest-left { padding:96px 72px; display:flex; flex-direction:column; gap:28px; position:relative; overflow:hidden; }
+    .interest-left-inner { position:relative; z-index:2; display:flex; flex-direction:column; gap:28px; }
+    .interest-why { display:flex; flex-direction:column; gap:0; margin-top:8px; }
+    .interest-why-item { display:flex; align-items:flex-start; gap:16px; padding:18px 0; border-bottom:1px solid rgba(255,255,255,0.07); }
+    .interest-why-item:last-child { border-bottom:none; }
+    .interest-why-num { font-family:var(--display,'Cormorant Garamond',serif); font-size:28px; font-weight:300; color:rgba(184,168,138,0.25); flex-shrink:0; width:28px; line-height:1; }
+    .interest-why-text { font-family:var(--body,'Montserrat',sans-serif); font-size:12px; font-weight:300; color:rgba(255,255,255,0.5); line-height:1.85; }
+    .interest-why-title { font-family:var(--display,'Cormorant Garamond',serif); font-size:18px; font-weight:400; color:#fff; margin-bottom:4px; }
+    .interest-right { background:var(--warm,#f0ede8); padding:96px 72px; display:flex; flex-direction:column; gap:32px; }
+    .interest-form { display:flex; flex-direction:column; gap:0; }
+    .form-group { display:flex; flex-direction:column; gap:8px; margin-bottom:16px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .form-label { font-family:var(--body,'Montserrat',sans-serif); font-size:8px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:var(--dark,#1a1a1a); }
+    .form-input, .form-select, .form-textarea { width:100%; font-family:var(--body,'Montserrat',sans-serif); font-size:13px; font-weight:300; color:var(--dark,#1a1a1a); background:#fff; border:1px solid rgba(0,0,0,0.12); padding:13px 16px; outline:none; transition:border-color 0.3s; border-radius:0; -webkit-appearance:none; appearance:none; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--gold,#b8a88a); }
+    .form-input::placeholder, .form-textarea::placeholder { color:rgba(0,0,0,0.25); }
+    .form-select { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23b8a88a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 16px center; padding-right:40px; cursor:pointer; }
+    .form-textarea { min-height:90px; resize:vertical; }
+    .form-submit { width:100%; font-family:var(--body,'Montserrat',sans-serif); font-size:10px; font-weight:500; letter-spacing:3px; text-transform:uppercase; padding:17px; background:var(--dark,#1a1a1a); color:#fff; border:1px solid var(--dark,#1a1a1a); cursor:pointer; transition:all 0.4s var(--ease,ease); margin-top:4px; }
+    .form-submit:hover { background:transparent; color:var(--dark,#1a1a1a); }
+    .form-note { font-family:var(--body,'Montserrat',sans-serif); font-size:10px; font-weight:300; color:rgba(0,0,0,0.35); text-align:center; margin-top:12px; }
+    .form-success { display:none; flex-direction:column; align-items:center; gap:16px; text-align:center; padding:40px 0; }
+    .form-success.show { display:flex; }
+    .form-success-check { width:52px; height:52px; border-radius:50%; border:1px solid var(--gold,#b8a88a); display:flex; align-items:center; justify-content:center; }
+    .form-success-check svg { width:20px; height:20px; stroke:var(--gold,#b8a88a); fill:none; stroke-width:1.5; }
+    @media (max-width:900px){ .interest-section { grid-template-columns:1fr; } .interest-left,.interest-right { padding:72px 48px; } }
+    @media (max-width:560px){ .interest-left,.interest-right { padding:56px 20px; } .form-row { grid-template-columns:1fr; } }
+    .community-picker { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:2px; }
+    .community-chip { position:relative; display:flex; align-items:center; gap:11px; min-height:56px; padding:12px 15px; background:#fff; border:1px solid rgba(0,0,0,0.12); cursor:pointer; user-select:none; transition:border-color .3s; }
+    .community-chip:hover { border-color:var(--gold); }
+    .community-chip input { position:absolute; opacity:0; width:0; height:0; }
+    .cc-box { width:18px; height:18px; flex-shrink:0; border:1px solid rgba(0,0,0,0.25); display:flex; align-items:center; justify-content:center; transition:all .3s; }
+    .cc-box svg { width:11px; height:11px; stroke:#fff; fill:none; stroke-width:2.4; opacity:0; transition:opacity .2s; }
+    .cc-name { font-family:var(--body,'Montserrat',sans-serif); font-size:12.5px; font-weight:400; color:var(--dark,#1a1a1a); line-height:1.3; }
+    .cc-tag { display:block; font-family:var(--body,'Montserrat',sans-serif); font-size:7.5px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--gold,#b8a88a); margin-top:3px; }
+    .community-chip.on { border-color:var(--dark,#1a1a1a); }
+    .community-chip.on .cc-box { background:var(--dark,#1a1a1a); border-color:var(--dark,#1a1a1a); }
+    .community-chip.on .cc-box svg { opacity:1; }
+    .community-chip:focus-within { border-color:var(--gold,#b8a88a); }
+    @media(max-width:560px){ .community-picker { grid-template-columns:1fr; } }
+  </style>
+  <style id="og-footer-picker-css">
+    .footer-signup { align-items:flex-start; }
+    .footer-signup-form { display:flex; flex-direction:column; align-items:flex-start; gap:16px; min-width:340px; }
+    .footer-signup-form .email-row { display:flex; align-items:center; gap:10px; flex-wrap:wrap; width:100%; }
+    .footer-signup-form .email-row input[type=email] { flex:1; }
+    .foot-pick-label { font-family:var(--body,'Montserrat',sans-serif); font-size:8px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:11px; }
+    .foot-pills { display:flex; flex-wrap:wrap; gap:8px; }
+    .foot-pill { position:relative; display:inline-flex; align-items:center; gap:8px; padding:9px 14px; border:1px solid rgba(255,255,255,0.15); background:rgba(255,255,255,0.03); cursor:pointer; user-select:none; transition:all .25s; }
+    .foot-pill:hover { border-color:rgba(184,168,138,0.6); }
+    .foot-pill input { position:absolute; opacity:0; width:0; height:0; }
+    .foot-pill .fp-dot { width:14px; height:14px; flex-shrink:0; border:1px solid rgba(255,255,255,0.3); display:flex; align-items:center; justify-content:center; transition:all .25s; }
+    .foot-pill .fp-dot svg { width:9px; height:9px; stroke:#1a1a1a; fill:none; stroke-width:2.6; opacity:0; }
+    .foot-pill .fp-name { font-family:var(--body,'Montserrat',sans-serif); font-size:11.5px; font-weight:400; color:rgba(255,255,255,0.75); letter-spacing:.3px; }
+    .foot-pill.on { border-color:var(--gold,#b8a88a); background:rgba(184,168,138,0.1); }
+    .foot-pill.on .fp-dot { background:var(--gold,#b8a88a); border-color:var(--gold,#b8a88a); }
+    .foot-pill.on .fp-dot svg { opacity:1; }
+    .foot-pill.on .fp-name { color:#fff; }
+    .foot-everything { display:inline-flex; align-items:center; gap:11px; padding:9px 14px; border:1px solid var(--gold,#b8a88a); background:transparent; cursor:pointer; user-select:none; }
+    .foot-everything .fe-name { font-family:var(--body,'Montserrat',sans-serif); font-size:11.5px; font-weight:600; letter-spacing:.5px; color:var(--gold,#b8a88a); text-transform:uppercase; }
+    .foot-everything input { position:absolute; opacity:0; width:0; height:0; }
+    .fe-switch { width:34px; height:18px; border-radius:10px; background:rgba(255,255,255,0.15); position:relative; transition:background .25s; flex-shrink:0; }
+    .fe-switch::after { content:""; position:absolute; top:2px; left:2px; width:14px; height:14px; border-radius:50%; background:#fff; transition:transform .25s; }
+    .foot-everything.on .fe-switch { background:var(--gold,#b8a88a); }
+    .foot-everything.on .fe-switch::after { transform:translateX(16px); }
+    @media(max-width:860px){ .footer-signup-form { width:100%; min-width:0; } }
+  </style>
 </head>
 <body>
 
@@ -416,16 +485,7 @@
     <input type="text" name="interest">
     <textarea name="message"></textarea>
   </form>
-  <form name="brook-valley-interest" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
-    <input type="text" name="first_name">
-    <input type="text" name="last_name">
-    <input type="email" name="email">
-    <input type="tel" name="phone">
-    <input type="text" name="community">
-    <input type="text" name="timeline">
-    <textarea name="notes"></textarea>
-  </form>
-  <form name="westacres-interest" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
+  <form name="community-interest" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
     <input type="text" name="first_name">
     <input type="text" name="last_name">
     <input type="email" name="email">
@@ -817,10 +877,105 @@
 
   <!-- ═══ FOOTER ════════════════════════════════════ -->
   <!-- Netlify form registration: email updates capture -->
+
+  <!-- ═══ INTEREST LIST ═════════════════════ -->
+  <section class="interest-section">
+    <div class="interest-left">
+      <div class="interest-left-inner">
+        <span class="t-label">The Interest List</span>
+        <h2 class="t-lg" style="color:#fff;">New Listings,<br>To You First.</h2>
+        <div class="rule"></div>
+        <div class="interest-why">
+          <div class="interest-why-item">
+            <div class="interest-why-num">01</div>
+            <div>
+              <div class="interest-why-title">First to Know</div>
+              <div class="interest-why-text">Hear about new homes and lot releases here before they reach the wider market.</div>
+            </div>
+          </div>
+          <div class="interest-why-item">
+            <div class="interest-why-num">02</div>
+            <div>
+              <div class="interest-why-title">One List, Every Community</div>
+              <div class="interest-why-text">Interested in more than one? Check them all here — no need to fill out a second form.</div>
+            </div>
+          </div>
+          <div class="interest-why-item">
+            <div class="interest-why-num">03</div>
+            <div>
+              <div class="interest-why-title">No Obligation</div>
+              <div class="interest-why-text">Joining is free and keeps you in the loop. Unsubscribe anytime.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="interest-right">
+      <div>
+        <span class="t-label">Register Your Interest</span>
+        <h2 class="t-lg" style="margin-top:12px;">New Listings<br>to You First.</h2>
+        <div class="rule" style="margin-top:20px;"></div>
+      </div>
+      <form id="interest-form" name="community-interest" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="interest-form">
+        <input type="hidden" name="form-name" value="community-interest">
+        <input type="hidden" name="community" value="">
+        <p style="display:none;"><input name="bot-field"></p>
+        <div class="form-group">
+          <label class="form-label">Communities You're Interested In</label>
+          <div class="community-picker" data-current="Victoria Farms"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="first">First Name</label>
+            <input class="form-input" type="text" id="first" name="first_name" placeholder="First" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="last">Last Name</label>
+            <input class="form-input" type="text" id="last" name="last_name" placeholder="Last" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="you@email.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone</label>
+            <input class="form-input" type="tel" id="phone" name="phone" placeholder="(231) 000-0000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="timeline">Purchase Timeline</label>
+          <select class="form-select" id="timeline" name="timeline">
+            <option value="" disabled selected>Select one...</option>
+            <option>Ready when available</option>
+            <option>Within 6 months</option>
+            <option>6–12 months</option>
+            <option>12–24 months</option>
+            <option>Just exploring for now</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="notes">Questions or Comments <span style="font-weight:300;text-transform:none;letter-spacing:0;color:rgba(0,0,0,0.3);">(optional)</span></label>
+          <textarea class="form-textarea" id="notes" name="notes" placeholder="Anything you'd like us to know — preferred lot type, timeline, questions..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Join the Interest List</button>
+        <p class="form-note">We follow up personally after your submission.</p>
+      </form>
+      <div class="form-success" id="form-success">
+        <div class="form-success-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span class="t-label">You're on the List</span>
+        <div style="font-family:var(--display,'Cormorant Garamond',serif);font-size:26px;font-weight:300;">We'll be in touch.</div>
+        <p style="font-family:var(--body,'Montserrat',sans-serif);font-size:12px;font-weight:300;color:var(--text,#6b6b6b);text-align:center;max-width:340px;line-height:1.9;">We'll reach out directly about the communities you selected — new listings, pricing, and availability.</p>
+      </div>
+    </div>
+  </section>
+
   <form name="updates" data-netlify="true" netlify-honeypot="bot-field" hidden>
     <input type="hidden" name="form-name" value="updates">
     <input type="email" name="email">
     <input type="text" name="source">
+    <input type="text" name="community">
   </form>
 
   <footer class="footer">
@@ -833,9 +988,21 @@
         <form name="updates" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="footer-signup-form" onsubmit="return ogUpdatesSubmit(this,event)">
           <input type="hidden" name="form-name" value="updates">
           <input type="hidden" name="source" value="footer">
+          <input type="hidden" name="community" value="">
           <p class="og-hp"><label>Skip this: <input name="bot-field"></label></p>
-          <input type="email" name="email" placeholder="Your email address" required aria-label="Email address">
-          <button type="submit">Join</button>
+          <label class="foot-everything">
+            <span class="fe-name">Everything O'Grady</span>
+            <input type="checkbox" class="foot-everything-toggle">
+            <span class="fe-switch" aria-hidden="true"></span>
+          </label>
+          <div>
+            <div class="foot-pick-label">Or pick communities</div>
+            <div class="foot-pills"></div>
+          </div>
+          <div class="email-row">
+            <input type="email" name="email" placeholder="Your email address" required aria-label="Email address">
+            <button type="submit">Join</button>
+          </div>
           <span class="footer-signup-msg" aria-live="polite"></span>
         </form>
       </div>
@@ -992,6 +1159,34 @@
     document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
   </script>
   <script>
+    (function(){
+      var COMMUNITIES = ["Brook Valley","Westacres","Peninsula Shores","Victoria Farms"];
+      var check = '<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>';
+      document.querySelectorAll('.footer-signup-form .foot-pills').forEach(function(pills){
+        var form = pills.closest('form');
+        var hidden = form.querySelector('input[name="community"]');
+        var everyWrap = form.querySelector('.foot-everything');
+        var everyToggle = form.querySelector('.foot-everything-toggle');
+        COMMUNITIES.forEach(function(name){
+          var pill = document.createElement('label');
+          pill.className = 'foot-pill';
+          pill.innerHTML = '<input type="checkbox" value="'+name+'"><span class="fp-dot">'+check+'</span><span class="fp-name">'+name+'</span>';
+          pills.appendChild(pill);
+        });
+        var boxes = pills.querySelectorAll('input');
+        function sync(){
+          var chosen = [];
+          boxes.forEach(function(b){ b.closest('.foot-pill').classList.toggle('on', b.checked); if(b.checked) chosen.push(b.value); });
+          if (hidden) hidden.value = chosen.join(', ');
+          var all = chosen.length === boxes.length;
+          if (everyToggle){ everyToggle.checked = all; everyWrap.classList.toggle('on', all); }
+        }
+        boxes.forEach(function(b){ b.addEventListener('change', sync); });
+        if (everyToggle){ everyToggle.addEventListener('change', function(){ boxes.forEach(function(b){ b.checked = everyToggle.checked; }); sync(); }); }
+        sync();
+      });
+    })();
+
     function ogUpdatesSubmit(form, e){
       e.preventDefault();
       var msg = form.querySelector('.footer-signup-msg');
@@ -1006,6 +1201,45 @@
     (function(){var sb=document.getElementById('sticky-bar');if(!sb)return;var hero=document.querySelector('.hero');
     function t(){var trg=hero?hero.offsetHeight-140:560;sb.classList.toggle('show',window.scrollY>trg);}
     window.addEventListener('scroll',t,{passive:true});t();})();
+  </script>
+  <script>
+  (function(){
+    var COMMUNITIES = ["Brook Valley","Westacres","Peninsula Shores","Victoria Farms"];
+    var check = '<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>';
+    document.querySelectorAll('.community-picker').forEach(function(grid){
+      var current = grid.getAttribute('data-current');
+      var form = grid.closest('form');
+      var hidden = form.querySelector('input[name="community"]');
+      COMMUNITIES.forEach(function(name){
+        var on = name === current;
+        var chip = document.createElement('label');
+        chip.className = 'community-chip' + (on ? ' on' : '');
+        chip.innerHTML = '<input type="checkbox" value="'+name+'"'+(on?' checked':'')+'>'
+          + '<span class="cc-box">'+check+'</span>'
+          + '<span class="cc-name">'+name+(on?'<span class="cc-tag">You\u2019re viewing</span>':'')+'</span>';
+        grid.appendChild(chip);
+      });
+      var boxes = grid.querySelectorAll('input[type=checkbox]');
+      function sync(){
+        var chosen = [];
+        boxes.forEach(function(b){ b.closest('.community-chip').classList.toggle('on', b.checked); if(b.checked) chosen.push(b.value); });
+        hidden.value = chosen.join(', ');
+      }
+      boxes.forEach(function(b){ b.addEventListener('change', sync); });
+      sync();
+    });
+    var f = document.getElementById('interest-form');
+    var s = document.getElementById('form-success');
+    if (f && s) {
+      f.addEventListener('submit', function(e){
+        e.preventDefault();
+        var body = new URLSearchParams(new FormData(f)).toString();
+        fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:body})
+          .then(function(){ f.style.display='none'; s.classList.add('show'); })
+          .catch(function(){ f.style.display='none'; s.classList.add('show'); });
+      });
+    }
+  })();
   </script>
 </body>
 </html>
