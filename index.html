@@ -990,6 +990,16 @@
     .foot-everything.on .fe-switch::after { transform:translateX(16px); }
     @media(max-width:860px){ .footer-signup-form { width:100%; min-width:0; } }
   </style>
+  <style id="og-sold-toast-css">
+    .sold-toast { position: fixed; right: 26px; bottom: 26px; z-index: 1200; max-width: 340px; background: #1a1a1a; color: #fff; padding: 26px 26px 24px; box-shadow: 0 24px 60px rgba(0,0,0,0.35); opacity: 0; transform: translateY(20px); pointer-events: none; transition: opacity .6s cubic-bezier(0.22,1,0.36,1), transform .6s cubic-bezier(0.22,1,0.36,1); }
+    .sold-toast.show { opacity: 1; transform: none; pointer-events: auto; }
+    .sold-toast .st-tag { font-family: 'Montserrat',sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #1a1a1a; background: #b8a88a; padding: 5px 11px; display: inline-block; }
+    .sold-toast h4 { font-family: 'Cormorant Garamond',Georgia,serif; font-weight: 300; font-size: 26px; line-height: 1.1; margin: 16px 0 0; color: #fff; }
+    .sold-toast p { font-family: 'Montserrat',sans-serif; font-size: 11px; font-weight: 300; letter-spacing: 1px; color: rgba(255,255,255,0.55); margin: 8px 0 0; line-height: 1.7; }
+    .sold-toast a.st-link { display: inline-block; margin-top: 16px; font-family: 'Montserrat',sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #cfc0a6; border-bottom: 1px solid rgba(207,192,166,0.4); padding-bottom: 2px; }
+    .sold-toast .st-close { position: absolute; top: 12px; right: 16px; background: none; border: none; color: rgba(255,255,255,0.45); font-size: 20px; cursor: pointer; font-family: 'Cormorant Garamond',serif; line-height: 1; }
+    @media (max-width: 520px) { .sold-toast { right: 14px; left: 14px; bottom: 14px; max-width: none; } }
+  </style>
 </head>
 <body>
 
@@ -1568,6 +1578,24 @@
         .catch(function(){ msg.textContent = "Something went wrong. Please try again."; });
       return false;
     }
+  </script>
+  <!-- Recently-sold announcement (corner card) -->
+  <div class="sold-toast" id="soldToast" role="dialog" aria-label="Recently sold">
+    <button class="st-close" onclick="dismissSoldToast()" aria-label="Dismiss">&times;</button>
+    <span class="st-tag">Sold</span>
+    <h4>15985 Waters Edge Drive</h4>
+    <p>Another Peninsula Shores home, sold. See what remains on Waters Edge Drive.</p>
+    <a href="peninsula-shores.html" class="st-link">Explore the community &rarr;</a>
+  </div>
+  <script>
+    (function(){
+      var KEY = 'ogSold_15985_dismissed';
+      var t = document.getElementById('soldToast');
+      if (!t) return;
+      window.dismissSoldToast = function(){ t.classList.remove('show'); try { localStorage.setItem(KEY,'1'); } catch(e){} };
+      try { if (localStorage.getItem(KEY) === '1') return; } catch(e){}
+      setTimeout(function(){ t.classList.add('show'); }, 1400);
+    })();
   </script>
 </body>
 </html>

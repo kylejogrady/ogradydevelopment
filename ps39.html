@@ -28,7 +28,7 @@
     "geo": { "@type": "GeoCoordinates", "latitude": 44.9147, "longitude": -85.4935 },
     "numberOfRooms": "4",
     "floorSize": { "@type": "QuantitativeValue", "value": 4077, "unitCode": "FTK" },
-    "offers": { "@type": "Offer", "price": "2950000", "priceCurrency": "USD" }
+    "offers": { "@type": "Offer", "price": "2950000", "priceCurrency": "USD", "availability": "https://schema.org/SoldOut" }
   }
   </script>
 
@@ -344,6 +344,9 @@
     @media(max-width:860px){ .footer-signup-form { width:100%; min-width:0; } }
     .footer-disclaimer { padding-bottom: 88px; }
   </style>
+  <style id="og-sold-css">
+    .sticky-bar-sold { font-family: var(--body); font-size: 9px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; background: #1a1a1a; color: #fff; padding: 5px 10px; margin-left: 4px; }
+  </style>
 </head>
 <body>
 
@@ -418,7 +421,7 @@
         </div>
       </div>
       <div class="hero-right h-anim h-d3">
-        <div class="hero-badge">Under Construction</div>
+        <div class="hero-badge" style="background:#1a1a1a;">SOLD</div>
         <div class="hero-price">$2,950,000</div>
         <p class="t-body" style="color:rgba(255,255,255,0.5);">A stunning ranch with walkout lower level — set on .60 acres with access to shared East Grand Traverse Bay frontage in a private gated community.</p>
         <button class="btn btn-white" onclick="openPopup()">Schedule a Tour</button>
@@ -456,7 +459,7 @@
   <!-- ═══ STICKY BAR ════════════════════════════════ -->
   <div class="sticky-bar">
     <div class="sticky-bar-address">15985 Waters Edge Drive, Traverse City, MI 49686</div>
-    <div class="sticky-bar-price">$2,950,000</div>
+    <div class="sticky-bar-price">$2,950,000 <span class="sticky-bar-sold">Sold</span></div>
     <div class="sticky-bar-actions">
       <a href="tel:+12314215161" class="sticky-btn sticky-btn-gold">(231) 421-5161</a>
       <button class="sticky-btn sticky-btn-dark" onclick="openPopup()">Request Info</button>
@@ -547,7 +550,7 @@
             </div>
             <div class="detail-item">
               <div class="detail-label">Status</div>
-              <div class="detail-val" style="color:var(--gold);">Under Construction</div>
+              <div class="detail-val" style="color:var(--gold);">Sold</div>
             </div>
           </div>
 
