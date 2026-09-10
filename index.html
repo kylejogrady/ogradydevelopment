@@ -1005,6 +1005,7 @@
 
   <!-- Netlify form detection — hidden static forms -->
   <form name="contact" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
+        <input type="text" name="source">
     <input type="text" name="first_name">
     <input type="text" name="last_name">
     <input type="email" name="email">
@@ -1014,6 +1015,7 @@
     <input type="text" name="how_heard">
   </form>
   <form name="property-inquiry" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
+        <input type="text" name="source">
     <input type="text" name="first_name">
     <input type="text" name="last_name">
     <input type="email" name="email">
@@ -1025,6 +1027,7 @@
         <textarea name="message"></textarea>
   </form>
   <form name="community-interest" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
+        <input type="text" name="source">
     <input type="text" name="first_name">
     <input type="text" name="last_name">
     <input type="email" name="email">
@@ -1034,6 +1037,7 @@
     <textarea name="notes"></textarea>
   </form>
   <form name="sell-land" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
+        <input type="text" name="source">
     <input type="text" name="first_name">
     <input type="text" name="last_name">
     <input type="email" name="email">
@@ -1433,7 +1437,7 @@
         </div>
         <form name="updates" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="footer-signup-form" onsubmit="return ogUpdatesSubmit(this,event)">
           <input type="hidden" name="form-name" value="updates">
-          <input type="hidden" name="source" value="footer">
+          <input type="hidden" name="source" value="Website - Footer Signup">
           <input type="hidden" name="community" value="">
           <p class="og-hp"><label>Skip this: <input name="bot-field"></label></p>
           <label class="foot-everything">

@@ -349,6 +349,7 @@
 
   <!-- Netlify hidden forms -->
   <form name="property-inquiry" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
+        <input type="text" name="source">
     <input type="text" name="first_name"><input type="text" name="last_name">
     <input type="email" name="email"><input type="tel" name="phone">
     <input type="text" name="property">
@@ -780,7 +781,7 @@
         </div>
         <form name="updates" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="footer-signup-form" onsubmit="return ogUpdatesSubmit(this,event)">
           <input type="hidden" name="form-name" value="updates">
-          <input type="hidden" name="source" value="footer">
+          <input type="hidden" name="source" value="Website - Footer Signup">
           <input type="hidden" name="community" value="">
           <p class="og-hp"><label>Skip this: <input name="bot-field"></label></p>
           <label class="foot-everything">
@@ -857,6 +858,7 @@
       </div>
       <div class="popup-body">
         <form id="popup-form" name="property-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="source" value="Website - Property Inquiry (PS13)">
           <input type="hidden" name="form-name" value="property-inquiry">
           <input type="hidden" name="property" value="15652 Waters Edge Drive, Traverse City MI 49686 — $3,295,000">
           <p style="display:none;"><input name="bot-field"></p>

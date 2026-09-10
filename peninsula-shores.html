@@ -425,6 +425,7 @@
 
   <!-- Netlify form detection — hidden static forms -->
   <form name="contact" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
+        <input type="text" name="source">
     <input type="text" name="first_name">
     <input type="text" name="last_name">
     <input type="email" name="email">
@@ -434,6 +435,7 @@
     <input type="text" name="how_heard">
   </form>
   <form name="property-inquiry" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
+        <input type="text" name="source">
     <input type="text" name="first_name">
     <input type="text" name="last_name">
     <input type="email" name="email">
@@ -445,6 +447,7 @@
         <textarea name="message"></textarea>
   </form>
   <form name="community-interest" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
+        <input type="text" name="source">
     <input type="text" name="first_name">
     <input type="text" name="last_name">
     <input type="email" name="email">
@@ -454,6 +457,7 @@
     <textarea name="notes"></textarea>
   </form>
   <form name="sell-land" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
+        <input type="text" name="source">
     <input type="text" name="first_name">
     <input type="text" name="last_name">
     <input type="email" name="email">
@@ -908,6 +912,7 @@
         <div class="rule" style="margin-top:20px;"></div>
       </div>
       <form id="interest-form" name="community-interest" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="interest-form">
+          <input type="hidden" name="source" value="Website - Peninsula Shores Interest List">
         <input type="hidden" name="form-name" value="community-interest">
         <input type="hidden" name="community" value="">
         <p style="display:none;"><input name="bot-field"></p>
@@ -978,7 +983,7 @@
         </div>
         <form name="updates" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="footer-signup-form" onsubmit="return ogUpdatesSubmit(this,event)">
           <input type="hidden" name="form-name" value="updates">
-          <input type="hidden" name="source" value="footer">
+          <input type="hidden" name="source" value="Website - Footer Signup">
           <input type="hidden" name="community" value="">
           <p class="og-hp"><label>Skip this: <input name="bot-field"></label></p>
           <label class="foot-everything">
@@ -1190,6 +1195,7 @@
       </div>
       <div class="popup-body">
         <form id="popup-form" name="property-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="source" value="Website - Property Inquiry (Peninsula Shores)">
           <input type="hidden" name="form-name" value="property-inquiry">
           <input type="hidden" name="property" id="popup-property-field" value="">
           <p style="display:none;"><input name="bot-field"></p>
