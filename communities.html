@@ -328,8 +328,10 @@
     <input type="email" name="email">
     <input type="tel" name="phone">
     <input type="text" name="property">
+        <input type="text" name="price">
     <input type="text" name="interest">
-    <textarea name="message"></textarea>
+    <input type="text" name="timeline">
+        <textarea name="message"></textarea>
   </form>
   <form name="community-interest" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
     <input type="text" name="first_name">
@@ -713,10 +715,12 @@
       var msg = form.querySelector('.footer-signup-msg');
       var body = new URLSearchParams(new FormData(form)).toString();
       fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:body})
+        .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); })
         .then(function(){ msg.textContent = "You're on the list \u2014 thank you."; form.querySelector('input[type=email]').value=''; })
         .catch(function(){ msg.textContent = "Something went wrong. Please try again."; });
       return false;
     }
   </script>
+  <script src="/tracking.js" defer></script>
 </body>
 </html>

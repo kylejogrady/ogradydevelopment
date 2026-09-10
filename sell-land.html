@@ -416,8 +416,10 @@
     <input type="email" name="email">
     <input type="tel" name="phone">
     <input type="text" name="property">
+        <input type="text" name="price">
     <input type="text" name="interest">
-    <textarea name="message"></textarea>
+    <input type="text" name="timeline">
+        <textarea name="message"></textarea>
   </form>
   <form name="community-interest" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
     <input type="text" name="first_name">
@@ -649,7 +651,9 @@
     </div>
 
     <div class="form-right">
-      <form id="land-form" novalidate>
+      <form id="land-form" name="sell-land" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="sell-land">
+        <p style="display:none;"><input name="bot-field"></p>
         <div class="form-row">
           <div class="form-group">
             <label class="form-label" for="fname">First Name</label>
@@ -825,9 +829,14 @@
     const landSuccess = document.getElementById('land-success');
     landForm.addEventListener('submit', e => {
       e.preventDefault();
-      landForm.style.opacity = '0';
-      landForm.style.transition = 'opacity 0.4s ease';
-      setTimeout(() => { landForm.style.display = 'none'; landSuccess.classList.add('show'); }, 400);
+      fetch('/', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: new URLSearchParams(new FormData(landForm)).toString() })
+        .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); })
+        .then(() => {
+          landForm.style.opacity = '0';
+          landForm.style.transition = 'opacity 0.4s ease';
+          setTimeout(() => { landForm.style.display = 'none'; landSuccess.classList.add('show'); }, 400);
+        })
+        .catch(() => { if (window.ogFormError) ogFormError(landForm); });
     });
 
     // Scroll animations
@@ -870,10 +879,12 @@
       var msg = form.querySelector('.footer-signup-msg');
       var body = new URLSearchParams(new FormData(form)).toString();
       fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:body})
+        .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); })
         .then(function(){ msg.textContent = "You're on the list \u2014 thank you."; form.querySelector('input[type=email]').value=''; })
         .catch(function(){ msg.textContent = "Something went wrong. Please try again."; });
       return false;
     }
   </script>
+  <script src="/tracking.js" defer></script>
 </body>
 </html>

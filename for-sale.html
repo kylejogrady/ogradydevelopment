@@ -586,8 +586,10 @@
     <input type="email" name="email">
     <input type="tel" name="phone">
     <input type="text" name="property">
+        <input type="text" name="price">
     <input type="text" name="interest">
-    <textarea name="message"></textarea>
+    <input type="text" name="timeline">
+        <textarea name="message"></textarea>
   </form>
   <form name="community-interest" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
     <input type="text" name="first_name">
@@ -804,10 +806,14 @@
         <h2 class="t-lg" style="color:#fff;">Be the First to Know<br>When a Home Hits the Market.</h2>
         <div class="rule"></div>
         <p class="t-body" style="color:rgba(255,255,255,0.4);">New O'Grady homes move quickly. Leave your email and we'll reach out the moment a new property becomes available — before it's publicly listed.</p>
-        <div class="notify-form">
-          <input type="email" class="notify-input" placeholder="Your email address" id="notify-email">
-          <button class="notify-btn" onclick="handleNotify()">Notify Me</button>
-        </div>
+        <form class="notify-form" name="updates" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return ogNotifySubmit(this,event)">
+          <input type="hidden" name="form-name" value="updates">
+          <input type="hidden" name="source" value="For Sale - Notify Me">
+          <input type="hidden" name="community" value="">
+          <p style="display:none;"><input name="bot-field"></p>
+          <input type="email" class="notify-input" name="email" placeholder="Your email address" id="notify-email" required>
+          <button type="submit" class="notify-btn">Notify Me</button>
+        </form>
         <p style="font-family:var(--body);font-size:10px;font-weight:300;color:rgba(255,255,255,0.2);margin-top:12px;">No spam. Just new listings, directly from us.</p>
       </div>
       <div class="notify-right">
@@ -921,7 +927,7 @@
         <p class="popup-subtitle">Tell us a bit about yourself and we'll be in touch within one business day.</p>
 
         <!-- Netlify Forms — data-netlify="true" activates email notifications -->
-        <form id="popup-form" name="property-inquiry" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <form id="popup-form" name="property-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="property-inquiry">
           <input type="hidden" name="property" id="popup-property-field">
           <input type="hidden" name="price" id="popup-price-field">
@@ -1009,15 +1015,12 @@
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(new FormData(form)).toString()
       })
+      .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); })
       .then(() => {
         form.style.display = 'none';
         document.getElementById('popup-success').classList.add('show');
       })
-      .catch(() => {
-        // Fallback — show success anyway (Netlify may still catch it)
-        form.style.display = 'none';
-        document.getElementById('popup-success').classList.add('show');
-      });
+      .catch(() => { if (window.ogFormError) ogFormError(form); });
     });
 
 
@@ -1039,12 +1042,19 @@
       spans.forEach(s => s.style.background = '');
     }));
 
-    // Email notify (placeholder — wire to your form backend)
-    function handleNotify() {
-      const email = document.getElementById('notify-email').value;
-      if (!email || !email.includes('@')) return;
-      document.querySelector('.notify-form').innerHTML = '<div style="font-family:var(--display);font-size:22px;font-weight:300;color:#fff;">You\'re on the list. We\'ll be in touch.</div>';
-    }
+    // Email notify — posts to the Netlify "updates" form
+    window.ogNotifySubmit = function (form, e) {
+      e.preventDefault();
+      fetch('/', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: new URLSearchParams(new FormData(form)).toString() })
+        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); })
+        .then(function () {
+          form.innerHTML = '<div style="font-family:var(--display);font-size:22px;font-weight:300;color:#fff;">You\'re on the list. We\'ll be in touch.</div>';
+        })
+        .catch(function () {
+          form.insertAdjacentHTML('beforeend', '<div style="font-family:var(--body);font-size:11px;font-weight:300;color:rgba(255,255,255,0.55);margin-top:10px;width:100%;">That didn\'t go through — please email Info@OGradyTeam.com.</div>');
+        });
+      return false;
+    };
 
     // Scroll animations
     const obs = new IntersectionObserver(entries => {
@@ -1056,71 +1066,6 @@
   }); // end DOMContentLoaded
   </script>
 
-  <!-- ═══ INQUIRY POPUP ════════════════════════════ -->
-  <div class="popup-overlay" id="popup-overlay">
-    <div class="popup" role="dialog" aria-modal="true" aria-label="Property Inquiry">
-
-      <div class="popup-header">
-        <button class="popup-close" onclick="closePopup()">Close ✕</button>
-        <div class="popup-property-label">Property Inquiry</div>
-        <div class="popup-property-address" id="popup-address">15985 Waters Edge Drive</div>
-        <div class="popup-property-price" id="popup-price">$2,950,000</div>
-      </div>
-
-      <div class="popup-body">
-        <form
-          id="popup-form"
-          name="property-inquiry"
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-        >
-          <!-- Netlify hidden fields -->
-          <input type="hidden" name="form-name" value="property-inquiry">
-          <input type="hidden" name="property" id="popup-property-field" value="">
-          <p style="display:none;"><input name="bot-field"></p>
-
-          <div class="popup-form-row">
-            <div class="popup-form-group">
-              <label class="popup-label" for="popup-first">First Name</label>
-              <input class="popup-input" type="text" id="popup-first" name="first_name" placeholder="First" required>
-            </div>
-            <div class="popup-form-group">
-              <label class="popup-label" for="popup-last">Last Name</label>
-              <input class="popup-input" type="text" id="popup-last" name="last_name" placeholder="Last" required>
-            </div>
-          </div>
-          <div class="popup-form-row">
-            <div class="popup-form-group">
-              <label class="popup-label" for="popup-email">Email</label>
-              <input class="popup-input" type="email" id="popup-email" name="email" placeholder="you@email.com" required>
-            </div>
-            <div class="popup-form-group">
-              <label class="popup-label" for="popup-phone">Phone</label>
-              <input class="popup-input" type="tel" id="popup-phone" name="phone" placeholder="(231) 000-0000">
-            </div>
-          </div>
-          <div class="popup-form-group">
-            <label class="popup-label" for="popup-message">Message <span style="font-weight:300;text-transform:none;letter-spacing:0;color:rgba(0,0,0,0.3);">(optional)</span></label>
-            <textarea class="popup-textarea" id="popup-message" name="message" placeholder="Questions, timeline, anything you'd like us to know..."></textarea>
-          </div>
-          <button type="submit" class="popup-submit">Send Inquiry</button>
-          <p class="popup-note">We respond within one business day. All inquiries are confidential.</p>
-        </form>
-
-        <div class="popup-success" id="popup-success">
-          <div class="popup-success-check">
-            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <span class="t-label">Inquiry Sent</span>
-          <div style="font-family:var(--display);font-size:26px;font-weight:300;">We'll be in touch soon.</div>
-          <p style="font-family:var(--body);font-size:12px;font-weight:300;color:var(--text);text-align:center;max-width:320px;line-height:1.9;">Expect to hear from Kyle within one business day. In the meantime feel free to browse our other communities.</p>
-          <button onclick="closePopup()" style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);background:none;border:none;cursor:pointer;margin-top:8px;">Close ✕</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
 
   <script>
     (function(){
@@ -1156,10 +1101,12 @@
       var msg = form.querySelector('.footer-signup-msg');
       var body = new URLSearchParams(new FormData(form)).toString();
       fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:body})
+        .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); })
         .then(function(){ msg.textContent = "You're on the list \u2014 thank you."; form.querySelector('input[type=email]').value=''; })
         .catch(function(){ msg.textContent = "Something went wrong. Please try again."; });
       return false;
     }
   </script>
+  <script src="/tracking.js" defer></script>
 </body>
 </html>

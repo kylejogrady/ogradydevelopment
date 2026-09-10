@@ -70,4 +70,13 @@
     }
   }, true); // capture phase: fires even though each page calls preventDefault
 
+  /* ---- Shared failure message so a lost submission never looks like a win ---- */
+  window.ogFormError = function (form) {
+    if (!form) return;
+    var m = form.querySelector('.og-form-error');
+    if (!m) { m = document.createElement('div'); m.className = 'og-form-error'; form.appendChild(m); }
+    m.setAttribute('style', 'margin-top:16px;padding:12px 14px;border:1px solid rgba(184,168,138,0.55);background:rgba(184,168,138,0.10);font-family:Montserrat,Helvetica,Arial,sans-serif;font-size:12px;font-weight:300;line-height:1.7;color:#1a1a1a;');
+    m.innerHTML = 'We couldn\'t send that just now. Please email <a href="mailto:Info@OGradyTeam.com" style="color:#b8a88a;">Info@OGradyTeam.com</a> or try again in a moment.';
+  };
+
 })();
