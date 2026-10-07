@@ -1000,8 +1000,33 @@
     .sold-toast .st-close { position: absolute; top: 12px; right: 16px; background: none; border: none; color: rgba(255,255,255,0.45); font-size: 20px; cursor: pointer; font-family: 'Cormorant Garamond',serif; line-height: 1; }
     @media (max-width: 520px) { .sold-toast { right: 14px; left: 14px; bottom: 14px; max-width: none; } }
   </style>
+  <style id="og-nav-breakpoint">
+    /* Switch to the menu button below 1180px so the 7-link header never wraps (tablets, small laptops). */
+    @media (max-width: 1320px) { .header .nav { gap: 24px; } }
+    @media (max-width: 1180px) { .header .nav { display: none; } .header .mobile-toggle { display: block; } }
+  </style>
 </head>
 <body>
+  <!-- Netlify form registration: "Stay in the know" pop-up (stay-in-the-know.js) -->
+  <form name="stay-in-the-know" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="stay-in-the-know">
+    <input type="text" name="source">
+    <input type="text" name="page">
+    <input type="text" name="community">
+    <input type="text" name="interests">
+    <input type="text" name="opened_by">
+    <input type="text" name="landing_page">
+    <input type="text" name="utm_source">
+    <input type="text" name="utm_medium">
+    <input type="text" name="utm_campaign">
+    <input type="text" name="first_name">
+    <input type="text" name="last_name">
+    <input type="email" name="email">
+    <input type="tel" name="phone">
+    <textarea name="message"></textarea>
+    <input name="bot-field">
+  </form>
+
 
   <!-- Netlify form detection — hidden static forms -->
   <form name="contact" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
@@ -1060,6 +1085,7 @@
       <a href="for-sale.html"    class="nav-link">For Sale</a>
       <a href="our-work.html"   class="nav-link">Our Work</a>
       <a href="about.html"       class="nav-link">Our Story</a>
+      <a href="sales-partners.html" class="nav-link">Sales Partners</a>
       <a href="sell-land.html"   class="nav-link">Sell Land</a>
       <a href="faq.html"         class="nav-link">FAQ</a>
       <a href="contact.html"     class="nav-cta">Contact Us</a>
@@ -1076,6 +1102,7 @@
     <a href="our-work.html">Our Work</a>
     <a href="faq.html">FAQ</a>
     <a href="about.html">Our Story</a>
+    <a href="sales-partners.html">Sales Partners</a>
     <a href="sell-land.html">Sell Land</a>
     <a href="contact.html">Contact</a>
   </div>
@@ -1471,6 +1498,7 @@
           <a href="our-work.html"    class="footer-link">Our Work</a>
           <a href="faq.html" class="footer-link">FAQ</a>
           <a href="about.html"        class="footer-link">Our Story</a>
+          <a href="sales-partners.html" class="footer-link">Sales Partners</a>
         </div>
         <div>
           <div class="footer-col-title">Connect</div>
@@ -1605,5 +1633,6 @@
     })();
   </script>
   <script src="/tracking.js" defer></script>
+  <script src="/stay-in-the-know.js" defer></script>
 </body>
 </html>

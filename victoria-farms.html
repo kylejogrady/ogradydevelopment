@@ -463,6 +463,11 @@
     .foot-everything.on .fe-switch::after { transform:translateX(16px); }
     @media(max-width:860px){ .footer-signup-form { width:100%; min-width:0; } }
   </style>
+  <style id="og-nav-breakpoint">
+    /* Switch to the menu button below 1180px so the 7-link header never wraps (tablets, small laptops). */
+    @media (max-width: 1320px) { .header .nav { gap: 24px; } }
+    @media (max-width: 1180px) { .header .nav { display: none; } .header .mobile-toggle { display: block; } }
+  </style>
 </head>
 <body>
 
@@ -523,6 +528,7 @@
       <a href="for-sale.html"    class="nav-link">For Sale</a>
       <a href="our-work.html"   class="nav-link">Our Work</a>
       <a href="about.html"       class="nav-link">Our Story</a>
+      <a href="sales-partners.html" class="nav-link">Sales Partners</a>
       <a href="sell-land.html"   class="nav-link">Sell Land</a>
       <a href="faq.html"         class="nav-link">FAQ</a>
       <a href="contact.html"     class="nav-cta">Contact Us</a>
@@ -538,6 +544,7 @@
     <a href="for-sale.html">For Sale</a>
     <a href="our-work.html">Our Work</a>
     <a href="about.html">Our Story</a>
+    <a href="sales-partners.html">Sales Partners</a>
     <a href="sell-land.html">Sell Land</a>
     <a href="faq.html">FAQ</a>
     <a href="contact.html">Contact</a>
@@ -1025,6 +1032,7 @@
           <a href="for-sale.html"    class="footer-link">For Sale</a>
           <a href="our-work.html"   class="footer-link">Our Work</a>
           <a href="about.html"       class="footer-link">Our Story</a>
+          <a href="sales-partners.html" class="footer-link">Sales Partners</a>
           <a href="faq.html"         class="footer-link">FAQ</a>
         </div>
         <div>
@@ -1253,5 +1261,6 @@
   })();
   </script>
   <script src="/tracking.js" defer></script>
+  <script src="/stay-in-the-know.js" defer></script>
 </body>
 </html>
