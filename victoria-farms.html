@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Victoria Farms | New Construction Homes — East Bay Township, Traverse City MI</title>
-  <meta name="description" content="Victoria Farms is a brand new subdivision in East Bay Township with two luxury home plans — The Farmstead and The Ridgeline. From $995,000. Schedule a site visit.">
+  <meta name="description" content="Turn-key luxury homes at Victoria Farms in East Bay Township, designed, finished, and built by O&#39;Grady Development. From $995,000. Schedule a tour.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -359,7 +359,7 @@
   <!-- SEO: Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:title"       content="Victoria Farms | New Construction Homes — East Bay Township, Traverse City MI">
-  <meta property="og:description" content="Victoria Farms is a brand new subdivision in East Bay Township with two luxury home plans — The Farmstead and The Ridgeline. From $995,000. Schedule a site visit.">
+  <meta property="og:description" content="Turn-key luxury homes at Victoria Farms in East Bay Township, designed, finished, and built by O&#39;Grady Development. From $995,000. Schedule a tour.">
   <meta property="og:url"         content="https://www.ogradydevelopment.com/victoria-farms.html">
   <meta property="og:image"       content="https://www.ogradydevelopment.com/images/communities/victoria-farms/victoria-farms-entrance.jpg">
   <meta property="og:site_name"   content="O'Grady Development Co.">
@@ -368,7 +368,7 @@
   <!-- SEO: Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Victoria Farms | New Construction Homes — East Bay Township, Traverse City MI">
-  <meta name="twitter:description" content="Victoria Farms is a brand new subdivision in East Bay Township with two luxury home plans — The Farmstead and The Ridgeline. From $995,000. Schedule a site visit.">
+  <meta name="twitter:description" content="Turn-key luxury homes at Victoria Farms in East Bay Township, designed, finished, and built by O&#39;Grady Development. From $995,000. Schedule a tour.">
   <meta name="twitter:image"       content="https://www.ogradydevelopment.com/images/communities/victoria-farms/victoria-farms-entrance.jpg">
 
   <!-- SEO: Additional -->
@@ -468,6 +468,15 @@
     @media (max-width: 1320px) { .header .nav { gap: 24px; } }
     @media (max-width: 1180px) { .header .nav { display: none; } .header .mobile-toggle { display: block; } }
   </style>
+  <style id="vf-paths-css">
+    .vf-paths { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
+    .vf-path { background: var(--warm); padding: 48px 44px; display: flex; flex-direction: column; gap: 16px; align-items: flex-start; border-top: 2px solid var(--vf-sage); }
+    .vf-path-eyebrow { font-family: var(--body); font-size: 8.5px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--vf-sage); }
+    .vf-path-title { font-family: var(--display); font-size: clamp(26px, 3vw, 36px); font-weight: 300; color: var(--dark); line-height: 1.1; }
+    .vf-path-text { font-family: var(--body); font-size: 12.5px; font-weight: 300; color: var(--text); line-height: 1.95; flex: 1; }
+    .vf-path .btn { margin-top: 6px; }
+    @media (max-width: 860px) { .vf-paths { grid-template-columns: 1fr; } .vf-path { padding: 36px 26px; } }
+  </style>
 </head>
 <body>
 
@@ -559,23 +568,24 @@
       <div class="hero-eyebrow h-anim h-d1">East Bay Township</div>
       <h1 class="hero-name h-anim h-d2">Victoria<br><em>Farms.</em></h1>
       <div class="hero-rule h-anim h-d2"></div>
-      <p class="hero-desc h-anim h-d3">A brand new subdivision on scenic rolling terrain off Three Mile Road — 20 minutes south of Traverse City, with two thoughtfully designed home plans to choose from.</p>
+      <p class="hero-desc h-anim h-d3">Turn-key luxury homes on rolling East Bay Township farmland, designed, finished, and built by O&rsquo;Grady Development with many of the same finishes found in our Peninsula Shores homes.</p>
       <div class="hero-stats h-anim h-d3">
         <div class="hero-stat">
-          <div class="hero-stat-val">2 Plans</div>
-          <div class="hero-stat-lbl">Available</div>
+          <div class="hero-stat-val">12 Homes</div>
+          <div class="hero-stat-lbl">Underway</div>
         </div>
         <div class="hero-stat">
           <div class="hero-stat-val">From $995,000</div>
           <div class="hero-stat-lbl">Starting Price</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-val">Three Mile Rd</div>
-          <div class="hero-stat-lbl">Location</div>
+          <div class="hero-stat-val">~20 Min</div>
+          <div class="hero-stat-lbl">To Downtown TC</div>
         </div>
       </div>
       <div class="hero-actions h-anim h-d4">
-        <button onclick="openPopup('Victoria Farms', 'From $995,000')" class="btn btn-dark">Schedule a Site Visit</button>
+        <button onclick="vfTour()" class="btn btn-dark">Schedule a Tour</button>
+        <button onclick="vfConsult()" class="btn" style="border-color:rgba(0,0,0,0.2);color:var(--text);">Talk With Our Team</button>
       </div>
     </div>
   </section>
@@ -590,17 +600,17 @@
         </div>
         <div class="intro-text fade-up delay-2">
           <span class="t-label">The Community</span>
-          <h2 class="t-lg">Big Sky Country.<br>New Construction.<br>Close to It All.</h2>
+          <h2 class="t-lg">Big Sky Country.<br>Luxury Homes.<br>Close to It All.</h2>
           <div class="rule"></div>
           <p class="t-body">Victoria Farms sits on some of the most naturally beautiful retired farm land in East Bay Township — gently rolling terrain that gives each home a sense of place and privacy. Located off Three Mile Road, you're as close to Traverse City as you need to be while still counting stars, birdwatching, and sleeping with your windows open.</p>
-          <blockquote class="pull">Just announced is our first two sets of home plans. Enjoy necessary living requirements as well as some bonuses — like a covered back porch and a fully finished basement.</blockquote>
+          <blockquote class="pull">Every home here is designed and finished by O&rsquo;Grady Development &mdash; the same team, the same attention to detail, and many of the same finishes as our Peninsula Shores waterfront homes.</blockquote>
           <div class="feature-grid">
             <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">East Bay Township</span></div>
             <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Three Mile Road</span></div>
             <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Rolling Terrain Lots</span></div>
             <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">~20 Min to Downtown TC</span></div>
-            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">New Construction</span></div>
-            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Covered Back Patio</span></div>
+            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Turn-Key Luxury Homes</span></div>
+            <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Finished Basements</span></div>
           </div>
         </div>
       </div>
@@ -626,7 +636,7 @@
         <h2 class="t-lg">Built as if it<br>were our own.</h2>
         <div class="rule"></div>
       </div>
-      <p class="worth-lead fade-up">For more than three decades, O'Grady Development has built homes across Northern Michigan on a simple philosophy: <strong>build every home as if it were our own.</strong> Each one is thoughtfully designed, professionally curated, and finished with details most builders treat as upgrades &mdash; considered long before construction begins.</p>
+      <p class="worth-lead fade-up">For more than three decades, O'Grady Development has built homes across Northern Michigan on a simple philosophy: <strong>build every home as if it were our own.</strong> Each one is thoughtfully designed, professionally curated, and finished with details most builders treat as upgrades &mdash; considered long before construction begins. At Victoria Farms, that means many of the same finishes we use in our Peninsula Shores homes.</p>
       <div class="worth-cols">
         <div class="worth-card fade-up">
           <div class="worth-card-eyebrow">Your Upgrades. Our Standard.</div>
@@ -650,24 +660,15 @@
     </div>
   </section>
 
-  <!-- ═══ AVAILABLE HOMESITES ═══ -->
-  <section class="plans-section" id="plans">
+  <!-- ═══ THE HOMES ═══ -->
+  <section class="plans-section" id="homes">
     <div class="wrap">
-      <div class="fade-up" style="margin-bottom:56px;">
-        <span class="t-label" style="color:var(--vf-deep);">Victoria Farms</span>
-        <h2 class="t-lg" style="margin-top:10px;">Community<br>Site Plan.</h2>
-        <div class="rule"></div>
-        <p class="t-body" style="max-width:520px;margin-top:14px;">Explore the full Victoria Farms layout &mdash; lot locations, road layout, and phasing across the entire community. Cross-reference the unit numbers on the plan with the available homes listed below to see exactly where each one sits.</p>
-        <a href="images/communities/victoria-farms/victoria-farms-site-plan.pdf" target="_blank" style="display:block;margin-top:24px;overflow:hidden;border:1px solid rgba(0,0,0,0.08);">
-          <img src="images/communities/victoria-farms/victoria-farms-site-plan-image.jpg" alt="Victoria Farms Site Plan" loading="lazy" style="width:100%;display:block;">
-        </a>
-      </div>
       <div class="plans-header fade-up">
         <span class="t-label">The Homes</span>
-        <h2 class="t-lg">Room to grow,<br>and space to gather.</h2>
+        <h2 class="t-lg">Designed and finished<br>by O&rsquo;Grady.</h2>
         <div class="homes-price">Homes from <em>$995,000</em></div>
         <div class="rule"></div>
-        <p class="t-body" style="max-width:600px;">Designed for the way families actually live today.</p>
+        <p class="t-body" style="max-width:620px;">There is no upgrade catalog to work through. Our team designs every home and selects every finish, fixture, and exterior palette, so each one arrives complete and move-in ready &mdash; and no two look quite alike.</p>
         <div class="worth-homes-features" style="margin-top:16px;max-width:580px;">
           <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Finished basements</span></div>
           <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Open living spaces</span></div>
@@ -681,71 +682,45 @@
           <div class="feature-item"><div class="feature-dot"></div><span class="feature-text">Underground utilities</span></div>
         </div>
         <div class="adu-callout">
-          <span class="adu-eyebrow">Optional &middot; Detached Building</span>
-          <h3 class="adu-title">More than the main house.</h3>
-          <p class="adu-text">Add a detached building, finished in the same materials as your home. Use it for extra garage space, a workshop, or storage for boats and toys &mdash; or finish it as an accessory dwelling unit (ADU): a guest house, in-law suite, or home office.</p>
+          <span class="adu-eyebrow">Room to Grow</span>
+          <h3 class="adu-title">Space for what comes next.</h3>
+          <p class="adu-text">The zoning and condominium documents at Victoria Farms allow for a detached outbuilding, giving homeowners room to grow in the future &mdash; whether that someday means extra garage space, a workshop, or storage for boats and toys. Any future outbuilding is the homeowner&rsquo;s own project; see the condominium documents below for the guidelines.</p>
         </div>
         <blockquote class="worth-close fade-up" style="margin-top:40px;">When you buy an O'Grady home, you're buying from a local, family-owned company with a reputation built over generations &mdash; and a team that stays involved through the whole process and stands behind every home we build.</blockquote>
       </div>
-      <div class="homesite-grid">
-        <div class="homesite-card fade-up">
-          <div class="hs-top"><div class="hs-unit">Unit 4</div><span class="hs-badge construction">Under Construction</span></div>
-          <div class="hs-address">1128 Victoria Farms Drive</div>
-          <div class="hs-specs">3, 4, or 5 Bedroom &middot; 3.5 Bath &middot; &plusmn;3,300 Sq Ft</div>
-          <div class="hs-line">Exterior &mdash; Quarry Gray</div>
-          <div class="hs-line">3-Car Garage</div>
-          <button class="hs-inquire" onclick="openPopup('Unit 4 — 1128 Victoria Farms Drive', 'Quarry Gray · Under Construction')">Inquire about this home</button>
+
+      <div class="vf-paths fade-up">
+        <div class="vf-path">
+          <span class="vf-path-eyebrow">See It in Person</span>
+          <h3 class="vf-path-title">Tour Victoria Farms.</h3>
+          <p class="vf-path-text">Walk the community and the model home with our team, and see the finishes and craftsmanship up close.</p>
+          <button class="btn btn-dark" onclick="vfTour()">Schedule a Tour</button>
         </div>
-        <div class="homesite-card fade-up">
-          <div class="hs-top"><div class="hs-unit">Unit 7</div><span class="hs-badge model">Model Home</span></div>
-          <div class="hs-address">1198 Victoria Farms Drive</div>
-          <div class="hs-specs">4 Bedroom &middot; 3.5 Bath &middot; &plusmn;3,200 Sq Ft</div>
-          <div class="hs-line">Exterior &mdash; Desert Stone</div>
-          <div class="hs-line">3-Car Garage</div>
-          <button class="hs-inquire" onclick="openPopup('Unit 7 — 1198 Victoria Farms Drive', 'Desert Stone · Model Home')">Inquire about this home</button>
-        </div>
-        <div class="homesite-card fade-up">
-          <div class="hs-top"><div class="hs-unit">Unit 13</div><span class="hs-badge reserved">Reserved</span></div>
-          <div class="hs-address">1368 Victoria Farms Drive</div>
-          <div class="hs-specs">4 Bedroom &middot; 3.5 Bath &middot; &plusmn;3,300 Sq Ft</div>
-          <div class="hs-line">Exterior &mdash; Garden Sage</div>
-          <div class="hs-line">3-Car Garage</div>
-          <button class="hs-inquire" onclick="openPopup('Unit 13 — 1368 Victoria Farms Drive', 'Garden Sage · Reserved')">Inquire about this home</button>
-        </div>
-        <div class="homesite-card fade-up">
-          <div class="hs-top"><div class="hs-unit">Unit 15</div><span class="hs-badge reserved">Reserved</span></div>
-          <div class="hs-address">1398 Victoria Farms Drive</div>
-          <div class="hs-specs">4 Bedroom &middot; 3.5 Bath &middot; &plusmn;3,200 Sq Ft</div>
-          <div class="hs-line">Exterior &mdash; Timberland Suede</div>
-          <div class="hs-line">3-Car Garage</div>
-          <button class="hs-inquire" onclick="openPopup('Unit 15 — 1398 Victoria Farms Drive', 'Timberland Suede · Reserved')">Inquire about this home</button>
-        </div>
-        <div class="homesite-card fade-up">
-          <div class="hs-top"><div class="hs-unit">Unit 19</div><span class="hs-badge available">Just Listed</span></div>
-          <div class="hs-address">1255 Victoria Farms Drive</div>
-          <div class="hs-specs">4 Bedroom &middot; 3.5 Bath &middot; &plusmn;3,200 Sq Ft</div>
-          <div class="hs-line">Exterior &mdash; Tundra Gray</div>
-          <div class="hs-line">3-Car Garage</div>
-          <button class="hs-inquire" onclick="openPopup('Unit 19 — 1255 Victoria Farms Drive', 'Tundra Gray · Just Listed')">Inquire about this home</button>
-        </div>
-        <div class="homesite-card fade-up">
-          <div class="hs-top"><div class="hs-unit">Unit 22</div><span class="hs-badge construction">Under Construction</span></div>
-          <div class="hs-address">1179 Victoria Farms Drive</div>
-          <div class="hs-specs">3, 4, or 5 Bedroom &middot; 3.5 Bath &middot; &plusmn;3,300 Sq Ft</div>
-          <div class="hs-line">Exterior &mdash; Snowscape White</div>
-          <div class="hs-line">3-Car Garage</div>
-          <button class="hs-inquire" onclick="openPopup('Unit 22 — 1179 Victoria Farms Drive', 'Snowscape White · Under Construction')">Inquire about this home</button>
+        <div class="vf-path">
+          <span class="vf-path-eyebrow">Find the Right Fit</span>
+          <h3 class="vf-path-title">Talk with our team.</h3>
+          <p class="vf-path-text">Tell us what you&rsquo;re looking for and when. A member of our Live Traverse City Sales Partner team will get to know your goals, pair you with the homes that fit, and keep you up to date as homes are completed.</p>
+          <button class="btn btn-dark" onclick="vfConsult()">Book a Consultation</button>
         </div>
       </div>
-      <div class="fade-up" style="margin-top:48px;display:flex;justify-content:center;">
-        <a href="images/communities/victoria-farms/victoria-farms-site-plan.pdf" target="_blank" style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--vf-sage);display:inline-flex;align-items:center;gap:8px;">Download Site Plan PDF →</a>
-      </div>
+
       <div class="fade-up" style="margin-top:64px;">
         <span class="t-label" style="display:block;margin-bottom:16px;">Model Home &middot; In Progress</span>
         <div style="overflow:hidden;border:1px solid rgba(0,0,0,0.08);">
           <img src="images/communities/victoria-farms/model-home-rendering-(compressed).jpg" alt="Victoria Farms model home rendering at dusk" loading="lazy" style="width:100%;display:block;">
         </div>
         <p style="font-family:var(--body);font-size:11px;font-weight:300;color:rgba(0,0,0,0.35);margin-top:12px;">Artist's rendering. Model home currently under construction.</p>
+      </div>
+
+      <div class="fade-up" style="margin-top:80px;">
+        <span class="t-label" style="color:var(--vf-deep);">Victoria Farms</span>
+        <h2 class="t-lg" style="margin-top:10px;">Community<br>Site Plan.</h2>
+        <div class="rule"></div>
+        <p class="t-body" style="max-width:520px;margin-top:14px;">See the full Victoria Farms layout &mdash; roads, open space, and how the homes sit on the rolling terrain.</p>
+        <a href="images/communities/victoria-farms/victoria-farms-site-plan.pdf" target="_blank" style="display:block;margin-top:24px;overflow:hidden;border:1px solid rgba(0,0,0,0.08);">
+          <img src="images/communities/victoria-farms/victoria-farms-site-plan-image.jpg" alt="Victoria Farms Site Plan" loading="lazy" style="width:100%;display:block;">
+        </a>
+        <div style="margin-top:20px;"><a href="images/communities/victoria-farms/victoria-farms-site-plan.pdf" target="_blank" style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--vf-sage);">Download Site Plan PDF &rarr;</a></div>
       </div>
     </div>
   </section>
@@ -762,19 +737,19 @@
       <div class="visit-steps">
         <div class="visit-step">
           <div class="visit-step-content">
-            <div class="visit-step-title">Submit Your Interest</div>
-            <div class="visit-step-desc">Fill out the form below and tell us which plan interests you. We'll reach out within one business day.</div>
+            <div class="visit-step-title">Request a Tour or Consultation</div>
+            <div class="visit-step-desc">Tell us a little about what you&rsquo;re looking for. A member of our team will reach out within one business day.</div>
           </div>
         </div>
         <div class="visit-step">
           <div class="visit-step-content">
             <div class="visit-step-title">Meet Us on Site</div>
-            <div class="visit-step-desc">We'll walk the lots with you, show you the model home, and answer every question — no pressure, no rush.</div>
+            <div class="visit-step-desc">We&rsquo;ll walk the community with you, show you the model home and finishes, and point you to the homes that fit &mdash; no pressure, no rush.</div>
           </div>
         </div>
       </div>
       <div style="margin-top:8px;">
-        <button class="btn btn-white" onclick="openPopup('Victoria Farms', 'From $995,000')">Schedule a Site Visit</button>
+        <button class="btn btn-white" onclick="vfTour()">Schedule a Tour</button>
       </div>
     </div>
   </section>
@@ -879,9 +854,9 @@
         <span class="t-label">Victoria Farms</span>
         <h2 class="t-lg" style="text-align:center;max-width:540px;">Ready to Walk<br>the Property?</h2>
         <div class="rule"></div>
-        <p class="t-body" style="text-align:center;max-width:460px;">Submit your interest below and we'll be in touch within one business day to schedule a time that works for you.</p>
+        <p class="t-body" style="text-align:center;max-width:460px;">Schedule a private tour and we&rsquo;ll be in touch within one business day to find a time that works for you.</p>
         <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
-          <button class="btn btn-dark" onclick="openPopup('Victoria Farms', 'From $995,000')">Schedule a Site Visit</button>
+          <button class="btn btn-dark" onclick="vfTour()">Schedule a Tour</button>
           <a href="tel:+12314215161" class="btn btn-gold">(231) 421-5161</a>
         </div>
       </div>
@@ -949,7 +924,7 @@
 
   <!-- ═══ STICKY ACTION BAR ═══ -->
   <div class="sticky-bar" id="sticky-bar">
-    <button class="sb-primary" onclick="openPopup('Victoria Farms', 'From $995,000')">Schedule a Visit</button>
+    <button class="sb-primary" onclick="vfTour()">Schedule a Tour</button>
     <a href="tel:+12314215161">Call</a>
     <a href="https://www.google.com/maps/dir/?api=1&amp;destination=44.677210746790806%2C-85.5557293081735" target="_blank" rel="noopener">Directions</a>
   </div>
@@ -1161,6 +1136,14 @@
       var label = [address, price].filter(Boolean).join(' · ');
       if (window.ogStayInTheKnow) window.ogStayInTheKnow(label);
     };
+  </script>
+  <script>
+    function vfTour() {
+      if (window.ogStayInTheKnow) ogStayInTheKnow('Victoria Farms · Private Tour', { title: 'Schedule a tour.', intro: 'Tell us a little about yourself and a member of our team will reach out within one business day to find a time to walk the community and the model home.', button: 'Request my tour' });
+    }
+    function vfConsult() {
+      if (window.ogStayInTheKnow) ogStayInTheKnow('Victoria Farms · Sales Consultation', { title: 'Talk with our team.', intro: 'Share what you&rsquo;re looking for and your timing in the note below. A member of our Live Traverse City Sales Partner team will follow up to pair you with the homes that fit.', button: 'Book my consultation' });
+    }
   </script>
 </body>
 </html>

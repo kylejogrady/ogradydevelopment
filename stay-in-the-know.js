@@ -234,18 +234,20 @@
     var doneIntroEl = root.querySelector('.ogsk-done .ogsk-intro');
     var DEFAULTS = { eyebrow: eyebrowEl.textContent, title: titleEl.textContent, intro: introEl.innerHTML, done: doneIntroEl.innerHTML, btn: btn.textContent };
     function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
-    function setMode(p) {
+    var modeOpts = {};
+    function setMode(p, opts) {
       property = (p || '').trim();
+      modeOpts = (property && opts) || {};
       root.classList.toggle('is-property', !!property);
       eyebrowEl.textContent = property ? 'O’Grady Development · Property Inquiry' : DEFAULTS.eyebrow;
-      titleEl.textContent = property ? 'Ask about this home.' : DEFAULTS.title;
+      titleEl.textContent = property ? (modeOpts.title || 'Ask about this home.') : DEFAULTS.title;
       introEl.innerHTML = property
-        ? '<span class="ogsk-prop">' + esc(property) + '</span>Share a few details and a member of our team will follow up personally, usually within one business day.'
+        ? '<span class="ogsk-prop">' + esc(property) + '</span>' + (modeOpts.intro || 'Share a few details and a member of our team will follow up personally, usually within one business day.')
         : DEFAULTS.intro;
       doneIntroEl.innerHTML = property
         ? 'We received your inquiry about ' + esc(property) + '. A member of our Live Traverse City Sales Partner team will be in touch shortly.'
         : DEFAULTS.done;
-      btn.textContent = property ? 'Send my inquiry' : DEFAULTS.btn;
+      btn.textContent = property ? (modeOpts.button || 'Send my inquiry') : DEFAULTS.btn;
     }
 
     // Sit above the home page's "Sold" corner card while it is showing.
@@ -270,9 +272,9 @@
     }
     function hidePill() { pill.classList.remove('in', 'show'); }
 
-    function open(by, prop) {
+    function open(by, prop, opts) {
       openedBy = by || 'button';
-      setMode(prop);
+      setMode(prop, opts);
       if (property) root.classList.remove('is-done');
       lastFocus = document.activeElement;
       root.hidden = false;
@@ -302,7 +304,7 @@
       var t = e.target.closest('[data-stay-in-the-know]');
       if (t) { e.preventDefault(); open('page-button', t.getAttribute('data-stay-in-the-know')); }
     });
-    window.ogStayInTheKnow = function (prop) { open(prop ? 'property-button' : 'script', prop); };
+    window.ogStayInTheKnow = function (prop, opts) { open(prop ? 'property-button' : 'script', prop, opts); };
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -350,7 +352,7 @@
         err.innerHTML = 'We couldn’t send that just now. Please try again, or email <a href="mailto:Info@OGradyTeam.com">Info@OGradyTeam.com</a>.';
         err.style.display = 'block';
       }).then(function () {
-        btn.disabled = false; btn.textContent = property ? 'Send my inquiry' : DEFAULTS.btn;
+        btn.disabled = false; btn.textContent = property ? (modeOpts.button || 'Send my inquiry') : DEFAULTS.btn;
       });
     });
 
