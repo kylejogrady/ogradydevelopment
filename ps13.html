@@ -28,7 +28,7 @@
     "geo": { "@type": "GeoCoordinates", "latitude": 44.9147, "longitude": -85.4935 },
     "numberOfRooms": "4",
     "floorSize": { "@type": "QuantitativeValue", "value": 4754, "unitCode": "FTK" },
-    "offers": { "@type": "Offer", "price": "3295000", "priceCurrency": "USD" }
+    "offers": { "@type": "Offer", "price": "3295000", "priceCurrency": "USD", "availability": "https://schema.org/SoldOut" }
   }
   </script>
 
@@ -349,6 +349,9 @@
     @media (max-width: 1320px) { .header .nav { gap: 24px; } }
     @media (max-width: 1180px) { .header .nav { display: none; } .header .mobile-toggle { display: block; } }
   </style>
+  <style id="og-sold-css">
+    .sticky-bar-sold { font-family: var(--body); font-size: 9px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; background: #1a1a1a; color: #fff; padding: 5px 10px; margin-left: 4px; }
+  </style>
 </head>
 <body>
 
@@ -428,10 +431,10 @@
         </div>
       </div>
       <div class="hero-right h-anim h-d3">
-        <div class="hero-badge">Under Construction</div>
+        <div class="hero-badge" style="background:#1a1a1a;">SOLD</div>
         <div class="hero-price">$3,295,000</div>
         <p class="t-body" style="color:rgba(255,255,255,0.5);">An exceptional two-story home with a fully finished basement — set on .66 acres with access to shared East Grand Traverse Bay frontage in a private gated community.</p>
-        <button class="btn btn-white" onclick="openPopup()">Request First Access</button>
+        <button class="btn btn-white" onclick="openPopup()">Request Info</button>
         <a href="peninsula-shores.html" class="hero-community-link">← View Peninsula Shores Community</a>
       </div>
     </div>
@@ -466,7 +469,7 @@
   <!-- ═══ STICKY BAR ════════════════════════════════ -->
   <div class="sticky-bar">
     <div class="sticky-bar-address">15652 Waters Edge Drive, Traverse City, MI 49686</div>
-    <div class="sticky-bar-price">$3,295,000</div>
+    <div class="sticky-bar-price">$3,295,000 <span class="sticky-bar-sold">Sold</span></div>
     <div class="sticky-bar-actions">
       <a href="tel:+12314215161" class="sticky-btn sticky-btn-gold">(231) 421-5161</a>
       <button class="sticky-btn sticky-btn-dark" onclick="openPopup()">Request Info</button>
@@ -495,9 +498,9 @@
           <span class="t-label">The Property</span>
           <h2 class="t-lg">Two Stories,<br>Fully Finished.</h2>
           <div class="rule"></div>
-          <p class="t-body">An exceptional two-story home with a fully finished basement — offering ~3,498 sq ft above grade and an additional ~1,256 sq ft of finished lower-level living space. Set on .66 acres in Peninsula Shores with access to shared East Grand Traverse Bay frontage. Coming to market soon — contact us now for first access.</p>
+          <p class="t-body">An exceptional two-story home with a fully finished basement — offering ~3,498 sq ft above grade and an additional ~1,256 sq ft of finished lower-level living space. Set on .66 acres in Peninsula Shores with access to shared East Grand Traverse Bay frontage.</p>
           <blockquote class="pull">One of the most exceptional waterfront settings in all of Northern Michigan — now with a home to match.</blockquote>
-          <button class="btn btn-dark" onclick="openPopup()" style="align-self:flex-start;">Request First Access</button>
+          <button class="btn btn-dark" onclick="openPopup()" style="align-self:flex-start;">Request Info</button>
         </div>
 
         <div class="overview-right fade-up delay-2">
@@ -548,7 +551,7 @@
             </div>
             <div class="detail-item">
               <div class="detail-label">Status</div>
-              <div class="detail-val" style="color:var(--gold);">Under Construction</div>
+              <div class="detail-val" style="color:var(--gold);">Sold</div>
             </div>
           </div>
 
@@ -759,11 +762,11 @@
     <div class="wrap">
       <div class="cta-inner fade-up">
         <span class="t-label" style="color:rgba(255,255,255,0.4);">15652 Waters Edge Drive</span>
-        <h2 class="t-lg" style="color:#fff;text-align:center;max-width:600px;">Interested in Being<br>First in Line?</h2>
+        <h2 class="t-lg" style="color:#fff;text-align:center;max-width:600px;">Looking for a Home<br>Like This One?</h2>
         <div class="rule"></div>
-        <p class="t-body" style="color:rgba(255,255,255,0.45);text-align:center;max-width:440px;">Be the first to know when this property comes to market — we respond within one business day.</p>
+        <p class="t-body" style="color:rgba(255,255,255,0.45);text-align:center;max-width:440px;">This home has sold. Tell us what you&rsquo;re looking for and we&rsquo;ll share what&rsquo;s next at Peninsula Shores — we respond within one business day.</p>
         <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:8px;">
-          <button class="btn btn-white" onclick="openPopup()">Request First Access</button>
+          <a href="contact.html" class="btn btn-white">Coming Next? Contact Us</a>
           <a href="tel:+12314215161" class="btn" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);">(231) 421-5161</a>
         </div>
       </div>
