@@ -803,7 +803,7 @@
       <!-- Empty state — shown when filter returns nothing -->
       <div id="empty-state" style="display:none;text-align:center;padding:80px 0;">
         <div style="font-family:var(--display);font-size:32px;font-weight:300;color:rgba(0,0,0,0.2);margin-bottom:16px;">No properties in this category right now.</div>
-        <a href="contact.html" style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);">Get Notified When One Hits the Market →</a>
+        <a href="#" data-stay-in-the-know style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);">Get Notified When One Hits the Market →</a>
       </div>
 
     </div>
@@ -816,16 +816,8 @@
         <span class="t-label" style="color:rgba(255,255,255,0.4);">Stay in the Loop</span>
         <h2 class="t-lg" style="color:#fff;">Be the First to Know<br>When a Home Hits the Market.</h2>
         <div class="rule"></div>
-        <p class="t-body" style="color:rgba(255,255,255,0.4);">New O'Grady homes move quickly. Leave your email and we'll reach out the moment a new property becomes available — before it's publicly listed.</p>
-        <form class="notify-form" name="updates" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return ogNotifySubmit(this,event)">
-          <input type="hidden" name="form-name" value="updates">
-          <input type="hidden" name="source" value="Website - For Sale Notify">
-          <input type="hidden" name="community" value="">
-          <p style="display:none;"><input name="bot-field"></p>
-          <input type="email" class="notify-input" name="email" placeholder="Your email address" id="notify-email" required>
-          <button type="submit" class="notify-btn">Notify Me</button>
-        </form>
-        <p style="font-family:var(--body);font-size:10px;font-weight:300;color:rgba(255,255,255,0.2);margin-top:12px;">No spam. Just new listings, directly from us.</p>
+        <p class="t-body" style="color:rgba(255,255,255,0.4);">New O'Grady homes move quickly. Join the list and we'll reach out the moment a new property becomes available — before it's publicly listed.</p>
+        <button type="button" class="notify-btn" data-stay-in-the-know style="margin-top:8px;width:auto;align-self:flex-start;padding-left:40px;padding-right:40px;">Stay in the Know</button>
       </div>
       <div class="notify-right">
         <div style="font-family:var(--body);font-size:8.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:16px;">Or Reach Out Directly</div>
@@ -839,7 +831,7 @@
         </div>
         <div class="notify-contact-item">
           <div class="notify-contact-lbl">Sales Partner</div>
-          <a href="https://www.livetraversecity.com" target="_blank" rel="noopener" class="notify-contact-val">LiveTraverseCity.com</a>
+          <a href="sales-partners.html" class="notify-contact-val">Meet Our Sales Partners</a>
         </div>
       </div>
     </div>
@@ -859,28 +851,9 @@
       <div class="footer-signup">
         <div>
           <div class="footer-signup-title">Be the first to know.</div>
-          <p class="footer-signup-sub">New listings, community launches, and priority access &mdash; sent straight to your inbox. No spam, unsubscribe anytime.</p>
+          <p class="footer-signup-sub">New homes, homesites, and pricing from O&rsquo;Grady Development &mdash; sent straight to you.</p>
         </div>
-        <form name="updates" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="footer-signup-form" onsubmit="return ogUpdatesSubmit(this,event)">
-          <input type="hidden" name="form-name" value="updates">
-          <input type="hidden" name="source" value="Website - Footer Signup (For Sale)">
-          <input type="hidden" name="community" value="">
-          <p class="og-hp"><label>Skip this: <input name="bot-field"></label></p>
-          <label class="foot-everything">
-            <span class="fe-name">Everything O'Grady</span>
-            <input type="checkbox" class="foot-everything-toggle">
-            <span class="fe-switch" aria-hidden="true"></span>
-          </label>
-          <div>
-            <div class="foot-pick-label">Or pick communities</div>
-            <div class="foot-pills"></div>
-          </div>
-          <div class="email-row">
-            <input type="email" name="email" placeholder="Your email address" required aria-label="Email address">
-            <button type="submit">Join</button>
-          </div>
-          <span class="footer-signup-msg" aria-live="polite"></span>
-        </form>
+        <button type="button" data-stay-in-the-know style="font-family:var(--body,'Montserrat',sans-serif);font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;padding:16px 34px;background:var(--gold,#b8a88a);color:#1a1a1a;border:none;cursor:pointer;">Stay in the Know</button>
       </div>
       <div class="footer-main">
         <div>
@@ -1122,5 +1095,18 @@
   </script>
   <script src="/tracking.js" defer></script>
   <script src="/stay-in-the-know.js" defer></script>
+  <!-- Property inquiries now open the site-wide "Stay in the know" pop-up in "Ask about this home" mode -->
+  <script>
+    window.openPopup = function (address, price) {
+      if (!address) {
+        var a = document.querySelector('.sticky-bar-address');
+        var p = document.querySelector('.sticky-bar-price');
+        address = a ? a.textContent.trim() : document.title.split('|')[0].trim();
+        price = price || (p ? p.childNodes[0].textContent.trim() : '');
+      }
+      var label = [address, price].filter(Boolean).join(' · ');
+      if (window.ogStayInTheKnow) window.ogStayInTheKnow(label);
+    };
+  </script>
 </body>
 </html>

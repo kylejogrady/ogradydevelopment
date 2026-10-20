@@ -122,8 +122,10 @@
   '.ogsk a.ogsk-link{color:var(--gd);text-decoration:underline;text-underline-offset:2px}' +
   '.ogsk-cta{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gd)}' +
   '.ogsk.is-done .ogsk-form{display:none}.ogsk.is-done .ogsk-done{display:flex}' +
+  '.ogsk.is-property fieldset{display:none}' +
+  '.ogsk-prop{display:block;margin:2px 0 12px;padding:12px 14px;background:var(--wm);border-left:2px solid var(--g);font-size:12px;font-weight:500;letter-spacing:.3px;color:var(--dk);line-height:1.5}' +
   '.ogsk-foot{flex:none;padding:14px 36px 16px;border-top:1px solid var(--ln);display:flex;align-items:center;justify-content:center;gap:14px;background:var(--bg)}' +
-  '.ogsk-foot .lm{height:10px;width:auto}.ogsk-foot .bk{height:17px;width:auto}' +
+  '.ogsk-foot .lm{height:30px;width:auto}.ogsk-foot .bk{height:17px;width:auto}' +
   '.ogsk-foot i{width:1px;height:18px;background:#cfc8bc}' +
   '.ogsk-pill{position:fixed;right:24px;bottom:24px;z-index:9990;min-height:52px;padding:0 22px 0 18px;border:1px solid rgba(184,168,138,.6);border-radius:30px;background:var(--dk);color:#fff;cursor:pointer;display:none;align-items:center;gap:12px;box-shadow:0 12px 30px rgba(0,0,0,.3);font-family:inherit;text-align:left;opacity:0;transform:translateY(12px);transition:opacity .35s,transform .35s}' +
   '.ogsk-pill.show{display:flex}.ogsk-pill.in{opacity:1;transform:none}' +
@@ -161,6 +163,7 @@
         '<input type="hidden" name="source" value="Website - Stay in the Know Pop-up">' +
         '<input type="hidden" name="page">' +
         '<input type="hidden" name="community">' +
+        '<input type="hidden" name="property">' +
         '<input type="hidden" name="interests">' +
         '<input type="hidden" name="opened_by">' +
         '<input type="hidden" name="landing_page">' +
@@ -179,19 +182,19 @@
         '<div class="ogsk-field"><label class="ogsk-lbl" for="ogsk-notes">Anything else we should know? <span class="ogsk-opt">Optional</span></label><textarea id="ogsk-notes" name="message" rows="2"></textarea></div>' +
         '<div class="ogsk-err" role="alert"></div>' +
         '<div><button type="submit" class="ogsk-go">Keep me in the know</button>' +
-          '<p class="ogsk-reassure">Your LiveMichigan Sales Partner is your guide to real estate throughout Northern Michigan, and your first call for the latest from O’Grady Development.</p></div>' +
-        '<div class="ogsk-team">' + faces + '<span>You’ll hear directly from a member of our LiveMichigan Sales Partner team.</span></div>' +
-        '<p class="ogsk-fine">By submitting, you agree to receive O’Grady Development updates and to be contacted by LiveMichigan, @properties REMI | Christie’s International Real Estate, by call, text or email. Msg &amp; data rates may apply. Reply STOP to opt out.</p>' +
+          '<p class="ogsk-reassure">Your Live Traverse City Sales Partner is your guide to real estate throughout Northern Michigan, and your first call for the latest from O’Grady Development.</p></div>' +
+        '<div class="ogsk-team">' + faces + '<span>You’ll hear directly from a member of our Live Traverse City Sales Partner team.</span></div>' +
+        '<p class="ogsk-fine">By submitting, you agree to receive O’Grady Development updates and to be contacted by Live Traverse City, @properties REMI | Christie’s International Real Estate, by call, text or email. Msg &amp; data rates may apply. Reply STOP to opt out.</p>' +
       '</form>' +
       '<div class="ogsk-done" aria-live="polite">' +
         '<div class="ogsk-ring"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>' +
         '<div><h2 class="ogsk-thanks">You’re on the list.</h2>' +
-          '<p class="ogsk-intro">You’ll be among the first to hear about new O’Grady homes, homesites and pricing. A member of our LiveMichigan Sales Partner team may also reach out personally.</p></div>' +
+          '<p class="ogsk-intro">You’ll be among the first to hear about new O’Grady homes, homesites and pricing. A member of our Live Traverse City Sales Partner team may also reach out personally.</p></div>' +
         '<div class="ogsk-teambox">' + faces + '<span>Karlie, Claire and Christiaan. <a class="ogsk-link" href="/sales-partners.html">Meet our Sales Partners</a></span></div>' +
         '<a class="ogsk-cta" href="/communities.html">Explore our communities →</a>' +
       '</div>' +
     '</div>' +
-    '<div class="ogsk-foot"><img class="lm" src="/images/logos/LiveMichigan%20Logo.png" alt="LiveMichigan"><i></i><img class="bk" src="/images/logos/Properties%20Christies%20Logo.png" alt="@properties REMI | Christie’s International Real Estate"></div>' +
+    '<div class="ogsk-foot"><img class="lm" src="/images/logos/Live%20Traverse%20City%20Logo.png" alt="Live Traverse City"><i></i><img class="bk" src="/images/logos/Properties%20Christies%20Logo.png" alt="@properties REMI | Christie’s International Real Estate"></div>' +
   '</div>';
 
   /* ---------- build ---------- */
@@ -220,6 +223,31 @@
     var lastFocus = null;
     var openedBy = 'auto';
 
+    /* ---------- property-inquiry mode ----------
+       ogStayInTheKnow('15652 Waters Edge Drive · $3,295,000') or
+       <button data-stay-in-the-know="Unit 13 — 1368 Victoria Farms Drive">
+       opens the same pop-up as an "Ask about this home" inquiry. */
+    var property = '';
+    var eyebrowEl = root.querySelector('.ogsk-eyebrow');
+    var titleEl = root.querySelector('#ogsk-title');
+    var introEl = root.querySelector('.ogsk-form .ogsk-intro');
+    var doneIntroEl = root.querySelector('.ogsk-done .ogsk-intro');
+    var DEFAULTS = { eyebrow: eyebrowEl.textContent, title: titleEl.textContent, intro: introEl.innerHTML, done: doneIntroEl.innerHTML, btn: btn.textContent };
+    function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+    function setMode(p) {
+      property = (p || '').trim();
+      root.classList.toggle('is-property', !!property);
+      eyebrowEl.textContent = property ? 'O’Grady Development · Property Inquiry' : DEFAULTS.eyebrow;
+      titleEl.textContent = property ? 'Ask about this home.' : DEFAULTS.title;
+      introEl.innerHTML = property
+        ? '<span class="ogsk-prop">' + esc(property) + '</span>Share a few details and a member of our team will follow up personally, usually within one business day.'
+        : DEFAULTS.intro;
+      doneIntroEl.innerHTML = property
+        ? 'We received your inquiry about ' + esc(property) + '. A member of our Live Traverse City Sales Partner team will be in touch shortly.'
+        : DEFAULTS.done;
+      btn.textContent = property ? 'Send my inquiry' : DEFAULTS.btn;
+    }
+
     // Sit above the home page's "Sold" corner card while it is showing.
     function placePill() {
       var toast = document.querySelector('.sold-toast.show');
@@ -242,8 +270,10 @@
     }
     function hidePill() { pill.classList.remove('in', 'show'); }
 
-    function open(by) {
+    function open(by, prop) {
       openedBy = by || 'button';
+      setMode(prop);
+      if (property) root.classList.remove('is-done');
       lastFocus = document.activeElement;
       root.hidden = false;
       hidePill();
@@ -270,9 +300,9 @@
     pill.addEventListener('click', function () { open('corner-button'); });
     document.addEventListener('click', function (e) {
       var t = e.target.closest('[data-stay-in-the-know]');
-      if (t) { e.preventDefault(); open('page-button'); }
+      if (t) { e.preventDefault(); open('page-button', t.getAttribute('data-stay-in-the-know')); }
     });
-    window.ogStayInTheKnow = function () { open('script'); };
+    window.ogStayInTheKnow = function (prop) { open(prop ? 'property-button' : 'script', prop); };
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -289,6 +319,8 @@
       form.interests.value = picks.join(', ');
       form.page.value = document.title + ' (' + location.pathname + ')';
       form.community.value = COMMUNITY_BY_PAGE[page] || '';
+      form.property.value = property;
+      form.source.value = property ? 'Website - Property Inquiry' : 'Website - Stay in the Know Pop-up';
       form.opened_by.value = openedBy;
       form.landing_page.value = get('sessionStorage', 'ogsk_landing') || '';
       form.utm_source.value = get('sessionStorage', 'ogsk_utm_source') || '';
@@ -309,16 +341,16 @@
         submitted = true;
         set('localStorage', 'ogsk_submitted', '1');
         // Lead conversion events (sent here, after a successful send, so failed attempts aren't counted).
-        if (typeof gtag === 'function') gtag('event', 'generate_lead', { form_name: FORM_NAME, page_path: location.pathname, opened_by: openedBy });
+        if (typeof gtag === 'function') gtag('event', 'generate_lead', { form_name: FORM_NAME, page_path: location.pathname, opened_by: openedBy, property: property });
         if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: FORM_NAME });
-        root.querySelector('.ogsk-thanks').textContent = 'You’re on the list, ' + first + '.';
+        root.querySelector('.ogsk-thanks').textContent = property ? 'Thanks, ' + first + '.' : 'You’re on the list, ' + first + '.';
         root.classList.add('is-done');
         root.querySelector('.ogsk-body').scrollTop = 0;
       }).catch(function () {
         err.innerHTML = 'We couldn’t send that just now. Please try again, or email <a href="mailto:Info@OGradyTeam.com">Info@OGradyTeam.com</a>.';
         err.style.display = 'block';
       }).then(function () {
-        btn.disabled = false; btn.textContent = 'Keep me in the know';
+        btn.disabled = false; btn.textContent = property ? 'Send my inquiry' : DEFAULTS.btn;
       });
     });
 

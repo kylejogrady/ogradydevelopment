@@ -882,100 +882,6 @@
   <!-- ═══ FOOTER ════════════════════════════════════ -->
   <!-- Netlify form registration: email updates capture -->
 
-  <!-- ═══ INTEREST LIST ═════════════════════ -->
-  <section class="interest-section">
-    <div class="interest-left">
-      <div class="interest-left-inner">
-        <span class="t-label">The Interest List</span>
-        <h2 class="t-lg" style="color:#fff;">New Listings,<br>To You First.</h2>
-        <div class="rule"></div>
-        <div class="interest-why">
-          <div class="interest-why-item">
-            <div class="interest-why-num">01</div>
-            <div>
-              <div class="interest-why-title">First to Know</div>
-              <div class="interest-why-text">Hear about new homes and lot releases here before they reach the wider market.</div>
-            </div>
-          </div>
-          <div class="interest-why-item">
-            <div class="interest-why-num">02</div>
-            <div>
-              <div class="interest-why-title">One List, Every Community</div>
-              <div class="interest-why-text">Interested in more than one? Check them all here — no need to fill out a second form.</div>
-            </div>
-          </div>
-          <div class="interest-why-item">
-            <div class="interest-why-num">03</div>
-            <div>
-              <div class="interest-why-title">No Obligation</div>
-              <div class="interest-why-text">Joining is free and keeps you in the loop. Unsubscribe anytime.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="interest-right">
-      <div>
-        <span class="t-label">Register Your Interest</span>
-        <h2 class="t-lg" style="margin-top:12px;">New Listings<br>to You First.</h2>
-        <div class="rule" style="margin-top:20px;"></div>
-      </div>
-      <form id="interest-form" name="community-interest" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="interest-form">
-          <input type="hidden" name="source" value="Website - Peninsula Shores Interest List">
-        <input type="hidden" name="form-name" value="community-interest">
-        <input type="hidden" name="community" value="">
-        <p style="display:none;"><input name="bot-field"></p>
-        <div class="form-group">
-          <label class="form-label">Communities You're Interested In</label>
-          <div class="community-picker" data-current="Peninsula Shores"></div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label" for="first">First Name</label>
-            <input class="form-input" type="text" id="first" name="first_name" placeholder="First" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="last">Last Name</label>
-            <input class="form-input" type="text" id="last" name="last_name" placeholder="Last" required>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label" for="email">Email</label>
-            <input class="form-input" type="email" id="email" name="email" placeholder="you@email.com" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="phone">Phone</label>
-            <input class="form-input" type="tel" id="phone" name="phone" placeholder="(231) 000-0000">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="timeline">Purchase Timeline</label>
-          <select class="form-select" id="timeline" name="timeline">
-            <option value="" disabled selected>Select one...</option>
-            <option>Ready when available</option>
-            <option>Within 6 months</option>
-            <option>6–12 months</option>
-            <option>12–24 months</option>
-            <option>Just exploring for now</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="notes">Questions or Comments <span style="font-weight:300;text-transform:none;letter-spacing:0;color:rgba(0,0,0,0.3);">(optional)</span></label>
-          <textarea class="form-textarea" id="notes" name="notes" placeholder="Anything you'd like us to know — preferred lot type, timeline, questions..."></textarea>
-        </div>
-        <button type="submit" class="form-submit">Join the Interest List</button>
-        <p class="form-note">We follow up personally after your submission.</p>
-      </form>
-      <div class="form-success" id="form-success">
-        <div class="form-success-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-        <span class="t-label">You're on the List</span>
-        <div style="font-family:var(--display,'Cormorant Garamond',serif);font-size:26px;font-weight:300;">We'll be in touch.</div>
-        <p style="font-family:var(--body,'Montserrat',sans-serif);font-size:12px;font-weight:300;color:var(--text,#6b6b6b);text-align:center;max-width:340px;line-height:1.9;">We'll reach out directly about the communities you selected — new listings, pricing, and availability.</p>
-      </div>
-    </div>
-  </section>
-
   <form name="updates" data-netlify="true" netlify-honeypot="bot-field" hidden>
     <input type="hidden" name="form-name" value="updates">
     <input type="email" name="email">
@@ -988,28 +894,9 @@
       <div class="footer-signup">
         <div>
           <div class="footer-signup-title">Be the first to know.</div>
-          <p class="footer-signup-sub">New listings, community launches, and priority access &mdash; sent straight to your inbox. No spam, unsubscribe anytime.</p>
+          <p class="footer-signup-sub">New homes, homesites, and pricing from O&rsquo;Grady Development &mdash; sent straight to you.</p>
         </div>
-        <form name="updates" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="footer-signup-form" onsubmit="return ogUpdatesSubmit(this,event)">
-          <input type="hidden" name="form-name" value="updates">
-          <input type="hidden" name="source" value="Website - Footer Signup (Peninsula Shores)">
-          <input type="hidden" name="community" value="">
-          <p class="og-hp"><label>Skip this: <input name="bot-field"></label></p>
-          <label class="foot-everything">
-            <span class="fe-name">Everything O'Grady</span>
-            <input type="checkbox" class="foot-everything-toggle">
-            <span class="fe-switch" aria-hidden="true"></span>
-          </label>
-          <div>
-            <div class="foot-pick-label">Or pick communities</div>
-            <div class="foot-pills"></div>
-          </div>
-          <div class="email-row">
-            <input type="email" name="email" placeholder="Your email address" required aria-label="Email address">
-            <button type="submit">Join</button>
-          </div>
-          <span class="footer-signup-msg" aria-live="polite"></span>
-        </form>
+        <button type="button" data-stay-in-the-know style="font-family:var(--body,'Montserrat',sans-serif);font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;padding:16px 34px;background:var(--gold,#b8a88a);color:#1a1a1a;border:none;cursor:pointer;">Stay in the Know</button>
       </div>
       <div class="footer-main">
         <div>
@@ -1380,5 +1267,18 @@
   </script>
   <script src="/tracking.js" defer></script>
   <script src="/stay-in-the-know.js" defer></script>
+  <!-- Property inquiries now open the site-wide "Stay in the know" pop-up in "Ask about this home" mode -->
+  <script>
+    window.openPopup = function (address, price) {
+      if (!address) {
+        var a = document.querySelector('.sticky-bar-address');
+        var p = document.querySelector('.sticky-bar-price');
+        address = a ? a.textContent.trim() : document.title.split('|')[0].trim();
+        price = price || (p ? p.childNodes[0].textContent.trim() : '');
+      }
+      var label = [address, price].filter(Boolean).join(' · ');
+      if (window.ogStayInTheKnow) window.ogStayInTheKnow(label);
+    };
+  </script>
 </body>
 </html>

@@ -797,28 +797,9 @@
       <div class="footer-signup">
         <div>
           <div class="footer-signup-title">Be the first to know.</div>
-          <p class="footer-signup-sub">New listings, community launches, and priority access &mdash; sent straight to your inbox. No spam, unsubscribe anytime.</p>
+          <p class="footer-signup-sub">New homes, homesites, and pricing from O&rsquo;Grady Development &mdash; sent straight to you.</p>
         </div>
-        <form name="updates" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="footer-signup-form" onsubmit="return ogUpdatesSubmit(this,event)">
-          <input type="hidden" name="form-name" value="updates">
-          <input type="hidden" name="source" value="Website - Footer Signup (Peninsula Shores Unit 39)">
-          <input type="hidden" name="community" value="">
-          <p class="og-hp"><label>Skip this: <input name="bot-field"></label></p>
-          <label class="foot-everything">
-            <span class="fe-name">Everything O'Grady</span>
-            <input type="checkbox" class="foot-everything-toggle">
-            <span class="fe-switch" aria-hidden="true"></span>
-          </label>
-          <div>
-            <div class="foot-pick-label">Or pick communities</div>
-            <div class="foot-pills"></div>
-          </div>
-          <div class="email-row">
-            <input type="email" name="email" placeholder="Your email address" required aria-label="Email address">
-            <button type="submit">Join</button>
-          </div>
-          <span class="footer-signup-msg" aria-live="polite"></span>
-        </form>
+        <button type="button" data-stay-in-the-know style="font-family:var(--body,'Montserrat',sans-serif);font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;padding:16px 34px;background:var(--gold,#b8a88a);color:#1a1a1a;border:none;cursor:pointer;">Stay in the Know</button>
       </div>
       <div class="footer-main">
         <div>
@@ -1074,5 +1055,18 @@
   </script>
   <script src="/tracking.js" defer></script>
   <script src="/stay-in-the-know.js" defer></script>
+  <!-- Property inquiries now open the site-wide "Stay in the know" pop-up in "Ask about this home" mode -->
+  <script>
+    window.openPopup = function (address, price) {
+      if (!address) {
+        var a = document.querySelector('.sticky-bar-address');
+        var p = document.querySelector('.sticky-bar-price');
+        address = a ? a.textContent.trim() : document.title.split('|')[0].trim();
+        price = price || (p ? p.childNodes[0].textContent.trim() : '');
+      }
+      var label = [address, price].filter(Boolean).join(' · ');
+      if (window.ogStayInTheKnow) window.ogStayInTheKnow(label);
+    };
+  </script>
 </body>
 </html>
