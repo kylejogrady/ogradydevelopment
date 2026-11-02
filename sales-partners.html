@@ -358,6 +358,11 @@
     .sp-logo-stack { display: flex; flex-direction: column; gap: 20px; }
     .sp-logo-box { border: 1px solid #e2ddd3; background: #fff; padding: 64px 48px; display: flex; align-items: center; justify-content: center; }
     .sp-logo-box img { width: 100%; height: auto; }
+    .sp-logo-row { display: grid; grid-template-columns: 1fr 1.6fr; gap: 14px; margin-top: 32px; }
+    .sp-logo-row .sp-logo-box { padding: 28px 24px; }
+    .sp-team-photo { margin: 0; overflow: hidden; }
+    .sp-team-photo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; display: block; }
+    @media (max-width: 600px) { .sp-logo-row { grid-template-columns: 1fr; } }
 
     .sp-cta { background: var(--dark); padding: 88px 0; }
     .sp-cta-inner { display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between; }
@@ -561,11 +566,14 @@
           <h2 class="sp-h2">Local roots. A global luxury network.</h2>
           <p class="sp-p" style="margin-top:22px;">Live Traverse City is affiliated with @properties REMI | Christie’s International Real Estate.</p>
           <p class="sp-small" style="margin-top:16px;">O’Grady Development properties are listed by Kyle O’Grady, REALTOR®, of @properties REMI | Christie’s International Real Estate.</p>
+          <div class="sp-logo-row">
+            <div class="sp-logo-box"><img src="images/logos/Live Traverse City Logo.png" alt="Live Traverse City" style="max-width:150px;" loading="lazy"></div>
+            <div class="sp-logo-box"><img src="images/logos/Properties Christies Logo.png" alt="@properties REMI | Christie’s International Real Estate" style="max-width:260px;" loading="lazy"></div>
+          </div>
         </div>
-        <div class="sp-logo-stack fade-up delay-1">
-          <div class="sp-logo-box"><img src="images/logos/Live Traverse City Logo.png" alt="Live Traverse City" style="max-width:220px;" loading="lazy"></div>
-          <div class="sp-logo-box"><img src="images/logos/Properties Christies Logo.png" alt="@properties REMI | Christie’s International Real Estate" style="max-width:440px;" loading="lazy"></div>
-        </div>
+        <figure class="sp-team-photo fade-up delay-1">
+          <img src="images/sales-partners/team-group.jpg" alt="Christiaan Lamprecht, Claire Washington and Karlie Acton at the @properties REMI | Christie’s International Real Estate office in Traverse City" loading="lazy" width="1000" height="1250">
+        </figure>
       </div>
     </section>
 
@@ -608,6 +616,7 @@
         <div>
           <div class="footer-col-title">Explore</div>
           <a href="communities.html" class="footer-link">Communities</a>
+          <a href="for-sale.html" class="footer-link">For Sale</a>
           <a href="our-work.html"   class="footer-link">Our Work</a>
           <a href="about.html"       class="footer-link">Our Story</a>
           <a href="sales-partners.html" class="footer-link">Sales Partners</a>

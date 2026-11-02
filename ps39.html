@@ -434,7 +434,7 @@
         <div class="hero-badge" style="background:#1a1a1a;">SOLD</div>
         <div class="hero-price">$2,950,000</div>
         <p class="t-body" style="color:rgba(255,255,255,0.5);">A stunning ranch with walkout lower level — set on .60 acres with access to shared East Grand Traverse Bay frontage in a private gated community.</p>
-        <button class="btn btn-white" onclick="openPopup()">Schedule a Tour</button>
+        <button class="btn btn-white" onclick="openPopup()">Find a Similar Home</button>
         <a href="peninsula-shores.html" class="hero-community-link">← View Peninsula Shores Community</a>
       </div>
     </div>
@@ -472,7 +472,7 @@
     <div class="sticky-bar-price">$2,950,000 <span class="sticky-bar-sold">Sold</span></div>
     <div class="sticky-bar-actions">
       <a href="tel:+12314215161" class="sticky-btn sticky-btn-gold">(231) 421-5161</a>
-      <button class="sticky-btn sticky-btn-dark" onclick="openPopup()">Request Info</button>
+      <button class="sticky-btn sticky-btn-dark" onclick="openPopup()">Find Similar</button>
     </div>
   </div>
 
@@ -509,7 +509,7 @@
           <div class="rule"></div>
           <p class="t-body">A thoughtfully designed ranch with a walkout lower level — offering the ease of single-level living with expansive lower-level entertaining space. Set in Peninsula Shores, one of Northern Michigan's most coveted waterfront communities.</p>
           <blockquote class="pull">Designed for the way people actually live — with every detail considered and nothing left to chance.</blockquote>
-          <button class="btn btn-dark" onclick="openPopup()" style="align-self:flex-start;">Schedule a Private Tour</button>
+          <button class="btn btn-dark" onclick="openPopup()" style="align-self:flex-start;">Find a Similar Home</button>
         </div>
 
         <div class="overview-right fade-up delay-2">
@@ -772,11 +772,11 @@
     <div class="wrap">
       <div class="cta-inner fade-up">
         <span class="t-label" style="color:rgba(255,255,255,0.4);">15985 Waters Edge Drive</span>
-        <h2 class="t-lg" style="color:#fff;text-align:center;max-width:600px;">Ready to See This<br>Home in Person?</h2>
+        <h2 class="t-lg" style="color:#fff;text-align:center;max-width:600px;">Looking for a Home<br>Like This One?</h2>
         <div class="rule"></div>
-        <p class="t-body" style="color:rgba(255,255,255,0.45);text-align:center;max-width:440px;">Schedule a private tour or request additional details — we respond within one business day.</p>
+        <p class="t-body" style="color:rgba(255,255,255,0.45);text-align:center;max-width:440px;">This home has sold. Tell us what you&rsquo;re looking for and we&rsquo;ll let you know about similar homes and upcoming opportunities — we respond within one business day.</p>
         <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:8px;">
-          <button class="btn btn-white" onclick="openPopup()">Schedule a Tour</button>
+          <button class="btn btn-white" onclick="openPopup()">Find a Similar Home</button>
           <a href="tel:+12314215161" class="btn" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);">(231) 421-5161</a>
         </div>
       </div>
@@ -810,6 +810,7 @@
         <div>
           <div class="footer-col-title">Explore</div>
           <a href="communities.html" class="footer-link">Communities</a>
+          <a href="for-sale.html" class="footer-link">For Sale</a>
           <a href="our-work.html"    class="footer-link">Our Work</a>
           <a href="about.html"       class="footer-link">Our Story</a>
           <a href="sales-partners.html" class="footer-link">Sales Partners</a>
@@ -1064,8 +1065,8 @@
         address = a ? a.textContent.trim() : document.title.split('|')[0].trim();
         price = price || (p ? p.childNodes[0].textContent.trim() : '');
       }
-      var label = [address, price].filter(Boolean).join(' · ');
-      if (window.ogStayInTheKnow) window.ogStayInTheKnow(label);
+      // This home has sold, so inquiries become "find me something similar".
+      if (window.ogAskSimilar) window.ogAskSimilar('The Highbank at Peninsula Shores');
     };
   </script>
 </body>

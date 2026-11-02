@@ -434,7 +434,7 @@
         <div class="hero-badge" style="background:#1a1a1a;">SOLD</div>
         <div class="hero-price">$3,295,000</div>
         <p class="t-body" style="color:rgba(255,255,255,0.5);">An exceptional two-story home with a fully finished basement — set on .66 acres with access to shared East Grand Traverse Bay frontage in a private gated community.</p>
-        <button class="btn btn-white" onclick="openPopup()">Request Info</button>
+        <button class="btn btn-white" onclick="openPopup()">Find a Similar Home</button>
         <a href="peninsula-shores.html" class="hero-community-link">← View Peninsula Shores Community</a>
       </div>
     </div>
@@ -472,7 +472,7 @@
     <div class="sticky-bar-price">$3,295,000 <span class="sticky-bar-sold">Sold</span></div>
     <div class="sticky-bar-actions">
       <a href="tel:+12314215161" class="sticky-btn sticky-btn-gold">(231) 421-5161</a>
-      <button class="sticky-btn sticky-btn-dark" onclick="openPopup()">Request Info</button>
+      <button class="sticky-btn sticky-btn-dark" onclick="openPopup()">Find Similar</button>
     </div>
   </div>
 
@@ -500,7 +500,7 @@
           <div class="rule"></div>
           <p class="t-body">An exceptional two-story home with a fully finished basement — offering ~3,498 sq ft above grade and an additional ~1,256 sq ft of finished lower-level living space. Set on .66 acres in Peninsula Shores with access to shared East Grand Traverse Bay frontage.</p>
           <blockquote class="pull">One of the most exceptional waterfront settings in all of Northern Michigan — now with a home to match.</blockquote>
-          <button class="btn btn-dark" onclick="openPopup()" style="align-self:flex-start;">Request Info</button>
+          <button class="btn btn-dark" onclick="openPopup()" style="align-self:flex-start;">Find a Similar Home</button>
         </div>
 
         <div class="overview-right fade-up delay-2">
@@ -800,6 +800,7 @@
         <div>
           <div class="footer-col-title">Explore</div>
           <a href="communities.html" class="footer-link">Communities</a>
+          <a href="for-sale.html" class="footer-link">For Sale</a>
           <a href="our-work.html"    class="footer-link">Our Work</a>
           <a href="about.html"       class="footer-link">Our Story</a>
           <a href="sales-partners.html" class="footer-link">Sales Partners</a>
@@ -1027,8 +1028,8 @@
         address = a ? a.textContent.trim() : document.title.split('|')[0].trim();
         price = price || (p ? p.childNodes[0].textContent.trim() : '');
       }
-      var label = [address, price].filter(Boolean).join(' · ');
-      if (window.ogStayInTheKnow) window.ogStayInTheKnow(label);
+      // This home has sold, so inquiries become "find me something similar".
+      if (window.ogAskSimilar) window.ogAskSimilar('The Harbormont at Peninsula Shores');
     };
   </script>
 </body>

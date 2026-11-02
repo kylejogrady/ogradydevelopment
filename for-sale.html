@@ -77,7 +77,24 @@
       text-decoration: none; color: inherit;
       transition: opacity 0.3s;
     }
-    .prop-card[data-status="sold"] { }
+    /* ── Sold: dim the whole card and stamp a centered SOLD label ── */
+    .prop-card[data-status="sold"] { position: relative; }
+    .prop-card[data-status="sold"]::before {
+      content: ''; position: absolute; inset: 0; z-index: 5;
+      background: rgba(20,18,16,0.35); pointer-events: none;
+      transition: background 0.4s;
+    }
+    .prop-card[data-status="sold"]:hover::before { background: rgba(20,18,16,0.28); }
+    .prop-card[data-status="sold"] .prop-card-img::after {
+      content: 'Sold'; position: absolute; top: 50%; left: 50%; z-index: 6;
+      transform: translate(-50%, -50%); pointer-events: none;
+      font-family: var(--body); font-size: 26px; font-weight: 500;
+      letter-spacing: 16px; text-indent: 16px; text-transform: uppercase; line-height: 1;
+      color: #fff; background: rgba(20,18,16,0.82);
+      padding: 30px 72px; box-shadow: inset 0 0 0 8px rgba(20,18,16,0.82), inset 0 0 0 9px rgba(255,255,255,0.4), 0 18px 44px rgba(0,0,0,0.28);
+    }
+    .prop-card[data-status="sold"] .badge-sold { display: none; }
+    @media (max-width: 600px) { .prop-card[data-status="sold"] .prop-card-img::after { font-size: 18px; letter-spacing: 11px; text-indent: 11px; padding: 22px 48px; } }
 
     /* Image spans both rows on the left */
     .prop-card-img {
@@ -688,7 +705,7 @@
         <!-- ── VICTORIA FARMS — touring now ── -->
         <a href="victoria-farms.html" class="prop-card prop-card-wide" data-status="available">
           <div class="prop-card-img">
-            <img src="images/communities/victoria-farms/model-home-rendering-(compressed).jpg" alt="Victoria Farms — turn-key luxury homes in East Bay Township">
+            <img src="images/communities/main-community-images/victoria-farms-model-home.jpg" alt="Victoria Farms — turn-key luxury homes in East Bay Township">
             <div class="prop-badge badge-available">Touring Now</div>
             <div class="prop-price-tag">
               <div class="prop-price">From the High $900s</div>
@@ -729,7 +746,7 @@
             </div>
           </div>
           <div class="prop-card-footer">
-            <button class="prop-inquiry-btn" onclick="openPopup('15985 Waters Edge Drive, Traverse City MI 49686', '$2,950,000'); event.preventDefault();">Request Info</button>
+            <button class="prop-inquiry-btn" onclick="event.preventDefault(); event.stopPropagation(); ogAskSimilar('The Highbank at Peninsula Shores');">Find a Similar Home</button>
             <span style="display:flex;align-items:center;gap:16px;">
               <span class="prop-acreage">Unit 39</span>
               <span style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);">View Property →</span>
@@ -757,7 +774,7 @@
             </div>
           </div>
           <div class="prop-card-footer">
-            <button class="prop-inquiry-btn" onclick="openPopup('15652 Waters Edge Drive, Traverse City MI 49686', '$3,295,000'); event.preventDefault(); event.stopPropagation();">Request Info</button>
+            <button class="prop-inquiry-btn" onclick="event.preventDefault(); event.stopPropagation(); ogAskSimilar('The Harbormont at Peninsula Shores');">Find a Similar Home</button>
             <span style="display:flex;align-items:center;gap:16px;">
               <span class="prop-acreage">Unit 13</span>
               <span style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);">View Property →</span>

@@ -50,7 +50,9 @@
 
   /* ---------- helpers ---------- */
   var page = (location.pathname.split('/').pop() || 'index').replace(/\.html$/, '') || 'index';
-  if (HIDE_COMPLETELY.indexOf(page) !== -1) return;
+  // On these pages the pop-up never opens by itself and the corner button is hidden,
+  // but any on-page "Stay in the know" button still opens it.
+  var quietPage = HIDE_COMPLETELY.indexOf(page) !== -1;
 
   function store(kind) { try { return window[kind]; } catch (e) { return null; } }
   function get(kind, k) { try { var s = store(kind); return s ? s.getItem(k) : null; } catch (e) { return null; } }
@@ -265,7 +267,7 @@
     }
 
     function showPill() {
-      if (submitted) return;
+      if (submitted || quietPage) return;
       placePill();
       pill.classList.add('show');
       requestAnimationFrame(function () { pill.classList.add('in'); });
@@ -305,6 +307,14 @@
       if (t) { e.preventDefault(); open('page-button', t.getAttribute('data-stay-in-the-know')); }
     });
     window.ogStayInTheKnow = function (prop, opts) { open(prop ? 'property-button' : 'script', prop, opts); };
+    // Sold homes: turn the inquiry into "find me something similar".
+    window.ogAskSimilar = function (homeName) {
+      open('sold-home-button', 'Homes like ' + homeName, {
+        title: 'Looking for a home like this?',
+        intro: 'This home has sold, but more O\u2019Grady homes are on the way. Tell us what you\u2019re looking for and a member of our Sales Partner team will reach out about similar homes and upcoming opportunities, usually within one business day.',
+        button: 'Find me something similar'
+      });
+    };
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -357,7 +367,7 @@
     });
 
     /* ---------- when to show ---------- */
-    var canAuto = !submitted && !shownThisVisit && Date.now() > snoozeUntil && NO_AUTO_OPEN.indexOf(page) === -1;
+    var canAuto = !submitted && !shownThisVisit && Date.now() > snoozeUntil && NO_AUTO_OPEN.indexOf(page) === -1 && !quietPage;
     if (canAuto) {
       // Count only time the tab is actually visible.
       var visibleMs = 0, last = Date.now(), timer = setInterval(function () {
