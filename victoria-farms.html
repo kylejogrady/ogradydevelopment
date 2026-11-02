@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Victoria Farms | New Construction Homes — East Bay Township, Traverse City MI</title>
   <meta name="description" content="Turn-key luxury homes at Victoria Farms in East Bay Township, designed, finished, and built by O&#39;Grady Development. From the high $900s. Schedule a tour.">
+  <link rel="preload" as="image" href="images/communities/victoria-farms/model-home/vf-model-hero-poster.jpg" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -228,6 +229,42 @@
     .hero-img { position: relative; overflow: hidden; padding-top: 72px; }
     .hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block; animation: heroZoom 14s ease forwards; transform: scale(1.04); }
     @keyframes heroZoom { to { transform: scale(1); } }
+    @media (min-width: 901px) { .hero { grid-template-columns: 1.3fr 1fr; } } /* wider video column so the whole house stays in frame */
+    .hero-video { position: absolute; inset: 72px 0 0 0; width: 100%; height: calc(100% - 72px); object-fit: cover; object-position: 50% 50%; display: block; background: var(--warm); }
+    .hero-video-toggle { position: absolute; left: 20px; bottom: 20px; z-index: 2; width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.45); background: rgba(10,8,6,0.35); color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(6px); transition: background 0.3s; }
+    .hero-video-toggle:hover { background: rgba(10,8,6,0.6); }
+    .hero-video-toggle[hidden] { display: none; }
+    .hero-video-toggle .i-play { display: none; }
+    .hero-video-toggle.paused .i-play { display: block; }
+    .hero-video-toggle.paused .i-pause { display: none; }
+    @media (max-width: 900px) { .hero-video { inset: 60px 0 0 0; height: calc(100% - 60px); } .hero-video-toggle { left: 14px; bottom: 14px; width: 34px; height: 34px; } }
+
+    /* ─── MODEL HOME GALLERY ──────────────────────── */
+    .model-section { margin-top: 72px; }
+    .model-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; margin-bottom: 28px; }
+    .model-head .t-body { max-width: 460px; }
+    .model-main { position: relative; overflow: hidden; aspect-ratio: 16/9; cursor: pointer; display: block; width: 100%; border: 0; padding: 0; background: none; }
+    .model-main img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+    .model-main:hover img { transform: scale(1.02); }
+    .model-main-tag { position: absolute; bottom: 20px; right: 20px; font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.85); background: rgba(10,8,6,0.5); backdrop-filter: blur(8px); padding: 10px 18px; pointer-events: none; }
+    .model-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-top: 4px; }
+    .model-thumb { position: relative; aspect-ratio: 4/3; overflow: hidden; cursor: pointer; border: 0; padding: 0; background: var(--warm); }
+    .model-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease), opacity 0.3s; }
+    .model-thumb:hover img { transform: scale(1.06); opacity: 0.88; }
+    .model-more { position: absolute; inset: 0; background: rgba(10,8,6,0.55); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; }
+    .model-cta { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,0.08); }
+    .model-cta p { font-family: var(--body); font-size: 12.5px; font-weight: 300; color: var(--text); line-height: 1.9; max-width: 520px; }
+    @media (max-width: 768px) { .model-grid { grid-template-columns: repeat(2, 1fr); } .model-cta .btn { width: 100%; text-align: center; } }
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(10,8,6,0.96); z-index: 1000; align-items: center; justify-content: center; }
+    .lightbox.open { display: flex; }
+    .lightbox-img { max-width: 90vw; max-height: 88vh; object-fit: contain; }
+    .lightbox-close { position: absolute; top: 24px; right: 32px; font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.5); cursor: pointer; transition: color 0.3s; background: none; border: none; }
+    .lightbox-close:hover { color: #fff; }
+    .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: none; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.6); width: 52px; height: 52px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 18px; transition: all 0.3s; }
+    .lightbox-nav:hover { border-color: var(--gold); color: var(--gold); }
+    .lightbox-prev { left: 24px; } .lightbox-next { right: 24px; }
+    .lightbox-counter { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 3px; color: rgba(255,255,255,0.4); }
+    @media (max-width: 600px) { .lightbox-nav { width: 42px; height: 42px; top: auto; bottom: 60px; transform: none; } .lightbox-prev { left: 20px; } .lightbox-next { right: 20px; } }
     .hero-panel { background: var(--warm); display: flex; flex-direction: column; justify-content: center; padding: 96px 56px 56px; gap: 0; }
     .hero-eyebrow { font-family: var(--body); font-size: 9px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--vf-sage); display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
     .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--vf-sage); flex-shrink: 0; }
@@ -562,13 +599,17 @@
   <!-- ═══ HERO ══════════════════════════════════════ -->
   <section class="hero">
     <div class="hero-img">
-      <img src="images/communities/victoria-farms/victoria-farms-entrance.jpg" alt="Victoria Farms stone entrance sign — East Bay Township" fetchpriority="high" style="object-position:20% 50%;">
+      <video class="hero-video" id="vf-hero-video" muted loop playsinline preload="none" poster="images/communities/victoria-farms/model-home/vf-model-hero-poster.jpg" aria-label="Drone footage of the completed Victoria Farms model home"></video>
+      <button class="hero-video-toggle" id="vf-hero-toggle" type="button" aria-label="Pause background video" hidden>
+        <svg class="i-pause" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="6" y="5" width="4" height="14" fill="currentColor"/><rect x="14" y="5" width="4" height="14" fill="currentColor"/></svg>
+        <svg class="i-play" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M7 5l12 7-12 7z" fill="currentColor"/></svg>
+      </button>
     </div>
     <div class="hero-panel">
       <div class="hero-eyebrow h-anim h-d1">East Bay Township</div>
       <h1 class="hero-name h-anim h-d2">Victoria<br><em>Farms.</em></h1>
       <div class="hero-rule h-anim h-d2"></div>
-      <p class="hero-desc h-anim h-d3">Turn-key luxury homes on rolling East Bay Township farmland, designed, finished, and built by O&rsquo;Grady Development with many of the same finishes found in our Peninsula Shores homes.</p>
+      <p class="hero-desc h-anim h-d3">Turn-key luxury homes on rolling East Bay Township farmland, designed, finished, and built by O&rsquo;Grady Development with many of the same finishes found in our Peninsula Shores homes. <strong style="font-weight:500;color:var(--dark);">The model home is complete and open for private tours.</strong></p>
       <div class="hero-stats h-anim h-d3">
         <div class="hero-stat">
           <div class="hero-stat-val">Turn-Key</div>
@@ -703,12 +744,50 @@
         </div>
       </div>
 
-      <div class="fade-up" style="margin-top:64px;">
-        <span class="t-label" style="display:block;margin-bottom:16px;">Model Home &middot; In Progress</span>
-        <div style="overflow:hidden;border:1px solid rgba(0,0,0,0.08);">
-          <img src="images/communities/victoria-farms/model-home-rendering-(compressed).jpg" alt="Victoria Farms model home rendering at dusk" loading="lazy" style="width:100%;display:block;">
+      <div class="model-section fade-up" id="model-home">
+        <div class="model-head">
+          <div>
+            <span class="t-label">The Model Home &middot; Now Complete</span>
+            <h2 class="t-lg" style="margin-top:10px;">See the finished<br>O&rsquo;Grady home.</h2>
+            <div class="rule"></div>
+          </div>
+          <p class="t-body">Our first completed home at Victoria Farms is finished and ready to tour. Walk through it with our team to see the craftsmanship, the finishes, and the setting in person.</p>
         </div>
-        <p style="font-family:var(--body);font-size:11px;font-weight:300;color:rgba(0,0,0,0.35);margin-top:12px;">Artist's rendering. Model home currently under construction.</p>
+        <button class="model-main" type="button" onclick="openLightbox(0)" aria-label="View all 12 model home photos">
+          <img src="images/communities/victoria-farms/model-home/vf-model-01-front-elevation.jpg" alt="Front elevation of the completed Victoria Farms model home" loading="lazy" width="2000" height="1125">
+          <span class="model-main-tag">View All 12 Photos &rarr;</span>
+        </button>
+        <div class="model-grid">
+          <button class="model-thumb" type="button" onclick="openLightbox(1)" aria-label="View photo 2 of 12">
+            <img src="images/communities/victoria-farms/model-home/vf-model-02-front-three-quarter-thumb.jpg" alt="Model home front with stone entry and evergreen landscaping" loading="lazy" width="800" height="450">
+          </button>
+          <button class="model-thumb" type="button" onclick="openLightbox(2)" aria-label="View photo 3 of 12">
+            <img src="images/communities/victoria-farms/model-home/vf-model-03-front-aerial-thumb.jpg" alt="Aerial view of the model home front and lawn" loading="lazy" width="800" height="450">
+          </button>
+          <button class="model-thumb" type="button" onclick="openLightbox(3)" aria-label="View photo 4 of 12">
+            <img src="images/communities/victoria-farms/model-home/vf-model-04-aerial-setting-thumb.jpg" alt="Aerial view of the model home set against East Bay Township woods and fields" loading="lazy" width="800" height="450">
+          </button>
+          <button class="model-thumb" type="button" onclick="openLightbox(4)" aria-label="View photo 5 of 12">
+            <img src="images/communities/victoria-farms/model-home/vf-model-05-garage-side-aerial-thumb.jpg" alt="Aerial view of the side-entry three-car garage" loading="lazy" width="800" height="450">
+          </button>
+          <button class="model-thumb" type="button" onclick="openLightbox(5)" aria-label="View photo 6 of 12">
+            <img src="images/communities/victoria-farms/model-home/vf-model-06-side-elevation-thumb.jpg" alt="Side elevation with three-car garage under blue sky" loading="lazy" width="800" height="450">
+          </button>
+          <button class="model-thumb" type="button" onclick="openLightbox(6)" aria-label="View photo 7 of 12">
+            <img src="images/communities/victoria-farms/model-home/vf-model-07-covered-entry-thumb.jpg" alt="Covered front entry with stone and craftsman door" loading="lazy" width="800" height="450">
+          </button>
+          <button class="model-thumb" type="button" onclick="openLightbox(7)" aria-label="View photo 8 of 12">
+            <img src="images/communities/victoria-farms/model-home/vf-model-08-garage-aerial-thumb.jpg" alt="Aerial view of the garage elevation and driveway" loading="lazy" width="800" height="450">
+          </button>
+          <button class="model-thumb" type="button" onclick="openLightbox(8)" aria-label="View photo 9 of 12">
+            <img src="images/communities/victoria-farms/model-home/vf-model-09-rear-covered-porch-thumb.jpg" alt="Rear of the model home with covered porch" loading="lazy" width="800" height="450">
+            <span class="model-more">+3 More</span>
+          </button>
+        </div>
+        <div class="model-cta">
+          <p>Photos only go so far. Schedule a private tour and a member of our team will meet you at the model home.</p>
+          <button class="btn btn-dark" onclick="vfTour()">Schedule a Private Tour</button>
+        </div>
       </div>
 
       <div class="fade-up" style="margin-top:80px;">
@@ -727,7 +806,7 @@
   <!-- ═══ SITE VISIT ════════════════════════════════ -->
   <section class="visit-section">
     <div class="visit-img">
-      <img src="images/communities/victoria-farms/model-home.jpg" alt="Victoria Farms — visit the model home">
+      <img src="images/communities/victoria-farms/model-home/vf-model-02-front-three-quarter.jpg" alt="The completed Victoria Farms model home" loading="lazy">
     </div>
     <div class="visit-text">
       <span class="t-label" style="color:rgba(255,255,255,0.4);">How It Works</span>
@@ -1135,6 +1214,82 @@
       var label = [address, price].filter(Boolean).join(' · ');
       if (window.ogStayInTheKnow) window.ogStayInTheKnow(label);
     };
+  </script>
+  <!-- ═══ MODEL HOME LIGHTBOX ═══ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Model home photos">
+    <button class="lightbox-close" onclick="closeLightbox()">Close &#10005;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="lightboxNav(-1)" aria-label="Previous photo">&#8592;</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="Victoria Farms model home">
+    <button class="lightbox-nav lightbox-next" onclick="lightboxNav(1)" aria-label="Next photo">&#8594;</button>
+    <div class="lightbox-counter" id="lightbox-counter"></div>
+  </div>
+  <script>
+    // Hero video: loads only when motion is OK and data-saver is off; otherwise the poster still shows.
+    (function () {
+      var v = document.getElementById('vf-hero-video'), b = document.getElementById('vf-hero-toggle');
+      if (!v) return;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var saveData = navigator.connection && navigator.connection.saveData;
+      if (reduce || saveData) return;
+      v.src = window.innerWidth <= 900 ? 'images/communities/victoria-farms/model-home/vf-model-hero-720.mp4' : 'images/communities/victoria-farms/model-home/vf-model-hero-1080.mp4';
+      var p = v.play(); if (p && p.catch) p.catch(function () {});
+      b.hidden = false;
+      b.addEventListener('click', function () {
+        if (v.paused) { v.play(); b.classList.remove('paused'); b.setAttribute('aria-label', 'Pause background video'); }
+        else { v.pause(); b.classList.add('paused'); b.setAttribute('aria-label', 'Play background video'); }
+      });
+    })();
+
+    // Model home gallery lightbox
+    var galleryImages = [
+      'images/communities/victoria-farms/model-home/vf-model-01-front-elevation.jpg',
+      'images/communities/victoria-farms/model-home/vf-model-02-front-three-quarter.jpg',
+      'images/communities/victoria-farms/model-home/vf-model-03-front-aerial.jpg',
+      'images/communities/victoria-farms/model-home/vf-model-04-aerial-setting.jpg',
+      'images/communities/victoria-farms/model-home/vf-model-05-garage-side-aerial.jpg',
+      'images/communities/victoria-farms/model-home/vf-model-06-side-elevation.jpg',
+      'images/communities/victoria-farms/model-home/vf-model-07-covered-entry.jpg',
+      'images/communities/victoria-farms/model-home/vf-model-08-garage-aerial.jpg',
+      'images/communities/victoria-farms/model-home/vf-model-09-rear-covered-porch.jpg',
+      'images/communities/victoria-farms/model-home/vf-model-10-rear-porch-meadow-view.jpg',
+      'images/communities/victoria-farms/model-home/vf-model-11-porch-cedar-ceiling.jpg',
+      'images/communities/victoria-farms/model-home/vf-model-12-porch-view.jpg'
+    ];
+    var galleryAlts = ['Front elevation of the completed Victoria Farms model home', 'Model home front with stone entry and evergreen landscaping', 'Aerial view of the model home front and lawn', 'Aerial view of the model home set against East Bay Township woods and fields', 'Aerial view of the side-entry three-car garage', 'Side elevation with three-car garage under blue sky', 'Covered front entry with stone and craftsman door', 'Aerial view of the garage elevation and driveway', 'Rear of the model home with covered porch', 'Covered rear porch overlooking open meadow', 'Tongue-and-groove wood ceiling on the covered porch', 'View from the covered porch across the backyard'];
+    var currentIdx = 0;
+    function showLightbox() {
+      var img = document.getElementById('lightbox-img');
+      img.src = galleryImages[currentIdx]; img.alt = galleryAlts[currentIdx];
+      document.getElementById('lightbox-counter').textContent = (currentIdx + 1) + ' / ' + galleryImages.length;
+    }
+    function openLightbox(idx) {
+      currentIdx = idx; showLightbox();
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      if (typeof gtag === 'function') gtag('event', 'model_gallery_open', { community: 'victoria-farms' });
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function lightboxNav(dir) {
+      currentIdx = (currentIdx + dir + galleryImages.length) % galleryImages.length; showLightbox();
+    }
+    document.getElementById('lightbox').addEventListener('click', function (e) { if (e.target === this) closeLightbox(); });
+    document.addEventListener('keydown', function (e) {
+      if (!document.getElementById('lightbox').classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') lightboxNav(-1);
+      if (e.key === 'ArrowRight') lightboxNav(1);
+    });
+    (function () { // swipe on phones
+      var lb = document.getElementById('lightbox'), x0 = null;
+      lb.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+      lb.addEventListener('touchend', function (e) {
+        if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; x0 = null;
+        if (Math.abs(dx) > 40) lightboxNav(dx < 0 ? 1 : -1);
+      });
+    })();
   </script>
   <script>
     function vfTour() {
