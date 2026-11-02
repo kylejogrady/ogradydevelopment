@@ -603,28 +603,6 @@
     <textarea name="message"></textarea>
     <input type="text" name="how_heard">
   </form>
-  <form name="property-inquiry" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
-        <input type="text" name="source">
-    <input type="text" name="first_name">
-    <input type="text" name="last_name">
-    <input type="email" name="email">
-    <input type="tel" name="phone">
-    <input type="text" name="property">
-        <input type="text" name="price">
-    <input type="text" name="interest">
-    <input type="text" name="timeline">
-        <textarea name="message"></textarea>
-  </form>
-  <form name="community-interest" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
-        <input type="text" name="source">
-    <input type="text" name="first_name">
-    <input type="text" name="last_name">
-    <input type="email" name="email">
-    <input type="tel" name="phone">
-    <input type="text" name="community">
-    <input type="text" name="timeline">
-    <textarea name="notes"></textarea>
-  </form>
   <form name="sell-land" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
         <input type="text" name="source">
     <input type="text" name="first_name">
@@ -830,12 +808,6 @@
 
   <!-- ═══ FOOTER ════════════════════════════════════ -->
   <!-- Netlify form registration: email updates capture -->
-  <form name="updates" data-netlify="true" netlify-honeypot="bot-field" hidden>
-    <input type="hidden" name="form-name" value="updates">
-    <input type="email" name="email">
-    <input type="text" name="source">
-    <input type="text" name="community">
-  </form>
 
   <footer class="footer">
     <div class="wrap">
@@ -886,119 +858,9 @@
     </div>
   </footer>
 
-  <!-- ═══ INQUIRY POPUP ════════════════════════════ -->
-  <div class="popup-overlay" id="popup-overlay">
-    <div class="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
-
-      <div class="popup-header">
-        <div class="popup-property-info">
-          <div class="popup-property-label">Property Inquiry</div>
-          <div class="popup-property-address" id="popup-address">—</div>
-          <div class="popup-property-price" id="popup-price"></div>
-        </div>
-        <button class="popup-close" onclick="closePopup()" aria-label="Close">✕</button>
-      </div>
-
-      <div class="popup-body">
-        <p class="popup-subtitle">Tell us a bit about yourself and we'll be in touch within one business day.</p>
-
-        <!-- Netlify Forms — data-netlify="true" activates email notifications -->
-        <form id="popup-form" name="property-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="source" value="Website - Property Inquiry (For Sale)">
-          <input type="hidden" name="form-name" value="property-inquiry">
-          <input type="hidden" name="property" id="popup-property-field">
-          <input type="hidden" name="price" id="popup-price-field">
-          <p style="display:none;"><input name="bot-field"></p>
-
-          <div class="popup-row">
-            <div class="popup-group">
-              <label class="popup-label" for="popup-first">First Name</label>
-              <input class="popup-input" type="text" id="popup-first" name="first_name" placeholder="First" required>
-            </div>
-            <div class="popup-group">
-              <label class="popup-label" for="popup-last">Last Name</label>
-              <input class="popup-input" type="text" id="popup-last" name="last_name" placeholder="Last" required>
-            </div>
-          </div>
-          <div class="popup-row">
-            <div class="popup-group">
-              <label class="popup-label" for="popup-email">Email</label>
-              <input class="popup-input" type="email" id="popup-email" name="email" placeholder="you@email.com" required>
-            </div>
-            <div class="popup-group">
-              <label class="popup-label" for="popup-phone">Phone</label>
-              <input class="popup-input" type="tel" id="popup-phone" name="phone" placeholder="(231) 000-0000">
-            </div>
-          </div>
-          <div class="popup-group">
-            <label class="popup-label" for="popup-timeline">Timeline</label>
-            <select class="popup-select" id="popup-timeline" name="timeline">
-              <option value="" disabled selected>When are you looking to move?</option>
-              <option>As soon as possible</option>
-              <option>Within 3 months</option>
-              <option>Within 6 months</option>
-              <option>Within a year</option>
-              <option>Just exploring for now</option>
-            </select>
-          </div>
-          <div class="popup-group">
-            <label class="popup-label" for="popup-message">Message (optional)</label>
-            <textarea class="popup-textarea" id="popup-message" name="message" placeholder="Any questions about the property, financing, scheduling a tour..."></textarea>
-          </div>
-          <button type="submit" class="popup-submit">Request Information</button>
-          <p class="popup-note">We respond within one business day. All inquiries are confidential.</p>
-        </form>
-
-        <div class="popup-success" id="popup-success">
-          <div class="popup-success-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <span style="font-family:var(--body);font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);">Inquiry Sent</span>
-          <div style="font-family:var(--display);font-size:28px;font-weight:300;">We'll be in touch soon.</div>
-          <p style="font-family:var(--body);font-size:12px;font-weight:300;color:var(--text);line-height:1.9;max-width:360px;">We typically respond within one business day. In the meantime, feel free to browse our other available properties.</p>
-          <button onclick="closePopup()" style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);background:none;border:none;cursor:pointer;margin-top:8px;">Close ✕</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // ── Popup ──────────────────────────────────────
-    function openPopup(address, price) {
-      document.getElementById('popup-address').textContent = address;
-      document.getElementById('popup-price').textContent = price;
-      document.getElementById('popup-property-field').value = address;
-      document.getElementById('popup-price-field').value = price;
-      document.getElementById('popup-overlay').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closePopup() {
-      document.getElementById('popup-overlay').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    // Close on background click
-    document.getElementById('popup-overlay').addEventListener('click', function(e) {
-      if (e.target === this) closePopup();
-    });
-    // Close on Escape key
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closePopup();
-    });
-    // Handle form submit — Netlify handles the actual sending
-    document.getElementById('popup-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = this;
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(form)).toString()
-      })
-      .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); })
-      .then(() => {
-        form.style.display = 'none';
-        document.getElementById('popup-success').classList.add('show');
-      })
-      .catch(() => { if (window.ogFormError) ogFormError(form); });
-    });
 
 
     const toggle = document.getElementById('mob-toggle');

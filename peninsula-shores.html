@@ -439,28 +439,6 @@
     <textarea name="message"></textarea>
     <input type="text" name="how_heard">
   </form>
-  <form name="property-inquiry" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
-        <input type="text" name="source">
-    <input type="text" name="first_name">
-    <input type="text" name="last_name">
-    <input type="email" name="email">
-    <input type="tel" name="phone">
-    <input type="text" name="property">
-        <input type="text" name="price">
-    <input type="text" name="interest">
-    <input type="text" name="timeline">
-        <textarea name="message"></textarea>
-  </form>
-  <form name="community-interest" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
-        <input type="text" name="source">
-    <input type="text" name="first_name">
-    <input type="text" name="last_name">
-    <input type="email" name="email">
-    <input type="tel" name="phone">
-    <input type="text" name="community">
-    <input type="text" name="timeline">
-    <textarea name="notes"></textarea>
-  </form>
   <form name="sell-land" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
         <input type="text" name="source">
     <input type="text" name="first_name">
@@ -882,12 +860,6 @@
   <!-- ═══ FOOTER ════════════════════════════════════ -->
   <!-- Netlify form registration: email updates capture -->
 
-  <form name="updates" data-netlify="true" netlify-honeypot="bot-field" hidden>
-    <input type="hidden" name="form-name" value="updates">
-    <input type="email" name="email">
-    <input type="text" name="source">
-    <input type="text" name="community">
-  </form>
 
   <footer class="footer">
     <div class="wrap">
@@ -1054,89 +1026,8 @@
     }, { threshold: 0.08 });
     document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
-    // ── POPUP ────────────────────────────────────────
-    function openPopup(address, price) {
-      document.getElementById('popup-address').textContent = address;
-      document.getElementById('popup-price').textContent = price;
-      document.getElementById('popup-property-field').value = address + ' — ' + price;
-      document.getElementById('popup-form').style.display = 'block';
-      document.getElementById('popup-success').classList.remove('show');
-      document.getElementById('popup-overlay').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closePopup() {
-      document.getElementById('popup-overlay').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    // The popup markup sits below this script, so wire it up once the page has loaded.
-    document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('popup-overlay').addEventListener('click', function(e) {
-      if (e.target === this) closePopup();
-    });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
-    document.getElementById('popup-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const data = new FormData(this);
-      fetch('/', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: new URLSearchParams(data).toString() })
-        .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); })
-        .then(() => { this.style.display = 'none'; document.getElementById('popup-success').classList.add('show'); })
-        .catch(() => { if (window.ogFormError) ogFormError(this); });
-    });
-    });
   </script>
 
-  <!-- ═══ INQUIRY POPUP ════════════════════════════ -->
-  <div class="popup-overlay" id="popup-overlay">
-    <div class="popup" role="dialog" aria-modal="true">
-      <div class="popup-header">
-        <button class="popup-close" onclick="closePopup()">Close ✕</button>
-        <div class="popup-property-label">Property Inquiry</div>
-        <div class="popup-property-address" id="popup-address"></div>
-        <div class="popup-property-price" id="popup-price"></div>
-      </div>
-      <div class="popup-body">
-        <form id="popup-form" name="property-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="source" value="Website - Property Inquiry (Peninsula Shores)">
-          <input type="hidden" name="form-name" value="property-inquiry">
-          <input type="hidden" name="property" id="popup-property-field" value="">
-          <p style="display:none;"><input name="bot-field"></p>
-          <div class="popup-form-row">
-            <div class="popup-form-group">
-              <label class="popup-label" for="popup-first">First Name</label>
-              <input class="popup-input" type="text" id="popup-first" name="first_name" placeholder="First" required>
-            </div>
-            <div class="popup-form-group">
-              <label class="popup-label" for="popup-last">Last Name</label>
-              <input class="popup-input" type="text" id="popup-last" name="last_name" placeholder="Last" required>
-            </div>
-          </div>
-          <div class="popup-form-row">
-            <div class="popup-form-group">
-              <label class="popup-label" for="popup-email">Email</label>
-              <input class="popup-input" type="email" id="popup-email" name="email" placeholder="you@email.com" required>
-            </div>
-            <div class="popup-form-group">
-              <label class="popup-label" for="popup-phone">Phone</label>
-              <input class="popup-input" type="tel" id="popup-phone" name="phone" placeholder="(231) 000-0000">
-            </div>
-          </div>
-          <div class="popup-form-group">
-            <label class="popup-label" for="popup-message">Message <span style="font-weight:300;text-transform:none;letter-spacing:0;color:rgba(0,0,0,0.3);">(optional)</span></label>
-            <textarea class="popup-textarea" id="popup-message" name="message" placeholder="Questions, timeline, anything you'd like us to know..."></textarea>
-          </div>
-          <button type="submit" class="popup-submit">Send Inquiry</button>
-          <p class="popup-note">We respond within one business day. All inquiries are confidential.</p>
-        </form>
-        <div class="popup-success" id="popup-success">
-          <div class="popup-success-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <span class="t-label">Inquiry Sent</span>
-          <div style="font-family:var(--display);font-size:26px;font-weight:300;">We'll be in touch soon.</div>
-          <p style="font-family:var(--body);font-size:12px;font-weight:300;color:var(--text);text-align:center;max-width:320px;line-height:1.9;">Expect to hear from Kyle within one business day.</p>
-          <button onclick="closePopup()" style="font-family:var(--body);font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);background:none;border:none;cursor:pointer;margin-top:8px;">Close ✕</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Peninsula Shores gallery lightbox -->
   <div id="psLightbox" class="ps-lightbox" role="dialog" aria-modal="true" aria-label="Peninsula Shores photo gallery">
