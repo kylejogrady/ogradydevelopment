@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Westacres | 2.5–3 Acre Homesites Now Available — West Traverse City, MI</title>
-  <meta name="description" content="Westacres by O'Grady Development: 17 homesites of approximately 2.5 to 3 acres on the west side of Traverse City. Room for a custom home, detached garage, workshop or hobby farm. Homesites now available.">
+  <meta name="description" content="Westacres by O'Grady Development: 17 vacant homesites of approximately 2.5 to 3 acres on the west side of Traverse City. Build with the builder of your choice, on your own timeline. Homesites now available.">
+  <link rel="preload" as="image" href="images/communities/westacres/westacres-hero-poster.jpg" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -258,7 +259,7 @@
   <!-- SEO: Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:title"       content="Westacres | 2.5–3 Acre Homesites Now Available — West Traverse City, MI">
-  <meta property="og:description" content="Westacres by O'Grady Development: 17 homesites of approximately 2.5 to 3 acres on the west side of Traverse City. Room for a custom home, detached garage, workshop or hobby farm. Homesites now available.">
+  <meta property="og:description" content="Westacres by O'Grady Development: 17 vacant homesites of approximately 2.5 to 3 acres on the west side of Traverse City. Build with the builder of your choice, on your own timeline. Homesites now available.">
   <meta property="og:url"         content="https://www.ogradydevelopment.com/westacres.html">
   <meta property="og:image"       content="https://www.ogradydevelopment.com/images/communities/westacres/westacres-hero-lake.jpg">
   <meta property="og:site_name"   content="O'Grady Development Co.">
@@ -267,7 +268,7 @@
   <!-- SEO: Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Westacres | 2.5–3 Acre Homesites Now Available — West Traverse City, MI">
-  <meta name="twitter:description" content="Westacres by O'Grady Development: 17 homesites of approximately 2.5 to 3 acres on the west side of Traverse City. Room for a custom home, detached garage, workshop or hobby farm. Homesites now available.">
+  <meta name="twitter:description" content="Westacres by O'Grady Development: 17 vacant homesites of approximately 2.5 to 3 acres on the west side of Traverse City. Build with the builder of your choice, on your own timeline. Homesites now available.">
   <meta name="twitter:image"       content="https://www.ogradydevelopment.com/images/communities/westacres/westacres-hero-lake.jpg">
 
   <!-- SEO: Additional -->
@@ -281,7 +282,7 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "RealEstateListing","name":"Westacres","description":"17 homesites of approximately 2.5 to 3 acres on the west side of Traverse City by O'Grady Development. Homesites now available.","address":{"@type":"PostalAddress","addressLocality":"Traverse City","addressRegion":"MI","postalCode":"49686","addressCountry":"US"}
+    "@type": "RealEstateListing","name":"Westacres","description":"17 vacant homesites of approximately 2.5 to 3 acres on the west side of Traverse City, sold by O'Grady Development. Buyers build with the builder of their choice.","address":{"@type":"PostalAddress","addressLocality":"Traverse City","addressRegion":"MI","postalCode":"49686","addressCountry":"US"}
   }
   </script>
 
@@ -445,12 +446,39 @@
     .pg-a { grid-row: 1 / 3; }
     .progress-grid figcaption { position: absolute; left: 16px; bottom: 16px; font-family: var(--body); font-size: 8.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #fff; background: rgba(17,16,16,0.6); padding: 8px 12px; backdrop-filter: blur(6px); }
     .photo-band { height: clamp(320px, 52vw, 720px); overflow: hidden; }
-    .photo-band img { width: 100%; height: 100%; object-fit: cover; object-position: center 65%; }
+    .photo-band img { width: 100%; height: 100%; object-fit: cover; object-position: center 92%; }
     @media (max-width: 768px) {
       .progress { padding-bottom: 72px; }
       .progress-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 62vw 40vw; height: auto; gap: 6px; }
       .pg-a { grid-row: auto; grid-column: 1 / 3; }
     }
+
+    .how { background: var(--dark); padding: 88px 0; }
+    .how-grid { display: grid; grid-template-columns: 0.8fr 2fr; gap: 72px; align-items: start; }
+    .how-head { display: flex; flex-direction: column; gap: 18px; }
+    .how-head .t-lg { color: #fff; font-size: clamp(30px, 3.4vw, 46px); }
+    .how-cells { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); }
+    .how-cell { background: var(--dark); padding: 36px 30px; display: flex; flex-direction: column; gap: 12px; }
+    .how-num { font-family: var(--display); font-size: 15px; font-style: italic; color: var(--gold); }
+    .how-title { font-family: var(--display); font-size: 24px; font-weight: 400; color: #fff; line-height: 1.2; }
+    .how-desc { font-family: var(--body); font-size: 12.5px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.55); }
+    @media (max-width: 1100px) { .how-grid { grid-template-columns: 1fr; gap: 40px; } }
+    @media (max-width: 768px) { .how { padding: 64px 0; } .how-cells { grid-template-columns: 1fr; } .how-cell { padding: 28px 22px; } }
+
+    .hero-video { position: absolute; inset: 72px 0 0 0; width: 100%; height: calc(100% - 72px); object-fit: cover; object-position: 50% 55%; display: block; background: var(--warm); }
+    .hero-video-toggle { position: absolute; left: 20px; bottom: 20px; z-index: 2; width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.45); background: rgba(10,8,6,0.35); color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(6px); transition: background 0.3s; }
+    .hero-video-toggle:hover { background: rgba(10,8,6,0.6); }
+    .hero-video-toggle[hidden] { display: none; }
+    .hero-video-toggle .i-play { display: none; }
+    .hero-video-toggle.paused .i-play { display: block; }
+    .hero-video-toggle.paused .i-pause { display: none; }
+    @media (max-width: 900px) { .hero-video { inset: 60px 0 0 0; height: calc(100% - 60px); object-position: 50% 52%; } .hero-video-toggle { left: 14px; bottom: 14px; width: 34px; height: 34px; } }
+
+    .progress-wide { position: relative; overflow: hidden; margin: 12px 0 0; height: clamp(300px, 44vw, 660px); background: #ddd8cf; }
+    .progress-wide img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; transition: transform 1.4s var(--ease); }
+    .progress-wide:hover img { transform: scale(1.03); }
+    .progress-wide figcaption { position: absolute; left: 16px; bottom: 16px; font-family: var(--body); font-size: 8.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #fff; background: rgba(17,16,16,0.6); padding: 8px 12px; backdrop-filter: blur(6px); }
+    @media (max-width: 768px) { .progress-wide { margin-top: 6px; height: 62vw; } }
   </style>
 </head>
 <body>
@@ -514,14 +542,18 @@
   <!-- ═══ HERO ══════════════════════════════════════ -->
   <section class="hero">
     <div class="hero-img">
-      <img src="images/communities/westacres/westacres-hero-lake.jpg" alt="Aerial view of Westacres and its new road, with the lake beyond" fetchpriority="high" style="object-position:45% 70%;">
+      <video class="hero-video" id="wa-hero-video" muted loop playsinline preload="none" poster="images/communities/westacres/westacres-hero-poster.jpg" aria-label="Drone footage over Westacres and its new road"></video>
+      <button class="hero-video-toggle" id="wa-hero-toggle" type="button" aria-label="Pause background video" hidden>
+        <svg class="i-pause" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="6" y="5" width="4" height="14" fill="currentColor"/><rect x="14" y="5" width="4" height="14" fill="currentColor"/></svg>
+        <svg class="i-play" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M7 5l12 7-12 7z" fill="currentColor"/></svg>
+      </button>
     </div>
     <div class="hero-panel">
-      <span class="now-badge h-anim h-d1"><i></i>Homesites Now Available</span>
+      <span class="now-badge h-anim h-d1"><i></i>Vacant Homesites Now Available</span>
       <div class="hero-eyebrow h-anim h-d1">West Traverse City</div>
       <h1 class="hero-name h-anim h-d2">West<em>acres.</em></h1>
       <div class="hero-rule h-anim h-d2"></div>
-      <p class="hero-desc h-anim h-d3">Seventeen private homesites of roughly 2.5 to 3 acres, close to Traverse City. The road is in, and homesites are now available.</p>
+      <p class="hero-desc h-anim h-d3">Seventeen vacant homesites of roughly 2.5 to 3 acres, close to Traverse City. Build with the builder of your choice, whenever you're ready. The road is in, and homesites are now available.</p>
       <div class="hero-stats h-anim h-d3">
         <div class="hero-stat">
           <div class="hero-stat-val">17</div>
@@ -539,6 +571,23 @@
       <div class="hero-actions h-anim h-d4">
         <a href="#inquire" class="btn btn-dark" data-interest="Lot map &amp; pricing">Get Lot Map &amp; Pricing</a>
         <a href="#inquire" class="btn-plain" data-interest="Walk the property">Walk the Property</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ HOW WESTACRES WORKS ══════════════════════ -->
+  <section class="how">
+    <div class="wrap">
+      <div class="how-grid">
+        <div class="how-head fade-up">
+          <span class="t-label">How Westacres Works</span>
+          <h2 class="t-lg">Your Land.<br>Your Builder.<br>Your Timeline.</h2>
+        </div>
+        <div class="how-cells">
+          <div class="how-cell fade-up delay-1"><span class="how-num">01</span><div class="how-title">Vacant Homesites</div><p class="how-desc">Westacres homesites are sold as vacant land. No homes are being built here by O'Grady Development, and none are included with a homesite purchase.</p></div>
+          <div class="how-cell fade-up delay-2"><span class="how-num">02</span><div class="how-title">The Builder of Your Choice</div><p class="how-desc">You choose who builds your home. O'Grady Development is the land developer for Westacres and is not offering to build on Westacres homesites.</p></div>
+          <div class="how-cell fade-up delay-3"><span class="how-num">03</span><div class="how-title">Build When You're Ready</div><p class="how-desc">Start when the time is right for you. Every home simply follows the Westacres architectural and property standards described below.</p></div>
+        </div>
       </div>
     </div>
   </section>
@@ -570,10 +619,11 @@
         <h2 class="t-lg">The Road Is In.</h2>
       </div>
       <div class="progress-grid">
-        <figure class="pg-a fade-up"><img src="images/communities/westacres/westacres-road.jpg" alt="The new Westacres road running between homesites" loading="lazy"></figure>
+        <figure class="pg-a fade-up"><img src="images/communities/westacres/westacres-road.jpg" alt="The new Westacres road from the cul-de-sac, looking north toward the entrance" loading="lazy"><figcaption>From the cul-de-sac, looking north to the entrance</figcaption></figure>
         <figure class="pg-b fade-up delay-1"><img src="images/communities/westacres/westacres-entrance.jpg" alt="The Westacres entrance with the O'Grady Development sign" loading="lazy"><figcaption>The entrance</figcaption></figure>
         <figure class="pg-c fade-up delay-2"><img src="images/communities/westacres/westacres-aerial-wide.jpg" alt="Westacres from above, with the road to the cul-de-sac and the surrounding countryside" loading="lazy"><figcaption>From above</figcaption></figure>
       </div>
+      <figure class="progress-wide fade-up"><img src="images/communities/westacres/westacres-hero-lake.jpg" alt="Westacres from above, with the new road, the cul-de-sac and the lake beyond" loading="lazy"><figcaption>From the entrance to the cul-de-sac, with the lake beyond</figcaption></figure>
     </div>
   </section>
 
@@ -587,6 +637,7 @@
           <div class="rule"></div>
           <p class="t-body">With just 17 homesites ranging from approximately 2.5 to 3 acres, Westacres offers room to spread out without sacrificing the convenience of being close to Traverse City.</p>
           <p class="t-body">Generously sized properties, approximately 200 feet wide and 600 feet deep, provide space between neighbors and the opportunity to create a home that feels distinctly your own. Whether that means expansive outdoor living areas, gardens, natural landscaping, or simply a little more peace and quiet, Westacres offers the setting to enjoy it.</p>
+          <p class="t-body">Intentional berms line the perimeter of the property, adding a natural buffer between Westacres and the surrounding roads and neighbors.</p>
         </div>
         <div class="facts fade-up delay-1">
           <div class="fact"><span class="fact-val">17</span><span class="fact-lbl">Homesites in total</span></div>
@@ -663,8 +714,11 @@
         <div class="homesites-info">
           <div class="hs-list">
             <div class="hs-row"><span>Homesites</span><b>17</b></div>
+            <div class="hs-row"><span>Sold as</span><b>Vacant land</b></div>
+            <div class="hs-row"><span>Builder</span><b>Buyer's choice</b></div>
             <div class="hs-row"><span>Size</span><b>Approx. 2.5 – 3 acres</b></div>
             <div class="hs-row"><span>Typical dimensions</span><b>~200′ wide × 600′ deep</b></div>
+            <div class="hs-row"><span>Perimeter</span><b>Buffered by berms</b></div>
             <div class="hs-row"><span>Location</span><b>West side of Traverse City</b></div>
             <div class="hs-row"><span>Status</span><b>Road in · Now selling</b></div>
           </div>
@@ -688,7 +742,7 @@
         <div class="interest-bullets fade-up delay-1">
           <div class="interest-bullet"><span class="interest-bullet-num">1</span><div><div class="interest-bullet-title">Get the lot map &amp; pricing</div><div class="interest-bullet-desc">See every homesite, its size, and current availability.</div></div></div>
           <div class="interest-bullet"><span class="interest-bullet-num">2</span><div><div class="interest-bullet-title">Walk the property</div><div class="interest-bullet-desc">Tour the homesites with our team at a time that suits you.</div></div></div>
-          <div class="interest-bullet"><span class="interest-bullet-num">3</span><div><div class="interest-bullet-title">Reserve your homesite</div><div class="interest-bullet-desc">Pick the one that fits, and start planning what comes next.</div></div></div>
+          <div class="interest-bullet"><span class="interest-bullet-num">3</span><div><div class="interest-bullet-title">Reserve your homesite</div><div class="interest-bullet-desc">Pick the one that fits, then build with the builder of your choice when you're ready.</div></div></div>
         </div>
       </div>
     </div>
@@ -703,7 +757,7 @@
           <div class="form-choice" id="wa-choices">
             <label class="choice on"><input type="radio" name="wa_choice" value="Lot map &amp; pricing" checked><span class="dot"></span>Get the lot map &amp; pricing</label>
             <label class="choice"><input type="radio" name="wa_choice" value="Walk the property"><span class="dot"></span>Walk the property</label>
-            <label class="choice"><input type="radio" name="wa_choice" value="Build a home with O'Grady"><span class="dot"></span>Build with O'Grady</label>
+            <label class="choice"><input type="radio" name="wa_choice" value="Question about a specific homesite"><span class="dot"></span>Ask about a homesite</label>
             <label class="choice"><input type="radio" name="wa_choice" value="General question"><span class="dot"></span>Ask a question</label>
           </div>
         </div>
@@ -715,7 +769,7 @@
           <div class="form-group"><label class="form-label" for="wa-email">Email</label><input class="form-input" type="email" id="wa-email" name="email" placeholder="you@email.com" required autocomplete="email"></div>
           <div class="form-group"><label class="form-label" for="wa-phone">Phone</label><input class="form-input" type="tel" id="wa-phone" name="phone" placeholder="(231) 000-0000" autocomplete="tel"></div>
         </div>
-        <div class="form-group"><label class="form-label" for="wa-msg">Anything we should know? <span style="opacity:.5;font-weight:400;">(optional)</span></label><textarea class="form-textarea" id="wa-msg" name="message" placeholder="Timeline, what you'd like to build, questions about a specific homesite..."></textarea></div>
+        <div class="form-group"><label class="form-label" for="wa-msg">Anything we should know? <span style="opacity:.5;font-weight:400;">(optional)</span></label><textarea class="form-textarea" id="wa-msg" name="message" placeholder="Your timeline, which homesites interest you, any questions..."></textarea></div>
         <button type="submit" class="form-submit" id="wa-submit">Send My Request</button>
         <p class="form-note">We'll only use your details to follow up about Westacres.</p>
       </form>
@@ -945,6 +999,24 @@
       document.getElementById('inquire').scrollIntoView({behavior:'smooth'});
     });
   })();
+  </script>
+
+  <script>
+    // Hero video: loads only when motion is OK and data-saver is off; otherwise the poster still shows.
+    (function () {
+      var v = document.getElementById('wa-hero-video'), b = document.getElementById('wa-hero-toggle');
+      if (!v) return;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var saveData = navigator.connection && navigator.connection.saveData;
+      if (reduce || saveData) return;
+      v.src = window.innerWidth <= 900 ? 'images/communities/westacres/westacres-hero-720.mp4' : 'images/communities/westacres/westacres-hero-1080.mp4';
+      var p = v.play(); if (p && p.catch) p.catch(function () {});
+      b.hidden = false;
+      b.addEventListener('click', function () {
+        if (v.paused) { v.play(); b.classList.remove('paused'); b.setAttribute('aria-label', 'Pause background video'); }
+        else { v.pause(); b.classList.add('paused'); b.setAttribute('aria-label', 'Play background video'); }
+      });
+    })();
   </script>
   <script src="/tracking.js" defer></script>
   <script src="/stay-in-the-know.js" defer></script>
