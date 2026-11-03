@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Westacres | 2.5–3 Acre Homesites Now Available — West Traverse City, MI</title>
-  <meta name="description" content="Westacres by O'Grady Development: 17 vacant homesites of approximately 2.5 to 3 acres on the west side of Traverse City. Build with the builder of your choice, on your own timeline. Homesites now available.">
+  <meta name="description" content="Westacres by O'Grady Development: 17 vacant homesites of approximately 2.5 to 3 acres on the west side of Traverse City. Homesites from the mid $100Ks. Build with the builder of your choice, on your own timeline.">
   <link rel="preload" as="image" href="images/communities/westacres/westacres-hero-poster.jpg" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -259,7 +259,7 @@
   <!-- SEO: Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:title"       content="Westacres | 2.5–3 Acre Homesites Now Available — West Traverse City, MI">
-  <meta property="og:description" content="Westacres by O'Grady Development: 17 vacant homesites of approximately 2.5 to 3 acres on the west side of Traverse City. Build with the builder of your choice, on your own timeline. Homesites now available.">
+  <meta property="og:description" content="Westacres by O'Grady Development: 17 vacant homesites of approximately 2.5 to 3 acres on the west side of Traverse City. Homesites from the mid $100Ks. Build with the builder of your choice, on your own timeline.">
   <meta property="og:url"         content="https://www.ogradydevelopment.com/westacres.html">
   <meta property="og:image"       content="https://www.ogradydevelopment.com/images/communities/westacres/westacres-hero-lake.jpg">
   <meta property="og:site_name"   content="O'Grady Development Co.">
@@ -268,7 +268,7 @@
   <!-- SEO: Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Westacres | 2.5–3 Acre Homesites Now Available — West Traverse City, MI">
-  <meta name="twitter:description" content="Westacres by O'Grady Development: 17 vacant homesites of approximately 2.5 to 3 acres on the west side of Traverse City. Build with the builder of your choice, on your own timeline. Homesites now available.">
+  <meta name="twitter:description" content="Westacres by O'Grady Development: 17 vacant homesites of approximately 2.5 to 3 acres on the west side of Traverse City. Homesites from the mid $100Ks. Build with the builder of your choice, on your own timeline.">
   <meta name="twitter:image"       content="https://www.ogradydevelopment.com/images/communities/westacres/westacres-hero-lake.jpg">
 
   <!-- SEO: Additional -->
@@ -398,7 +398,8 @@
     .hs-row { display: flex; justify-content: space-between; gap: 16px; padding: 15px 0; border-bottom: 1px solid rgba(0,0,0,0.09); font-family: var(--body); font-size: 12.5px; font-weight: 300; color: var(--text); }
     .hs-row b { font-weight: 500; color: var(--dark); text-align: right; }
 
-    .lot-table-wrap { margin-top: 40px; overflow-x: auto; }
+    .lot-table-wrap { margin-top: 20px; }
+    .lot-table-wrap + .homesites-panel { margin-top: 40px; }
     .lot-table { width: 100%; border-collapse: collapse; font-family: var(--body); font-size: 13px; font-weight: 300; color: var(--dark); }
     .lot-table th { text-align: left; font-size: 8.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(0,0,0,0.4); padding: 14px 16px; border-bottom: 1px solid rgba(0,0,0,0.15); }
     .lot-table td { padding: 18px 16px; border-bottom: 1px solid rgba(0,0,0,0.08); }
@@ -479,6 +480,28 @@
     .progress-wide:hover img { transform: scale(1.03); }
     .progress-wide figcaption { position: absolute; left: 16px; bottom: 16px; font-family: var(--body); font-size: 8.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #fff; background: rgba(17,16,16,0.6); padding: 8px 12px; backdrop-filter: blur(6px); }
     @media (max-width: 768px) { .progress-wide { margin-top: 6px; height: 62vw; } }
+
+    .site-plan { margin: 56px 0 0; background: #f4f1ea; border: 1px solid rgba(0,0,0,0.08); }
+    .site-plan img { width: 100%; height: auto; display: block; cursor: zoom-in; }
+    .site-plan figcaption { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding: 16px 22px; border-top: 1px solid rgba(0,0,0,0.08); font-family: var(--body); font-size: 9px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(0,0,0,0.5); }
+    .site-plan figcaption a { color: var(--gold); }
+    .site-plan + .homesites-panel { margin-top: 16px; }
+    .unit-head { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-family: var(--body); font-size: 9px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(0,0,0,0.45); margin-bottom: 14px; }
+    .unit-head span:first-child { color: var(--dark); }
+    .unit-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 8px; }
+    @media (min-width: 1100px) { .unit-grid { grid-template-columns: repeat(9, 1fr); } }
+    .unit-tile { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 16px 16px 14px; background: #fff; border: 1px solid rgba(0,0,0,0.1); cursor: pointer; text-align: left; transition: border-color .25s, background .25s, transform .25s; font: inherit; color: var(--dark); }
+    .unit-tile:hover, .unit-tile:focus-visible { border-color: var(--dark); transform: translateY(-2px); outline: none; }
+    .ut-num { font-family: var(--display); font-size: 30px; font-weight: 300; line-height: 1; }
+    .ut-acres { font-family: var(--body); font-size: 11.5px; font-weight: 400; color: var(--text); }
+    .ut-status { font-family: var(--body); font-size: 7.5px; font-weight: 600; letter-spacing: 1.8px; text-transform: uppercase; color: #4f6b4a; margin-top: 4px; }
+    .unit-tile.reserved { background: #f6f1e6; }
+    .unit-tile.reserved .ut-status { color: #9a7b3c; }
+    .unit-tile.sold { background: #1a1a1a; border-color: #1a1a1a; cursor: default; transform: none; }
+    .unit-tile.sold .ut-num { color: #fff; }
+    .unit-tile.sold .ut-acres { color: rgba(255,255,255,0.4); text-decoration: line-through; }
+    .unit-tile.sold .ut-status { color: var(--gold-lt); }
+    @media (max-width: 560px) { .unit-grid { grid-template-columns: repeat(4, 1fr); gap: 6px; } .unit-tile { padding: 12px 10px 10px; } .ut-num { font-size: 24px; } .ut-acres { font-size: 10.5px; } .ut-status { font-size: 6.5px; letter-spacing: 1.2px; } }
   </style>
 </head>
 <body>
@@ -564,8 +587,8 @@
           <div class="hero-stat-lbl">Each</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-val">~200′ × 600′</div>
-          <div class="hero-stat-lbl">Typical Lot</div>
+          <div class="hero-stat-val">Mid $100Ks</div>
+          <div class="hero-stat-lbl">Starting From</div>
         </div>
       </div>
       <div class="hero-actions h-anim h-d4">
@@ -706,17 +729,25 @@
         </div>
         <a href="#inquire" class="btn btn-dark fade-up" data-interest="Lot map &amp; pricing">Request Lot Map &amp; Pricing</a>
       </div>
+      <figure class="site-plan fade-up">
+        <a href="images/communities/westacres/westacres-site-plan.jpg" target="_blank" rel="noopener" aria-label="Open the Westacres site plan full size"><img src="images/communities/westacres/westacres-site-plan.jpg" alt="Westacres site plan: 17 units on Church View Drive off Highway M-72, from 2.43 to 3.05 acres" loading="lazy"></a>
+        <figcaption><span>Site plan · 17 units on Church View Drive</span><a href="images/communities/westacres/westacres-site-plan.jpg" target="_blank" rel="noopener">View full size &rarr;</a></figcaption>
+      </figure>
+      <!-- Unit tiles: built from LOTS in the script below -->
+      <div class="lot-table-wrap" id="lot-table-wrap" hidden></div>
       <div class="homesites-panel fade-up delay-1">
         <div class="homesites-map">
           <img src="images/communities/westacres/westacres-road-cul-de-sac.jpg" alt="The new Westacres road and cul-de-sac from above" loading="lazy">
-          <span class="homesites-map-tag">The new road &amp; cul-de-sac · Site plan on request</span>
+          <span class="homesites-map-tag">The new road &amp; cul-de-sac</span>
         </div>
         <div class="homesites-info">
           <div class="hs-list">
             <div class="hs-row"><span>Homesites</span><b>17</b></div>
+            <div class="hs-row"><span>Pricing</span><b>From the mid $100Ks</b></div>
             <div class="hs-row"><span>Sold as</span><b>Vacant land</b></div>
             <div class="hs-row"><span>Builder</span><b>Buyer's choice</b></div>
-            <div class="hs-row"><span>Size</span><b>Approx. 2.5 – 3 acres</b></div>
+            <div class="hs-row"><span>Size</span><b>2.43 – 3.05 acres</b></div>
+            <div class="hs-row"><span>Type</span><b>Residential site condominium</b></div>
             <div class="hs-row"><span>Typical dimensions</span><b>~200′ wide × 600′ deep</b></div>
             <div class="hs-row"><span>Perimeter</span><b>Buffered by berms</b></div>
             <div class="hs-row"><span>Road</span><b>Church View Drive</b></div>
@@ -726,11 +757,9 @@
             <div class="hs-row"><span>Location</span><b>Long Lake Township, west of Traverse City</b></div>
             <div class="hs-row"><span>Status</span><b>Road in · Now selling</b></div>
           </div>
-          <p class="t-body" style="font-size:12.5px;line-height:1.9;">Pricing, the full site plan, and available homesites are sent directly, so you're working from the most current information. Ask for the lot map, or come walk the land with us.</p>
+          <p class="t-body" style="font-size:12.5px;line-height:1.9;">Homesites start in the mid $100Ks. Unit-by-unit pricing and current availability are sent directly, so you're always working from the latest information. Select a unit below, or come walk the land with us.</p>
         </div>
       </div>
-      <!-- Lot table: renders automatically once LOTS (in the script below) is filled in -->
-      <div class="lot-table-wrap" id="lot-table-wrap" hidden></div>
     </div>
   </section>
 
@@ -982,24 +1011,46 @@
       a.addEventListener('click', function(){ pick(a.getAttribute('data-interest')); });
     });
 
-    /* ── LOTS: fill in to show the homesite table on the page.
+    /* ── LOTS: one line per unit; drives the unit tiles under the site plan. Price is not shown on the page.
        status: 'available' | 'reserved' | 'sold'   price: number or null ("Inquire")
        e.g. { lot: 1, acres: 2.6, price: 189000, status: 'available' } */
-    var LOTS = [];
+    var LOTS = [
+      { lot: 1, acres: 2.86, price: null, status: 'available' },
+      { lot: 2, acres: 2.43, price: null, status: 'available' },
+      { lot: 3, acres: 2.84, price: null, status: 'available' },
+      { lot: 4, acres: 2.87, price: null, status: 'available' },
+      { lot: 5, acres: 2.86, price: null, status: 'available' },
+      { lot: 6, acres: 2.86, price: null, status: 'available' },
+      { lot: 7, acres: 2.84, price: null, status: 'available' },
+      { lot: 8, acres: 2.87, price: null, status: 'available' },
+      { lot: 9, acres: 2.67, price: null, status: 'available' },
+      { lot: 10, acres: 2.51, price: null, status: 'available' },
+      { lot: 11, acres: 2.58, price: null, status: 'available' },
+      { lot: 12, acres: 2.58, price: null, status: 'available' },
+      { lot: 13, acres: 2.58, price: null, status: 'available' },
+      { lot: 14, acres: 2.58, price: null, status: 'available' },
+      { lot: 15, acres: 2.58, price: null, status: 'available' },
+      { lot: 16, acres: 2.63, price: null, status: 'available' },
+      { lot: 17, acres: 3.05, price: null, status: 'available' }
+    ];
     if (!LOTS.length) return;
     var wrap = document.getElementById('lot-table-wrap');
-    var fmt = function(p){ return p ? '$' + p.toLocaleString('en-US') : 'Inquire'; };
-    var rows = LOTS.map(function(l){
-      var ask = l.status === 'sold' ? '' : '<button type="button" class="lot-ask" data-lot="' + l.lot + '">Ask about this lot &rarr;</button>';
-      return '<tr><td>Lot ' + l.lot + '</td><td>' + l.acres + ' acres</td><td>' + fmt(l.price) + '</td><td><span class="lot-status ' + l.status + '">' + l.status + '</span></td><td>' + ask + '</td></tr>';
+    var LABEL = { available: 'Available', reserved: 'Under Contract', sold: 'Sold' };
+    var avail = LOTS.filter(function(l){ return l.status === 'available'; }).length;
+    var tiles = LOTS.map(function(l){
+      var dis = l.status === 'sold' ? ' disabled aria-disabled="true"' : '';
+      return '<button type="button" class="unit-tile ' + l.status + '" data-lot="' + l.lot + '"' + dis + ' aria-label="Unit ' + l.lot + ', ' + l.acres.toFixed(2) + ' acres, ' + LABEL[l.status] + '">'
+        + '<span class="ut-num">' + l.lot + '</span><span class="ut-acres">' + l.acres.toFixed(2) + ' ac</span><span class="ut-status">' + LABEL[l.status] + '</span></button>';
     }).join('');
-    wrap.innerHTML = '<table class="lot-table"><thead><tr><th>Homesite</th><th>Size</th><th>Price</th><th>Status</th><th></th></tr></thead><tbody>' + rows + '</tbody></table>';
+    wrap.innerHTML = '<div class="unit-head"><span>' + avail + ' of ' + LOTS.length + ' units available</span><span>Select a unit to ask about it</span></div><div class="unit-grid">' + tiles + '</div>';
     wrap.hidden = false;
     wrap.addEventListener('click', function(e){
-      var b = e.target.closest('.lot-ask'); if (!b) return;
+      var b = e.target.closest('.unit-tile'); if (!b || b.disabled) return;
+      var n = b.getAttribute('data-lot');
       pick('Lot map & pricing');
-      hidden.value = 'Westacres - Lot ' + b.getAttribute('data-lot');
-      var m = document.getElementById('wa-msg'); if (!m.value) m.value = "I'm interested in Lot " + b.getAttribute('data-lot') + '.';
+      hidden.value = 'Westacres - Unit ' + n;
+      var m = document.getElementById('wa-msg');
+      if (!m.value || /^I'm interested in Unit \d+\.$/.test(m.value)) m.value = "I'm interested in Unit " + n + '.';
       document.getElementById('inquire').scrollIntoView({behavior:'smooth'});
     });
   })();
