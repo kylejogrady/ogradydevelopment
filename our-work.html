@@ -325,6 +325,15 @@
   <!-- EDITORIAL GALLERY -->
   <div class="gallery">
 
+    <!-- ROW 0: Country Club — full width (newest) -->
+    <div class="g-row">
+      <div class="g-item g-full" onclick="openLightbox('Country Club')">
+        <img src="images/our-work/country-club/country-club-1.jpg" alt="Country Club" loading="lazy">
+        <div class="g-overlay"><div><div class="g-name">Country Club</div><div class="g-rule"></div></div></div>
+        <div class="g-pill">View Gallery</div>
+      </div>
+    </div>
+
     <!-- ROW 1: Bayridge — full width -->
     <div class="g-row">
       <div class="g-item g-full" onclick="openLightbox('Bayridge')">
@@ -524,6 +533,8 @@
 
     // All photos in one flat array
     const photos = [
+      // COUNTRY CLUB (15)
+      ...[...Array(15)].map((_,i)=>({src:`images/our-work/country-club/country-club-${i+1}.jpg`,home:'Country Club'})),
       // BAYRIDGE (15)
       ...[1,2,3,4,5,6,8,'8a',9,10,11,12,13,14,15].map(n=>({src:`images/our-work/bayridge/bayridge-${n}.jpg`,home:'Bayridge'})),
       // BAY VIEW (25 — skip 12, includes bayview-bayview-12)
