@@ -118,6 +118,7 @@
     .homes-section { padding: 120px 0; background: var(--bg); }
     .ps-portfolio { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; padding: 44px 48px; background: var(--warm); border: 1px solid rgba(0,0,0,0.08); }
     .ps-portfolio-text { flex: 1; min-width: 280px; }
+    @media (max-width: 768px) { .ps-two-col { grid-template-columns: 1fr !important; gap: 48px !important; } .ps-docs-grid { grid-template-columns: 1fr !important; gap: 32px !important; } .ps-portfolio { padding: 28px 22px; gap: 24px; } .ps-portfolio-text { min-width: 0; } }
     .homes-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 64px; gap: 32px; }
     .homes-header-left { display: flex; flex-direction: column; gap: 16px; }
 
@@ -571,20 +572,19 @@
               alt="15985 Waters Edge Drive — Unit 39 front elevation"
               class="home-card-main-img"
               id="main-39"
-              onclick="openLightbox('lot39', 0)"
-            >
+              onclick="openLightbox('lot39', 0)" loading="lazy" decoding="async">
             <div class="home-card-thumbs">
               <div class="home-card-thumb" onclick="swapMain('main-39','images/communities/peninsula-shores/unit-39/unit_39_002.jpg'); openLightbox('lot39',1)">
-                <img src="images/communities/peninsula-shores/unit-39/unit_39_002.jpg" alt="Unit 39 front view 2">
+                <img src="images/communities/peninsula-shores/unit-39/unit_39_002.jpg" alt="Unit 39 front view 2" loading="lazy" decoding="async">
               </div>
               <div class="home-card-thumb" onclick="swapMain('main-39','images/communities/peninsula-shores/unit-39/unit_39_003.jpg'); openLightbox('lot39',2)">
-                <img src="images/communities/peninsula-shores/unit-39/unit_39_003.jpg" alt="Unit 39 front view 3">
+                <img src="images/communities/peninsula-shores/unit-39/unit_39_003.jpg" alt="Unit 39 front view 3" loading="lazy" decoding="async">
               </div>
               <div class="home-card-thumb" onclick="swapMain('main-39','images/communities/peninsula-shores/unit-39/unit_39_005.jpg'); openLightbox('lot39',3)">
-                <img src="images/communities/peninsula-shores/unit-39/unit_39_005.jpg" alt="Unit 39 rear view">
+                <img src="images/communities/peninsula-shores/unit-39/unit_39_005.jpg" alt="Unit 39 rear view" loading="lazy" decoding="async">
               </div>
               <div class="home-card-thumb" onclick="swapMain('main-39','images/communities/peninsula-shores/unit-39/unit_39_007.jpg'); openLightbox('lot39',4)">
-                <img src="images/communities/peninsula-shores/unit-39/unit_39_007.jpg" alt="Unit 39 aerial">
+                <img src="images/communities/peninsula-shores/unit-39/unit_39_007.jpg" alt="Unit 39 aerial" loading="lazy" decoding="async">
               </div>
             </div>
           </div>
@@ -628,8 +628,7 @@
               class="home-card-main-img"
               id="main-13"
               onclick="openLightbox('lot13', 0)"
-              style="cursor:pointer;"
-            >
+              style="cursor:pointer;" loading="lazy" decoding="async">
           </div>
           <div class="home-card-info">
             <div class="home-card-badge" style="background:var(--dark);">SOLD</div>
@@ -715,7 +714,7 @@
   <!-- ═══ PROXIMITY ═════════════════════════════════ -->
   <section style="padding:96px 0;background:var(--bg);">
     <div class="wrap">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:start;" class="fade-up">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:start;" class="fade-up ps-two-col">
 
         <div style="display:flex;flex-direction:column;gap:24px;">
           <span class="t-label">Getting Around</span>
@@ -811,7 +810,7 @@
   <!-- ═══ USEFUL LINKS ══════════════════════════════ -->
   <section style="padding:72px 0;background:var(--warm);">
     <div class="wrap">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+      <div class="ps-docs-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
         <div class="fade-up">
           <span class="t-label">Resources</span>
           <h2 class="t-lg" style="margin-top:12px;margin-bottom:16px;">Useful<br>Documents.</h2>
@@ -872,7 +871,7 @@
       </div>
       <div class="footer-main">
         <div>
-          <a href="index.html"><img src="images/logos/Gold Logo.png" alt="O'Grady Development Co." class="footer-logo-img"></a>
+          <a href="index.html"><img src="images/logos/Gold Logo.png" alt="O'Grady Development Co." class="footer-logo-img" loading="lazy" decoding="async"></a>
           <p class="footer-address">901 South Garfield Avenue, Suite 202<br>Traverse City, MI 49686</p>
           <p class="footer-tagline">Building Your Future. Now.®</p>
         </div>

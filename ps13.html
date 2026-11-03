@@ -289,6 +289,10 @@
       .hero-content { grid-template-columns: 1fr; gap: 32px; padding: 0 20px 56px; }
       .sticky-bar { padding: 0 20px; }
       .sticky-bar-address { font-size: 14px; }
+      .sticky-bar { gap: 10px; }
+      .sticky-bar-actions { gap: 8px; }
+      .sticky-btn { padding: 10px 12px; letter-spacing: 1.5px; }
+      .sticky-bar-address { min-width: 0; flex: 1; }
       .overview-section, .location-section { padding: 72px 0; }
       .features-section { padding: 72px 0; }
       .stats-bar-inner { grid-template-columns: repeat(2, 1fr); }
@@ -316,7 +320,8 @@
     .footer-signup-msg { font-family:var(--body,'Montserrat',sans-serif); font-size:12px; color:var(--gold-lt,#cfc0a6); flex-basis:100%; }
     .footer-signup .og-hp { position:absolute; left:-9999px; top:-9999px; }
     @media(max-width:768px){ .footer-signup-form { width:100%; } .footer-signup-form input[type=email]{ min-width:0; flex:1; } }
-</style>
+  @media (max-width: 480px) { .sticky-bar-address { display: none; } .sticky-bar { justify-content: space-between; } }
+  </style>
   <style id="og-footer-picker-css">
     .footer-signup { align-items:flex-start; }
     .footer-signup-form { display:flex; flex-direction:column; align-items:flex-start; gap:16px; min-width:340px; }
@@ -471,12 +476,12 @@
   <!-- ═══ PHOTO GALLERY ══════════════════════════════ -->
   <div class="gallery-section">
     <div class="gallery-main gallery-trigger" onclick="openLightbox(0)">
-      <img id="gallery-main-img" src="images/communities/peninsula-shores/unit-13/lot-13-front-elevation.jpg" alt="15652 Waters Edge Drive — Unit 13 front elevation">
+      <img id="gallery-main-img" src="images/communities/peninsula-shores/unit-13/lot-13-front-elevation.jpg" alt="15652 Waters Edge Drive — Unit 13 front elevation" loading="lazy" decoding="async">
       <div class="gallery-main-overlay">View All Photos →</div>
     </div>
     <div class="gallery-grid">
       <div class="gallery-thumb gallery-trigger" onclick="openLightbox(1)">
-        <img src="images/communities/peninsula-shores/unit-13/lot-13-front-elevation-dusk.jpg" alt="15652 Waters Edge Drive — dusk view">
+        <img src="images/communities/peninsula-shores/unit-13/lot-13-front-elevation-dusk.jpg" alt="15652 Waters Edge Drive — dusk view" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -613,7 +618,7 @@
 
   <!-- ═══ BANNER ════════════════════════════════════ -->
   <div class="banner">
-    <img src="images/communities/peninsula-shores/peninsula-shores-sub-hero.jpg" alt="Peninsula Shores — Old Mission Peninsula">
+    <img src="images/communities/peninsula-shores/peninsula-shores-sub-hero.jpg" alt="Peninsula Shores — Old Mission Peninsula" loading="lazy" decoding="async">
     <div class="banner-overlay">
       <div class="banner-text fade-up">
         <span class="t-label" style="color:rgba(255,255,255,0.5);">East Grand Traverse Bay</span>
@@ -779,7 +784,7 @@
       </div>
       <div class="footer-main">
         <div>
-          <a href="index.html"><img src="images/logos/Gold Logo.png" alt="O'Grady Development Co." class="footer-logo-img"></a>
+          <a href="index.html"><img src="images/logos/Gold Logo.png" alt="O'Grady Development Co." class="footer-logo-img" loading="lazy" decoding="async"></a>
           <p class="footer-address">901 South Garfield Avenue, Suite 202<br>Traverse City, MI 49686</p>
           <p class="footer-tagline">Building Your Future. Now.®</p>
         </div>
