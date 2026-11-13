@@ -308,6 +308,42 @@
     .community-chip.on .cc-box svg { opacity:1; }
     .community-chip:focus-within { border-color:var(--gold,#b8a88a); }
     @media(max-width:560px){ .community-picker { grid-template-columns:1fr; } }
+    /* ─── WESTACRES POP-UPS (price sheet + packet) ─── */
+    .hero-actions button.btn { font: inherit; font-family: var(--body); font-size: 10px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; }
+    .wa-modal { position: fixed; inset: 0; z-index: 1000; display: none; align-items: center; justify-content: center; padding: 24px; }
+    .wa-modal.open { display: flex; }
+    .wa-modal-backdrop { position: absolute; inset: 0; background: rgba(17,16,16,0.72); }
+    .wa-modal-box { position: relative; background: var(--bg); width: 100%; max-width: 520px; box-shadow: 0 30px 80px rgba(0,0,0,0.35); }
+    .wa-modal-box.wa-sheet { max-width: 900px; height: min(92vh, 1100px); display: flex; flex-direction: column; }
+    .wa-modal-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 18px 14px 24px; border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .wa-modal-title { font-family: var(--body); font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--dark); }
+    .wa-modal-tools { display: flex; align-items: center; gap: 18px; }
+    .wa-modal-tools a { font-family: var(--body); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--dark); border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
+    .wa-modal-close { background: none; border: 0; font-size: 26px; line-height: 1; color: var(--dark); cursor: pointer; padding: 2px 6px; }
+    .wa-sheet iframe { flex: 1; width: 100%; border: 0; background: #e9e6e0; }
+    .wa-packet-body { padding: 36px 36px 32px; }
+    .wa-packet-body .wa-eyebrow { font-family: var(--body); font-size: 9px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; color: var(--gold); }
+    .wa-packet-body h3 { font-family: var(--display); font-weight: 400; font-size: 34px; line-height: 1.08; margin: 10px 0 12px; color: var(--dark); }
+    .wa-packet-body h3 em { font-style: italic; color: var(--gold); }
+    .wa-packet-body p { font-family: var(--body); font-size: 13px; line-height: 1.8; color: var(--text); margin: 0 0 22px; }
+    .wa-packet-row { display: flex; }
+    .wa-packet-row input { flex: 1; min-width: 0; font-family: var(--body); font-size: 14px; padding: 15px 16px; border: 1px solid rgba(0,0,0,0.25); border-right: 0; background: #fff; color: var(--dark); border-radius: 0; outline: none; -webkit-appearance: none; }
+    .wa-packet-row input:focus { border-color: var(--gold); }
+    .wa-packet-row button { font-family: var(--body); font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; background: var(--dark); color: #fff; border: 1px solid var(--dark); padding: 0 24px; cursor: pointer; }
+    .wa-packet-row button:hover { background: #000; }
+    .wa-packet-row button[disabled] { opacity: .6; cursor: default; }
+    .wa-packet-msg { font-family: var(--body); font-size: 13px; line-height: 1.7; color: var(--dark); margin-top: 14px; }
+    .wa-packet-msg:empty { display: none; }
+    .wa-packet-msg a { text-decoration: underline; text-underline-offset: 3px; }
+    .wa-hp, .wa-sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    @media (max-width: 600px) {
+      .wa-packet-body { padding: 28px 22px 24px; }
+      .wa-packet-body h3 { font-size: 28px; }
+      .wa-packet-row { flex-direction: column; gap: 10px; }
+      .wa-packet-row input { border-right: 1px solid rgba(0,0,0,0.25); }
+      .wa-packet-row button { padding: 16px; }
+    }
+
   </style>
   <style id="og-footer-picker-css">
     .footer-signup { align-items:flex-start; }
@@ -568,8 +604,8 @@
         </div>
       </div>
       <div class="hero-actions h-anim h-d4">
-        <a href="#inquire" class="btn btn-dark" data-interest="Lot map &amp; pricing">Get Lot Map &amp; Pricing</a>
-        <a href="#inquire" class="btn-plain" data-interest="Walk the property">Walk the Property</a>
+        <a href="images/communities/westacres/westacres-price-sheet.pdf" target="_blank" rel="noopener" class="btn btn-dark js-price-sheet">Price Sheet</a>
+        <button type="button" class="btn btn-dark js-packet">Complete Information Packet</button>
       </div>
     </div>
   </section>
@@ -599,7 +635,7 @@
           <span class="t-label">The Site Plan</span>
           <h2 class="t-lg">17 Homesites on<br>Church View Drive.</h2>
         </div>
-        <a href="#inquire" class="btn btn-dark" data-interest="Lot map &amp; pricing">Get Pricing</a>
+        <a href="images/communities/westacres/westacres-price-sheet.pdf" target="_blank" rel="noopener" class="btn btn-dark js-price-sheet">Price Sheet</a>
       </div>
       <figure class="site-plan fade-up delay-1">
         <a href="images/communities/westacres/westacres-site-plan-v2.jpg" target="_blank" rel="noopener" aria-label="Open the Westacres site plan full size"><img src="images/communities/westacres/westacres-site-plan-v2.jpg" alt="Westacres site plan: 17 units on Church View Drive off Highway M-72, from 2.43 to 3.05 acres" loading="lazy"></a>
@@ -720,7 +756,7 @@
           <h2 class="t-lg">Choose Your<br>Piece of Westacres.</h2>
           <div class="rule"></div>
         </div>
-        <a href="#inquire" class="btn btn-dark fade-up" data-interest="Lot map &amp; pricing">Request Lot Map &amp; Pricing</a>
+        <a href="images/communities/westacres/westacres-price-sheet.pdf" target="_blank" rel="noopener" class="btn btn-dark fade-up js-price-sheet">View Price Sheet</a>
       </div>
       <div class="homesites-panel fade-up delay-1">
         <div class="homesites-map">
@@ -1014,6 +1050,105 @@
       b.addEventListener('click', function () {
         if (v.paused) { v.play(); b.classList.remove('paused'); b.setAttribute('aria-label', 'Pause background video'); }
         else { v.pause(); b.classList.add('paused'); b.setAttribute('aria-label', 'Play background video'); }
+      });
+    })();
+  </script>
+
+  <!-- ═══ Westacres pop-ups: price sheet viewer + packet request ═══ -->
+  <div class="wa-modal" id="wa-sheet-modal" aria-hidden="true">
+    <div class="wa-modal-backdrop" data-close></div>
+    <div class="wa-modal-box wa-sheet" role="dialog" aria-modal="true" aria-label="Westacres price sheet">
+      <div class="wa-modal-bar">
+        <span class="wa-modal-title">Westacres Price Sheet</span>
+        <div class="wa-modal-tools">
+          <a href="images/communities/westacres/westacres-price-sheet.pdf" download>Download</a>
+          <button type="button" class="wa-modal-close" data-close aria-label="Close">&times;</button>
+        </div>
+      </div>
+      <iframe title="Westacres price sheet" data-src="images/communities/westacres/westacres-price-sheet.pdf#view=FitH"></iframe>
+    </div>
+  </div>
+
+  <div class="wa-modal" id="wa-packet-modal" aria-hidden="true">
+    <div class="wa-modal-backdrop" data-close></div>
+    <div class="wa-modal-box" role="dialog" aria-modal="true" aria-labelledby="wa-packet-h">
+      <div class="wa-modal-bar">
+        <span class="wa-modal-title">Information Packet</span>
+        <button type="button" class="wa-modal-close" data-close aria-label="Close">&times;</button>
+      </div>
+      <div class="wa-packet-body">
+        <div class="wa-eyebrow">Westacres</div>
+        <h3 id="wa-packet-h">Send me the complete <em>information packet.</em></h3>
+        <p class="wa-packet-note">Pricing, site plan, location map, association budget and guidelines, all in one PDF. Where should we send it?</p>
+        <form id="wa-packet-form" name="westacres-packet" method="POST" novalidate>
+          <input type="hidden" name="form-name" value="westacres-packet">
+          <input type="hidden" name="community" value="Westacres">
+          <input type="hidden" name="request" value="Complete information packet">
+          <input type="hidden" name="page" value="">
+          <input type="hidden" name="landing_page" value="">
+          <input type="hidden" name="utm_source" value="">
+          <input type="hidden" name="utm_medium" value="">
+          <input type="hidden" name="utm_campaign" value="">
+          <p class="wa-hp" aria-hidden="true"><label>Leave blank <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+          <div class="wa-packet-row">
+            <label class="wa-sr" for="wa-packet-email">Email address</label>
+            <input type="email" id="wa-packet-email" name="email" placeholder="you@email.com" required autocomplete="email">
+            <button type="submit">Send It</button>
+          </div>
+          <div class="wa-packet-msg" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      var PACKET = 'images/communities/westacres/westacres-information-packet.pdf';
+      var sheet = document.getElementById('wa-sheet-modal');
+      var pack = document.getElementById('wa-packet-modal');
+      var lastFocus = null;
+      function open(m){ lastFocus = document.activeElement; m.classList.add('open'); m.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+      function close(m){ m.classList.remove('open'); m.setAttribute('aria-hidden','true'); document.body.style.overflow=''; if (lastFocus) lastFocus.focus(); }
+      [sheet, pack].forEach(function(m){ m.querySelectorAll('[data-close]').forEach(function(b){ b.addEventListener('click', function(){ close(m); }); }); });
+      document.addEventListener('keydown', function(e){ if (e.key === 'Escape') { [sheet, pack].forEach(function(m){ if (m.classList.contains('open')) close(m); }); } });
+
+      // Price sheet: pop-up viewer on larger screens; phones open the PDF directly (more reliable there).
+      document.querySelectorAll('.js-price-sheet').forEach(function(a){
+        a.addEventListener('click', function(e){
+          if (typeof gtag === 'function') gtag('event', 'view_price_sheet', { community: 'Westacres' });
+          if (window.matchMedia('(max-width: 768px)').matches) return;
+          e.preventDefault();
+          var f = sheet.querySelector('iframe'); if (!f.src) f.src = f.getAttribute('data-src');
+          open(sheet);
+        });
+      });
+
+      // Packet request -> Netlify form "westacres-packet" (same Zap as the homepage)
+      var form = document.getElementById('wa-packet-form');
+      document.querySelectorAll('.js-packet').forEach(function(b){
+        b.addEventListener('click', function(){ open(pack); setTimeout(function(){ form.querySelector('input[type=email]').focus(); }, 50); });
+      });
+      var q = new URLSearchParams(location.search);
+      ['utm_source','utm_medium','utm_campaign'].forEach(function(k){
+        var v = q.get(k); try { if (!v) v = sessionStorage.getItem(k) || ''; } catch(e){}
+        form.querySelector('[name='+k+']').value = v || '';
+      });
+      form.querySelector('[name=page]').value = location.pathname || '/westacres.html';
+      try { form.querySelector('[name=landing_page]').value = sessionStorage.getItem('landing_page') || location.href; } catch(e){ form.querySelector('[name=landing_page]').value = location.href; }
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var email = form.querySelector('input[type=email]'), msg = form.querySelector('.wa-packet-msg'), btn = form.querySelector('button[type=submit]');
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { msg.textContent = 'Please enter a valid email address.'; email.focus(); return; }
+        btn.disabled = true; btn.textContent = 'Sending\u2026';
+        fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
+          .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); })
+          .then(function(){
+            form.querySelector('.wa-packet-row').style.display = 'none';
+            var note = pack.querySelector('.wa-packet-note'); if (note) note.style.display = 'none';
+            msg.innerHTML = 'Thank you! The Westacres packet is on its way to your inbox. <a href="' + PACKET + '" target="_blank" rel="noopener">Open it now</a>.';
+            if (typeof gtag === 'function') gtag('event', 'generate_lead', { form_name: 'westacres-packet', community: 'Westacres', page: 'westacres' });
+          })
+          .catch(function(){ btn.disabled = false; btn.textContent = 'Send It'; msg.textContent = 'Something went wrong. Please try again, or call 231.499.9999.'; });
       });
     })();
   </script>
