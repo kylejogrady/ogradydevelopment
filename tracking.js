@@ -37,6 +37,47 @@
     gtag('config', GOOGLE_ADS_ID);
   }
 
+  /* ---- Campaign attribution (QR codes, email links, ads) ----
+     When someone lands with utm_ tags in the link (e.g. a lot-sign QR code),
+     remember them for 60 days. If that person later submits ANY form on the
+     site, the tag is appended to the form's "source" field, so it shows up in
+     the Netlify submission, Google Sheet, Zapier and Lofty. Example:
+       "Website - Westacres Page | QR: Westacres Lot Sign (Unit 4)"        */
+  var ATTRIB_KEY = 'og_attrib', ATTRIB_DAYS = 60;
+
+  function readAttrib() {
+    try {
+      var a = JSON.parse(localStorage.getItem(ATTRIB_KEY) || 'null');
+      if (a && a.t && (Date.now() - a.t) < ATTRIB_DAYS * 864e5) return a;
+    } catch (err) {}
+    return null;
+  }
+
+  (function captureAttrib() {
+    try {
+      var q = new URLSearchParams(window.location.search);
+      var src = q.get('utm_source');
+      if (!src) return;
+      localStorage.setItem(ATTRIB_KEY, JSON.stringify({
+        source:   src,
+        medium:   q.get('utm_medium')   || '',
+        campaign: q.get('utm_campaign') || '',
+        content:  q.get('utm_content')  || '',
+        landing:  window.location.pathname,
+        t:        Date.now()
+      }));
+    } catch (err) {}
+  })();
+
+  function attribLabel(a) {
+    function nice(v) { return String(v).replace(/[-_]+/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); }); }
+    var unit = /^unit[-_ ]?(\d+)$/i.exec(a.content || '');
+    if (a.source === 'lot-sign' && a.medium === 'qr') {
+      return 'QR: ' + nice(a.campaign || 'community') + ' Lot Sign' + (unit ? ' (Unit ' + unit[1] + ')' : '');
+    }
+    return 'Via ' + [a.source, a.medium, a.campaign, a.content].filter(Boolean).join(' / ');
+  }
+
   /* ---- Fire a lead conversion whenever a form is submitted ---- */
   document.addEventListener('submit', function (e) {
     var form = e.target;
@@ -49,11 +90,22 @@
 
     var formName = form.getAttribute('name') || form.id || 'unknown_form';
 
+    // Tag the lead with the campaign that brought them (see attribution above)
+    var attrib = readAttrib();
+    if (attrib) {
+      var label = attribLabel(attrib);
+      var srcField = form.querySelector('[name="source"]');
+      if (srcField && srcField.value.indexOf(label) === -1) {
+        srcField.value = (srcField.value ? srcField.value + ' | ' : '') + label;
+      }
+    }
+
     // GA4 — recommended "generate_lead" event (LIVE now)
     if (typeof gtag === 'function') {
       gtag('event', 'generate_lead', {
         form_name: formName,
-        page_path: window.location.pathname
+        page_path: window.location.pathname,
+        lead_attribution: attrib ? attribLabel(attrib) : '(none)'
       });
     }
 

@@ -921,6 +921,47 @@
     .footer-signup-msg { font-family:var(--body,'Montserrat',sans-serif); font-size:12px; color:var(--gold-lt,#cfc0a6); flex-basis:100%; }
     .footer-signup .og-hp { position:absolute; left:-9999px; top:-9999px; }
     @media(max-width:768px){ .footer-signup-form { width:100%; } .footer-signup-form input[type=email]{ min-width:0; flex:1; } }
+    /* ─── WESTACRES FEATURE (NEW) ─────────────────── */
+    .wa-feature { background: var(--dark); color: #fff; display: grid; grid-template-columns: 1.1fr 1fr; min-height: 460px; }
+    .wa-feature-img { position: relative; overflow: hidden; display: block; }
+    .wa-feature-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 70%; transition: transform 1.2s var(--ease); }
+    .wa-feature-img:hover img { transform: scale(1.04); }
+    .wa-new-badge { position: absolute; top: 24px; left: 24px; background: var(--gold); color: #fff; font-family: var(--body); font-size: 9px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; padding: 9px 16px; }
+    .wa-feature-body { padding: clamp(40px, 6vw, 88px); display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+    .wa-feature-eyebrow { display: flex; align-items: center; gap: 14px; }
+    .wa-feature-eyebrow .rule { width: 36px; height: 1px; background: var(--gold); }
+    .wa-feature-body .t-lg { color: #fff; }
+    .wa-feature-body .t-lg em { color: var(--gold-lt); font-style: italic; }
+    .wa-tagline { display: block; font-size: 0.62em; font-style: italic; color: rgba(255,255,255,0.82); margin-top: 10px; line-height: 1.2; }
+    .wa-feature-copy { font-family: var(--body); font-size: 13px; line-height: 1.95; color: rgba(255,255,255,0.68); max-width: 470px; }
+    .wa-feature-facts { display: flex; flex-wrap: wrap; gap: 10px 28px; font-family: var(--body); font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.85); }
+    .wa-feature-facts span { display: flex; align-items: center; gap: 10px; }
+    .wa-feature-facts span::before { content: ""; width: 4px; height: 4px; border-radius: 50%; background: var(--gold); }
+    .wa-feature-actions { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; max-width: 520px; }
+    .wa-feature-actions .btn { text-align: center; }
+    .wa-feature-links { display: flex; gap: 14px; flex-wrap: wrap; }
+    .wa-feature-links .btn { flex: 1 1 180px; white-space: nowrap; padding-left: 20px; padding-right: 20px; }
+    .wa-packet-toggle { width: 100%; line-height: 1.6; }
+    .wa-packet-toggle[aria-expanded="true"] { background: transparent; color: var(--gold-lt); border-color: var(--gold); }
+    .wa-packet-form { border: 1px solid rgba(184,168,138,0.45); padding: 20px 20px 16px; background: #222; }
+    .wa-packet-note { font-family: var(--body); font-size: 12px; line-height: 1.7; color: rgba(255,255,255,0.7); margin: 0 0 14px; }
+    .wa-packet-row { display: flex; gap: 0; }
+    .wa-packet-row input { flex: 1; min-width: 0; font-family: var(--body); font-size: 13px; color: #fff; background: transparent; border: 1px solid rgba(255,255,255,0.35); border-right: 0; padding: 14px 16px; outline: none; border-radius: 0; -webkit-appearance: none; }
+    .wa-packet-row input::placeholder { color: rgba(255,255,255,0.4); }
+    .wa-packet-row input:focus { border-color: var(--gold-lt); }
+    .wa-packet-submit { font-family: var(--body); font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; background: var(--gold); color: #fff; border: 1px solid var(--gold); padding: 0 24px; cursor: pointer; transition: background .3s; }
+    .wa-packet-submit:hover { background: #a6957a; }
+    .wa-packet-submit[disabled] { opacity: .6; cursor: default; }
+    .wa-packet-msg { font-family: var(--body); font-size: 12px; line-height: 1.7; color: var(--gold-lt); margin: 10px 0 0; min-height: 0; }
+    .wa-packet-msg:empty { display: none; }
+    .wa-packet-msg a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+    .wa-hp, .wa-sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .wa-btn-gold { background: var(--gold); border-color: var(--gold); color: #fff; }
+    .wa-btn-gold:hover { background: #a6957a; border-color: #a6957a; color: #fff; }
+    @media (max-width: 900px) {
+      .wa-feature { grid-template-columns: 1fr; }
+      .wa-feature-img { aspect-ratio: 16 / 10; }
+    }
 </style>
 
   <!-- SEO: Canonical -->
@@ -1029,6 +1070,20 @@
   </form>
 
 
+  <!-- Netlify form registration: Westacres packet request (homepage feature) -->
+  <form name="westacres-packet" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="westacres-packet">
+    <input type="text" name="community">
+    <input type="text" name="request">
+    <input type="text" name="page">
+    <input type="text" name="landing_page">
+    <input type="text" name="utm_source">
+    <input type="text" name="utm_medium">
+    <input type="text" name="utm_campaign">
+    <input type="email" name="email">
+    <input name="bot-field">
+  </form>
+
   <!-- Netlify form detection — hidden static forms -->
   <form name="contact" data-netlify="true" netlify-honeypot="bot-field" style="display:none;">
         <input type="text" name="source">
@@ -1119,6 +1174,45 @@
       </div>
     </div>
 
+  </section>
+
+  <!-- ═══ WESTACRES FEATURE (NEW) ══════════════════ -->
+  <section class="wa-feature" aria-label="Westacres, now available">
+    <a href="westacres.html" class="wa-feature-img">
+      <img src="images/communities/westacres/westacres-aerial-wide.jpg" alt="Aerial view of Westacres acreage homesites in Long Lake Township" loading="lazy">
+      <span class="wa-new-badge">Brand New</span>
+    </a>
+    <div class="wa-feature-body">
+      <div class="wa-feature-eyebrow fade-up"><div class="rule"></div><span class="t-label">Now Available &middot; Long Lake Township</span></div>
+      <h2 class="t-lg fade-up delay-1">West<em>acres.</em><span class="wa-tagline">Your property. Your pace.</span></h2>
+      <p class="wa-feature-copy fade-up delay-2">Our premier acreage community on the west side of Traverse City. Seventeen 2.5 to 3 acre homesites on the new Church View Drive, buffered by berms and mature pines. Build with the builder of your choice, on your own timeline.</p>
+      <div class="wa-feature-facts fade-up delay-2"><span>17 Homesites</span><span>2.5 &ndash; 3 Acres</span><span>From the Mid $100Ks</span></div>
+      <div class="wa-feature-actions fade-up delay-3">
+        <button type="button" class="btn wa-btn-gold wa-packet-toggle" aria-expanded="false" aria-controls="wa-packet-form">Send Me the Complete Information Packet</button>
+        <form class="wa-packet-form" id="wa-packet-form" name="westacres-packet" method="POST" hidden novalidate>
+          <input type="hidden" name="form-name" value="westacres-packet">
+          <input type="hidden" name="community" value="Westacres">
+          <input type="hidden" name="request" value="Complete information packet">
+          <input type="hidden" name="page" value="">
+          <input type="hidden" name="landing_page" value="">
+          <input type="hidden" name="utm_source" value="">
+          <input type="hidden" name="utm_medium" value="">
+          <input type="hidden" name="utm_campaign" value="">
+          <p class="wa-hp" aria-hidden="true"><label>Leave blank <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+          <p class="wa-packet-note">Pricing, site plan, location map, association budget and guidelines, all in one PDF. Where should we send it?</p>
+          <div class="wa-packet-row">
+            <label class="wa-sr" for="wa-packet-email">Email address</label>
+            <input type="email" id="wa-packet-email" name="email" placeholder="you@email.com" required autocomplete="email">
+            <button type="submit" class="wa-packet-submit">Send It</button>
+          </div>
+          <p class="wa-packet-msg" role="status" aria-live="polite"></p>
+        </form>
+        <div class="wa-feature-links">
+          <a href="images/communities/westacres/westacres-price-sheet.pdf" target="_blank" rel="noopener" class="btn btn-white">Price Sheet</a>
+          <a href="westacres.html" class="btn btn-white">Explore Westacres</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ═══ STATS + MARQUEE SANDWICH ═════════════════ -->
@@ -1613,6 +1707,45 @@
       window.dismissSoldToast = function(){ t.classList.remove('show'); try { localStorage.setItem(KEY,'1'); } catch(e){} };
       try { if (localStorage.getItem(KEY) === '1') return; } catch(e){}
       setTimeout(function(){ t.classList.add('show'); }, 1400);
+    })();
+  </script>
+  <script>
+    /* Westacres packet request: email capture -> Netlify form "westacres-packet" */
+    (function(){
+      var btn = document.querySelector('.wa-packet-toggle');
+      var form = document.getElementById('wa-packet-form');
+      if (!btn || !form) return;
+      var PACKET = 'images/communities/westacres/westacres-information-packet.pdf';
+      btn.addEventListener('click', function(){
+        var open = form.hasAttribute('hidden');
+        if (open) { form.removeAttribute('hidden'); } else { form.setAttribute('hidden',''); }
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (open) { setTimeout(function(){ form.querySelector('input[type=email]').focus(); }, 50); }
+      });
+      var q = new URLSearchParams(location.search);
+      ['utm_source','utm_medium','utm_campaign'].forEach(function(k){
+        var v = q.get(k); try { if (!v) v = sessionStorage.getItem(k) || ''; } catch(e){}
+        form.querySelector('[name='+k+']').value = v || '';
+      });
+      form.querySelector('[name=page]').value = location.pathname || '/';
+      try { form.querySelector('[name=landing_page]').value = sessionStorage.getItem('landing_page') || location.href; } catch(e){ form.querySelector('[name=landing_page]').value = location.href; }
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var email = form.querySelector('input[type=email]');
+        var msg = form.querySelector('.wa-packet-msg');
+        var submit = form.querySelector('.wa-packet-submit');
+        if (!email.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { msg.textContent = 'Please enter a valid email address.'; email.focus(); return; }
+        submit.disabled = true; submit.textContent = 'Sending\u2026';
+        fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
+          .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); })
+          .then(function(){
+            form.querySelector('.wa-packet-row').style.display = 'none';
+            form.querySelector('.wa-packet-note').style.display = 'none';
+            msg.innerHTML = 'Thank you! The Westacres packet is on its way to your inbox. <a href="' + PACKET + '" target="_blank" rel="noopener">Open it now</a>.';
+            if (typeof gtag === 'function') { gtag('event', 'generate_lead', { form_name: 'westacres-packet', community: 'Westacres' }); }
+          })
+          .catch(function(){ submit.disabled = false; submit.textContent = 'Send It'; msg.textContent = 'Something went wrong. Please try again, or call 231.499.9999.'; });
+      });
     })();
   </script>
   <script src="/tracking.js" defer></script>
