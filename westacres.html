@@ -1145,7 +1145,7 @@
           .then(function(){
             form.querySelector('.wa-packet-row').style.display = 'none';
             var note = pack.querySelector('.wa-packet-note'); if (note) note.style.display = 'none';
-            msg.innerHTML = 'Thank you! The Westacres packet is on its way to your inbox. <a href="' + PACKET + '" target="_blank" rel="noopener">Open it now</a>.';
+            msg.innerHTML = 'Thank you! A member of our team will email you the Westacres packet shortly. Can\u2019t wait? <a href="' + PACKET + '" target="_blank" rel="noopener">Open it now</a>.';
             if (typeof gtag === 'function') gtag('event', 'generate_lead', { form_name: 'westacres-packet', community: 'Westacres', page: 'westacres' });
           })
           .catch(function(){ btn.disabled = false; btn.textContent = 'Send It'; msg.textContent = 'Something went wrong. Please try again, or call 231.499.9999.'; });
