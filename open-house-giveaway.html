@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+<title>Open House Giveaway | O'Grady Development Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --gold:#b8a88a; --gold-dk:#9c8c6e; --char:#1a1a1a; --beige:#f0ede8; --muted:#6f6a63; --line:#ddd6cb; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; min-height:100%; }
+  body { font-family:Montserrat,system-ui,-apple-system,sans-serif; background:var(--beige); color:var(--char);
+         display:flex; align-items:center; justify-content:center; padding:32px 20px; min-height:100vh; }
+  .card { width:100%; max-width:640px; background:#fff; border-radius:6px; overflow:hidden;
+          box-shadow:0 24px 60px rgba(26,26,26,.10); }
+  .hero { background:var(--char); color:#fff; padding:44px 44px 36px; text-align:center; }
+  .eyebrow { letter-spacing:.28em; text-transform:uppercase; font-size:12px; color:var(--gold); margin:0 0 14px; font-weight:600; }
+  h1 { font-family:"Cormorant Garamond",Georgia,serif; font-weight:600; font-size:46px; line-height:1.05; margin:0; }
+  .rule { width:56px; height:2px; background:var(--gold); margin:20px auto 16px; }
+  .sub { margin:0; font-size:16px; opacity:.85; line-height:1.55; }
+  form, .done { padding:36px 44px 30px; }
+  .row { display:flex; gap:16px; }
+  .row .field { flex:1; }
+  .field { margin-bottom:18px; }
+  label { display:block; font-size:12px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--char); margin-bottom:8px; }
+  input[type=text], input[type=email] { width:100%; font-size:20px; padding:15px 16px; border:1.5px solid var(--line);
+         border-radius:4px; font-family:inherit; color:var(--char); background:#fff; -webkit-appearance:none; }
+  input:focus { outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(184,168,138,.25); }
+  .check { display:flex; align-items:flex-start; gap:12px; font-size:14px; color:var(--muted); margin:6px 0 24px;
+           line-height:1.5; cursor:pointer; text-transform:none; letter-spacing:0; font-weight:400; }
+  .check input { width:24px; height:24px; margin:0; flex:none; accent-color:var(--gold-dk); }
+  button { width:100%; font-size:16px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; padding:20px;
+           border:0; border-radius:4px; background:var(--gold); color:#fff; font-family:inherit; cursor:pointer; }
+  button:active { background:var(--gold-dk); }
+  button:disabled { opacity:.6; }
+  .err { color:#a3261b; font-size:14px; margin:0 0 14px; }
+  .fine { text-align:center; font-size:12px; color:var(--muted); margin:18px 0 0; line-height:1.5; }
+  .done { display:none; text-align:center; padding:64px 44px; }
+  .done h2 { font-family:"Cormorant Garamond",Georgia,serif; font-size:42px; font-weight:600; margin:0 0 10px; }
+  .done p { font-size:17px; color:var(--muted); margin:0; line-height:1.5; }
+  .footer { text-align:center; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); padding:0 20px 26px; }
+  .sync { display:none; background:#fbf6ea; color:#7a5d1e; font-size:13px; padding:10px 16px; text-align:center; }
+  .hp { position:absolute; left:-9999px; }
+  @media (max-width:560px){ .row{display:block;} h1{font-size:36px;} form,.done,.hero{padding-left:24px;padding-right:24px;} }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="sync" id="sync"></div>
+  <div class="hero">
+    <p class="eyebrow">Open House Giveaway</p>
+    <h1>Win a $100 Gift Certificate to The Boathouse</h1>
+    <div class="rule"></div>
+    <p class="sub">Enter your name and email for a chance to win dinner on us.</p>
+  </div>
+
+  <form id="f" name="boathouse-giveaway" method="POST" data-netlify="true" netlify-honeypot="company" autocomplete="off" novalidate>
+    <input type="hidden" name="form-name" value="boathouse-giveaway">
+    <input type="hidden" name="updates-opt-in" id="optinField" value="Yes">
+    <p class="hp"><label>Leave blank <input name="company" tabindex="-1" autocomplete="off"></label></p>
+    <div class="row">
+      <div class="field">
+        <label for="first">First name</label>
+        <input id="first" name="first-name" type="text" autocomplete="off" autocapitalize="words" autocorrect="off" spellcheck="false" required>
+      </div>
+      <div class="field">
+        <label for="last">Last name</label>
+        <input id="last" name="last-name" type="text" autocomplete="off" autocapitalize="words" autocorrect="off" spellcheck="false" required>
+      </div>
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" inputmode="email" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" required>
+    </div>
+    <label class="check"><input type="checkbox" id="optin" checked> Yes, send me occasional updates on new homes and communities from O'Grady Development Company. Unsubscribe anytime.</label>
+    <p class="err" id="err"></p>
+    <button id="go" type="submit">Enter to Win</button>
+    <p class="fine">One entry per person. Winner will be contacted by email.</p>
+  </form>
+
+  <div class="done" id="done">
+    <h2>You're entered!</h2>
+    <p>Thanks for stopping by. Good luck!</p>
+  </div>
+
+  <div class="footer">Presented by O'Grady Development Company</div>
+</div>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var KEY = "odc_boathouse_pending";
+
+  function pending(){ try { return JSON.parse(localStorage.getItem(KEY) || "[]"); } catch(e){ return []; } }
+  function savePending(a){ try { localStorage.setItem(KEY, JSON.stringify(a)); } catch(e){} }
+  function showSync(){
+    var n = pending().length, s = $("sync");
+    if (n) { s.textContent = n + (n === 1 ? " entry" : " entries") + " saved on this iPad, will send when Wi-Fi is back…"; s.style.display = "block"; }
+    else s.style.display = "none";
+  }
+
+  function post(body){
+    return fetch("/", { method:"POST", headers:{ "Content-Type":"application/x-www-form-urlencoded" }, body: body })
+      .then(function(r){ if (!r.ok) throw new Error("HTTP " + r.status); });
+  }
+
+  function flush(){
+    var p = pending(); if (!p.length) return;
+    var left = [], chain = Promise.resolve();
+    p.forEach(function(body){ chain = chain.then(function(){ return post(body).catch(function(){ left.push(body); }); }); });
+    chain.then(function(){ savePending(left); showSync(); });
+  }
+  showSync(); flush();
+  setInterval(flush, 20000);
+  window.addEventListener("online", flush);
+
+  var emailOk = function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); };
+  var clean = function(s){ return s.trim().replace(/\s+/g, " "); };
+
+  $("f").addEventListener("submit", function(ev){
+    ev.preventDefault();
+    $("first").value = clean($("first").value);
+    $("last").value  = clean($("last").value);
+    $("email").value = $("email").value.trim().toLowerCase();
+    if (!$("first").value || !$("last").value) { $("err").textContent = "Please enter your first and last name."; return; }
+    if (!emailOk($("email").value)) { $("err").textContent = "Please enter a valid email address."; return; }
+    $("err").textContent = "";
+    $("optinField").value = $("optin").checked ? "Yes" : "No";
+    $("go").disabled = true;
+
+    var body = new URLSearchParams(new FormData($("f"))).toString();
+    post(body).catch(function(){ var p = pending(); p.push(body); savePending(p); showSync(); });
+
+    $("f").style.display = "none"; $("done").style.display = "block";
+    setTimeout(reset, 4000);
+  });
+
+  function reset(){
+    $("f").reset(); $("optin").checked = true; $("go").disabled = false;
+    $("done").style.display = "none"; $("f").style.display = "block";
+    window.scrollTo(0, 0);
+  }
+})();
+</script>
+</body>
+</html>
