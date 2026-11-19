@@ -921,6 +921,31 @@
     .footer-signup-msg { font-family:var(--body,'Montserrat',sans-serif); font-size:12px; color:var(--gold-lt,#cfc0a6); flex-basis:100%; }
     .footer-signup .og-hp { position:absolute; left:-9999px; top:-9999px; }
     @media(max-width:768px){ .footer-signup-form { width:100%; } .footer-signup-form input[type=email]{ min-width:0; flex:1; } }
+    /* ─── JUST LISTED FEATURE ─────────────────────── */
+    .jl-feature { background: var(--warm); color: var(--dark); display: grid; grid-template-columns: 1fr 1.1fr; min-height: 460px; }
+    .jl-feature-img { position: relative; overflow: hidden; display: block; order: 2; }
+    .jl-feature-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; transition: transform 1.2s var(--ease); }
+    .jl-feature-img:hover img { transform: scale(1.04); }
+    .jl-badge { position: absolute; top: 24px; left: 24px; background: var(--dark); color: #fff; font-family: var(--body); font-size: 9px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; padding: 9px 16px; }
+    .jl-feature-body { padding: clamp(40px, 6vw, 88px); display: flex; flex-direction: column; justify-content: center; gap: 22px; order: 1; }
+    .jl-eyebrow { display: flex; align-items: center; gap: 14px; }
+    .jl-eyebrow .rule { width: 36px; height: 1px; background: var(--gold); }
+    .jl-feature-body .t-lg em { color: var(--gold); font-style: italic; }
+    .jl-sub { display: block; font-family: var(--body); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--text); margin-top: 12px; }
+    .jl-price { font-family: var(--display); font-size: clamp(30px, 3.4vw, 44px); font-weight: 400; line-height: 1; color: var(--dark); }
+    .jl-copy { font-family: var(--body); font-size: 13px; line-height: 1.95; color: var(--text); max-width: 470px; }
+    .jl-facts { display: flex; flex-wrap: wrap; gap: 10px 28px; font-family: var(--body); font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dark); }
+    .jl-facts span { display: flex; align-items: center; gap: 10px; }
+    .jl-facts span::before { content: ""; width: 4px; height: 4px; border-radius: 50%; background: var(--gold); }
+    .jl-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; max-width: 520px; }
+    .jl-actions .btn { flex: 1 1 200px; text-align: center; white-space: nowrap; padding-left: 20px; padding-right: 20px; }
+    .jl-btn-solid { background: var(--dark); border-color: var(--dark); color: #fff; }
+    .jl-btn-solid:hover { background: var(--gold); border-color: var(--gold); color: #fff; }
+    @media (max-width: 900px) {
+      .jl-feature { grid-template-columns: 1fr; }
+      .jl-feature-img { order: 0; aspect-ratio: 16 / 10; }
+      .jl-feature-body { order: 1; }
+    }
     /* ─── WESTACRES FEATURE (NEW) ─────────────────── */
     .wa-feature { background: var(--dark); color: #fff; display: grid; grid-template-columns: 1.1fr 1fr; min-height: 460px; }
     .wa-feature-img { position: relative; overflow: hidden; display: block; }
@@ -1241,6 +1266,25 @@
     </div>
 
     <div class="hv2-scroll" aria-hidden="true"><span class="hv2-scroll-line"></span><span>Scroll</span></div>
+  </section>
+
+  <!-- ═══ JUST LISTED: 1255 VICTORIA FARMS DR (MLS #1952640) ═══ -->
+  <section class="jl-feature" aria-label="Just listed: 1255 Victoria Farms Drive">
+    <a href="vf19.html" class="jl-feature-img">
+      <img src="images/communities/victoria-farms/unit-19/vf19-01.jpg" alt="Front of 1255 Victoria Farms Drive by O'Grady Development" loading="lazy" width="2000" height="1500">
+      <span class="jl-badge">Just Listed</span>
+    </a>
+    <div class="jl-feature-body">
+      <div class="jl-eyebrow fade-up"><div class="rule"></div><span class="t-label">Just Listed &middot; Victoria Farms</span></div>
+      <h2 class="t-lg fade-up delay-1">1255 Victoria <em>Farms Drive.</em><span class="jl-sub">East Bay Township &middot; Traverse City</span></h2>
+      <div class="jl-price fade-up delay-1">$995,000</div>
+      <p class="jl-copy fade-up delay-2">A brand-new, turn-key home by O&rsquo;Grady Development: an open-concept layout, a beautifully appointed kitchen, a finished lower level and carefully curated finishes throughout. About 15 minutes from downtown Traverse City.</p>
+      <div class="jl-facts fade-up delay-2"><span>4 Bedrooms</span><span>3.5 Baths</span><span>3,337 Sq Ft</span><span>3-Car Garage</span></div>
+      <div class="jl-actions fade-up delay-3">
+        <a href="contact.html?community=victoria-farms" class="btn jl-btn-solid" onclick="if (window.ogStayInTheKnow) { ogStayInTheKnow('1255 Victoria Farms Dr · Just Listed', { title: 'Schedule a showing.', intro: 'Tell us a little about yourself and a member of our team will reach out within one business day to show you 1255 Victoria Farms Drive and the completed model home.', button: 'Request a showing' }); return false; }">Schedule a Showing</a>
+        <a href="vf19.html" class="btn btn-dark">View the Listing</a>
+      </div>
+    </div>
   </section>
 
   <!-- ═══ WESTACRES FEATURE (NEW) ══════════════════ -->
